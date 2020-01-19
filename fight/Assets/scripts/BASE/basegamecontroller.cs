@@ -58,4 +58,9 @@ public class basegamecontroller : MonoBehaviour
 		}
 
 	}
+
+	public virtual void GameEnded()
+	{
+		// this deals about the endig of the game
+	}
 }
