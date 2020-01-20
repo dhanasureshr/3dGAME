@@ -22,7 +22,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
     public int targetframe = 60;
 
 
-    public VirtualJoystick joystick;
+   // public VirtualJoystick joystick;
     //this are for the caera collision detection 
 
     private float thinRadius = 0.15f;
