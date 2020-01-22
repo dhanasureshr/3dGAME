@@ -9,7 +9,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
     public float rotx = 0.0f;
     public float roty = 0.0f;
     public Vector3 origrot;
-    public float rotspeed = 0.5f;
+    public float rotspeed = 0.2f;
     public float dir = -1;
     public float inittouch_x;
     public float inittouch_y;
@@ -27,15 +27,15 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
 
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
-    private float distance = 5.0f;
+    private float distance = 5.0f;                   
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f;
     private float distanceMax = 5f;
     private object hit;
 
-    private float xspeed = 10.0f;
-    private float yspeed = 10.0f;
+    private float xspeed = 1.0f;// // // / //
+    private float yspeed = 1.0f;
     private float yMinLimit = 10f;
     private float yMaxLimit = 80f;
 
@@ -82,7 +82,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
             }
             Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
             Vector3 position = rotation * distanceVector + target.position;
-            transform.rotation = rotation;
+			transform.rotation = rotation;
             transform.position = position;
 
         }

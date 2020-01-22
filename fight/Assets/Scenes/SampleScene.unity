@@ -414,14 +414,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313543958}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.56, y: 1.02, z: 0}
+  m_LocalRotation: {x: -0, y: 0.70906174, z: -0, w: 0.70514643}
+  m_LocalPosition: {x: -3.89, y: 1.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1535833115}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.317, z: 0}
 --- !u!1 &1529975225
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633744394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: 1.16, z: 0}
+  m_LocalPosition: {x: 4.24, y: 1.16, z: 0}
   m_LocalScale: {x: 0.24, y: 6.65, z: 12.68}
   m_Children: []
   m_Father: {fileID: 0}
@@ -763,11 +763,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b995b1aaf1c4bb439a5163746dcc0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playercamerefollow: {fileID: 534669906}
   swipe_up: 0
   swipe_down: 0
   swipe_right: 0
   swipe_left: 0
   swiping: 0
+  deltaPosition: {x: 0, y: 0}
   bigin_x_tuch: 0
   bigin_y_tuch: 0
   end_x_tuch: 0
@@ -996,7 +998,7 @@ PrefabInstance:
     - target: {fileID: 4115625514840044906, guid: 1b049d003fbfa0c4586b651351c5f935,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4115625514840044909, guid: 1b049d003fbfa0c4586b651351c5f935,
         type: 3}

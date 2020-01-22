@@ -6,6 +6,8 @@ public class tuch_inpu : MonoBehaviour {
     //touch input manager class
     public static tuch_inpu touch_input_manager;
 
+	public PLAYER_CAMERA_FOLLOW playercamerefollow;
+
     // public functions for accessing the touch input class
     public bool swipe_up = false;
     public bool swipe_down = false;
@@ -13,7 +15,8 @@ public class tuch_inpu : MonoBehaviour {
     public bool swipe_left = false;
     public bool swiping = false;
 
-
+	// this is the code to check the touch detect distance
+	public Vector2 deltaPosition;
 
     // this are the variables for the tuch positions 
     public float bigin_x_tuch;
@@ -53,7 +56,7 @@ public class tuch_inpu : MonoBehaviour {
     }
     public void Start()
     {
-        dragDistance = Screen.height * 15 / 100; //here i seted the dragDistance to 15% of the screen height
+        dragDistance = Screen.height * 2 / 100; //here i seted the dragDistance to 15% of the screen height
 
     }
 
@@ -73,16 +76,18 @@ public class tuch_inpu : MonoBehaviour {
             }else if(touch.phase == TouchPhase.Moved)//updated the last posistion where the touch touch begain
             {
             
+				playercamerefollow.rotspeed = 0.5f;
 
                 lp = touch.position;
                 swiping = true;
             }
             else if(touch.phase == TouchPhase.Ended)//user has removed his finger from the screen
             {
-                swipe_up = false;
-                swipe_down = false;
-                swipe_right = false;
-                swipe_left = false;
+               // swipe_up = false;
+                //swipe_down = false;
+               // swipe_right = false;
+               // swipe_left = false;
+				playercamerefollow.rotspeed = 0.0f;
                 swiping = false;
                 lp = touch.position; // last touch positon
 
@@ -96,7 +101,7 @@ public class tuch_inpu : MonoBehaviour {
                         // now i am checking if the movement was to the right
                         if(lp.x > fp.x)
                         {
-                            print("swiping right");
+                            //print("swiping right");
                             swipe_right = true;
                             swipe_down = false;
                             swipe_left = false;
@@ -112,6 +117,9 @@ public class tuch_inpu : MonoBehaviour {
                             swipe_down = false;
                             swipe_up = false;
                         }
+
+						swipe_right = false;
+						swipe_left = false;
 
                     }
                     else
@@ -134,11 +142,13 @@ public class tuch_inpu : MonoBehaviour {
                             swipe_right = false;
                             swipe_left = false;
                         }
+						swipe_up = false;
+						swipe_down = false;
                     }
                 }
                 else
                 {
-                    print("user taped the screen");
+                    //print("user taped the screen");
                     swipe_up = false;
                     swipe_down = false;
                     swipe_right = false;
