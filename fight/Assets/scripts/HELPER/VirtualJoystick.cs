@@ -7,6 +7,8 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 {
     public Image bgImg, jsImg;
 	public Vector3 InputDirection;
+	public bool isfingeronjoystick = false;
+
 	 
 
     private void Start()
@@ -24,11 +26,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 		//Audio playing area starts
 
 		 
-
-
-
-
-
 		//Audio playing area ends
 
         Vector2 pos = Vector2.zero;
@@ -46,17 +43,28 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
             InputDirection = new Vector3(x, 0, y);
             InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
-            jsImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImg.rectTransform.sizeDelta.x / 3)
-                , InputDirection.z * (bgImg.rectTransform.sizeDelta.y / 3));
+            jsImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImg.rectTransform.sizeDelta.y / 3), InputDirection.z * (bgImg.rectTransform.sizeDelta.x / 3),0.0f);
         }
     }
     public virtual void OnPointerDown(PointerEventData ped)
     {
-        OnDrag(ped);
+
+
+		isfingeronjoystick = true;
+        
+
+
+		OnDrag(ped);
 
     }
     public virtual void OnPointerUp(PointerEventData ped)
     {
+
+
+		isfingeronjoystick = false;
+
+
+
         InputDirection = Vector3.zero;
         jsImg.rectTransform.anchoredPosition = Vector3.zero;
 	 

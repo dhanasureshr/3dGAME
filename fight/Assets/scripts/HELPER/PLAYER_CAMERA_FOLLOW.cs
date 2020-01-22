@@ -4,8 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
-    // new ********************************
+public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
+{
+
+	/*
+	 *  this is the script that manages the camara collision 
+	 * 
+	 * 								&&
+	 * 
+	 * By depending up the player state it will manage the camara movement 
+	 *by changing the state from "movement_camera" to "around_the_player_camera" 
+	 *
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
+
+
+	public VirtualJoystick virtual_joystick_access;
+
+
+
+	// new ********************************
     public float rotx = 0.0f;
     public float roty = 0.0f;
     public Vector3 origrot;
@@ -49,6 +72,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
 
     private void Start()
     {
+		
         Vector3 angles = this.transform.eulerAngles;
         x = angles.y;
         y = angles.x;
@@ -69,21 +93,47 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
     {
         if (target)
         {
-            CameraMovement();
-            //rotation = Quaternion.Euler(y, x, 0);
 
-            //new ****************
-            rotation = Quaternion.Euler(rotx, roty, 0);
+			if(virtual_joystick_access.isfingeronjoystick)
+			{
+				//
+			}
+			else
+			{
+				CameraMovementAroundPlayer();
+				//rotation = Quaternion.Euler(y, x, 0);
 
-            if(distance < distanceMax)
-            {
-                distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+				//new ****************
+				rotation = Quaternion.Euler(rotx, roty, 0);
 
-            }
-            Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-            Vector3 position = rotation * distanceVector + target.position;
+				if(distance < distanceMax)
+				{
+					distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+
+				}
+				Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+				Vector3 position = rotation * distanceVector + target.position;
+				transform.rotation = rotation;
+				transform.position = position;
+			}
+
+
+			/*CameraMovement();
+			  //rotation = Quaternion.Euler(y, x, 0);
+
+			  //new ****************
+			rotation = Quaternion.Euler(rotx, roty, 0);
+
+			if(distance < distanceMax)
+			{
+				distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+
+			}
+			Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+			Vector3 position = rotation * distanceVector + target.position;
 			transform.rotation = rotation;
-            transform.position = position;
+			transform.position = position;
+            */
 
         }
         CameraCollision();
@@ -91,7 +141,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
 
     //this is the code for the camera movement with respective to the player
 
-        public void CameraMovement()
+	public void CameraMovementAroundPlayer()
     {
         //x += joystick.InputDirection.x * xspeed;
         //y -= joystick.InputDirection.z * yspeed;
@@ -136,7 +186,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour {
         return Mathf.Clamp(angle, min, max);
     }
 
-    private void CameraCollision()
+    public void CameraCollision()
     {
         // difining the variables for the calculation
         Vector3 normal, thicknormal;
