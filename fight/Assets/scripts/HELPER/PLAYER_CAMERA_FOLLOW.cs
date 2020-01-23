@@ -23,11 +23,6 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 	 * 
 	 * */
 
-
-	public VirtualJoystick virtual_joystick_access;
-
-
-
 	// new ********************************
     public float rotx = 0.0f;
     public float roty = 0.0f;
@@ -45,9 +40,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
     public int targetframe = 60;
 
 
-   // public VirtualJoystick joystick;
-    //this are for the caera collision detection 
-
+    //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
     private float distance = 5.0f;                   
@@ -69,7 +62,20 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
     private Vector3 position;
     private float x = 0.0f;
     private float y = 0.0f;
+	// this is the end of the camera collision varables
 
+
+
+	/*
+	 * now this variables all are for the player movement 
+	 * when is finger is on the joystick
+	 * 
+	 * */
+	public VirtualJoystick virtual_joystick_access;
+
+	public Vector3 camjoyrotateinput = Vector3.zero;
+	Quaternion targetrotation;
+	public float speed = 300.0f;
     private void Start()
     {
 		
@@ -78,7 +84,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         y = angles.x;
         QualitySettings.vSyncCount = 0;
 
+
     }
+
 
     //this is the update function for the fixed frme rate
     private void FixedUpdate()
@@ -96,11 +104,32 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 			if(virtual_joystick_access.isfingeronjoystick)
 			{
-				//
+				//camjoyrotateinput  = new Vector3(virtual_joystick_access.InputDirection.x,0,virtual_joystick_access.InputDirection.z);
+				//if(camjoyrotateinput != Vector3.zero)
+				//{
+				//	targetrotation = Quaternion.LookRotation(camjoyrotateinput);
+				//}
+				//transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed*Time.deltaTime);
+				//print("player is moving");
+
+				if(distance < distanceMax)
+				{
+					distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+
+				}
+				Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+				Vector3 position = rotation * distanceVector + target.position;
+				transform.rotation = rotation;
+				transform.position = position;
 			}
 			else
 			{
+				
+				// this is the code that deals about the player camera follow with the joystick 
+				//with movement of player
+
 				CameraMovementAroundPlayer();
+
 				//rotation = Quaternion.Euler(y, x, 0);
 
 				//new ****************
@@ -138,6 +167,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
         CameraCollision();
     }
+		
 
     //this is the code for the camera movement with respective to the player
 
@@ -285,7 +315,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
     }
 
-    Vector3 GetRayCollisionPoint(Vector3 cameraPosition)
+  
+
+	Vector3 GetRayCollisionPoint(Vector3 cameraPosition)
     {
         Vector3 origin = target.position;
         Vector3 ray = cameraPosition - origin;

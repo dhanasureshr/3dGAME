@@ -28,6 +28,8 @@ public class Inputcontroller : MonoBehaviour
 		{
 			playercamerefollow.rotspeed = 0.0f;
 		}
+
+
 	}
   
 
