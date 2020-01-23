@@ -11,16 +11,11 @@ public class Inputcontroller : MonoBehaviour
 
 	public PLAYER_CAMERA_FOLLOW playercamerefollow;
 
-	private tuch_inpu touch_input_script;
 
-	public void Start()
-	{
-		touch_input_script = gameObject.GetComponent<tuch_inpu>();
-	}
 
 	void Update()
 	{
-		if(touch_input_script.swiping)
+		if(tuch_inpu.touch_input_manager.swiping)
 		{
 			playercamerefollow.rotspeed = 0.5f;
 		}

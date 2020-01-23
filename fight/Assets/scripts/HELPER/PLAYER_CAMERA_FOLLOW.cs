@@ -119,8 +119,13 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				}
 				Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
 				Vector3 position = rotation * distanceVector + target.position;
-				transform.rotation = rotation;
+			//	transform.rotation = rotation;
 				transform.position = position;
+
+				if(tuch_inpu.touch_input_manager.swiping)
+				{
+					transform.rotation = rotation;
+				}
 			}
 			else
 			{
