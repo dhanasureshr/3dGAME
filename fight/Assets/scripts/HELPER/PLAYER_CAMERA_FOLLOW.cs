@@ -67,6 +67,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 	public bool useOffsetValue;
 	public Vector3 offset;
 
+
 	/*
 	 * now this variables all are for the player movement 
 	 * when is finger is on the joystick
@@ -76,7 +77,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
-	public float speed = 0.5f;
+	public float speed;
     private void Start()
     {
 		
@@ -149,10 +150,14 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				float deltax = inittouch_x - finaltouch_x;
 				//rotx -= deltay * Time.deltaTime * speed;
 				//roty -= deltax * Time.deltaTime * speed;
+
+
+
 */
+
 				float horizontal = virtual_joystick_access.InputDirection.x *(speed) ;
 
-				//float horizontal = deltax;
+				//float horizontal = x;
 				//Quaternion rot = Quaternion.Euler(0,horizontal,0);
 				//target.rotation = rot;
 				target.Rotate(0,horizontal,0);
@@ -160,7 +165,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				float vertical = virtual_joystick_access.InputDirection.y *(speed);
 
 		
-				//float vertical = deltay;
+				//float vertical = roty;
 				pivot.Rotate(-vertical,0,0);
 				float desiredYAngle = target.eulerAngles.y;
 				float desiredXAngle = pivot.eulerAngles.x;
