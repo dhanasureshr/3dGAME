@@ -7,19 +7,19 @@ public class playerjoymovement : MonoBehaviour
 	public tuch_inpu touch_input_script;
     [TextArea]
 	public string var = "should be attatched to the player";
-	public float speed = 1.0f;
+	public float speed;
 	private Vector3 MoveDirection = Vector3.zero;
 	public VirtualJoystick joystickinputforplayermovement;
 	public float h_joy;
 	public float y_joy;
-	public CharacterController playercharactercontroller;
+	private CharacterController playercharactercontroller;
 
 
 	private float x_touch_input;
 	private float init_touch_x;
 	private float finals_touch_x;
 	private float plyer_rot_x;
-	public  float rotate_speed = 10.0f;
+	public  float rotate_speed = 5.0f;
 	private Vector3 playerrotatevector = Vector3.zero;
 	private void Start()
 	{
@@ -37,7 +37,8 @@ public class playerjoymovement : MonoBehaviour
 		//MoveDirection *= speed;
 
 		// this is the code for the movement camera controller 
-		MoveDirection =(transform.forward *h_joy) + (transform.right * y_joy);
+		//MoveDirection =(transform.forward *h_joy) + (transform.right * y_joy);
+		MoveDirection =(transform.forward *h_joy)+ (-transform.right * y_joy);
 		MoveDirection = MoveDirection.normalized * speed;
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 

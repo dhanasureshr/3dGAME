@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -275,13 +275,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.08104297, y: 0.6896365, z: -0.078129664, w: -0.7153526}
-  m_LocalPosition: {x: 2.4302752, y: 1.3515235, z: 0.06378318}
+  m_LocalRotation: {x: -0.06169553, y: 0.69149494, z: -0.059477746, w: -0.7172802}
+  m_LocalPosition: {x: 4.58, y: 1.85, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.832001, y: -87.90301, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e20db8d29d3a994f94536ac5b06790c, type: 3}
   m_Name: 
@@ -312,7 +312,7 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   virtual_joystick_access: {fileID: 154498461}
   camjoyrotateinput: {x: 0, y: 0, z: 0}
-  speed: 3
+  speed: 1
   pivot: {fileID: 1718630169}
 --- !u!1 &946480394
 GameObject:
@@ -583,14 +583,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313543958}
-  m_LocalRotation: {x: -0, y: 0.69860977, z: -0, w: 0.7155029}
+  m_LocalRotation: {x: -0, y: -0.023124892, z: -0, w: 0.9997326}
   m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1535833115}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 88.631004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -2.65, z: 0}
 --- !u!143 &1313543963
 CharacterController:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.50000006
+  m_Radius: 0.49999997
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -623,12 +623,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touch_input_script: {fileID: 1825307463}
   var: should be attatched to the player
-  speed: 6
+  speed: 3
   joystickinputforplayermovement: {fileID: 154498461}
   h_joy: 0
   y_joy: 0
-  playercharactercontroller: {fileID: 1313543963}
-  rotate_speed: 10
+  rotate_speed: 5
 --- !u!1 &1529975225
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,7 +712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1535833115
 Transform:
   m_ObjectHideFlags: 0
@@ -723,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 1535833114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.66587, z: 4.0655}
+  m_LocalScale: {x: 0.42258, y: 0.25217164, z: 2.1393068}
   m_Children: []
   m_Father: {fileID: 1313543962}
   m_RootOrder: 0

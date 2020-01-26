@@ -89,7 +89,10 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 		if(!useOffsetValue)
 		{
+			
+		
 			offset = target.position - transform.position;
+
 		}
 		// this is for the movement camer controller code
 		pivot.transform.position = target.transform.position;
@@ -118,54 +121,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 			if(virtual_joystick_access.isfingeronjoystick)
 			{
-				//camjoyrotateinput  = new Vector3(virtual_joystick_access.InputDirection.x,0,virtual_joystick_access.InputDirection.z);
-				//if(camjoyrotateinput != Vector3.zero)
-				//{
-				//	targetrotation = Quaternion.LookRotation(camjoyrotateinput);
-				//}
-				//transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed*Time.deltaTime);
-				//print("player is moving");
-
-									//if(distance < distanceMax)
-									//{
-								//		distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-
-								//	}
-								//	Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-				//Vector3 position = rotation * distanceVector + target.position;
-								//	transform.rotation = rotation;
-									//transform.position = position;
-
-									//if(tuch_inpu.touch_input_manager.swiping)
-									//{
-									//	transform.rotation = rotation;
-									/*}
-*/
-				/*//this is for the movement camera controller code
-				inittouch_y = tuch_inpu.touch_input_manager.fp.y;
-				finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
-				float deltay = inittouch_y - finaltouch_y;
-				inittouch_x = tuch_inpu.touch_input_manager.fp.x;
-				finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
-				float deltax = inittouch_x - finaltouch_x;
-				//rotx -= deltay * Time.deltaTime * speed;
-				//roty -= deltax * Time.deltaTime * speed;
-
-
-
-*/
-
 				float horizontal = virtual_joystick_access.InputDirection.x *(speed) ;
-
-				//float horizontal = x;
-				//Quaternion rot = Quaternion.Euler(0,horizontal,0);
-				//target.rotation = rot;
 				target.Rotate(0,horizontal,0);
-
 				float vertical = virtual_joystick_access.InputDirection.y *(speed);
-
-		
-				//float vertical = roty;
 				pivot.Rotate(-vertical,0,0);
 				float desiredYAngle = target.eulerAngles.y;
 				float desiredXAngle = pivot.eulerAngles.x;
@@ -173,8 +131,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				transform.position = target.position - (rotations * offset);
 				transform.LookAt(target);
 
-			}
-			else
+			}else
 			{
 				
 				// this is the code that deals about the player camera follow with the joystick 
@@ -184,7 +141,19 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 				//rotation = Quaternion.Euler(y, x, 0);
 
-				//new ****************
+/*
+				float horizontal = rotx;
+				float vertical = roty;
+				pivot.Rotate(-vertical,0,0);
+				float desiredYAngle = target.eulerAngles.y;
+				float desiredXAngle = pivot.eulerAngles.x;
+				transform.position = target.position - ( target.rotation *offset);
+				transform.LookAt(target);
+
+*/
+
+
+				//this is the code for the plyer around camera
 				rotation = Quaternion.Euler(rotx, roty, 0);
 
 				if(distance < distanceMax)
@@ -196,25 +165,23 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				Vector3 position = rotation * distanceVector + target.position;
 				transform.rotation = rotation;
 				transform.position = position;
+
 			}
 
 
-			/*CameraMovement();
-			  //rotation = Quaternion.Euler(y, x, 0);
-
-			  //new ****************
-			rotation = Quaternion.Euler(rotx, roty, 0);
-
-			if(distance < distanceMax)
+			if(!tuch_inpu.touch_input_manager.swiping)
 			{
-				distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-
+				float horizontal = rotx;
+				float vertical = roty;
+				pivot.Rotate(-vertical,0,0);
+				float desiredYAngle = target.eulerAngles.y;
+				float desiredXAngle = pivot.eulerAngles.x;
+				transform.position = target.position - ( target.rotation *offset);
+				transform.LookAt(target);
 			}
-			Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-			Vector3 position = rotation * distanceVector + target.position;
-			transform.rotation = rotation;
-			transform.position = position;
-            */
+
+
+
 
         }
         CameraCollision();
@@ -244,12 +211,6 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
         
 
-        // new *****************************
-
-
-
-        //x = ClampAngle(x, xMinLimit, xMaxLimit);
-        //y = ClampAngle(y, yMinLimit, yMaxLimit);
 
     }
 
