@@ -25,42 +25,18 @@ public class playerjoymovement : MonoBehaviour
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
 
+
 	}
 
 	private void Update()
 	{
 		h_joy = joystickinputforplayermovement.InputDirection.x;
 		y_joy = joystickinputforplayermovement.InputDirection.z;
-
-		//MoveDirection = new Vector3(-y_joy,0,h_joy);
-		//MoveDirection = transform.TransformDirection(MoveDirection);
-		//MoveDirection *= speed;
-
-		// this is the code for the movement camera controller 
-		//MoveDirection =(transform.forward *h_joy) + (transform.right * y_joy);
 		MoveDirection =(transform.forward *h_joy)+ (-transform.right * y_joy);
 		MoveDirection = MoveDirection.normalized * speed;
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 
 
-		/*
-		if(joystickinputforplayermovement.isfingeronjoystick)
-		{
-
-			if(touch_input_script.swiping)
-			{
-				
-				init_touch_x  = touch_input_script.fp.x;
-				finals_touch_x = touch_input_script.lp.x;
-				x_touch_input = init_touch_x - finals_touch_x;
-				plyer_rot_x = x_touch_input * Time.deltaTime * rotate_speed;
-				transform.localEulerAngles = new Vector3(0,transform.localEulerAngles.y +plyer_rot_x,0);
-
-	//		}
-
-
-	}
-		*/
 	}
 
 

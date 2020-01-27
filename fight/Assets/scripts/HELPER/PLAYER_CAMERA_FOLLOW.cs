@@ -276,6 +276,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         if(Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
             transform.position = collisionPointRay;
+
             
         }
      }

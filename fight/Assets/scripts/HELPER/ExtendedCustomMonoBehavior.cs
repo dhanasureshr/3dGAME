@@ -10,6 +10,7 @@ public class ExtendedCustomMonoBehavior : MonoBehaviour
 	public bool didInit;
 	public bool canControl;
 	public int iD;
+	public CharacterController charactercontroller;
 
 	[System.NonSerialized]
 	public Transform tempTR;
