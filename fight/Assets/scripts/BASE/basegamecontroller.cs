@@ -4,6 +4,7 @@ using UnityEngine;
 public class basegamecontroller : MonoBehaviour
 {
 	bool Paused;
+	public bool enimy_is_in_range;
 
 	public virtual void PlayerLostLife()
 	{

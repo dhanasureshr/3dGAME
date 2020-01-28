@@ -34,12 +34,8 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
     public float finaltouch_x;
     public float finaltouch_y;
     //new *************************************
-
-
     public Transform target;
     public int targetframe = 60;
-
-
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
@@ -49,62 +45,45 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
     private float distanceMin = 1f;
     private float distanceMax = 5f;
     private object hit;
-
     private float xspeed = 1.0f;// // // / //
     private float yspeed = 1.0f;
     private float yMinLimit = 10f;
     private float yMaxLimit = 80f;
-
     private float xMinLimit = -360f;
     private float xMaxLimit = 360;
-
     private Quaternion rotation;
     private Vector3 position;
     private float x = 0.0f;
     private float y = 0.0f;
 	// this is the end of the camera collision varables
-
 	public bool useOffsetValue;
 	public Vector3 offset;
-
-
 	/*
 	 * now this variables all are for the player movement 
 	 * when is finger is on the joystick
 	 * 
 	 * */
 	public VirtualJoystick virtual_joystick_access;
-
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
     private void Start()
     {
-		
         Vector3 angles = this.transform.eulerAngles;
         x = angles.y;
         y = angles.x;
         QualitySettings.vSyncCount = 0;
-
-
 		if(!useOffsetValue)
 		{
-			
-		
 			offset = target.position - transform.position;
-
 		}
 		// this is for the movement camer controller code
 		pivot.transform.position = target.transform.position;
 		pivot.transform.parent = target.transform;
 
     }
-
-
-
 	// this is for the movement camera controller variables
 	public Transform pivot;
-
     //this is the update function for the fixed frme rate
     private void FixedUpdate()
     {
@@ -113,12 +92,18 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
             Application.targetFrameRate = targetframe;
         }
     }
-
     private void LateUpdate()
     {
         if (target)
         {
-
+			if(tuch_inpu.touch_input_manager.swiping)
+			{
+				rotspeed = 0.5f;
+			}
+			else
+			{
+				rotspeed = 0.0f;
+			}
 			if(virtual_joystick_access.isfingeronjoystick)
 			{
 				float horizontal = virtual_joystick_access.InputDirection.x *(speed) ;
@@ -130,17 +115,20 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				Quaternion rotations = Quaternion.Euler(desiredXAngle,desiredYAngle,0);
 				transform.position = target.position - (rotations * offset);
 				transform.LookAt(target);
-
-			}else
+			}
+			else
 			{
-				
+				if(tuch_inpu.touch_input_manager.swiping)
+				{
+					rotspeed = 0.5f;
+				}
+				else
+				{
+					rotspeed = 0.0f;
+				}
 				// this is the code that deals about the player camera follow with the joystick 
 				//with movement of player
-
 				CameraMovementAroundPlayer();
-
-				//rotation = Quaternion.Euler(y, x, 0);
-
 /*
 				float horizontal = rotx;
 				float vertical = roty;
@@ -151,25 +139,18 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				transform.LookAt(target);
 
 */
-
-
 				//this is the code for the plyer around camera
 				rotation = Quaternion.Euler(rotx, roty, 0);
-
 				if(distance < distanceMax)
 				{
 					distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-
 				}
 				Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
 				Vector3 position = rotation * distanceVector + target.position;
 				transform.rotation = rotation;
 				transform.position = position;
-
 			}
-
-
-			if(!tuch_inpu.touch_input_manager.swiping)
+		/*	if(!tuch_inpu.touch_input_manager.swiping)
 			{
 				float horizontal = rotx;
 				float vertical = roty;
@@ -178,11 +159,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				float desiredXAngle = pivot.eulerAngles.x;
 				transform.position = target.position - ( target.rotation *offset);
 				transform.LookAt(target);
-			}
-
-
-
-
+			}*/
         }
         CameraCollision();
     }
@@ -192,26 +169,18 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 
 	public void CameraMovementAroundPlayer()
     {
-        //x += joystick.InputDirection.x * xspeed;
-        //y -= joystick.InputDirection.z * yspeed;
-
         //new **********************************
         inittouch_x = tuch_inpu.touch_input_manager.fp.x;
         inittouch_y = tuch_inpu.touch_input_manager.fp.y;
         finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
         finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
        
-        
             float deltax = inittouch_x - finaltouch_x;
             float deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;
             rotx = Mathf.Clamp(rotx, -30f, 30f);
-         
-
-        
-
-
+       
     }
 
     // this is the code  for clamping the angles between the x and y for the camera movement 
@@ -276,8 +245,6 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         if(Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
             transform.position = collisionPointRay;
-
-            
         }
      }
 
@@ -329,8 +296,6 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
     }
 
-  
-
 	Vector3 GetRayCollisionPoint(Vector3 cameraPosition)
     {
         Vector3 origin = target.position;
@@ -343,12 +308,5 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
         return cameraPosition;
     }
-
-
-
-
-   
-
-    
 
 }

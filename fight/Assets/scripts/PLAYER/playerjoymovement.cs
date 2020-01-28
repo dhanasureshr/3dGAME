@@ -12,7 +12,7 @@ public class playerjoymovement : MonoBehaviour
 	public VirtualJoystick joystickinputforplayermovement;
 	public float h_joy;
 	public float y_joy;
-	private CharacterController playercharactercontroller;
+	public CharacterController playercharactercontroller;
 
 
 	private float x_touch_input;
@@ -34,6 +34,7 @@ public class playerjoymovement : MonoBehaviour
 		y_joy = joystickinputforplayermovement.InputDirection.z;
 		MoveDirection =(transform.forward *h_joy)+ (-transform.right * y_joy);
 		MoveDirection = MoveDirection.normalized * speed;
+		MoveDirection +=Physics.gravity;
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 
 
