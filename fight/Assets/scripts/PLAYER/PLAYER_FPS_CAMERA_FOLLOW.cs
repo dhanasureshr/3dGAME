@@ -20,10 +20,19 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 	private float swipeDistanceY;
 
 
+	void Start()
+	{
+		transform.parent = player_target.transform;
+		transform.position = player_target.position + new Vector3(0.0f,1.0f,0.0f);
+
+	}
+
+
 	// this is the late update for the player fps move
 
-	void Update()
+	void LateUpdate()
 	{
+		
 		foreach(Touch touch in Input.touches)
 		{
 			if(touch.phase == TouchPhase.Began)
@@ -38,6 +47,8 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 				swipeDistanceX = Mathf.Abs((lp.x - fp.x));
 				swipeDistanceY = Mathf.Abs((lp.y - fp.y));
 
+				//swipeDistanceX= Mathf.Clamp(swipeDistanceX, -30f, 30f);
+
 			}
 
 			if(touch.phase == TouchPhase.Ended)
@@ -49,7 +60,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 				}
 				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
 				{
-					transform.Rotate(ClampAngle(45,0,20),0.0f,0.0f);
+
 				}
 				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
 				{
@@ -57,7 +68,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 				}
 				if(angle > -30 && angle < 30 && swipeDistanceY > 40)
 				{
-					transform.Rotate(ClampAngle(-45,0,20),0.0f,0.0f);
+					
 				}
 			}
 		

@@ -80,6 +80,8 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 		// this is for the movement camer controller code
 		pivot.transform.position = target.transform.position;
 		pivot.transform.parent = target.transform;
+		 
+	
 
     }
 	// this is for the movement camera controller variables
@@ -137,8 +139,8 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				float desiredXAngle = pivot.eulerAngles.x;
 				transform.position = target.position - ( target.rotation *offset);
 				transform.LookAt(target);
-
 */
+
 				//this is the code for the plyer around camera
 				rotation = Quaternion.Euler(rotx, roty, 0);
 				if(distance < distanceMax)
@@ -149,8 +151,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				Vector3 position = rotation * distanceVector + target.position;
 				transform.rotation = rotation;
 				transform.position = position;
+
 			}
-			/*if(!tuch_inpu.touch_input_manager.swiping)
+/*			if(!tuch_inpu.touch_input_manager.swiping)
 			{
 				float horizontal = rotx;
 				float vertical = roty;
@@ -159,8 +162,8 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				float desiredXAngle = pivot.eulerAngles.x;
 				transform.position = target.position - ( target.rotation *offset);
 				transform.LookAt(target);
-			}*/
-        }
+			}
+*/        }
         CameraCollision();
     }
 		

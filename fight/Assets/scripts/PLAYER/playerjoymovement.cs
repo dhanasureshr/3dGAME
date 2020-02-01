@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,13 +32,17 @@ public class playerjoymovement : MonoBehaviour
 	{
 		h_joy = joystickinputforplayermovement.InputDirection.x;
 		y_joy = joystickinputforplayermovement.InputDirection.z;
-		MoveDirection =(transform.forward *h_joy)+ (-transform.right * y_joy);
+
+		MoveDirection =(transform.forward * h_joy)+ (-transform.right * y_joy);
 		MoveDirection = MoveDirection.normalized * speed;
 		MoveDirection +=Physics.gravity;
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 
-
 	}
+
+
+
+
 
 
 }
