@@ -56,7 +56,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 				angle = Mathf.Atan2((lp.x - fp.x),(lp.y - fp.y)) * 57.2957795f;
 				if(angle > 60 && angle < 120 && swipeDistanceX > 40)
 				{
-					player_target.Rotate(0.0f,45,0.0f);
+					player_target.Rotate(0.0f,25,0.0f);
 				}
 				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
 				{
@@ -64,7 +64,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 				}
 				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
 				{
-					player_target.Rotate(0.0f,-45.0f,0.0f);
+					player_target.Rotate(0.0f,-25.0f,0.0f);
 				}
 				if(angle > -30 && angle < 30 && swipeDistanceY > 40)
 				{
