@@ -5,6 +5,11 @@ using System.Collections;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+	// hear this is the main script to comminucate with the main funcitons of the joystick controller
+
+
+	// this are the variable references for the joystick image input images to control
+
     public Image bgImg, jsImg;
 	public Vector3 InputDirection;
 	public bool isfingeronjoystick = false;
@@ -22,11 +27,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     //EventSystems interfaces
     public virtual void OnDrag(PointerEventData ped)
     {
-
-		//Audio playing area starts
-
-		 
-		//Audio playing area ends
+		
 
         Vector2 pos = Vector2.zero;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle
@@ -38,6 +39,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             pos.x = (pos.x / bgImg.rectTransform.sizeDelta.x);
             pos.y = (pos.y / bgImg.rectTransform.sizeDelta.y);
 
+
+			// this is the area for calculating the x and y values 
+
             float x = (bgImg.rectTransform.pivot.x == 1) ? pos.x * 2 + 1 : pos.x * 2 - 1;
             float y = (bgImg.rectTransform.pivot.y == 1) ? pos.y * 2 + 1 : pos.y * 2 - 1;
 
@@ -46,6 +50,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             jsImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImg.rectTransform.sizeDelta.y / 3), InputDirection.z * (bgImg.rectTransform.sizeDelta.x / 3),0.0f);
         }
     }
+
+	// this method is used to find and set the values about the player is using the joystick or not 
+	// if the player is using the joystick then this method is called 
     public virtual void OnPointerDown(PointerEventData ped)
     {
 
@@ -57,6 +64,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 		OnDrag(ped);
 
     }
+
+	// this method is going to decide weather the player is using the joystick or not 
+	// if the  player is using the joystick for that purpes this method is used
     public virtual void OnPointerUp(PointerEventData ped)
     {
 

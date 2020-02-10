@@ -45,7 +45,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
     private float distanceMin = 1f;
     private float distanceMax = 5f;
     private object hit;
-    private float xspeed = 1.0f;// // // / //
+    private float xspeed = 1.0f;
     private float yspeed = 1.0f;
     private float yMinLimit = 10f;
     private float yMaxLimit = 80f;
@@ -118,7 +118,7 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 				transform.position = target.position - (rotations * offset);
 				transform.LookAt(target);
 			}
-			else
+			else//
 			{
 				if(tuch_inpu.touch_input_manager.swiping)
 				{

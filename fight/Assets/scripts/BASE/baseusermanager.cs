@@ -10,7 +10,7 @@ public class baseusermanager : MonoBehaviour
 	private int health;
 	private bool isfinished;
 
-
+	// hear i am initilizing the default values
 	public virtual void GetDefaultData()
 	{
 		score = 0;

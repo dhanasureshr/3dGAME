@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExtendedCustomMonoBehavior : MonoBehaviour
 {
+	// this extended coustom monobehavior is used in all scripts 
+	// those who need the monobehaviour
 	public Transform myTransform;
 	public GameObject myGo;
 	public Rigidbody myBody;

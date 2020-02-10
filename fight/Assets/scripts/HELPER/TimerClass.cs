@@ -17,16 +17,16 @@ public class TimerClass : MonoBehaviour
 	private string minutes;
 	private string seconds;
 	private string mills;
-
 	private int aHour;
 	private int aMinute;
 	private int aSecond;
 	private int aMillis;
 	private int tmp;
 	private int aTime;
-	private GameObject callback;
+	private GameObject callback; 
+	// this is the end of the variable decleration
 
-
+	// this method is used to update the timer 
 	private void UpdateTimer()
 	{
 
@@ -39,19 +39,20 @@ public class TimerClass : MonoBehaviour
 		lastTime = Time.realtimeSinceStartup;
 	}
 
-
+	// this mehthod is used to start the timer
 	public void StartTimer()
 	{
 		isTimerRunning = true;
 		lastTime = Time.realtimeSinceStartup;
 	}
+	// this method is used to stop the timer
 
 	public void StopTimer()
 	{
 		isTimerRunning = false;
 	}
 
-
+	// this method is used to reset the timer
 	public void ResetTimer()
 	{
 		timeElapsed = 0.0f;
@@ -60,6 +61,10 @@ public class TimerClass : MonoBehaviour
 
 	}
 
+
+	//finally this method is used to get the formated time 
+	// this method will return a string of time that can be used in the image text 
+	// to display in the scene
 	public string GetformatedTime()
 	{
 		UpdateTimer();
@@ -96,9 +101,12 @@ public class TimerClass : MonoBehaviour
 
 
 		timeString =minutes +":"+seconds+":"+mills;
-		return timeString;
+		return timeString; // returning the time in the format of string
 	}
 
+
+	// this GetTime method is used to get the current time in the form of integer
+	// for the purpus of modification
 	public int GetTime()
 	{
 
