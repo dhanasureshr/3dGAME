@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class tuch_inpu : MonoBehaviour {
+public class tuch_inpu : ExtendedCustomMonoBehavior
+{
     //touch input manager class
     public static tuch_inpu touch_input_manager;
 

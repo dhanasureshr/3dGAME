@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
+public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 {
 	//this is the code about the player fps camera follow
 	[TextArea]

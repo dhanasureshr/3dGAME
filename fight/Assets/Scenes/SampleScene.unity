@@ -393,6 +393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e20db8d29d3a994f94536ac5b06790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   rotx: 0
   roty: 0
   origrot: {x: 0, y: 0, z: 0}
@@ -424,8 +431,8 @@ GameObject:
   - component: {fileID: 609371233}
   - component: {fileID: 609371237}
   - component: {fileID: 609371236}
-  - component: {fileID: 609371234}
   - component: {fileID: 609371235}
+  - component: {fileID: 609371234}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -461,10 +468,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 609371232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a36263adf774ef488cc93d0ca8dae76, type: 3}
+  m_Script: {fileID: 11500000, guid: b29a607737446454e8bc82ddfb1178ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_manage_script_ref: {fileID: 1313543965}
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  camera_swithch_controller_script_ref: {fileID: 1313543967}
 --- !u!114 &609371235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -885,6 +899,7 @@ GameObject:
   - component: {fileID: 1313543964}
   - component: {fileID: 1313543965}
   - component: {fileID: 1313543966}
+  - component: {fileID: 1313543967}
   m_Layer: 0
   m_Name: test_player
   m_TagString: Untagged
@@ -998,6 +1013,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b80d6129a4ccb47a167c46666ea3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   touch_input_script: {fileID: 1825307463}
   var: should be attatched to the player
   speed: 4
@@ -1025,10 +1047,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 1313543963}
-  val: 'this script should be attatched to the main player '
-  tps_camera_script_reference: {fileID: 534669902}
-  fps_camera_script_regerence: {fileID: 1696534875}
-  fps_cam: 0
 --- !u!114 &1313543966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,6 +1059,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaf3e84a1fc90e47bbd51b4359078f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+--- !u!114 &1313543967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313543958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32769c785da6ae748ad2441e6ba6e4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  val: 'this script should be attatched to the main player '
+  tps_camera_script_reference: {fileID: 534669902}
+  fps_camera_script_regerence: {fileID: 1696534875}
+  fps_cam: 0
 --- !u!1 &1529975225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,6 +1432,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56da461ebc37aeb4d9322044cd376c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   val: this script should attatch to the fps camera
   player_target: {fileID: 1313543962}
 --- !u!1 &1714785675
@@ -1520,6 +1575,7 @@ GameObject:
   - component: {fileID: 1825307461}
   - component: {fileID: 1825307463}
   - component: {fileID: 1825307462}
+  - component: {fileID: 1825307464}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -1553,6 +1609,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21b6e5f0175bd4a40a3ffdde6122b5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   val: TIMER CLASS FOR THE WHOLE PROJECT SHOULD BE ATTATCHED TO GAME MANAGER
   isTimerRunning: 0
   timeElapsed: 0
@@ -1570,12 +1633,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c708a872c927743b3d6a88dc873ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isinputallowed: 1
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  isinputallowed: 0
   isgamestarted: 0
   isgameended: 0
-  isplayerdead: 1
+  isplayerdead: 0
   isenimydead: 0
-  ispaused: 0
+  Game_paused: 0
+  base_game_controller_ref: {fileID: 1825307464}
 --- !u!114 &1825307462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,6 +1659,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1544e60f9695c64fa1cc6520ecf982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
 --- !u!114 &1825307463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1600,6 +1678,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b995b1aaf1c4bb439a5163746dcc0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   swipe_up: 0
   swipe_down: 0
   swipe_right: 0
@@ -1618,6 +1703,26 @@ MonoBehaviour:
   fp: {x: 0, y: 0, z: 0}
   lp: {x: 0, y: 0, z: 0}
   dragDistance: 0
+--- !u!114 &1825307464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825307458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a0d54a483ab06459b2b31b20f6dad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  enimy_is_in_range: 0
 --- !u!1 &1933405813
 GameObject:
   m_ObjectHideFlags: 0

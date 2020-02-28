@@ -16,7 +16,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SingleJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class SingleJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [Tooltip("When checked, this joystick will stay in a fixed position.")]
     public bool joystickStaysInFixedPosition = false;

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
-public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
 	// hear this is the main script to comminucate with the main funcitons of the joystick controller
 

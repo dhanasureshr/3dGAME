@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerjoymovement : MonoBehaviour
+public class playerjoymovement : ExtendedCustomMonoBehavior
 {
 	public tuch_inpu touch_input_script;
     [TextArea]

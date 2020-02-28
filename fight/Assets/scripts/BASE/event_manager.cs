@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class event_manager : MonoBehaviour
+public class event_manager : ExtendedCustomMonoBehavior
 {
 	#region C# properties
 	public static event_manager Instance

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerClass : MonoBehaviour
+public class TimerClass : ExtendedCustomMonoBehavior
 {
    // this is the timer class
 	[TextArea]

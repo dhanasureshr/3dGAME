@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
+public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 {
 
     /*

@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class basegamecontroller : MonoBehaviour
+public class basegamecontroller : ExtendedCustomMonoBehavior
 {
-	bool Paused;
+	
 	public bool enimy_is_in_range;
-
+	
 	public virtual void PlayerLostLife()
 	{
 		// this deals about the player death and updating the ui
@@ -25,6 +25,8 @@ public class basegamecontroller : MonoBehaviour
 
 	public virtual void StartGame()
 	{
+		Debug.Log("Hi dhana suresh game started sucessfully");
+		Debug.Log("this starting from the gamemanager script");
 		//this deals about the starting the game
 	}
 
@@ -34,34 +36,9 @@ public class basegamecontroller : MonoBehaviour
 		//this deals about restarting the same level
 	}
 
-
-
-	public bool paused
-	{
-
-		get
-		{
-
-			return Paused;
-		}
-		set
-		{
-			Paused = value;
-			if(Paused)
-			{
-				Time.timeScale = 0.0f;
-
-			}
-			else
-			{
-				Time.timeScale = 1.0f;
-			}
-		}
-
-	}
-
 	public virtual void GameEnded()
 	{
 		// this deals about the endig of the game
 	}
+
 }

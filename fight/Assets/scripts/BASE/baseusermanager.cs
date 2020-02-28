@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class baseusermanager : MonoBehaviour
+public class baseusermanager : ExtendedCustomMonoBehavior
 {
 	private int score;
 	private int highscore;
 	private int level;
 	private int health;
 	private bool isfinished;
-
+	
 	// hear i am initilizing the default values
 	public virtual void GetDefaultData()
 	{
@@ -86,5 +86,6 @@ public class baseusermanager : MonoBehaviour
 	{
 		isfinished = aval;
 	}
+
 }
  

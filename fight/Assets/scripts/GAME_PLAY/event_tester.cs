@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class event_tester : MonoBehaviour, IListener
+public class event_tester : ExtendedCustomMonoBehavior , IListener
 {
     private int _health;
     private void Start()
