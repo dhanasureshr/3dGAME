@@ -17,10 +17,10 @@ public class playermanager :ExtendedCustomMonoBehavior
 
 	void Update()
 	{
-		
-		if(fps_cam)
+
+		if (fps_cam)
 		{
-			
+
 			tps_camera_script_reference.SetActive(false);
 			fps_camera_script_regerence.SetActive(true);
 		}
@@ -28,9 +28,10 @@ public class playermanager :ExtendedCustomMonoBehavior
 		{
 			fps_camera_script_regerence.SetActive(false);
 			tps_camera_script_reference.SetActive(true);
-			
+
 		}
 	}
+
 
 
 

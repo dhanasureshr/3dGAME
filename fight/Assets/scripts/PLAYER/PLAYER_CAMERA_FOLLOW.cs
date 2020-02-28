@@ -7,7 +7,7 @@ using UnityEngine;
 public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 {
 
-	/*
+    /*
 	 *  this is the script that manages the camara collision 
 	 * 
 	 * 								&&
@@ -18,12 +18,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 	 * 
 	 * 
 	 * 
-	 * 
-	 * 
-	 * 
 	 * */
-
-	// new ********************************
+    #region variables
+    // new ********************************
     public float rotx = 0.0f;
     public float roty = 0.0f;
     public Vector3 origrot;
@@ -67,6 +64,13 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
+
+    // this is for the movement camera controller variables
+    public Transform pivot;
+    #endregion
+
+    #region start metheod for initilization
+
     private void Start()
     {
         Vector3 angles = this.transform.eulerAngles;
@@ -76,17 +80,19 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 		if(!useOffsetValue)
 		{
 			offset = target.position - transform.position;
+
+
 		}
 		// this is for the movement camer controller code
 		pivot.transform.position = target.transform.position;
 		pivot.transform.parent = target.transform;
-		 
-	
+		
 
     }
-	// this is for the movement camera controller variables
-	public Transform pivot;
-    //this is the update function for the fixed frme rate
+    #endregion
+
+    //this is the fixedupdate and lateUPdate function in which camera movement around player and camera collision occurs
+    #region FixedUpdate
     private void FixedUpdate()
     {
         if(Application.targetFrameRate != targetframe)
@@ -94,6 +100,9 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
             Application.targetFrameRate = targetframe;
         }
     }
+    #endregion
+
+    #region LateUpdate
     private void LateUpdate()
     {
         if (target)
@@ -166,11 +175,11 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
 */        }
         CameraCollision();
     }
-		
+    #endregion
 
     //this is the code for the camera movement with respective to the player
-
-	public void CameraMovementAroundPlayer()
+    #region CameraMovementAroundPlayer script
+    public void CameraMovementAroundPlayer()
     {
         //new **********************************
         inittouch_x = tuch_inpu.touch_input_manager.fp.x;
@@ -185,10 +194,11 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
             rotx = Mathf.Clamp(rotx, -30f, 30f);
        
     }
+    #endregion
 
     // this is the code  for clamping the angles between the x and y for the camera movement 
-
-        public float ClampAngle(float angle,float min,float max)
+    #region ClampAgle script
+    public float ClampAngle(float angle,float min,float max)
     {
         if(angle < -360f)
         {
@@ -200,7 +210,10 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
         return Mathf.Clamp(angle, min, max);
     }
+    #endregion
 
+    // this is for the CameraCollision script
+    #region CameraCollision script
     public void CameraCollision()
     {
         // difining the variables for the calculation
@@ -250,8 +263,10 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
             transform.position = collisionPointRay;
         }
      }
+    #endregion
 
     //this is one method of the camera collision
+    #region GetDoubleSphereCastCollision script
     Vector3 GetDoubleSphereCastCollision(Vector3 cameraPosition, float radius, out Vector3 normal, bool pushAlongNormal)
     {
         float raylength = 1;
@@ -298,8 +313,11 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
             return cameraPosition;
         }
     }
+    #endregion
 
-	Vector3 GetRayCollisionPoint(Vector3 cameraPosition)
+    // this is the second method of the camera collision
+    #region GetRayCollisionPoint script
+    Vector3 GetRayCollisionPoint(Vector3 cameraPosition)
     {
         Vector3 origin = target.position;
         Vector3 ray = cameraPosition - origin;
@@ -311,5 +329,5 @@ public class PLAYER_CAMERA_FOLLOW : MonoBehaviour
         }
         return cameraPosition;
     }
-
+    #endregion
 }

@@ -8,8 +8,9 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 	[TextArea]
 	public string val = "this script should attatch to the fps camera";
 
-	// reference to the player 
-	public Transform player_target;
+    #region variables
+    // reference to the player 
+    public Transform player_target;
 
 	// this are the variable for the touch detecprion
 
@@ -18,19 +19,19 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 	private float angle;
 	private float swipeDistanceX;
 	private float swipeDistanceY;
+    #endregion
 
-
-	void Start()
+    #region start method
+    void Start()
 	{
 		transform.parent = player_target.transform;
 		transform.position = player_target.position + new Vector3(0.0f,1.0f,0.0f);
 
 	}
-
-
-	// this is the late update for the player fps move
-
-	void LateUpdate()
+    #endregion 
+    // this is the late update for the player fps move
+    #region LateUpdate
+    void LateUpdate()
 	{
 		
 		foreach(Touch touch in Input.touches)
@@ -74,12 +75,10 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 		
 		}
 	}
-
-
-
-
-
-	public float ClampAngle(float angle,float min,float max)
+    #endregion
+    // this is the calampAngles script
+    #region ClampAngle
+    public float ClampAngle(float angle,float min,float max)
 	{
 		if(angle < -360f)
 		{
@@ -91,7 +90,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : MonoBehaviour
 		}
 		return Mathf.Clamp(angle, min, max);
 	}
-
+    #endregion
 
 
 
