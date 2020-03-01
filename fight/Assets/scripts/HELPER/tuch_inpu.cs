@@ -5,6 +5,8 @@ using UnityEngine;
 public class tuch_inpu : ExtendedCustomMonoBehavior
 {
     //touch input manager class
+    #region public variables for the touch_input code
+
     public static tuch_inpu touch_input_manager;
 
 	//public PLAYER_CAMERA_FOLLOW playercamerefollow;
@@ -42,7 +44,13 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
     public Vector3 lp; // last touch position
     public float dragDistance; // the minimum distance of the swipe to be restricted
 
-	// this code is about the singelton for the tuch_inpu
+
+    #endregion 
+
+
+
+    // this code is about the singelton for the tuch_inpu
+    #region singletone code
 
     public void Awake()
     {
@@ -61,18 +69,23 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
             DontDestroyOnLoad(gameObject);
         }
     }
-
-	// this is the end of the singelton code
-
-
+    #endregion
+    
+    //this is the code to initilze some variables for the touch input detection 
+    #region start to initilize
     public void Start()
     {
         dragDistance = Screen.height * 2 / 100; //here i seted the dragDistance to 15% of the screen height
 
     }
 
+    #endregion
+
+
 
     //  now i am checking the touch input 
+
+    #region update to check the touch input
     public void Update()
     {
         if(Input.touchCount == 1) // user is touching the screen with the single finger
@@ -191,5 +204,5 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
 
 
     }
-
+    #endregion
 }

@@ -16,6 +16,8 @@ public class event_manager : ExtendedCustomMonoBehavior
 
 	}
     #endregion
+
+
     #region variables
 	// Notifications Manager instance (singleton design pattern)
     private static event_manager instance = null;
@@ -24,7 +26,9 @@ public class event_manager : ExtendedCustomMonoBehavior
 	private Dictionary<EVENT_TYPE,List<IListener>> Listeners = new Dictionary<EVENT_TYPE,List<IListener>>();
 
     #endregion
-    #region methods
+    
+	
+	#region methods
 	// call the star-up to initilize
     void Awake()
 	{
@@ -116,6 +120,8 @@ public class event_manager : ExtendedCustomMonoBehavior
 		Dictionary<EVENT_TYPE,List<IListener>> TmpListeners = new Dictionary<EVENT_TYPE,List<IListener>>();
 
 
+		
+
 		//Cycle through all dicionary entries
 		foreach(KeyValuePair<EVENT_TYPE,List<IListener>> Item in Listeners)
 		{
@@ -136,15 +142,8 @@ public class event_manager : ExtendedCustomMonoBehavior
 		Listeners = TmpListeners;
 	}
 
-//---------------------------------------------------------------------
-	// called on scene chanage. clean up dictionary
 
-	void OnLevelWasLoaded()
-	{
-		RemoveRedundancies();
-	}
 
-    //-----------------------------------------------------------------------
     #endregion
 }
 

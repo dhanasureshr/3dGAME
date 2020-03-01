@@ -4,32 +4,61 @@ using UnityEngine;
 
 public class gamemanager : ExtendedCustomMonoBehavior,IListener
 {
-	public bool isinputallowed = false;
+    #region global variables to INTIMATE OTHER SCRIPTS
+    public bool isinputallowed = false;
 	public bool isgamestarted = false;
 	public bool isgameended = false;
 	public bool isplayerdead = false;
+	public bool isgamestoped = false;
 	public bool isenimydead  = false;
 	public bool Game_paused;
 	private bool is_paused;
 
+	#endregion
 
-	private  basegamecontroller base_game_controller_ref;
 
+	#region local variables to communicate  other scripts with the game manager
 
+	private basegamecontroller base_game_controller_ref;
 	private static gamemanager instance;
+	
+    #endregion
 
 
-	void Awake()
+    #region make singletons
+    void Awake()
 	{
 		makesingleton();
 
 	}
 
-	public void Start()
+
+	void makesingleton()
+	{
+		if (instance != null)
+		{
+			Destroy(this);
+		}
+		else
+		{
+			instance = this;
+			DontDestroyOnLoad(this);
+		}
+
+
+	}
+
+    #endregion
+
+
+    #region start to add event listeners and to post GAME_INIT notification
+    public void Start()
 	{
 		event_manager.Instance.AddListener(EVENT_TYPE.GAME_INIT, this);
 		event_manager.Instance.AddListener(EVENT_TYPE.GAME_PAUSED, this);
 		event_manager.Instance.AddListener(EVENT_TYPE.GAME_RESUMED, this);
+		event_manager.Instance.AddListener(EVENT_TYPE.GAME_STOPED, this);
+
 
 		base_game_controller_ref = gameObject.GetComponent<basegamecontroller>();
 
@@ -40,7 +69,25 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	}
 
 
-	public bool ispaused
+    #endregion
+
+
+    #region Application quite detection to post GAME_STOPED notification
+
+    void OnApplicationQuit()
+	{
+		Debug.Log("Application ending after " + Time.time + " seconds");
+
+		event_manager.Instance.PostNotification(EVENT_TYPE.GAME_STOPED, this);
+	}
+
+
+    #endregion
+
+
+    #region code to set and get the ispaused variable and to post notifications accordingly
+
+    public bool ispaused
 	{
 
 		get
@@ -65,20 +112,10 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
 	}
 
-
-	void makesingleton()
-	{
-		if(instance != null)
-		{
-			Destroy(this);
-		}else
-		{
-			instance = this;
-			DontDestroyOnLoad(this);
-		}
+	#endregion
 
 
-	}
+	#region OnEvent IListener Interface method implementation
 
 	public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param = null)
 	{
@@ -86,20 +123,32 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 		{
 			case EVENT_TYPE.GAME_INIT:
 				isgamestarted = true;
-				base_game_controller_ref.StartGame();
+				base_game_controller_ref.StartGame_Handler_Method();
 				break;
 
 
 			case EVENT_TYPE.GAME_PAUSED:
 				Game_paused = true;
+				base_game_controller_ref.GamePaused_Handler_Method();
 				break;
 
 
 			case EVENT_TYPE.GAME_RESUMED:
 				Game_paused = false;
+				base_game_controller_ref.GameResumed_Handler_Method();
 				break;
+
+			case EVENT_TYPE.GAME_STOPED:
+				base_game_controller_ref.GameStoped_Handler_Method();
+				break;
+
 		}
 		
 		
 	}
+
+#endregion
+
+
+
 }

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class baseusermanager : ExtendedCustomMonoBehavior
 {
-	private int score;
+    #region local variables 
+    private int score;
 	private int highscore;
 	private int level;
 	private int health;
 	private bool isfinished;
-	
-	// hear i am initilizing the default values
-	public virtual void GetDefaultData()
+
+    #endregion
+
+    #region IMPORTANT GAME LOGIC METHODS
+    // hear i am initilizing the default values
+    public virtual void GetDefaultData()
 	{
 		score = 0;
 		level  = 1;
@@ -20,8 +24,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		isfinished = false;
 	}
 
-
-	public int GetLevel()
+    public int GetLevel()
 	{
 		return level;
 	}
@@ -87,5 +90,6 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		isfinished = aval;
 	}
 
+    #endregion
+
 }
- 
