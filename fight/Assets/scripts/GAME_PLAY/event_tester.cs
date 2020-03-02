@@ -5,6 +5,8 @@ using UnityEngine;
 public class event_tester : ExtendedCustomMonoBehavior , IListener
 {
     private int _health;
+
+   
     private void Start()
     {
         event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE,this);
@@ -48,5 +50,10 @@ public class event_tester : ExtendedCustomMonoBehavior , IListener
         print(s);
         print(val);
     }
+
+
+
+   
+   
 }
 
