@@ -67,6 +67,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
     // this is for the movement camera controller variables
     public Transform pivot;
+
+    // this is for the fighting camera movement enabler variable
+    public bool isplayer_fighting = false;
     #endregion
 
     #region start metheod for initilization
@@ -115,7 +118,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			{
 				rotspeed = 0.0f;
 			}
-			if(virtual_joystick_access.isfingeronjoystick)
+
+			if(virtual_joystick_access.isfingeronjoystick && isplayer_fighting ==true)
 			{
 				float horizontal = virtual_joystick_access.InputDirection.x *(speed) ;
 				target.Rotate(0,horizontal,0);
@@ -127,7 +131,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				transform.position = target.position - (rotations * offset);
 				transform.LookAt(target);
 			}
-			else//
+			else
 			{
 				if(tuch_inpu.touch_input_manager.swiping)
 				{
@@ -140,39 +144,23 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				// this is the code that deals about the player camera follow with the joystick 
 				//with movement of player
 				CameraMovementAroundPlayer();
-/*
-				float horizontal = rotx;
-				float vertical = roty;
-				pivot.Rotate(-vertical,0,0);
-				float desiredYAngle = target.eulerAngles.y;
-				float desiredXAngle = pivot.eulerAngles.x;
-				transform.position = target.position - ( target.rotation *offset);
-				transform.LookAt(target);
-*/
 
-				//this is the code for the plyer around camera
-				rotation = Quaternion.Euler(rotx, roty, 0);
-				if(distance < distanceMax)
-				{
-					distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-				}
-				Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-				Vector3 position = rotation * distanceVector + target.position;
-				transform.rotation = rotation;
-				transform.position = position;
 
-			}
-/*			if(!tuch_inpu.touch_input_manager.swiping)
-			{
-				float horizontal = rotx;
-				float vertical = roty;
-				pivot.Rotate(-vertical,0,0);
-				float desiredYAngle = target.eulerAngles.y;
-				float desiredXAngle = pivot.eulerAngles.x;
-				transform.position = target.position - ( target.rotation *offset);
-				transform.LookAt(target);
-			}
-*/        }
+                //this is the code for the plyer around camera
+                rotation = Quaternion.Euler(rotx, roty, 0);
+                if(distance < distanceMax)
+                {
+                	distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+                }
+                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+                Vector3 position = rotation * distanceVector + target.position;
+                transform.rotation = rotation;
+                transform.position = position;
+                
+
+            }
+
+        }
         CameraCollision();
     }
     #endregion

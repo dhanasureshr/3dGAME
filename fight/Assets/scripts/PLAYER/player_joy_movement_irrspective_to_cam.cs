@@ -27,6 +27,8 @@ public class player_joy_movement_irrspective_to_cam : ExtendedCustomMonoBehavior
     #region private variables
     private float x;
     private float y;
+
+    
     #endregion
 
 
@@ -35,17 +37,23 @@ public class player_joy_movement_irrspective_to_cam : ExtendedCustomMonoBehavior
     {
         charactercontroller = GetComponent<CharacterController>();
         tempVEC = Vector3.zero;
+        
+
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(charactercontroller.isGrounded)
         {
             x = joystickcontroller_ref.InputDirection.x;
             y = joystickcontroller_ref.InputDirection.z;
-            tempVEC = new Vector3(-y, 0, x);
+            tempVEC = (transform.forward * x) + (transform.right * y);
+            tempVEC = tempVEC.normalized;
             tempVEC = transform.InverseTransformDirection(tempVEC);
             tempVEC *= speed;
+
+
+         
         }
 
         tempVEC.y -= gravity * Time.deltaTime;
