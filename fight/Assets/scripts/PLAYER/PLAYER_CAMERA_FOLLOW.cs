@@ -69,7 +69,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public Transform pivot;
 
     // this is for the fighting camera movement enabler variable
-    public bool isplayer_fighting = false;
+    public bool is_player_fighting = false;
     #endregion
 
     #region start metheod for initilization
@@ -119,17 +119,41 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				rotspeed = 0.0f;
 			}
 
-			if(virtual_joystick_access.isfingeronjoystick && isplayer_fighting ==true)
+			if(virtual_joystick_access.isfingeronjoystick)
 			{
-				float horizontal = virtual_joystick_access.InputDirection.x *(speed) ;
-				target.Rotate(0,horizontal,0);
-				float vertical = virtual_joystick_access.InputDirection.y *(speed);
-				pivot.Rotate(-vertical,0,0);
-				float desiredYAngle = target.eulerAngles.y;
-				float desiredXAngle = pivot.eulerAngles.x;
-				Quaternion rotations = Quaternion.Euler(desiredXAngle,desiredYAngle,0);
-				transform.position = target.position - (rotations * offset);
-				transform.LookAt(target);
+                if (is_player_fighting)
+                {
+                    //CameraMovementAroundPlayer();
+                    rotation = Quaternion.Euler(y, x, 0);
+                    if (distance < distanceMax)
+                    {
+                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+                    }
+                    //Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+                    //Vector3 position = rotation * distanceVector + target.position;
+                    //transform.rotation = rotation;
+                    //transform.position = position;
+                    float desiredYAngle = target.eulerAngles.y;
+                    float desiredXAngle = pivot.eulerAngles.x;
+                    Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
+                    //transform.position = target.position - (rotations * offset);
+                    transform.LookAt(target);
+                    
+
+                }
+                else
+                {
+                    float horizontal = virtual_joystick_access.InputDirection.x * (speed);
+                    target.Rotate(0, horizontal, 0);
+                    float vertical = virtual_joystick_access.InputDirection.y * (speed);
+                    pivot.Rotate(-vertical, 0, 0);
+                    float desiredYAngle = target.eulerAngles.y;
+                    float desiredXAngle = pivot.eulerAngles.x;
+                    Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
+                    rotations = rotations.normalized;
+                    transform.position = target.position - (rotations * offset);
+                    transform.LookAt(target);
+                }
 			}
 			else
 			{
@@ -148,6 +172,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 //this is the code for the plyer around camera
                 rotation = Quaternion.Euler(rotx, roty, 0);
+                rotation = rotation.normalized;
                 if(distance < distanceMax)
                 {
                 	distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
@@ -164,6 +189,23 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         CameraCollision();
     }
     #endregion
+
+    // this is the script for the camera movement when fighting with enimyes
+
+    public void CameraMovement_when_fighting()
+    {
+        inittouch_x = tuch_inpu.touch_input_manager.fp.x;
+        inittouch_y = tuch_inpu.touch_input_manager.fp.y;
+        finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
+        finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
+
+        x  = inittouch_x - finaltouch_x;
+        y  = inittouch_y - finaltouch_y;
+
+        x = ClampAngle(x, xMinLimit, xMaxLimit);
+        y = ClampAngle(y, yMinLimit, yMaxLimit);
+    }
+
 
     //this is the code for the camera movement with respective to the player
     #region CameraMovementAroundPlayer script
