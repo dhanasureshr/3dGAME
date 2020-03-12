@@ -38,6 +38,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		{
 			MoveDirection = new Vector3(h_joy, 0, y_joy);
 			MoveDirection = transform.InverseTransformDirection(MoveDirection);
+			
+
 		}
 		else
 		{
