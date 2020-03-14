@@ -64,12 +64,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
-
     // this is for the movement camera controller variables
     public Transform pivot;
-
     // this is for the fighting camera movement enabler variable
     public bool is_player_fighting = false;
+    
     #endregion
 
     #region start metheod for initilization
@@ -80,17 +79,19 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         x = angles.y;
         y = angles.x;
         QualitySettings.vSyncCount = 0;
-		if(!useOffsetValue)
-		{
-			offset = target.position - transform.position;
+        if (!useOffsetValue)
+        {
+            offset = target.position - transform.position;
 
 
-		}
-		// this is for the movement camer controller code
-		pivot.transform.position = target.transform.position;
-		pivot.transform.parent = target.transform;
-		
 
+            // this is for the movement camer controller code
+            pivot.transform.position = target.transform.position;
+            pivot.transform.parent = target.transform;
+
+            transform.position = pivot.position;
+            transform.rotation = pivot.rotation;
+        }
     }
     #endregion
 
@@ -123,23 +124,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			{
                 if (is_player_fighting)
                 {
-                    //CameraMovementAroundPlayer();
-                    rotation = Quaternion.Euler(y, x, 0);
-                    if (distance < distanceMax)
-                    {
-                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-                    }
-                    //Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-                    //Vector3 position = rotation * distanceVector + target.position;
-                    //transform.rotation = rotation;
-                    //transform.position = position;
-                    float desiredYAngle = target.eulerAngles.y;
-                    float desiredXAngle = pivot.eulerAngles.x;
-                    Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-                    //transform.position = target.position - (rotations * offset);
-                    transform.LookAt(target);
-                    
-
+                 
                 }
                 else
                 {

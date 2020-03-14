@@ -34,22 +34,20 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		h_joy = joystickinputforplayermovement.InputDirection.x;
 		y_joy = joystickinputforplayermovement.InputDirection.z;
 
-		if(player_camera_follow_script.is_player_fighting)
+		if (player_camera_follow_script.is_player_fighting)
 		{
-			MoveDirection = new Vector3(h_joy, 0, y_joy);
-			MoveDirection = transform.InverseTransformDirection(MoveDirection);
-			
+
 
 		}
 		else
 		{
 
 			MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
-		}
-		MoveDirection = MoveDirection.normalized * speed;
-		MoveDirection +=Physics.gravity;
-		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 
+			MoveDirection = MoveDirection.normalized * speed;
+			MoveDirection += Physics.gravity;
+			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
+		}
 	}
 
 
