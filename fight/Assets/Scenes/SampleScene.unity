@@ -310,6 +310,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Tps_camera
   m_TagString: MainCamera
@@ -379,7 +380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 9.832001, y: -87.90301, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -421,6 +422,28 @@ MonoBehaviour:
   speed: 5
   pivot: {fileID: 1718630169}
   is_player_fighting: 0
+  ui_script_ref: {fileID: 609371234}
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56da461ebc37aeb4d9322044cd376c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  val: this script should attatch to the fps camera
+  player_target: {fileID: 1313543962}
 --- !u!1 &609371232
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +503,12 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   camera_swithch_controller_script_ref: {fileID: 1313543967}
+  Toggles: {fileID: 609371235}
+  Player_camera_follow_script_ref: {fileID: 534669906}
+  fps_camera_pivot: {fileID: 1134520049}
+  main_camera: {fileID: 534669905}
+  tps_camera_pivot: {fileID: 1490652853}
+  Player_fps_camera_script_ref: {fileID: 534669907}
 --- !u!114 &609371235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +729,7 @@ Transform:
   - {fileID: 2096817734}
   - {fileID: 611194048}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946480394
 GameObject:
@@ -884,6 +913,36 @@ Transform:
   m_Father: {fileID: 777185268}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1134520048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134520049}
+  m_Layer: 0
+  m_Name: fps_pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134520049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134520048}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1313543962}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1313543958
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,16 +1033,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313543958}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.15, y: 1.0799998, z: -0.0000000020249142}
-  m_LocalScale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.94, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1535833115}
+  - {fileID: 1134520049}
   - {fileID: 1696534878}
   - {fileID: 1718630169}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!143 &1313543963
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1091,6 +1151,36 @@ MonoBehaviour:
   tps_camera_script_reference: {fileID: 534669902}
   fps_camera_script_regerence: {fileID: 1696534875}
   fps_cam: 0
+--- !u!1 &1490652852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490652853}
+  m_Layer: 0
+  m_Name: tps_pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490652853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490652852}
+  m_LocalRotation: {x: -0, y: -0.7530126, z: 0, w: -0.6580061}
+  m_LocalPosition: {x: -3.8264675, y: 3.58, z: 7.396349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -262.296, z: 0}
 --- !u!1 &1529975225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,7 +1245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1535833114
 GameObject:
@@ -1416,11 +1506,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696534875}
   m_LocalRotation: {x: -0, y: -0.7032715, z: -0, w: 0.71092135}
-  m_LocalPosition: {x: -0.06, y: 0.34000015, z: -0.07}
+  m_LocalPosition: {x: -0.06, y: 0.57, z: -0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313543962}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -89.380005, z: 0}
 --- !u!114 &1696534879
 MonoBehaviour:
@@ -1557,12 +1647,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718630168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.68, y: 0.08000028, z: -1.4}
-  m_LocalScale: {x: 1, y: 1, z: 0.8851268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313543962}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825307458
 GameObject:

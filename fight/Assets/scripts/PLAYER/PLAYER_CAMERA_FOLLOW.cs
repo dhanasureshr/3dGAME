@@ -68,13 +68,14 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public Transform pivot;
     // this is for the fighting camera movement enabler variable
     public bool is_player_fighting = false;
-    
+    public camera_switch_ui_script ui_script_ref;
     #endregion
 
     #region start metheod for initilization
 
     private void Start()
     {
+        gameObject.transform.parent = null;
         Vector3 angles = this.transform.eulerAngles;
         x = angles.y;
         y = angles.x;
@@ -109,6 +110,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region LateUpdate
     private void LateUpdate()
     {
+        gameObject.transform.parent = null;
         if (target)
         {
 			if(tuch_inpu.touch_input_manager.swiping)
@@ -120,11 +122,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				rotspeed = 0.0f;
 			}
 
-			if(virtual_joystick_access.isfingeronjoystick)
-			{
+            if (virtual_joystick_access.isfingeronjoystick)
+            {
                 if (is_player_fighting)
                 {
-                 
+
                 }
                 else
                 {
@@ -139,8 +141,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     transform.position = target.position - (rotations * offset);
                     transform.LookAt(target);
                 }
-			}
-			else
+            }
+            else
 			{
 				if(tuch_inpu.touch_input_manager.swiping)
 				{

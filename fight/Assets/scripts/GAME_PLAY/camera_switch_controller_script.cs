@@ -19,18 +19,20 @@ public class camera_switch_controller_script : ExtendedCustomMonoBehavior
 	void Update()
 	{
 
-		if (fps_cam)
-		{
+		//if (fps_cam)
+		//{
 
-			tps_camera_script_reference.SetActive(false);
-			fps_camera_script_regerence.SetActive(true);
-		}
-		else
-		{
-			fps_camera_script_regerence.SetActive(false);
-			tps_camera_script_reference.SetActive(true);
+		//	tps_camera_script_reference.SetActive(false);
+		//	fps_camera_script_regerence.SetActive(true);
+		//}
+		//else
+		//{
+		//	fps_camera_script_regerence.SetActive(false);
+		//	tps_camera_script_reference.SetActive(true);
 
-		}
+		//}
+
+		
 	}
 
 
