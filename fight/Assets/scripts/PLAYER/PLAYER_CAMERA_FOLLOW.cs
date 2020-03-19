@@ -155,8 +155,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				// this is the code that deals about the player camera follow with the joystick 
 				//with movement of player
 				CameraMovementAroundPlayer();
-
-
                 //this is the code for the plyer around camera
                 rotation = Quaternion.Euler(rotx, roty, 0);
                 rotation = rotation.normalized;
@@ -168,8 +166,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 Vector3 position = rotation * distanceVector + target.position;
                 transform.rotation = rotation;
                 transform.position = position;
-                
-
             }
 
         }

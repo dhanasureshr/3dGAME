@@ -444,6 +444,7 @@ MonoBehaviour:
   charactercontroller: {fileID: 0}
   val: this script should attatch to the fps camera
   player_target: {fileID: 1313543962}
+  camera_switch_ui_script_ref: {fileID: 609371234}
 --- !u!1 &609371232
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +508,9 @@ MonoBehaviour:
   Player_camera_follow_script_ref: {fileID: 534669906}
   fps_camera_pivot: {fileID: 1134520049}
   main_camera: {fileID: 534669905}
-  tps_camera_pivot: {fileID: 1490652853}
+  tps_camera_pivot: {fileID: 1718630169}
+  tps_pos_ref: {x: 0, y: 0, z: 0}
+  player_target_for_fps: {fileID: 1313543962}
   Player_fps_camera_script_ref: {fileID: 534669907}
 --- !u!114 &609371235
 MonoBehaviour:
@@ -936,13 +939,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134520048}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.72, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7032715, z: -0, w: 0.71092135}
+  m_LocalPosition: {x: -0.06, y: 0.57, z: -0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313543962}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.380005, z: 0}
 --- !u!1 &1313543958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,6 +1536,7 @@ MonoBehaviour:
   charactercontroller: {fileID: 0}
   val: this script should attatch to the fps camera
   player_target: {fileID: 1313543962}
+  camera_switch_ui_script_ref: {fileID: 0}
 --- !u!1 &1714785675
 GameObject:
   m_ObjectHideFlags: 0

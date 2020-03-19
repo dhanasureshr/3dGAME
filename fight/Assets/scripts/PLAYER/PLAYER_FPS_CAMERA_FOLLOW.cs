@@ -16,24 +16,33 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	private float angle;
 	private float swipeDistanceX;
 	private float swipeDistanceY;
+	public camera_switch_ui_script camera_switch_ui_script_ref;
     #endregion
 
     #region start method
     void Start()
 	{
 		transform.parent = player_target.transform;
-		transform.position = player_target.position + new Vector3(0.0f,1.0f,0.0f);
+		transform.position = player_target.position;
+
+		player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
+		//transform.rotation = player_target.rotation;
 
 	}
-    #endregion 
-    // this is the late update for the player fps move
-    #region LateUpdate
-    void LateUpdate()
+	#endregion
+	// this is the late update for the player fps move
+	#region LateUpdate
+	void LateUpdate()
 	{
 		transform.parent = player_target.transform;
-		transform.position = player_target.position + new Vector3(0.0f, 1.0f, 0.0f);
-		transform.rotation = player_target.rotation;
+		transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
+		player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
+		//transform.rotation = player_target.rotation;
 
+		//player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
+		//transform.forward = camera_switch_ui_script_ref.tps_camera_pivot.forward;
+
+		//transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
 		foreach (Touch touch in Input.touches)
 		{
 			if(touch.phase == TouchPhase.Began)
@@ -59,6 +68,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				{
 					player_target.Rotate(0.0f,25,0.0f);
 					
+					
 				}
 				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
 				{
@@ -67,6 +77,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
 				{
 					player_target.Rotate(0.0f,-25.0f,0.0f);
+					
 					
 				}
 				if(angle > -30 && angle < 30 && swipeDistanceY > 40)
