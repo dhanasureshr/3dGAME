@@ -24,10 +24,8 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	{
 		transform.parent = player_target.transform;
 		transform.position = player_target.position;
-
-		player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
-		//transform.rotation = player_target.rotation;
-
+		transform.rotation = player_target.rotation;
+		player_target.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation; // changed to fps from tps
 	}
 	#endregion
 	// this is the late update for the player fps move
@@ -36,13 +34,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	{
 		transform.parent = player_target.transform;
 		transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
-		player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
-		//transform.rotation = player_target.rotation;
-
-		//player_target.rotation = camera_switch_ui_script_ref.tps_camera_pivot.rotation;
-		//transform.forward = camera_switch_ui_script_ref.tps_camera_pivot.forward;
-
-		//transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
+		transform.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation;
 		foreach (Touch touch in Input.touches)
 		{
 			if(touch.phase == TouchPhase.Began)
@@ -57,8 +49,6 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				swipeDistanceX = Mathf.Abs((lp.x - fp.x));
 				swipeDistanceY = Mathf.Abs((lp.y - fp.y));
 
-				//swipeDistanceX= Mathf.Clamp(swipeDistanceX, -30f, 30f);
-
 			}
 
 			if(touch.phase == TouchPhase.Ended)
@@ -67,8 +57,6 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				if(angle > 60 && angle < 120 && swipeDistanceX > 40)
 				{
 					player_target.Rotate(0.0f,25,0.0f);
-					
-					
 				}
 				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
 				{
@@ -77,8 +65,6 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
 				{
 					player_target.Rotate(0.0f,-25.0f,0.0f);
-					
-					
 				}
 				if(angle > -30 && angle < 30 && swipeDistanceY > 40)
 				{
