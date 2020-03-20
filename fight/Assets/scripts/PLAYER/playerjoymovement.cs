@@ -10,7 +10,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
     [TextArea]
 	public string var = "should be attatched to the player";
 	public float speed;
-	private Vector3 MoveDirection = Vector3.zero;
+	public Vector3 MoveDirection = Vector3.zero;
 	public VirtualJoystick joystickinputforplayermovement;
 	public float h_joy;
 	public float y_joy;
