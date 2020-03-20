@@ -37,7 +37,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		if (player_camera_follow_script.is_player_fighting)
 		{
 
-
 		}
 		else
 		{

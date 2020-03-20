@@ -69,10 +69,15 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     // this is for the fighting camera movement enabler variable
     public bool is_player_fighting = false;
     public camera_switch_ui_script ui_script_ref;
+
+    protected float cameraAngle;
+    protected float cameraAnglespeed = 2.0f;
+
+    public float deltax;
+
     #endregion
 
     #region start metheod for initilization
-
     private void Start()
     {
         gameObject.transform.parent = null;
@@ -83,13 +88,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         if (!useOffsetValue)
         {
             offset = target.position - transform.position;
-
-
-
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
             pivot.transform.parent = target.transform;
-
             transform.position = pivot.position;
             transform.rotation = pivot.rotation;
         }
@@ -126,7 +127,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             {
                 if (is_player_fighting)
                 {
-
+                    // hear we should disable the fps control
+                    transform.LookAt(target);
+                   
                 }
                 else
                 {
@@ -144,14 +147,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             }
             else
 			{
-				if(tuch_inpu.touch_input_manager.swiping)
-				{
-					rotspeed = 0.5f;
-				}
-				else
-				{
-					rotspeed = 0.0f;
-				}
 				// this is the code that deals about the player camera follow with the joystick 
 				//with movement of player
 				CameraMovementAroundPlayer();
@@ -167,29 +162,12 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 transform.rotation = rotation;
                 transform.position = position;
             }
+          
 
         }
         CameraCollision();
     }
     #endregion
-
-    // this is the script for the camera movement when fighting with enimyes
-
-    public void CameraMovement_when_fighting()
-    {
-        inittouch_x = tuch_inpu.touch_input_manager.fp.x;
-        inittouch_y = tuch_inpu.touch_input_manager.fp.y;
-        finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
-        finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
-
-        x  = inittouch_x - finaltouch_x;
-        y  = inittouch_y - finaltouch_y;
-
-        x = ClampAngle(x, xMinLimit, xMaxLimit);
-        y = ClampAngle(y, yMinLimit, yMaxLimit);
-    }
-
-
     //this is the code for the camera movement with respective to the player
     #region CameraMovementAroundPlayer script
     public void CameraMovementAroundPlayer()
@@ -200,7 +178,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
         finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
        
-            float deltax = inittouch_x - finaltouch_x;
+            deltax = inittouch_x - finaltouch_x;
             float deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;

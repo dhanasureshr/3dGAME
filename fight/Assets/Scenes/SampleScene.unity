@@ -423,6 +423,7 @@ MonoBehaviour:
   pivot: {fileID: 1718630169}
   is_player_fighting: 0
   ui_script_ref: {fileID: 609371234}
+  deltax: 0
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +504,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
-  camera_swithch_controller_script_ref: {fileID: 0}
   Toggles: {fileID: 609371235}
   Player_camera_follow_script_ref: {fileID: 534669906}
   fps_camera_pivot: {fileID: 1134520049}
