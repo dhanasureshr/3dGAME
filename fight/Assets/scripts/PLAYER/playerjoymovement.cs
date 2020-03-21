@@ -25,28 +25,17 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
-
-
 	}
 
 	private void Update()
 	{
 		h_joy = joystickinputforplayermovement.InputDirection.x;
 		y_joy = joystickinputforplayermovement.InputDirection.z;
-
-		if (player_camera_follow_script.is_player_fighting)
-		{
-
-		}
-		else
-		{
-
-			MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
-
-			MoveDirection = MoveDirection.normalized * speed;
-			MoveDirection += Physics.gravity;
-			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
-		}
+		MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
+		MoveDirection = MoveDirection.normalized * speed;
+		MoveDirection += Physics.gravity;
+		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
+		
 	}
 
 

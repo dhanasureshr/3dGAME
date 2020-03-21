@@ -69,12 +69,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     // this is for the fighting camera movement enabler variable
     public bool is_player_fighting = false;
     public camera_switch_ui_script ui_script_ref;
-
     protected float cameraAngle;
     protected float cameraAnglespeed = 2.0f;
-
     public float deltax;
-
     #endregion
 
     #region start metheod for initilization
@@ -122,17 +119,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			{
 				rotspeed = 0.0f;
 			}
-
             if (virtual_joystick_access.isfingeronjoystick)
             {
-                if (is_player_fighting)
-                {
-                    // hear we should disable the fps control
-                    transform.LookAt(target);
-                   
-                }
-                else
-                {
+
                     float horizontal = virtual_joystick_access.InputDirection.x * (speed);
                     target.Rotate(0, horizontal, 0);
                     float vertical = virtual_joystick_access.InputDirection.y * (speed);
@@ -143,26 +132,29 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotations = rotations.normalized;
                     transform.position = target.position - (rotations * offset);
                     transform.LookAt(target);
-                }
+
             }
             else
-			{
-				// this is the code that deals about the player camera follow with the joystick 
-				//with movement of player
-				CameraMovementAroundPlayer();
-                //this is the code for the plyer around camera
-                rotation = Quaternion.Euler(rotx, roty, 0);
-                rotation = rotation.normalized;
-                if(distance < distanceMax)
-                {
-                	distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
-                }
-                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
-                Vector3 position = rotation * distanceVector + target.position;
-                transform.rotation = rotation;
-                transform.position = position;
+            {
+                    // this is the code that deals about the player camera follow with the joystick 
+                    //with movement of player
+                    CameraMovementAroundPlayer();
+                    //this is the code for the plyer around camera
+                    rotation = Quaternion.Euler(rotx, roty, 0);
+                    rotation = rotation.normalized;
+                    if (distance < distanceMax)
+                    {
+                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+                    }
+                    Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+                    Vector3 position = rotation * distanceVector + target.position;
+                    transform.rotation = rotation;
+                    transform.position = position;
             }
-          
+            
+            
+ 
+
 
         }
         CameraCollision();
