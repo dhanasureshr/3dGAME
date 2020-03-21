@@ -17,10 +17,11 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	private float swipeDistanceX;
 	private float swipeDistanceY;
 	public camera_switch_ui_script camera_switch_ui_script_ref;
-    #endregion
+	public PLAYER_CAMERA_FOLLOW player_camer_follow;
+	#endregion
 
-    #region start method
-    void Start()
+	#region start method
+	void Start()
 	{
 		transform.parent = player_target.transform;
 		transform.position = player_target.position;
@@ -50,7 +51,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				swipeDistanceY = Mathf.Abs((lp.y - fp.y));
 
 			}
-
+			
 			if(touch.phase == TouchPhase.Ended)
 			{
 				angle = Mathf.Atan2((lp.x - fp.x),(lp.y - fp.y)) * 57.2957795f;
@@ -71,9 +72,12 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 					
 				}
 			}
-		
+			
+			
+
 		}
 	}
+
     #endregion
     // this is the calampAngles script
     #region ClampAngle

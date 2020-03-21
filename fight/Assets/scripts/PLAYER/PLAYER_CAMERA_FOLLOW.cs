@@ -61,6 +61,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	 * 
 	 * */
 	public VirtualJoystick virtual_joystick_access;
+    public VirtualJoystick Camera_joystick_access;
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
@@ -72,6 +73,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     protected float cameraAngle;
     protected float cameraAnglespeed = 2.0f;
     public float deltax;
+    public float deltay;
     #endregion
 
     #region start metheod for initilization
@@ -122,7 +124,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			}
             if (virtual_joystick_access.isfingeronjoystick)
             {
-
+                
                     float horizontal = virtual_joystick_access.InputDirection.x * (speed);
                     target.Rotate(0, horizontal, 0);
                     float vertical = virtual_joystick_access.InputDirection.y * (speed);
@@ -133,13 +135,19 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotations = rotations.normalized;
                     transform.position = target.position - (rotations * offset);
                     transform.LookAt(target);
-
+                
+                    
             }
             else
             {
-                    // this is the code that deals about the player camera follow with the joystick 
-                    //with movement of player
+                // this is the code that deals about the player camera follow with the joystick 
+                //with movement of player
+                    /// this is moving the camera with the swiping mehod
+                    
                     CameraMovementAroundPlayer();
+
+                    /// this is the moving the camera with the camera joystick
+                    //CameraMovementAroundPlayerWithJoy();
                     //this is the code for the plyer around camera
                     rotation = Quaternion.Euler(rotx, roty, 0);
                     rotation = rotation.normalized;
@@ -151,6 +159,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     Vector3 position = rotation * distanceVector + target.position;
                     transform.rotation = rotation;
                     transform.position = position;
+                    transform.LookAt(target);
             }
             
             
@@ -160,6 +169,18 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         CameraCollision();
     }
     #endregion
+    // this is the code for the camera movement with irrespetive to the player
+    #region CameraMovementAroundPlayerwithjoy script
+    public void CameraMovementAroundPlayerWithJoy()
+    {
+        deltax = Camera_joystick_access.InputDirection.x * speed;
+        deltay = Camera_joystick_access.InputDirection.z * speed;
+        rotx -= deltay * Time.deltaTime * 10 * dir;
+        roty -= deltax * Time.deltaTime *10 * dir;
+        rotx = Mathf.Clamp(rotx, -10f, 15f);
+    }
+    #endregion
+
     //this is the code for the camera movement with respective to the player
     #region CameraMovementAroundPlayer script
     public void CameraMovementAroundPlayer()
@@ -171,7 +192,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
        
             deltax = inittouch_x - finaltouch_x;
-            float deltay = inittouch_y - finaltouch_y;
+            deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;
             rotx = Mathf.Clamp(rotx, -30f, 30f);
