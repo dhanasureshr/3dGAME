@@ -15,7 +15,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public float h_joy;
 	public float y_joy;
 	public CharacterController playercharactercontroller;
-
 	private float x_touch_input;
 	private float init_touch_x;
 	private float finals_touch_x;
@@ -31,11 +30,13 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	{
 		h_joy = joystickinputforplayermovement.InputDirection.x;
 		y_joy = joystickinputforplayermovement.InputDirection.z;
+
+		float yStore = MoveDirection.y;
 		MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
-		MoveDirection = MoveDirection.normalized * speed;
+		MoveDirection = MoveDirection * speed;
+		MoveDirection.y = yStore;
 		MoveDirection += Physics.gravity;
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
-		
 	}
 
 

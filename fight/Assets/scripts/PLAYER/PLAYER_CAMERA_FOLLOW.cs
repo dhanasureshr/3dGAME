@@ -111,6 +111,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         gameObject.transform.parent = null;
         if (target)
         {
+            
 			if(tuch_inpu.touch_input_manager.swiping)
 			{
 				rotspeed = 0.5f;
@@ -153,8 +154,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             }
             
             
- 
-
+            
 
         }
         CameraCollision();
