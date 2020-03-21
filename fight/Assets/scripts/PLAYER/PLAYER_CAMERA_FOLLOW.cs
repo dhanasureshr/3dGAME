@@ -124,31 +124,65 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			}
             if (virtual_joystick_access.isfingeronjoystick)
             {
+                ////////=====================================================================
+                ///if you enable the below lines of code menas 
+                ///the camera will move free from player
+                            float horizontal = virtual_joystick_access.InputDirection.x * (speed);
+                            target.Rotate(0, horizontal, 0);
+                            float vertical = virtual_joystick_access.InputDirection.y * (speed);
+                            pivot.Rotate(-vertical, 0, 0);
+                            float desiredYAngle = target.eulerAngles.y;
+                            float desiredXAngle = pivot.eulerAngles.x;
+                            Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
+                            rotations = rotations.normalized;
+                            transform.LookAt(target);
+                /////////====================================================================
                 
-                    float horizontal = virtual_joystick_access.InputDirection.x * (speed);
-                    target.Rotate(0, horizontal, 0);
-                    float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                    pivot.Rotate(-vertical, 0, 0);
-                    float desiredYAngle = target.eulerAngles.y;
-                    float desiredXAngle = pivot.eulerAngles.x;
-                    Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-                    rotations = rotations.normalized;
-                    transform.position = target.position - (rotations * offset);
-                    transform.LookAt(target);
+                    // the below code only one code should be enabled
+            
+                ////////=====================================================================
+                ///if you enable the below code means the camera will be at the back of the player
                 
-                    
+
+                                transform.position = target.position - (rotations * offset);
+
+
+                ///////======================================================================
+
+
+
             }
             else
             {
                 // this is the code that deals about the player camera follow with the joystick 
                 //with movement of player
-                    /// this is moving the camera with the swiping mehod
                     
+                //////================================================================
+                /// if you enable the below function means the 
+                /// camera move around the player with swipe input feature will be 
+                /// enabled
+                
+
                     CameraMovementAroundPlayer();
 
-                    /// this is the moving the camera with the camera joystick
+
+                //////================================================================
+                
+                /////////=============================================================
+                /// if you enable the below function means
+                /// camera move around the player with camera joystick feature will be 
+                /// enabled
+                
+
                     //CameraMovementAroundPlayerWithJoy();
-                    //this is the code for the plyer around camera
+
+
+                /////////=============================================================
+                    
+                /*
+                 *the below  is the common code for both the above functions
+                 * 
+                 */
                     rotation = Quaternion.Euler(rotx, roty, 0);
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
@@ -177,7 +211,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         deltay = Camera_joystick_access.InputDirection.z * speed;
         rotx -= deltay * Time.deltaTime * 10 * dir;
         roty -= deltax * Time.deltaTime *10 * dir;
-        rotx = Mathf.Clamp(rotx, -10f, 15f);
+        rotx = Mathf.Clamp(rotx, -10f, 30f);
     }
     #endregion
 
