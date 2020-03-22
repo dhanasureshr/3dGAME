@@ -127,6 +127,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ////////=====================================================================
                 ///if you enable the below lines of code menas 
                 ///the camera will move free from player
+                    //code no 1
                             float horizontal = virtual_joystick_access.InputDirection.x * (speed);
                             target.Rotate(0, horizontal, 0);
                             float vertical = virtual_joystick_access.InputDirection.y * (speed);
@@ -142,9 +143,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             
                 ////////=====================================================================
                 ///if you enable the below code means the camera will be at the back of the player
-                
+                        //code no 2
 
-                                transform.position = target.position - (rotations * offset);
+                                //transform.position = target.position - (rotations * offset);
 
 
                 ///////======================================================================

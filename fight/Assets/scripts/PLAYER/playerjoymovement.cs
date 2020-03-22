@@ -49,7 +49,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		///we should enable this comented code when we want our camera to follow at
 		/// the back of the player
 		/// 
-					MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
+				//code no 1
+					//MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
 		//////==========================================================
 		
 		// at a time there should be only one to be enabled either 
@@ -61,8 +62,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		//////==========================================================
 		///we should enable this comented code when  we want our camera to 
 		///be free from player 
-					//MoveDirection = new Vector3(-y_joy, 0, h_joy);
-					//MoveDirection = transform.TransformDirection(MoveDirection);
+				// code no 2
+					MoveDirection = new Vector3(-y_joy, 0, h_joy);
+					MoveDirection = transform.TransformDirection(MoveDirection);
 		/////===========================================================
 
 		MoveDirection = MoveDirection * speed;
