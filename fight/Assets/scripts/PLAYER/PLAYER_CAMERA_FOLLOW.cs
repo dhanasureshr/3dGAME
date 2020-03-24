@@ -36,7 +36,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
-    private float distance = 5.0f;                   
+    private float distance = 10.0f;                   
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f;
@@ -164,7 +164,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 /// enabled
                 
 
-                    CameraMovementAroundPlayer();
+                    //CameraMovementAroundPlayer();
 
 
                 //////================================================================
@@ -175,7 +175,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 /// enabled
                 
 
-                    //CameraMovementAroundPlayerWithJoy();
+                    CameraMovementAroundPlayerWithJoy();
 
 
                 /////////=============================================================
