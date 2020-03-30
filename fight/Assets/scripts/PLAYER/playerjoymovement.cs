@@ -25,6 +25,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public Vector3 MoveVector { set; get; }
 	private void Start()
 	{
+		//playercharactercontroller = GetComponent<CharacterController>();
 		playercharactercontroller = GetComponent<CharacterController>();
 	}
 
@@ -50,7 +51,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		/// the back of the player
 		/// 
 		//code no 1
-		//MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
+		MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
 		//////==========================================================
 
 		// at a time there should be only one to be enabled either 
