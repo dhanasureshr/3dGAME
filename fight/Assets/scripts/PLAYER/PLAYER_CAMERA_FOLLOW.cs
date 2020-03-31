@@ -32,6 +32,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public float finaltouch_y;
     //new *************************************
     public Transform target;
+    public Transform look_target;
     public int targetframe = 60;
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
@@ -41,12 +42,12 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f;
-    private float distanceMax = 5f;
+    private float distanceMax = 3f;//DEFAULT 5
     private object hit;
     private float xspeed = 1.0f;
     private float yspeed = 1.0f;
     private float yMinLimit = 10f;
-    private float yMaxLimit = 80f;
+    private float yMaxLimit = 30f; //DEFAULT 80
     private float xMinLimit = -360f;
     private float xMaxLimit = 360;
     private Quaternion rotation;
@@ -72,7 +73,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public bool is_player_fighting = false;
     public camera_switch_ui_script ui_script_ref;
     protected float cameraAngle;
-    protected float cameraAnglespeed = 2.0f;
+    protected float cameraAnglespeed = 1.0f; // DEFAULT 2.0F
     public float deltax;
     public float deltay;
     #endregion
@@ -130,14 +131,16 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ///the camera will move free from player
                     //code no 1
                             float horizontal = virtual_joystick_access.InputDirection.x * (speed);
-                            target.Rotate(0, horizontal, 0);
+                            //target.Rotate(0, horizontal, 0);
+                            look_target.Rotate(0,horizontal,0);
                             float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                            pivot.Rotate(-vertical, 0, 0);
+                            //pivot.Rotate(-vertical, 0, 0);
                             float desiredYAngle = target.eulerAngles.y;
                             float desiredXAngle = pivot.eulerAngles.x;
                             Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-                            rotations = rotations.normalized;
+                            //rotations = rotations.normalized;
                             transform.LookAt(target);
+                            //transform.LookAt(look_target);
                 /////////====================================================================
                 
                     // the below code only one code should be enabled
@@ -146,7 +149,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ///if you enable the below code means the camera will be at the back of the player
                         //code no 2
 
-                                transform.position = target.position - (rotations * offset);
+                            //transform.position = target.position - (rotations * offset + new Vector3(0.0f,-2.0f,5.0f));
 
 
                 ///////======================================================================
@@ -231,7 +234,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;
-            rotx = Mathf.Clamp(rotx, -10.0f, 30f);
+            rotx = Mathf.Clamp(rotx, -30.0f, 30f);
        
     }
     #endregion

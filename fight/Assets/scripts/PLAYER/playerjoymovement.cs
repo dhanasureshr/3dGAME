@@ -25,18 +25,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public Vector3 MoveVector { set; get; }
 	private void Start()
 	{
-		//playercharactercontroller = GetComponent<CharacterController>();
 		playercharactercontroller = GetComponent<CharacterController>();
+		//playercharactercontroller = GetComponentInChildren<CharacterController>();
 	}
 
 	private void Update()
 	{
-		/// this code is for the player movement with free camera 
-		/// -----------------------------------------------------
-		//MoveVector = PoolInput();
-		//MoveVector = RotateWithView();
-		//Move();
-		/// -----------------------------------------------------
 		
 
 
@@ -51,7 +45,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		/// the back of the player
 		/// 
 		//code no 1
-		MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
+		//MoveDirection = (transform.forward * h_joy) + (-transform.right * y_joy);
 		//////==========================================================
 
 		// at a time there should be only one to be enabled either 
@@ -80,40 +74,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 		///-----------------------------------------------------------
 	}
-
-	private void Move()
-	{
-		
-		playercharactercontroller.Move(MoveVector * speed * Time.deltaTime);
-
-	}
-
-	private Vector3 PoolInput()
-	{
-
-		Vector3 dir = Vector3.zero;
-
-		dir.x = joystickinputforplayermovement.InputDirection.x;
-		dir.z = joystickinputforplayermovement.InputDirection.z;
-		if (dir.magnitude > 1)
-			dir.Normalize();
-		return dir;
-	}
-
-	private Vector3 RotateWithView()
-	{
-		if(camera_pos != null)
-		{
-			Vector3 dir = camera_pos.TransformDirection(MoveVector);
-			dir.Set(dir.x, 0, dir.z);
-			return dir.normalized * MoveVector.magnitude;
-		}
-		else
-		{
-			return MoveVector;
-		}
-	}
-
 
 
 
