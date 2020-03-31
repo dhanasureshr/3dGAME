@@ -189,9 +189,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
                     {
-                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime * 2f);
+                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *2f);
                     }
-                    Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);
+                    Vector3 distanceVector = new Vector3(0.0f, 3.0f, -distance);
                     Vector3 position = rotation * distanceVector + target.position;
                     transform.rotation = rotation;
                     transform.position = position;
@@ -231,7 +231,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;
-            rotx = Mathf.Clamp(rotx, -30.0f, 30f);
+            rotx = Mathf.Clamp(rotx, -10.0f, 30f);
        
     }
     #endregion
@@ -296,7 +296,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position= target.position + ray.normalized * distance;
+        transform.position = target.position + ray.normalized * distance;
 
         if(Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
