@@ -194,7 +194,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     {
                         distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *2f);
                     }
-                    Vector3 distanceVector = new Vector3(0.0f, 3.0f, -distance);
+                    Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);
                     Vector3 position = rotation * distanceVector + target.position;
                     transform.rotation = rotation;
                     transform.position = position;
