@@ -47,7 +47,7 @@ public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointe
 
             InputDirection = new Vector3(x, 0, y);
             InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
-            jsImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImg.rectTransform.sizeDelta.y / 3), InputDirection.z * (bgImg.rectTransform.sizeDelta.x / 3),0.0f);
+            jsImg.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (bgImg.rectTransform.sizeDelta.y / 3.5f), InputDirection.z * (bgImg.rectTransform.sizeDelta.x / 3.5f),0.0f);
         }
     }
 

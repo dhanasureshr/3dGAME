@@ -23,9 +23,15 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private Vector3 playerrotatevector = Vector3.zero;
 	public Transform camera_pos;
 	public Vector3 MoveVector { set; get; }
+
+	// these are animation paramaters
+	public Animator player_animator;
+	private static int horthash = Animator.StringToHash("X");
+	private static int verthash = Animator.StringToHash("Y");
 	private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
+		player_animator = GetComponent<Animator>();
 		//playercharactercontroller = GetComponentInChildren<CharacterController>();
 	}
 
@@ -73,6 +79,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 		///-----------------------------------------------------------
+		player_animator.SetFloat(horthash, h_joy,0.1f,Time.deltaTime);
+		player_animator.SetFloat(verthash, y_joy,0.1f,Time.deltaTime);
+		
 	}
 
 
