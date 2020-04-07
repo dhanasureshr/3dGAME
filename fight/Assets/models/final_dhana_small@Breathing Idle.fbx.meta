@@ -125,8 +125,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Breathing Idle
       takeName: mixamo.com
-      firstFrame: 0
-      lastFrame: 298
+      firstFrame: 28
+      lastFrame: 153
       wrapMode: 0
       orientationOffsetY: 90
       level: 0
@@ -150,17 +150,17 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -561,7 +561,7 @@ ModelImporter:
     - name: mixamorig:LeftHandIndex1
       parentName: mixamorig:LeftHand
       position: {x: 1.0658141e-16, y: 0.09150839, z: 0.00007298872}
-      rotation: {x: 0.031180993, y: -0.00086934934, z: -0.027857766, w: 0.99912506}
+      rotation: {x: 0.031181002, y: -0.00086934934, z: -0.027857775, w: 0.99912506}
       scale: {x: 1.0000006, y: 1.0000007, z: 1.000001}
     - name: mixamorig:LeftHandIndex2
       parentName: mixamorig:LeftHandIndex1
@@ -627,7 +627,7 @@ ModelImporter:
     - name: mixamorig:RightForeArm
       parentName: mixamorig:RightArm
       position: {x: -0, y: 0.2133303, z: 0}
-      rotation: {x: -0.0015465163, y: -0.0000787694, z: -0.05078641, w: -0.9987084}
+      rotation: {x: -0.0015465152, y: -0.0000787694, z: -0.050786372, w: -0.9987084}
       scale: {x: 1.0000005, y: 1.0000006, z: 1.0000008}
     - name: mixamorig:RightHand
       parentName: mixamorig:RightForeArm

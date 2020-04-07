@@ -24,4 +24,6 @@ public class ExtendedCustomMonoBehavior : MonoBehaviour
 	{
 		iD = anId;
 	}
+
+
 }
