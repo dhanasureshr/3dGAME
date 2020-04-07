@@ -2003,6 +2003,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: full_player
       objectReference: {fileID: 0}
+    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: virtual_joystick_access
+      value: 
+      objectReference: {fileID: 154498461}
+    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: Camera_joystick_access
+      value: 
+      objectReference: {fileID: 953613211}
+    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: ui_script_ref
+      value: 
+      objectReference: {fileID: 609371234}
+    - target: {fileID: 1925238662998567461, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: camera_switch_ui_script_ref
+      value: 
+      objectReference: {fileID: 609371234}
     - target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2011,7 +2031,7 @@ PrefabInstance:
     - target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
@@ -2068,26 +2088,11 @@ PrefabInstance:
       propertyPath: joystickinputforplayermovement
       value: 
       objectReference: {fileID: 154498461}
-    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+    - target: {fileID: 1925238663393400147, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
-      propertyPath: virtual_joystick_access
-      value: 
-      objectReference: {fileID: 154498461}
-    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: Camera_joystick_access
-      value: 
-      objectReference: {fileID: 953613211}
-    - target: {fileID: 1925238662998567460, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: ui_script_ref
-      value: 
-      objectReference: {fileID: 609371234}
-    - target: {fileID: 1925238662998567461, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: camera_switch_ui_script_ref
-      value: 
-      objectReference: {fileID: 609371234}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
 --- !u!1001 &4115625514723852529

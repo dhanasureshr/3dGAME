@@ -12,16 +12,20 @@ public class fighting_collider : MonoBehaviour
     /// </summary>
     /// <param name="collision"></param>
 
-    public void OnCollisionEnter(Collision collision)
+    private string Player_Tag = "Player";
+    private string Enimy_Tag = "Enimy";
+    public void OnCollisionEnter(Collision other)
     {
-        if(collision.collider.CompareTag("Enimy"))
+        if(other.gameObject.CompareTag(Enimy_Tag))
         {
             Debug.Log("player colided the enimy");
+            // hear we have to raise an event that player is hiting the enimy
         }
 
-        if(collision.collider.CompareTag("Player"))
+        if(other.gameObject.CompareTag(Player_Tag))
         {
             Debug.Log("Enimy collided  the player");
+            //hear we have to raise the event that enimy is hiting the player
         }
     }
 }
