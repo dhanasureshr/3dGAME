@@ -16,7 +16,8 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         PUNCH_5,
         PUNCH_6,
         KICK_1,
-        KICK_2
+        KICK_2,
+        KICK_3
     }
 
     private bool activateTimerToReset;
@@ -39,10 +40,11 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     private static int down_up_punch = Animator.StringToHash("DOWN_UP_PUNCH");
 
     //these all are kick sets
-    private static int right_side_kick = Animator.StringToHash("RIGHT_SIDE_KICK");
+    private static int fly_two_leg_kick = Animator.StringToHash("FLY_TWO_LEG_KICK");
     private static int round_kick = Animator.StringToHash("ROUND_KICK");
-    
+    private static int right_forword_kick = Animator.StringToHash("RIGHT_FORWORD_KICK");
 
+    
     #endregion
     private void Start()
     {
@@ -84,13 +86,17 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(punch_combo);
 
     }
-    public void PLAY_RIGHT_SIDE_KICK()
+    public void PLAY_FLY_TWO_LEG_KICK()
     {
-        player_animator_ref.SetTrigger(right_side_kick);
+        player_animator_ref.SetTrigger(fly_two_leg_kick);
     }
     public void PLAY_ROUND_KICK()
     {
         player_animator_ref.SetTrigger(round_kick);
+    }
+    public void PLAY_RIGHT_FORWORD_KICK()
+    {
+        player_animator_ref.SetTrigger(right_forword_kick);
     }
 
     #endregion
@@ -99,12 +105,13 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     #region prayer fighting functions
     public void PUNCH1_BUTTON_PRESSED()
     {
-        if(current_combo_state == CombeState.PUNCH_3 ||
+        if( current_combo_state == CombeState.PUNCH_3 ||
             current_combo_state == CombeState.PUNCH_4 ||
             current_combo_state == CombeState.PUNCH_5 ||
             current_combo_state == CombeState.PUNCH_6 ||
             current_combo_state == CombeState.KICK_1||
-            current_combo_state == CombeState.KICK_2)
+            current_combo_state == CombeState.KICK_2||
+            current_combo_state == CombeState.KICK_3)
         {
             return;
         }
@@ -131,7 +138,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         if(current_combo_state == CombeState.PUNCH_6 ||
             current_combo_state == CombeState.PUNCH_3||
-            current_combo_state == CombeState.KICK_2)
+            current_combo_state == CombeState.KICK_3)
         {
             return;
 
@@ -139,7 +146,9 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
         if(current_combo_state == CombeState.NONE||
             current_combo_state == CombeState.PUNCH_1||
-            current_combo_state == CombeState.PUNCH_2)
+            current_combo_state == CombeState.PUNCH_2||
+            current_combo_state == CombeState.KICK_1||
+            current_combo_state == CombeState.KICK_2)
         {
             current_combo_state = CombeState.PUNCH_4;
         }
@@ -167,7 +176,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     public void KICK_BUTTON_PRESSED()
     {
-        if (current_combo_state == CombeState.KICK_2 ||
+        if ( //current_combo_state == CombeState.KICK_3 ||
               current_combo_state == CombeState.PUNCH_3 ||
               current_combo_state == CombeState.PUNCH_6)
         {
@@ -176,7 +185,9 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
         if (current_combo_state == CombeState.NONE ||
               current_combo_state == CombeState.PUNCH_4 ||
-              current_combo_state == CombeState.PUNCH_5)
+              current_combo_state == CombeState.PUNCH_5||
+              current_combo_state == CombeState.PUNCH_1||
+              current_combo_state == CombeState.PUNCH_2)
         {
             current_combo_state = CombeState.KICK_1;
         }
@@ -188,17 +199,20 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         current_combo_timer = default_combo_timer;
         if(current_combo_state == CombeState.KICK_1)
         {
-            PLAY_RIGHT_SIDE_KICK();
+            PLAY_FLY_TWO_LEG_KICK();
         }
         if(current_combo_state == CombeState.KICK_2)
         {
             PLAY_ROUND_KICK();
+            
+        }
+
+        if(current_combo_state == CombeState.KICK_3)
+        {
+            PLAY_RIGHT_FORWORD_KICK();
         }
     }
     #endregion
-
-
-
 
     private void ResetComboState()
     {
