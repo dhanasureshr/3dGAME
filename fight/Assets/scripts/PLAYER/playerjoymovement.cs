@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class playerjoymovement : ExtendedCustomMonoBehavior
 {
-	public tuch_inpu touch_input_script;
+	// this is paramaters section
+    #region player movement paramaters
+    // this are for the player movement with joustick without animations
+    public tuch_inpu touch_input_script;
 	public PLAYER_CAMERA_FOLLOW player_camera_follow_script;
     [TextArea]
 	public string var = "should be attatched to the player";
@@ -23,19 +26,27 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private Vector3 playerrotatevector = Vector3.zero;
 	public Transform camera_pos;
 	public Vector3 MoveVector { set; get; }
+    #endregion
 
-	// these are animation paramaters
-	public Animator player_animator;
+    #region player_movement animation paramaters
+    // these are animation paramaters for player basic movement
+    public Animator player_animator;
 	private static int horthash = Animator.StringToHash("X");
 	private static int verthash = Animator.StringToHash("Y");
-	private void Start()
+	#endregion
+    // this is for game functions
+    #region start for player coimponent references
+    private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
 		player_animator = GetComponent<Animator>();
 		//playercharactercontroller = GetComponentInChildren<CharacterController>();
 	}
+    #endregion
 
-	private void Update()
+    #region player movement updater
+
+    private void Update()
 	{
 		
 
@@ -83,6 +94,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		player_animator.SetFloat(verthash, y_joy,0.1f,Time.deltaTime);
 		
 	}
+
+    #endregion
 
 
 
