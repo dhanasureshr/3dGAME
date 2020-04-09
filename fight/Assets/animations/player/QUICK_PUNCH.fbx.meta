@@ -120,8 +120,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Quick_punch
       takeName: mixamo.com
-      firstFrame: 24
-      lastFrame: 100
+      firstFrame: 23
+      lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 90
       level: 0
@@ -141,17 +141,35 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: NewEvent
+      - time: 0.08869632
+        functionName: LEFT_HAND_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9961535
-        functionName: NewEvent
+      - time: 0.10767844
+        functionName: RIGHT_HAND_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.70721036
+        functionName: LEFT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.72588325
+        functionName: RIGHT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

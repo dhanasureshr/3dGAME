@@ -7,25 +7,29 @@ public class fighting_collider : MonoBehaviour
     [TextArea]
     public string doc = "this script should be attatched to the player and enimy  collision points";
 
-    /// <summary>
-    /// //this is the main script for handling the player fighting collisions
-    /// </summary>
-    /// <param name="collision"></param>
+    public LayerMask collisionLayer;
+    public float radius = 0.5f;
+    public float damage = 2f;
 
-    private string Player_Tag = "Player";
-    private string Enimy_Tag = "Enimy";
-    public void OnCollisionEnter(Collision other)
+    public bool is_Player, is_Enemy;
+
+    //public GameObject hit_Fx;
+    private void Update()
     {
-        if(other.gameObject.CompareTag(Enimy_Tag))
-        {
-            Debug.Log("player colided the enimy");
-            // hear we have to raise an event that player is hiting the enimy
-        }
+        DetectCollision();
+    }
+    void DetectCollision()
+    {
+        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
 
-        if(other.gameObject.CompareTag(Player_Tag))
+        if(hit.Length > 0)
         {
-            Debug.Log("Enimy collided  the player");
-            //hear we have to raise the event that enimy is hiting the player
+            // we are hiting something
+           
+            
+                gameObject.SetActive(false);
+            
         }
     }
+
 }

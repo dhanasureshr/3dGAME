@@ -142,17 +142,19 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 3.228585e-10
-        functionName: 
+      - time: 0.22113022
+        functionName: LEFT_LEG_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.995833
-        functionName: 
+      - time: 0.43809342
+        functionName: LEFT_LEG_DISABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

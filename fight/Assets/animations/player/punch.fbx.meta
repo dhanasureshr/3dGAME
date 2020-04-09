@@ -105,16 +105,15 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event disable_root_motion has a time (0.850000) outside
-      the clip's valid range (0.000000..0.766667). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
     animationCompression: 3
-    animationRotationError: 1
-    animationPositionError: 1
-    animationScaleError: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
@@ -122,8 +121,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Punch
       takeName: mixamo.com
-      firstFrame: 10
-      lastFrame: 51
+      firstFrame: 7
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 90
       level: 0
@@ -143,17 +142,18 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: 
+      - time: 0.19398311
+        functionName: LEFT_HAND_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
-        functionName: disable_root_motion
+      - time: 0.4873825
+        functionName: LEFT_HAND_DISABLER
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: d5fb518e17ca6dd46816bdb09933753c,
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
           type: 3}
         floatParameter: 0
         intParameter: 0

@@ -105,8 +105,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event NewEvent has a time (2.212119) outside the clip's
-      valid range (0.000000..1.933333). It will never be fired
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -122,8 +121,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Punch_combo
       takeName: mixamo.com
-      firstFrame: 15
-      lastFrame: 55
+      firstFrame: 12
+      lastFrame: 52
       wrapMode: 0
       orientationOffsetY: 90
       level: 0
@@ -143,17 +142,35 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0
-        functionName: NewEvent
+      - time: 0.083538085
+        functionName: LEFT_HAND_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1.0055084
-        functionName: NewEvent
+      - time: 0.119808376
+        functionName: RIGHT_HAND_ENABLER
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6535309
+        functionName: LEFT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7132453
+        functionName: RIGHT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

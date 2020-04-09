@@ -126,6 +126,8 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         }
         if(current_combo_state == CombeState.PUNCH_2)
         {
+            
+            
             PLAY_RIGHT_HOOK_PUNCH();
         }
         if(current_combo_state == CombeState.PUNCH_3)
