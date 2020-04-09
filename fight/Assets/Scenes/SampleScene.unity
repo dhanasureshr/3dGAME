@@ -2557,16 +2557,6 @@ PrefabInstance:
       propertyPath: camera_switch_ui_script_ref
       value: 
       objectReference: {fileID: 609371234}
-    - target: {fileID: 1925238663866852999, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.364
-      objectReference: {fileID: 0}
-    - target: {fileID: 1925238663866852999, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.445
-      objectReference: {fileID: 0}
     - target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2632,10 +2622,10 @@ PrefabInstance:
       propertyPath: joystickinputforplayermovement
       value: 
       objectReference: {fileID: 154498461}
-    - target: {fileID: 1925238663417393183, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+    - target: {fileID: 1925238663087392761, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
-      propertyPath: near clip plane
-      value: 0.02
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}

@@ -61,7 +61,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				}
 				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
 				{
-
+					
 				}
 				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
 				{

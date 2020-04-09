@@ -379,7 +379,7 @@ GameObject:
   m_Layer: 0
   m_Name: RIGHT__HAND_HIT_COLLIDER
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 1925238663393400148}
   - component: {fileID: 1925238663393400149}
   - component: {fileID: 726780151}
+  - component: {fileID: 2428851792851323593}
   m_Layer: 0
   m_Name: final_dhana_small@Breathing Idle
   m_TagString: Untagged
@@ -866,6 +867,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_animator_ref: {fileID: 1925238663393400147}
+--- !u!114 &2428851792851323593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238663393400150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LEFT_HAND_COLLIDER: {fileID: 1925238663734621203}
+  RIGHT_HAND_COLLIDER: {fileID: 1925238663087392761}
+  LEFT_LEG_COLLIDER: {fileID: 1925238663901139203}
+  RIGHT_LEG_COLLIDER: {fileID: 1925238663738476794}
 --- !u!1 &1925238663417393169
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +939,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.02
   far clip plane: 1000
   field of view: 50.4
   orthographic: 0
@@ -1309,7 +1326,7 @@ GameObject:
   m_Layer: 0
   m_Name: LEFT__HAND_HIT_COLLIDER
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -1376,7 +1393,7 @@ GameObject:
   m_Layer: 0
   m_Name: RIGHT__LEG_HIT_COLLIDER
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -1483,7 +1500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925238663866852998}
   m_LocalRotation: {x: 0.0000000025971987, y: -0.7071068, z: 0.0000000013540676, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.374, z: 0}
+  m_LocalPosition: {x: 0.364, y: 1.445, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1925238663393400144}
@@ -1535,7 +1552,7 @@ GameObject:
   m_Layer: 0
   m_Name: LEFT__LEG_HIT_COLLIDER
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
