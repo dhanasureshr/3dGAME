@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925238662605357395}
+  - component: {fileID: 5598006728583757864}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -32,6 +33,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5598006728583757864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409c3a0fb4b38ae42860d9583bcbdb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
 --- !u!1 &1925238662669108777
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +435,7 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
+  hit_Fx: []
 --- !u!1 &1925238663107872818
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +729,6 @@ GameObject:
   - component: {fileID: 1925238663393400147}
   - component: {fileID: 1925238663393400151}
   - component: {fileID: 1925238663393400146}
-  - component: {fileID: 1925238663393400148}
   - component: {fileID: 1925238663393400149}
   - component: {fileID: 726780151}
   - component: {fileID: 8502479354131330374}
@@ -727,7 +747,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925238663393400150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1925238664033040535}
@@ -750,7 +770,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f846976fd81495641a70f8ca30bd3444, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -767,9 +787,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.26
-  m_Height: 1.44
+  m_Height: 1.67
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6, z: 0}
+  m_Center: {x: 0, y: 0.71, z: 0}
 --- !u!143 &1925238663393400146
 CharacterController:
   m_ObjectHideFlags: 0
@@ -781,32 +801,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.44
+  m_Height: 1.67
   m_Radius: 0.26
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.6, z: 0}
---- !u!114 &1925238663393400148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 409c3a0fb4b38ae42860d9583bcbdb8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 1925238663393400146}
+  m_Center: {x: 0, y: 0.71, z: 0}
 --- !u!114 &1925238663393400149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,6 +1347,7 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
+  hit_Fx: []
 --- !u!1 &1925238663738476794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1399,7 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
+  hit_Fx: []
 --- !u!1 &1925238663748128438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1543,7 @@ MonoBehaviour:
   damage: 2
   is_Player: 1
   is_Enemy: 0
+  hit_Fx: []
 --- !u!1 &1925238664018222907
 GameObject:
   m_ObjectHideFlags: 0

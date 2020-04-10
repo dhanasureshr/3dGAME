@@ -14,14 +14,14 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
     // right hand 
      void RIGHT_HAND_ENABLER()
     {
-        RIGHT_HAND_COLLIDER.gameObject.SetActive(true);
+        RIGHT_HAND_COLLIDER.SetActive(true);
     }
 
     void RIGHT_HAND_DISABLER()
     {
         if (RIGHT_HAND_COLLIDER.gameObject.activeInHierarchy)
         {
-            RIGHT_HAND_COLLIDER.gameObject.SetActive(false);
+            RIGHT_HAND_COLLIDER.SetActive(false);
         }
     }
 
@@ -29,14 +29,14 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
 
     void LEFT_HAND_ENABLER()
     {
-        LEFT_HAND_COLLIDER.gameObject.SetActive(true);
+        LEFT_HAND_COLLIDER.SetActive(true);
     }
 
     void LEFT_HAND_DISABLER()
     {
         if(LEFT_HAND_COLLIDER.gameObject.activeInHierarchy)
         {
-            LEFT_HAND_COLLIDER.gameObject.SetActive(false);
+            LEFT_HAND_COLLIDER.SetActive(false);
         }
     }
 
@@ -45,21 +45,21 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
 
     void RIGHT_LEG_ENABLER()
     {
-        RIGHT_LEG_COLLIDER.gameObject.SetActive(true);
+        RIGHT_LEG_COLLIDER.SetActive(true);
     }
 
     void RIGHT_LEG_DISABLER()
     {
         if(RIGHT_LEG_COLLIDER.gameObject.activeInHierarchy)
         {
-            RIGHT_LEG_COLLIDER.gameObject.SetActive(false);
+            RIGHT_LEG_COLLIDER.SetActive(false);
         }
     }
 
     // left leg
     void LEFT_LEG_ENABLER()
     {
-        LEFT_LEG_COLLIDER.gameObject.SetActive(true);
+        LEFT_LEG_COLLIDER.SetActive(true);
 
     }
 
@@ -67,7 +67,36 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
     {
         if(LEFT_LEG_COLLIDER.gameObject.activeInHierarchy)
         {
-            LEFT_LEG_COLLIDER.gameObject.SetActive(false);
+            LEFT_LEG_COLLIDER.SetActive(false);
         }
     }
+
+
+
+
+    void Tag_right_leg_TAG()
+    {
+        RIGHT_LEG_COLLIDER.tag = tags.player_right_leg_tag;
+
+    }
+
+    void Untag_right_leg_TAG()
+    {
+        RIGHT_LEG_COLLIDER.tag = tags.un_tag;
+    }
+
+
+    void Tag_left_hand_TAG()
+    {
+        LEFT_HAND_COLLIDER.tag = tags.player_left_hand_tag;
+    }
+
+    void Untag_left_hand_TAG()
+    {
+        LEFT_HAND_COLLIDER.tag = tags.un_tag;
+    }
+
+    
+
+
 }

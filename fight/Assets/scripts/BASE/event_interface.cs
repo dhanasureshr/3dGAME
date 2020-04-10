@@ -14,7 +14,10 @@ public enum EVENT_TYPE
                             PLAYER_DEAD,
                             GAME_PAUSED,
                             GAME_RESUMED,
-                            GAME_STOPED
+                            GAME_STOPED,
+                            ENIMY_DEAD,
+                            NOCK_ENIMY
+
                     };
 #endregion
 

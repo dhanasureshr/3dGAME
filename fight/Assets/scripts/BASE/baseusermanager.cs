@@ -7,8 +7,8 @@ public class baseusermanager : ExtendedCustomMonoBehavior
     #region local variables 
     private int score;
 	private int highscore;
-	private int level;
-	private int health;
+	private  int level;
+	private  int health;
 	private bool isfinished;
 
     #endregion
@@ -19,7 +19,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 	{
 		score = 0;
 		level  = 1;
-		health = 3;
+		health = 100;
 		highscore = 0;
 		isfinished = false;
 	}
@@ -90,6 +90,8 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		isfinished = aval;
 	}
 
-    #endregion
+	
+
+	#endregion
 
 }

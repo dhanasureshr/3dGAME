@@ -21,7 +21,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     }
 
     private bool activateTimerToReset;
-    private float default_combo_timer = 0.4f;
+    private float default_combo_timer = 0.6f;
     private float current_combo_timer;
     private CombeState current_combo_state;
     #endregion
@@ -99,6 +99,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(right_forword_kick);
     }
 
+    
     #endregion
 
 

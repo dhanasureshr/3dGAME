@@ -6,7 +6,7 @@ public class playermanager : ExtendedCustomMonoBehavior
 {
 
 
-    // need to complet 
+    
 
 
 
