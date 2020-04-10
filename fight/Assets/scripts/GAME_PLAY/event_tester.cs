@@ -6,6 +6,7 @@ public class event_tester : ExtendedCustomMonoBehavior , IListener
 {
     private int _health;
 
+    
    
     private void Start()
     {
@@ -42,6 +43,7 @@ public class event_tester : ExtendedCustomMonoBehavior , IListener
         if(Input.GetKeyDown(KeyCode.A))
         {
             Health += 10;
+           
         }
     }
     void HEALTH_CHANAGE(Component s,int val)

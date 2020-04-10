@@ -49,7 +49,7 @@ public class event_manager : ExtendedCustomMonoBehavior
 	/// <summary>
 	/// Functions to add  listeners to array of listeners
 	/// </summary>
-	/// <param name="Event_Type"> Event to listen for </param>
+	/// <param name="Event_Type">Event to listen for </param>
 	/// <param name="Listener">Object to listen for event</param>
 	public void AddListener(EVENT_TYPE Event_Type,IListener Listener)
 	{

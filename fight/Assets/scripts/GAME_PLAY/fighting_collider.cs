@@ -20,7 +20,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public string doc = "this script should be attatched to the player and enimy  collision points";
 
     public LayerMask collisionLayer;
-    public float radius = 0.5f;
+    public float radius = 0.005f;
     public float damage = 2f;
     public bool is_Player, is_Enemy;
 
@@ -52,6 +52,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 /// hear we came to know that player is hiting enimy
                 /// now we hava to raise an event to update the enimy health
 
+                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 5);
 
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
@@ -60,7 +61,8 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 }
 
                 //raise an event to randomely play hit animation on enimy
-                
+                Vector3 hit_pos = hit[0].transform.position;
+                Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
             }
             else
@@ -68,9 +70,9 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 //if above condition is false that means enimy is hutting the player 
                 /// hear we came to know that enimy is hiting the player
                 /// we have to raise an event to update the player health
-                
-                // there will be no hit animations on enimy
 
+                // there will be no hit animations on enimy
+                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 5);
 
             }
 
@@ -83,6 +85,21 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
 
     public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param = null)
     {
-        throw new System.NotImplementedException();
+        switch(Event_Type)
+        {
+            case EVENT_TYPE.HEALTH_CHANAGE:
+                if(Sender.gameObject.GetComponent<fighting_collider>().is_Player)
+                {
+                    //now reduce the enimy health
+                    Debug.Log("APPLING DAMAGE TO THE ENIMY");
+                }
+
+                if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)
+                {
+                    // now reduce the palyer health
+                    Debug.Log("appling damage to the player");
+                }
+                break;
+        }
     }
 }
