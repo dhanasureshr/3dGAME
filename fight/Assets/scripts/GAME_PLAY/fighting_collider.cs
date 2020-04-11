@@ -52,7 +52,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 /// hear we came to know that player is hiting enimy
                 /// now we hava to raise an event to update the enimy health
 
-                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 5);
+                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
 
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
@@ -72,7 +72,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 /// we have to raise an event to update the player health
 
                 // there will be no hit animations on enimy
-                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 5);
+                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
 
             }
 
@@ -83,7 +83,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
         }
     }
 
-    public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param = null)
+    public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param)
     {
         switch(Event_Type)
         {
@@ -92,6 +92,10 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 {
                     //now reduce the enimy health
                     Debug.Log("APPLING DAMAGE TO THE ENIMY");
+                   baseusermanager bb = Sender.gameObject.GetComponentInParent<baseusermanager>();
+                    bb.ReduceHealth((int)Param);
+                    Debug.Log(bb.GetHealth());
+                    
                 }
 
                 if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)

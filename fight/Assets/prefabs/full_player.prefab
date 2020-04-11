@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925238662605357395}
   - component: {fileID: 5598006728583757864}
+  - component: {fileID: 9172442735454509178}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -43,6 +44,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 409c3a0fb4b38ae42860d9583bcbdb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+--- !u!114 &9172442735454509178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58807392e0e2d1249bbb78b5879ee60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myTransform: {fileID: 0}
@@ -438,7 +458,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 2048
-  radius: 1
+  radius: 0.4
   damage: 2
   is_Player: 1
   is_Enemy: 0
@@ -741,7 +761,7 @@ GameObject:
   - component: {fileID: 8502479354131330374}
   m_Layer: 10
   m_Name: final_dhana_small@Breathing Idle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -794,7 +814,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.26
-  m_Height: 1.67
+  m_Height: 1.45
   m_Direction: 1
   m_Center: {x: 0, y: 0.71, z: 0}
 --- !u!143 &1925238663393400146
@@ -808,7 +828,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.67
+  m_Height: 1.45
   m_Radius: 0.26
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1357,7 +1377,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 2048
-  radius: 1
+  radius: 0.4
   damage: 2
   is_Player: 1
   is_Enemy: 0
@@ -1416,7 +1436,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 2048
-  radius: 1
+  radius: 0.4
   damage: 2
   is_Player: 1
   is_Enemy: 0
@@ -1567,7 +1587,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 2048
-  radius: 1
+  radius: 0.4
   damage: 2
   is_Player: 1
   is_Enemy: 0
