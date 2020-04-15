@@ -160,14 +160,9 @@ ModelImporter:
     optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
-      in configuration does not match rotation in animation file:\n\t'CATRigSpine'
-      : rotation error = 1.500027 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'CATRigSpine' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -203,7 +198,39 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.26464888
+        functionName: RIGHT_HAND_ENABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.45454544
+        functionName: LEFT_HAND_ENABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7976548
+        functionName: RIGHT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8431064
+        functionName: LEFT_HAND_DISABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

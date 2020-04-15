@@ -23,8 +23,9 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public float radius = 0.005f;
     public float damage = 2f;
     public bool is_Player, is_Enemy;
+    public GameObject PLAYER, ENIMY;
 
-    public GameObject hit_Fx;
+   // public GameObject hit_Fx;
 
 
     //this is for the game logic events using event manager
@@ -62,7 +63,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
-                Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+               // Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
             }
             else
@@ -91,17 +92,23 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 if(Sender.gameObject.GetComponent<fighting_collider>().is_Player)
                 {
                     //now reduce the enimy health
-                    Debug.Log("APPLING DAMAGE TO THE ENIMY");
-                   baseusermanager bb = Sender.gameObject.GetComponentInParent<baseusermanager>();
-                    bb.ReduceHealth((int)Param);
-                    Debug.Log(bb.GetHealth());
+                    //Debug.Log("APPLING DAMAGE TO THE ENIMY");
+                    //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
+                     baseusermanager enimy_health_reducer = ENIMY.GetComponent<baseusermanager>();
+                     enimy_health_reducer.ReduceHealth((int)Param);
+                   // Debug.Log("enimy_current_health"+enimy_health_reducer.GetHealth());
                     
                 }
 
                 if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)
                 {
                     // now reduce the palyer health
-                    Debug.Log("appling damage to the player");
+                    //Debug.Log("APPLING DAMAGE TO THE PLAYER");
+                    //baseusermanager player_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
+                    baseusermanager player_health_reducer = PLAYER.GetComponent<baseusermanager>();
+                    player_health_reducer.ReduceHealth((int)Param);
+                   // Debug.Log("player_current_health" + player_health_reducer.GetHealth());
+                    
                 }
                 break;
         }

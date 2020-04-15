@@ -17,7 +17,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     //this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
     public Transform target_position;
-
+    public float max_distance;
+    public float distance;
     //this are the varibles for the  enimy animations
     public Animator enimy_animator_ref;
     private static int enimy_run = Animator.StringToHash("move");
@@ -29,8 +30,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-       // enimy_animator_ref = GetComponent<Animator>();
-        StartCoroutine("start_enimy_moement");
+        enimy_animator_ref = GetComponent<Animator>();
+        StartCoroutine(start_enimy_moement());
     }
     #region enimy_fighting_functions
     public void PLAY_ENIMY_RUN()
@@ -45,14 +46,22 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     }
     public void PLAY_ENIMY_FIGHT()
     {
-        enimy_animator_ref.SetTrigger(enimy_fight);
+        enimy_animator_ref.SetBool(enimy_fight,true);
     }
-
+    
+    public void EXIT_ENIMY_FIGHT()
+    {
+        enimy_animator_ref.SetBool(enimy_fight, false);
+    }
     public void PLAY_ENIMY_GET_HIT()
     {
-        enimy_animator_ref.SetTrigger(enimy_get_hit);
-    }
+        enimy_animator_ref.SetBool(enimy_get_hit,true);
 
+    }
+    public void EXIT_ENIMY_GET_HIT()
+    {
+        enimy_animator_ref.SetBool(enimy_get_hit, false);
+    }
     public void PLAY_ENIMY_FALL_DOWN()
     {
         enimy_animator_ref.SetTrigger(enimy_fall_down);
@@ -61,25 +70,38 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     private void Update()
     {
-        if(enimy_nav_mesh_agent.isStopped)
+        distance = Vector3.Distance(transform.position, target_position.position);
+        
+        if(distance <= enimy_nav_mesh_agent.stoppingDistance)
         {
-            EXIT_ENIMY_RUN();
+            PLAY_ENIMY_FIGHT();
         }
-
-        if(!enimy_nav_mesh_agent.isStopped)
+        else
         {
-            PLAY_ENIMY_RUN();
+            EXIT_ENIMY_FIGHT();
         }
     }
 
-    #region enimy_movement_Ienumerator
+    #region enimy_Ienumerator_methods
+
     IEnumerator start_enimy_moement()
     {
-        enimy_nav_mesh_agent.updatePosition = true;
         yield return new WaitForSeconds(2);
-        enimy_nav_mesh_agent.SetDestination(target_position.position);
-        enimy_nav_mesh_agent.updatePosition = false;
-        yield return StartCoroutine("start_enimy_moement");
+        if (distance <= max_distance && distance >= enimy_nav_mesh_agent.stoppingDistance)
+        {
+            
+            PLAY_ENIMY_RUN();
+            enimy_nav_mesh_agent.SetDestination(target_position.position);
+        }
+        else
+        {
+            EXIT_ENIMY_RUN();
+            EXIT_ENIMY_FIGHT();
+        }
+        yield return StartCoroutine(start_enimy_moement());
     }
+
+
+   
     #endregion
 }
