@@ -14,35 +14,72 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     /// </summary>
     [TextArea]
     public string objd = "this should be attatched to the enimy mesh where enimy animator and nav_mesh_agent";
-
+    //this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
     public Transform target_position;
-    public float move_speed;
-    public float min_distance;
-    public float max_distance;
 
-    public bool patrol=false;
-    public bool chase=false;
-    public bool fight=false;
+    //this are the varibles for the  enimy animations
+    public Animator enimy_animator_ref;
+    private static int enimy_run = Animator.StringToHash("move");
+    private static int enimy_fight = Animator.StringToHash("fight");
+    private static int enimy_get_hit = Animator.StringToHash("get_hit");
+    private static int enimy_fall_down = Animator.StringToHash("death");
 
+    
+    private void Start()
+    {
+        enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
+       // enimy_animator_ref = GetComponent<Animator>();
+        StartCoroutine("start_enimy_moement");
+    }
+    #region enimy_fighting_functions
+    public void PLAY_ENIMY_RUN()
+    {
+        // enimy_animator_ref.SetTrigger(enimy_run);
+        enimy_animator_ref.SetBool(enimy_run, true);
+    }
+
+    public void EXIT_ENIMY_RUN()
+    {
+        enimy_animator_ref.SetBool(enimy_run, false);
+    }
+    public void PLAY_ENIMY_FIGHT()
+    {
+        enimy_animator_ref.SetTrigger(enimy_fight);
+    }
+
+    public void PLAY_ENIMY_GET_HIT()
+    {
+        enimy_animator_ref.SetTrigger(enimy_get_hit);
+    }
+
+    public void PLAY_ENIMY_FALL_DOWN()
+    {
+        enimy_animator_ref.SetTrigger(enimy_fall_down);
+    }
+    #endregion
 
     private void Update()
     {
-        tempVEC = transform.position - target_position.position;
-        move_enimy();
+        if(enimy_nav_mesh_agent.isStopped)
+        {
+            EXIT_ENIMY_RUN();
+        }
+
+        if(!enimy_nav_mesh_agent.isStopped)
+        {
+            PLAY_ENIMY_RUN();
+        }
     }
 
-    public void  move_enimy()
+    #region enimy_movement_Ienumerator
+    IEnumerator start_enimy_moement()
     {
-        
-           
-            enimy_nav_mesh_agent.SetDestination(target_position.position);
-        
-
-
-        
+        enimy_nav_mesh_agent.updatePosition = true;
+        yield return new WaitForSeconds(2);
+        enimy_nav_mesh_agent.SetDestination(target_position.position);
+        enimy_nav_mesh_agent.updatePosition = false;
+        yield return StartCoroutine("start_enimy_moement");
     }
-
-
-
+    #endregion
 }
