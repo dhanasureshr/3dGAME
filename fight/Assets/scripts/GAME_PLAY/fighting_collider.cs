@@ -24,7 +24,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public float damage = 2f;
     public bool is_Player, is_Enemy;
     public GameObject PLAYER, ENIMY;
-
+    public bool nock_down_the_enimy;
    // public GameObject hit_Fx;
 
 
@@ -59,7 +59,14 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     gameObject.CompareTag(tags.player_right_leg_tag))
                 {
                     //raise an event to nock down the player
+                    nock_down_the_enimy = true;
                 }
+                else
+                {
+                    nock_down_the_enimy = false;
+                }
+                
+           
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;

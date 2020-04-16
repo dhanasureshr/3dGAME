@@ -961,7 +961,7 @@ MonoBehaviour:
   virtual_joystick_access: {fileID: 0}
   Camera_joystick_access: {fileID: 0}
   camjoyrotateinput: {x: 0, y: 0, z: 0}
-  speed: 3
+  speed: 4
   pivot: {fileID: 1925238664448636783}
   is_player_fighting: 0
   ui_script_ref: {fileID: 0}
@@ -2009,6 +2009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RIGHT__LEG_HIT_COLLIDER
       objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: PLAYER
+      value: 
+      objectReference: {fileID: 1925238662605357394}
     - target: {fileID: 8290779132368131042, guid: eaa430930558bf34fa51bcdf04e6ad2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2064,11 +2069,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: PLAYER
-      value: 
-      objectReference: {fileID: 1925238662605357394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa430930558bf34fa51bcdf04e6ad2b, type: 3}
 --- !u!4 &1925238663738476793 stripped
