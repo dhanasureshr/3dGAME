@@ -129,18 +129,20 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ////////=====================================================================
                 ///if you enable the below lines of code menas 
                 ///the camera will move free from player
-                    //code no 1
-                            float horizontal = virtual_joystick_access.InputDirection.x * (speed);
-                            //target.Rotate(0, horizontal, 0);
-                            look_target.Rotate(0,horizontal,0);
-                            float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                            //pivot.Rotate(-vertical, 0, 0);
-                            float desiredYAngle = target.eulerAngles.y;
-                            float desiredXAngle = pivot.eulerAngles.x;
-                            Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-                            //rotations = rotations.normalized;
-                            transform.LookAt(target);
-                            //transform.LookAt(look_target);
+                //code no 1
+                float horizontal = virtual_joystick_access.InputDirection.x *(speed);
+                //target.Rotate(0, horizontal, 0);//////////////////
+                look_target.Rotate(0,horizontal,0);
+                
+                float vertical = virtual_joystick_access.InputDirection.y * (speed);
+              //pivot.Rotate(-vertical, 0, 0);////////////////////
+                float desiredYAngle = target.eulerAngles.y;
+                float desiredXAngle = pivot.eulerAngles.x;
+                Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
+                
+              //rotations = rotations.normalized;//////////////////
+                transform.LookAt(target);
+              //transform.LookAt(look_target);
                 /////////====================================================================
                 
                     // the below code only one code should be enabled

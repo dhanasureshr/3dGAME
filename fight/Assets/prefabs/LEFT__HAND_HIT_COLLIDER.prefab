@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8310741321711787654}
   - component: {fileID: 8310741321711787655}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: LEFT__HAND_HIT_COLLIDER
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -53,9 +53,11 @@ MonoBehaviour:
   doc: this script should be attatched to the player and enimy  collision points
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 1024
   radius: 0.4
   damage: 2
-  is_Player: 1
-  is_Enemy: 0
-  hit_Fx: {fileID: 1858566888165598333, guid: b2cc989dbad139641a248e16bd3e91f3, type: 3}
+  is_Player: 0
+  is_Enemy: 1
+  PLAYER: {fileID: 0}
+  ENIMY: {fileID: 0}
+  nock_down_the_enimy: 0

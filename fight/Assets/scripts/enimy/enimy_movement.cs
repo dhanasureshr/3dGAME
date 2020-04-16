@@ -23,7 +23,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
         StartCoroutine(start_enimy_moement());
-        enimy_nav_mesh_agent.updateRotation = false;
+        enimy_nav_mesh_agent.updateRotation = true;
     }
 
 
@@ -32,6 +32,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     {
         yield return new WaitForSeconds(2);
         distance = Vector3.Distance(transform.position, target_position.position);
+
         enimy_nav_mesh_agent.SetDestination(target_position.position);
         yield return StartCoroutine(start_enimy_moement());
    

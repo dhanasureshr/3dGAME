@@ -58,13 +58,10 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
                 {
-                    //raise an event to nock down the player
-                    nock_down_the_enimy = true;
+                    Debug.Log("enimy_nock_down");
+                    
                 }
-                else
-                {
-                    nock_down_the_enimy = false;
-                }
+                
                 
            
 

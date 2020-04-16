@@ -859,11 +859,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LEFT__HAND_HIT_COLLIDER
       objectReference: {fileID: 0}
-    - target: {fileID: 8310741321711787659, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 8310741321711787654, guid: c890a2e0893dc7a4ebafa9218c19587b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -918,21 +913,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: is_Player
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: is_Enemy
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
         type: 3}
