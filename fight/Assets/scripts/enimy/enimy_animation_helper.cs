@@ -6,6 +6,7 @@ public class enimy_animation_helper : MonoBehaviour
 {
     public enimy_movement enimy_movement_reference;
     public Animator enimy_animator_ref;
+    public Renderer enimy_rendrer;
 
     private static int enimy_run = Animator.StringToHash("move");
     private static int enimy_fight = Animator.StringToHash("fight");
@@ -16,6 +17,7 @@ public class enimy_animation_helper : MonoBehaviour
     {
         enimy_movement_reference = GetComponent<enimy_movement>();
         enimy_animator_ref = GetComponent<Animator>();
+        enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     #region enimy_fighting_functions
@@ -53,5 +55,26 @@ public class enimy_animation_helper : MonoBehaviour
     }
     #endregion
 
+    private void Update()
+    {
+        if(enimy_rendrer.isVisible == true)
+        {
+            if(enimy_movement_reference.distance >= enimy_movement_reference.enimy_nav_mesh_agent.stoppingDistance && enimy_movement_reference.move)
+            {
+                EXIT_ENIMY_FIGHT();
+                PLAY_ENIMY_RUN();
+            }
+            else
+            {
+                EXIT_ENIMY_RUN();
+                
+            }
 
+           if(enimy_movement_reference.distance < enimy_movement_reference.enimy_nav_mesh_agent.stoppingDistance)
+            {
+                PLAY_ENIMY_FIGHT();
+            }
+        }
+
+    }
 }

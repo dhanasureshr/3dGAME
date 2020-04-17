@@ -38,6 +38,7 @@ MonoBehaviour:
   target_position: {fileID: 0}
   max_distance: 10
   distance: 0
+  move: 0
 --- !u!114 &745689822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enimy_movement_reference: {fileID: 745689821}
   enimy_animator_ref: {fileID: 7557738453821744048}
+  enimy_rendrer: {fileID: 7557738453817564528}
 --- !u!114 &1001464616174034572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,6 +846,12 @@ Transform:
 --- !u!4 &7557738453829159996 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400108, guid: 7c6330b40539a244f8338c8af16ee33d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7557738453829031632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7557738453817564528 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d,
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}

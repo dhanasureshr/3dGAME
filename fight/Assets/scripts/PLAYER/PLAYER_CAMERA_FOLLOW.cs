@@ -131,10 +131,12 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ///the camera will move free from player
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
+                float vertical = virtual_joystick_access.InputDirection.y * (speed);
                 //target.Rotate(0, horizontal, 0);//////////////////
                 look_target.Rotate(0,horizontal,0);
                 
-                float vertical = virtual_joystick_access.InputDirection.y * (speed);
+                
+                
               //pivot.Rotate(-vertical, 0, 0);////////////////////
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;

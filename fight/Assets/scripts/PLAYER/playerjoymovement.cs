@@ -41,6 +41,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		playercharactercontroller = GetComponent<CharacterController>();
 		player_animator = GetComponent<Animator>();
 		//playercharactercontroller = GetComponentInChildren<CharacterController>();
+		//player_animator = GetComponentInChildren<Animator>();
 	}
     #endregion
 
@@ -80,8 +81,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		//tempVEC = Vector3.Scale(camera_pos.forward, new Vector3(1, 0, 1)).normalized;
 		//MoveDirection = y_joy * tempVEC  + h_joy * camera_pos.right;
 
-		MoveDirection = new Vector3(-y_joy, 0, h_joy);///////////////////////////////////////////////////
-		MoveDirection = transform.TransformDirection(MoveDirection);/////////////////////////////////////
+		MoveDirection = new Vector3(-y_joy, 0, h_joy);
+		MoveDirection = transform.TransformDirection(MoveDirection);
 		/////===========================================================
 
 		MoveDirection = MoveDirection * speed;
