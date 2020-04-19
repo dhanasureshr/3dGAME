@@ -52,6 +52,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private float xMaxLimit = 360;
     private Quaternion rotation;
     private Vector3 position;
+    public Vector3 positions;
     private float x = 0.0f;
     private float y = 0.0f;
 	// this is the end of the camera collision varables
@@ -134,9 +135,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
                 //target.Rotate(0, horizontal, 0);//////////////////
                 look_target.Rotate(0,horizontal,0);
-                
-                
-                
               //pivot.Rotate(-vertical, 0, 0);////////////////////
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
@@ -144,17 +142,17 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 
               //rotations = rotations.normalized;//////////////////
                 transform.LookAt(target);
-              //transform.LookAt(look_target);
+                //transform.LookAt(look_target);
                 /////////====================================================================
-                
-                    // the below code only one code should be enabled
-            
+
+                // the below code only one code should be enabled
+
                 ////////=====================================================================
                 ///if you enable the below code means the camera will be at the back of the player
-                        //code no 2
+                //code no 2
 
-                            //transform.position = target.position - (rotations * offset + new Vector3(0.0f,-2.0f,5.0f));
-
+                // transform.position = target.position - (rotations * offset + new Vector3(0.0f,-2.0f,5.0f));
+               // transform.position = positions - (rotations * offset + new Vector3(0.0f, -2.0f, 5.0f));
 
                 ///////======================================================================
 
@@ -199,9 +197,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                         distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *2f);
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);
-                    Vector3 position = rotation * distanceVector + target.position;
+                    positions = rotation * distanceVector + target.position;
                     transform.rotation = rotation;
-                    transform.position = position;
+                    transform.position = positions;
                     transform.LookAt(target);
             }
             

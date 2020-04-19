@@ -23,11 +23,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-        StartCoroutine(start_enimy_moement());
-        //enimy_nav_mesh_agent.updateRotation = true;
+        StartCoroutine("start_enimy_moement");
     }
 
-
+    
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_moement()
     {
@@ -49,4 +48,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
    
     }
     #endregion
+    
+    
 }
