@@ -35,8 +35,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public virtual void StartGame_Handler_Method()
 	{
-		Debug.Log("Hi dhana suresh game started sucessfully");
-		Debug.Log("this starting from the gamemanager script");
+		
 		event_manager_ref.RemoveRedundancies();
 		//this deals about the starting the game
 	}

@@ -76,7 +76,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
     void OnApplicationQuit()
 	{
-		Debug.Log("Application ending after " + Time.time + " seconds");
+
 
 		event_manager.Instance.PostNotification(EVENT_TYPE.GAME_STOPED, this);
 	}

@@ -59,8 +59,8 @@ public class enimy_animation_helper : MonoBehaviour
 
     private void Update()
     {
-        if(enimy_rendrer.isVisible == true)
-        {
+        
+        
             //enimy blend tree movement
             Vector3 worldDeltaPosition = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition - transform.position;
 
@@ -85,7 +85,7 @@ public class enimy_animation_helper : MonoBehaviour
             enimy_animator_ref.SetFloat("y", velocity.y);
             GetComponent<LookAt>().lookAtTargetPosition = enimy_movement_reference.enimy_nav_mesh_agent.steeringTarget + transform.forward;
 
-        }
+        
 
      
     }
