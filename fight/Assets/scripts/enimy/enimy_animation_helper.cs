@@ -61,26 +61,6 @@ public class enimy_animation_helper : MonoBehaviour
     {
         if(enimy_rendrer.isVisible == true)
         {
-            /*
-            if(enimy_movement_reference.distance >= enimy_movement_reference.enimy_nav_mesh_agent.stoppingDistance && enimy_movement_reference.move)
-            {
-                EXIT_ENIMY_FIGHT();
-                PLAY_ENIMY_RUN();
-            }
-            else
-            {
-                EXIT_ENIMY_RUN();
-                
-            }
-
-           if(enimy_movement_reference.distance < enimy_movement_reference.enimy_nav_mesh_agent.stoppingDistance)
-            {
-                PLAY_ENIMY_FIGHT();
-            }
-            */
-
-
-
             //enimy blend tree movement
             Vector3 worldDeltaPosition = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition - transform.position;
 
@@ -112,9 +92,7 @@ public class enimy_animation_helper : MonoBehaviour
 
     void OnAnimatorMove()
     {
-        // Update position to agent position
+        
         transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
-        //enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = true;
-        //enimy_movement_reference.enimy_nav_mesh_agent.SetDestination(enimy_movement_reference.target_position.position);
     }
 }

@@ -26,7 +26,14 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         StartCoroutine("start_enimy_moement");
     }
 
-    
+    public void Update()
+    {
+        if(Input.GetKey(KeyCode.Return))
+        {
+            StopCoroutine("start_enimy_moement");
+        }
+    }
+
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_moement()
     {
@@ -36,14 +43,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
             transform.LookAt(tar);
         }
-        else
-        {
-            enimy_nav_mesh_agent.updateRotation = true;
-        }
-        yield return new WaitForSeconds(2);
+       // yield return new WaitForSeconds(2);
         move = true;
         enimy_nav_mesh_agent.SetDestination(target_position.position);
-        yield return StartCoroutine(start_enimy_moement());
+        yield return StartCoroutine("start_enimy_moement");
         move = false;
    
     }

@@ -817,8 +817,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.18
-  m_Radius: 0.16
+  m_Height: 1.4734885
+  m_Radius: 0.18449959
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -1002,6 +1002,7 @@ MonoBehaviour:
   layermask:
     serializedVersion: 2
     m_Bits: 512
+  positions: {x: 0, y: 0, z: 0}
   useOffsetValue: 0
   offset: {x: 0, y: 6, z: 5}
   virtual_joystick_access: {fileID: 0}
