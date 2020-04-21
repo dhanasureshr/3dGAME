@@ -17,48 +17,102 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     //this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
     public Transform target_position;
+    [HideInInspector]
     public float max_distance;
+    [HideInInspector]
     public float distance;
-    public bool move = false;
-    public LookAt lookAt;
+
+    public Transform[] points;
+    private int destpoint = 0;
+    public bool fight = false;
+    public bool petrol = false;
+    public bool chase = false;
+
+    private int fight_con = 0;
+
+
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-        StartCoroutine("start_enimy_moement");
+        StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
-
-        lookAt = GetComponent<LookAt>();
-
+        // this is for the enimy petrol code 
+        enimy_nav_mesh_agent.autoBraking = false;
+        destpoint = points.Length;
     }
+
+  
     private void Update()
     {
-        if (lookAt)
-            lookAt.lookAtTargetPosition = enimy_nav_mesh_agent.steeringTarget + transform.forward;
-    }
-    public void common_enimy_movement()
-    {
-
         distance = Vector3.Distance(transform.position, target_position.position);
-        Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
-        enimy_nav_mesh_agent.SetDestination(target_position.position);
-        if (distance < enimy_nav_mesh_agent.stoppingDistance)
+        //Debug.Log(distance);
+        if(distance > 10)
         {
+            chase = true;
+        }
+        else
+        {
+            chase = false;
+        }
+
+        if(distance < 10 && distance > enimy_nav_mesh_agent.stoppingDistance)
+        {
+            petrol = true;
+        }
+        else
+        {
+            petrol = false;
+        }
+        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
+        {
+            fight_con = Random.Range(0, 2);
+            if (fight_con == 0 || fight_con == 1)
+            {
+                fight = true;
+            }
+            else
+            {
+                fight = false;
+            }
+        }
+    }
+
+    public void common_enimy_movement(bool fig,bool cha,bool pet)
+    {
+        if (fig)
+        {
+            enimy_nav_mesh_agent.updateRotation = false;
+            Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
             transform.LookAt(tar);
+            enimy_nav_mesh_agent.SetDestination(target_position.position); 
+        }
+
+        if(cha)
+        {
+            enimy_nav_mesh_agent.updateRotation = true;
+            enimy_nav_mesh_agent.SetDestination(points[Random.Range(0, destpoint)].position);
+        }
+
+        if(pet)
+        {
+            if(points.Length == 0)
+            {
+                return;
+            }
+            enimy_nav_mesh_agent.updateRotation = false;
+            Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+            transform.LookAt(tar);
+            enimy_nav_mesh_agent.SetDestination(points[Random.Range(0, destpoint)].position);
         }
     }
     #region enimy_Ienumerator_methods
-    IEnumerator start_enimy_moement()
+    IEnumerator start_enimy_movement()
     {
-        
         yield return new WaitForSeconds(3);
-        common_enimy_movement();
-        yield return StartCoroutine("start_enimy_moement");
-        
-   
+        common_enimy_movement(fight,chase,petrol);
+        Debug.Log("coroutine_running............");
+        yield return StartCoroutine("start_enimy_movement");
     }
-
-
- 
     #endregion
     
     
