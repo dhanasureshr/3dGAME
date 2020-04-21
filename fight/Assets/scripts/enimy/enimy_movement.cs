@@ -24,32 +24,30 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
         StartCoroutine("start_enimy_moement");
+       
     }
 
-    public void Update()
+    public void common_enimy_movement()
     {
-        if(Input.GetKey(KeyCode.Return))
-        {
-            StopCoroutine("start_enimy_moement");
-        }
-    }
 
+        distance = Vector3.Distance(transform.position, target_position.position);
+        Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+        transform.LookAt(tar);
+        enimy_nav_mesh_agent.SetDestination(target_position.position);
+    }
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_moement()
     {
-        distance = Vector3.Distance(transform.position, target_position.position);
-        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
-        {
-            Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
-            transform.LookAt(tar);
-        }
-        yield return new WaitForSeconds(2);
-        move = true;
-        enimy_nav_mesh_agent.SetDestination(target_position.position);
-       // yield return StartCoroutine("start_enimy_moement");
-        move = false;
+        
+        yield return new WaitForSeconds(3);
+        common_enimy_movement();
+        yield return StartCoroutine("start_enimy_moement");
+        
    
     }
+
+
+ 
     #endregion
     
     
