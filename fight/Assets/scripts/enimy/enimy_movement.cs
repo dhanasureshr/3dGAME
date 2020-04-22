@@ -55,7 +55,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             chase = false;
         }
 
-        if(distance < 10 && distance > enimy_nav_mesh_agent.stoppingDistance)
+        if(distance < 6 && distance > 3)
         {
             petrol = true;
         }
@@ -63,16 +63,19 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         {
             petrol = false;
         }
-        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
+        if (distance <= 2)
         {
-            fight_con = Random.Range(0, 2);
+            fight_con = Random.Range(0, 8);
             if (fight_con == 0 || fight_con == 1)
             {
                 fight = true;
+                
             }
             else
             {
                 fight = false;
+              
+                
             }
         }
     }
@@ -108,7 +111,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_movement()
     {
-        yield return new WaitForSeconds(3);
+        Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+        transform.LookAt(tar);
+        yield return new WaitForSeconds(2);
         common_enimy_movement(fight,chase,petrol);
         Debug.Log("coroutine_running............");
         yield return StartCoroutine("start_enimy_movement");

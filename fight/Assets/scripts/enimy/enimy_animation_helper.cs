@@ -24,16 +24,8 @@ public class enimy_animation_helper : MonoBehaviour
     }
 
     #region enimy_fighting_functions
-    public void PLAY_ENIMY_RUN()
-    {
-        // enimy_animator_ref.SetTrigger(enimy_run);
-        enimy_animator_ref.SetBool(enimy_run, true);
-    }
+    
 
-    public void EXIT_ENIMY_RUN()
-    {
-        enimy_animator_ref.SetBool(enimy_run, false);
-    }
     public void PLAY_ENIMY_FIGHT()
     {
         enimy_animator_ref.SetBool(enimy_fight, true);
@@ -79,7 +71,7 @@ public class enimy_animation_helper : MonoBehaviour
             bool shouldMove = velocity.magnitude > 0.5f && enimy_movement_reference.enimy_nav_mesh_agent.remainingDistance > enimy_movement_reference.enimy_nav_mesh_agent.radius;
 
             // Update animation parameters
-            enimy_animator_ref.SetBool("move", shouldMove);
+            enimy_animator_ref.SetBool(enimy_run, shouldMove);
             enimy_animator_ref.SetFloat("x", velocity.x);
             enimy_animator_ref.SetFloat("y", velocity.y);
             GetComponent<LookAt>().lookAtTargetPosition = enimy_movement_reference.enimy_nav_mesh_agent.steeringTarget + transform.forward;

@@ -141,6 +141,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
                 
               //rotations = rotations.normalized;//////////////////
+              
+                //transform.rotation = target.rotation;
                 transform.LookAt(target);
                 //transform.LookAt(look_target);
                 /////////====================================================================
@@ -152,7 +154,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 2
 
                 // transform.position = target.position - (rotations * offset + new Vector3(0.0f,-2.0f,5.0f));
-               // transform.position = positions - (rotations * offset + new Vector3(0.0f, -2.0f, 5.0f));
+                // transform.position = positions - (rotations * offset + new Vector3(0.0f, -2.0f, 5.0f));
 
                 ///////======================================================================
 
