@@ -23,9 +23,13 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public float distance;
 
     public Transform[] points;
+    
     private int destpoint = 0;
+    
     public bool fight = false;
+ 
     public bool petrol = false;
+   
     public bool chase = false;
 
     private int fight_con = 0;
@@ -34,6 +38,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
+       
         StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 
@@ -115,7 +120,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         transform.LookAt(tar);
         yield return new WaitForSeconds(2);
         common_enimy_movement(fight,chase,petrol);
-        Debug.Log("coroutine_running............");
+       // Debug.Log("coroutine_running............");
         yield return StartCoroutine("start_enimy_movement");
     }
     #endregion

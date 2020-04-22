@@ -1107,7 +1107,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.28
   m_Speed: 1
-  m_Acceleration: 8
+  m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 360
   m_StoppingDistance: 0.6
@@ -1225,16 +1225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7557738453829159990}
     m_Modifications:
-    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
-        type: 3}
-      propertyPath: m_Name
-      value: RIGHT__HAND_HIT_COLLIDER
-      objectReference: {fileID: 0}
-    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 574440187082015091, guid: eea8380a501f934438b8dc171276c2e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1290,6 +1280,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
+        type: 3}
+      propertyPath: m_Name
+      value: RIGHT__HAND_HIT_COLLIDER
+      objectReference: {fileID: 0}
+    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 574440187082015090, guid: eea8380a501f934438b8dc171276c2e9,
         type: 3}
       propertyPath: collisionLayer.m_Bits
@@ -1325,36 +1325,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7557738453829159996}
     m_Modifications:
-    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: m_Name
-      value: RIGHT__LEG_HIT_COLLIDER
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: collisionLayer.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: is_Player
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: is_Enemy
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: ENIMY
-      value: 
-      objectReference: {fileID: 7557738453906304287}
     - target: {fileID: 8290779132368131042, guid: eaa430930558bf34fa51bcdf04e6ad2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1410,6 +1380,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: m_Name
+      value: RIGHT__LEG_HIT_COLLIDER
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: collisionLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: is_Player
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: is_Enemy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: ENIMY
+      value: 
+      objectReference: {fileID: 7557738453906304287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa430930558bf34fa51bcdf04e6ad2b, type: 3}
 --- !u!1 &3749557152003392446 stripped
