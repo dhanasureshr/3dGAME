@@ -88,8 +88,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
             pivot.transform.parent = target.transform;
-           // transform.position = pivot.position;
-           // transform.rotation = pivot.rotation;
+            transform.position = pivot.position;
+            transform.rotation = pivot.rotation;
+            
         }
     }
     #endregion
@@ -133,7 +134,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 float desiredXAngle = pivot.eulerAngles.x;
                 Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
                 transform.LookAt(target);
-
+               
             }
             else
             {

@@ -55,6 +55,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		float yStore = MoveDirection.y;
 		MoveDirection = new Vector3(h_joy, 0, y_joy);
 		MoveDirection = transform.TransformDirection(MoveDirection);
+		////////////////MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
 		/////===========================================================
 		MoveDirection = MoveDirection * speed;
 		MoveDirection += Physics.gravity;
