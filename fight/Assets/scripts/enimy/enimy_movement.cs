@@ -38,7 +38,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-       
+       // enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
         StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 

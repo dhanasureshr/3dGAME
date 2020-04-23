@@ -13,14 +13,15 @@ public class enimy_animation_helper : MonoBehaviour
     private static int enimy_fight = Animator.StringToHash("fight");
     private static int enimy_get_hit = Animator.StringToHash("get_hit");
     private static int enimy_fall_down = Animator.StringToHash("death");
-    public LookAt lookAt;
+   
     private void Start()
     {
         enimy_movement_reference = GetComponent<enimy_movement>();
         enimy_animator_ref = GetComponent<Animator>();
+       // enimy_animator_ref = GetComponentInChildren<Animator>();
         enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
         enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
-        lookAt = GetComponent<LookAt>();
+       
     }
 
     #region enimy_fighting_functions
@@ -74,13 +75,7 @@ public class enimy_animation_helper : MonoBehaviour
             enimy_animator_ref.SetBool(enimy_run, shouldMove);
             enimy_animator_ref.SetFloat("x", velocity.x);
             enimy_animator_ref.SetFloat("y", velocity.y);
-            GetComponent<LookAt>().lookAtTargetPosition = enimy_movement_reference.enimy_nav_mesh_agent.steeringTarget + transform.forward;
-
-            if (lookAt)
-                lookAt.lookAtTargetPosition = enimy_movement_reference.enimy_nav_mesh_agent.steeringTarget + transform.forward;
-
-
-
+            
     }
 
     void OnAnimatorMove()

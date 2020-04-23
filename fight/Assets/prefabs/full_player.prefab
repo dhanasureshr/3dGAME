@@ -161,6 +161,11 @@ GameObject:
   - component: {fileID: 1925238662605357395}
   - component: {fileID: 5598006728583757864}
   - component: {fileID: 9172442735454509178}
+  - component: {fileID: 2060232406}
+  - component: {fileID: 2060232405}
+  - component: {fileID: 2060232404}
+  - component: {fileID: 2060232403}
+  - component: {fileID: 2060232402}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -224,6 +229,100 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
+--- !u!143 &2060232406
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.3152179
+  m_Radius: 0.18449959
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.71, z: 0}
+--- !u!114 &2060232405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b80d6129a4ccb47a167c46666ea3cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 2060232406}
+  touch_input_script: {fileID: 0}
+  player_camera_follow_script: {fileID: 1925238662998567460}
+  var: should be attatched to the player
+  speed: 3
+  MoveDirection: {x: 0, y: 0, z: 0}
+  joystickinputforplayermovement: {fileID: 0}
+  h_joy: 0
+  y_joy: 0
+  playercharactercontroller: {fileID: 2060232406}
+  rotate_speed: 0
+  camera_pos: {fileID: 1925238662998567463}
+  player_animator: {fileID: 1925238663393400147}
+--- !u!114 &2060232404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc73c4c52092e404a8969410ffa6e25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_animator_ref: {fileID: 1925238663393400147}
+--- !u!114 &2060232403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RIGHT_HAND_COLLIDER: {fileID: 1925238663087392761}
+  LEFT_HAND_COLLIDER: {fileID: 1925238663734621203}
+  RIGHT_LEG_COLLIDER: {fileID: 1925238663738476794}
+  LEFT_LEG_COLLIDER: {fileID: 1925238663901139203}
+--- !u!208 &2060232402
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238662605357394}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.33, y: 0.657609, z: 0.33}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.55, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1925238662669108777
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,11 +976,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1925238663393400144}
   - component: {fileID: 1925238663393400147}
-  - component: {fileID: 1925238663393400146}
-  - component: {fileID: 1925238663393400149}
-  - component: {fileID: 726780151}
-  - component: {fileID: 8502479354131330374}
-  - component: {fileID: 748282222}
   m_Layer: 10
   m_Name: final_dhana_small@Breathing Idle
   m_TagString: Player
@@ -931,100 +1025,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &1925238663393400146
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1.3152179
-  m_Radius: 0.18449959
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.71, z: 0}
---- !u!114 &1925238663393400149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b80d6129a4ccb47a167c46666ea3cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 1925238663393400146}
-  touch_input_script: {fileID: 0}
-  player_camera_follow_script: {fileID: 1925238662998567460}
-  var: should be attatched to the player
-  speed: 3
-  MoveDirection: {x: 0, y: 0, z: 0}
-  joystickinputforplayermovement: {fileID: 0}
-  h_joy: 0
-  y_joy: 0
-  playercharactercontroller: {fileID: 1925238663393400146}
-  rotate_speed: 0
-  camera_pos: {fileID: 1925238662998567463}
-  player_animator: {fileID: 1925238663393400147}
---- !u!114 &726780151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc73c4c52092e404a8969410ffa6e25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player_animator_ref: {fileID: 1925238663393400147}
---- !u!114 &8502479354131330374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RIGHT_HAND_COLLIDER: {fileID: 1925238663087392761}
-  LEFT_HAND_COLLIDER: {fileID: 1925238663734621203}
-  RIGHT_LEG_COLLIDER: {fileID: 1925238663738476794}
-  LEFT_LEG_COLLIDER: {fileID: 1925238663901139203}
---- !u!208 &748282222
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238663393400150}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.33, y: 0.657609, z: 0.33}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.55, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &1925238663417393169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   finaltouch_x: 0
   finaltouch_y: 0
   target: {fileID: 1925238663866852999}
-  look_target: {fileID: 1925238663393400144}
+  look_target: {fileID: 1925238662605357395}
   targetframe: 60
   layermask:
     serializedVersion: 2
@@ -2124,6 +2124,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925238663369425529}
     m_Modifications:
+    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
+        type: 3}
+      propertyPath: m_Name
+      value: RIGHT__HAND_HIT_COLLIDER
+      objectReference: {fileID: 0}
     - target: {fileID: 574440187082015091, guid: eea8380a501f934438b8dc171276c2e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2178,11 +2183,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 574440187082015086, guid: eea8380a501f934438b8dc171276c2e9,
-        type: 3}
-      propertyPath: m_Name
-      value: RIGHT__HAND_HIT_COLLIDER
       objectReference: {fileID: 0}
     - target: {fileID: 574440187082015090, guid: eea8380a501f934438b8dc171276c2e9,
         type: 3}
@@ -2296,6 +2296,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925238664386199782}
     m_Modifications:
+    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: m_Name
+      value: RIGHT__LEG_HIT_COLLIDER
+      objectReference: {fileID: 0}
+    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
+        type: 3}
+      propertyPath: PLAYER
+      value: 
+      objectReference: {fileID: 1925238662605357394}
     - target: {fileID: 8290779132368131042, guid: eaa430930558bf34fa51bcdf04e6ad2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2351,16 +2361,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131041, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: m_Name
-      value: RIGHT__LEG_HIT_COLLIDER
-      objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: PLAYER
-      value: 
-      objectReference: {fileID: 1925238662605357394}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaa430930558bf34fa51bcdf04e6ad2b, type: 3}
 --- !u!1 &1925238663738476794 stripped

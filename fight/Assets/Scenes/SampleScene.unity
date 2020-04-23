@@ -971,12 +971,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &795944952 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1925238663393400144, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1925238662736298102}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &953613211 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 154498461, guid: 1b049d003fbfa0c4586b651351c5f935,
@@ -2098,6 +2092,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1925238662736298102}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2060232402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1925238662736298102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2096817730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,16 +2277,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1925238663393400149, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: touch_input_script
-      value: 
-      objectReference: {fileID: 1825307463}
-    - target: {fileID: 1925238663393400149, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: joystickinputforplayermovement
-      value: 
-      objectReference: {fileID: 154498461}
     - target: {fileID: 1925238663087392741, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
       propertyPath: ENIMY
@@ -2307,6 +2297,14 @@ PrefabInstance:
       propertyPath: ENIMY
       value: 
       objectReference: {fileID: 186708474}
+    - target: {fileID: 2060232405, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
+      propertyPath: touch_input_script
+      value: 
+      objectReference: {fileID: 1825307463}
+    - target: {fileID: 2060232405, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
+      propertyPath: joystickinputforplayermovement
+      value: 
+      objectReference: {fileID: 154498461}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
 --- !u!1001 &4115625514723852529
@@ -2510,26 +2508,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 745689821, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
-      propertyPath: target_position
-      value: 
-      objectReference: {fileID: 795944952}
-    - target: {fileID: 745689821, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
-      propertyPath: points.Array.data[0]
-      value: 
-      objectReference: {fileID: 1309434782}
-    - target: {fileID: 745689821, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
-      propertyPath: points.Array.data[1]
-      value: 
-      objectReference: {fileID: 1083873539}
-    - target: {fileID: 745689821, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
-      propertyPath: points.Array.data[2]
-      value: 
-      objectReference: {fileID: 742675006}
-    - target: {fileID: 745689821, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
-      propertyPath: points.Array.data[3]
-      value: 
-      objectReference: {fileID: 74838550}
     - target: {fileID: 1096748944572970892, guid: 5f3a4044c65f30e44a84063efee041d6,
         type: 3}
       propertyPath: PLAYER
@@ -2550,5 +2528,25 @@ PrefabInstance:
       propertyPath: PLAYER
       value: 
       objectReference: {fileID: 2060232401}
+    - target: {fileID: 186708476, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
+      propertyPath: target_position
+      value: 
+      objectReference: {fileID: 2060232402}
+    - target: {fileID: 186708476, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
+      propertyPath: points.Array.data[0]
+      value: 
+      objectReference: {fileID: 1309434782}
+    - target: {fileID: 186708476, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
+      propertyPath: points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1083873539}
+    - target: {fileID: 186708476, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
+      propertyPath: points.Array.data[2]
+      value: 
+      objectReference: {fileID: 742675006}
+    - target: {fileID: 186708476, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
+      propertyPath: points.Array.data[3]
+      value: 
+      objectReference: {fileID: 74838550}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}

@@ -58,11 +58,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	// this is the end of the camera collision varables
 	public bool useOffsetValue;
 	public Vector3 offset;
-	/*
-	 * now this variables all are for the player movement 
-	 * when is finger is on the joystick
-	 * 
-	 * */
 	public VirtualJoystick virtual_joystick_access;
     public VirtualJoystick Camera_joystick_access;
 	public Vector3 camjoyrotateinput = Vector3.zero;
@@ -133,65 +128,16 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                //target.Rotate(0, horizontal, 0);//////////////////
                 look_target.Rotate(0,horizontal,0);
-              //pivot.Rotate(-vertical, 0, 0);////////////////////
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
                 Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
-                
-              //rotations = rotations.normalized;//////////////////
-              
-                //transform.rotation = target.rotation;
                 transform.LookAt(target);
-                //transform.LookAt(look_target);
-                /////////====================================================================
-
-                // the below code only one code should be enabled
-
-                ////////=====================================================================
-                ///if you enable the below code means the camera will be at the back of the player
-                //code no 2
-
-                // transform.position = target.position - (rotations * offset + new Vector3(0.0f,-2.0f,5.0f));
-                // transform.position = positions - (rotations * offset + new Vector3(0.0f, -2.0f, 5.0f));
-
-                ///////======================================================================
-
-
 
             }
             else
             {
-                // this is the code that deals about the player camera follow with the joystick 
-                //with movement of player
-                    
-                //////================================================================
-                /// if you enable the below function means the 
-                /// camera move around the player with swipe input feature will be 
-                /// enabled
-                
-
                     CameraMovementAroundPlayer();
-
-
-                //////================================================================
-                
-                /////////=============================================================
-                /// if you enable the below function means
-                /// camera move around the player with camera joystick feature will be 
-                /// enabled
-                
-
-                    //CameraMovementAroundPlayerWithJoy();
-
-
-                /////////=============================================================
-                    
-                /*
-                 *the below  is the common code for both the above functions
-                 * 
-                 */
                     rotation = Quaternion.Euler(rotx, roty, 0);
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
@@ -210,17 +156,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         }
         CameraCollision();
-    }
-    #endregion
-    // this is the code for the camera movement with irrespetive to the player
-    #region CameraMovementAroundPlayerwithjoy script
-    public void CameraMovementAroundPlayerWithJoy()
-    {
-        deltax = Camera_joystick_access.InputDirection.x * speed;
-        deltay = Camera_joystick_access.InputDirection.z * speed;
-        rotx -= deltay * Time.deltaTime * 10 * dir;
-        roty -= deltax * Time.deltaTime *10 * dir;
-        rotx = Mathf.Clamp(rotx, -10f, 30f);
     }
     #endregion
 
