@@ -10,9 +10,15 @@ public class enimy_animation_helper : MonoBehaviour
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
     private static int enimy_run = Animator.StringToHash("move");
-    private static int enimy_fight = Animator.StringToHash("fight");
     private static int enimy_get_hit = Animator.StringToHash("get_hit");
-    private static int enimy_fall_down = Animator.StringToHash("death");
+    private static int enimy_death = Animator.StringToHash("death");
+    private static int enimy_punch = Animator.StringToHash("punch");
+    private static int enimy_punch1 = Animator.StringToHash("punch1");
+    private static int enimy_kick = Animator.StringToHash("kick");
+    private static int enimy_nock_down = Animator.StringToHash("nock_down");
+    private static int enimy_stand_up = Animator.StringToHash("stand_up");
+    private static int x_input = Animator.StringToHash("x");
+    private static int y_input = Animator.StringToHash("y");
    
     private void Start()
     {
@@ -26,29 +32,42 @@ public class enimy_animation_helper : MonoBehaviour
 
     #region enimy_fighting_functions
     
-
-    public void PLAY_ENIMY_FIGHT()
-    {
-        enimy_animator_ref.SetBool(enimy_fight, true);
-    }
-
-    public void EXIT_ENIMY_FIGHT()
-    {
-        enimy_animator_ref.SetBool(enimy_fight, false);
-    }
     public void PLAY_ENIMY_GET_HIT()
     {
-        enimy_animator_ref.SetBool(enimy_get_hit, true);
+        enimy_animator_ref.SetTrigger(enimy_get_hit);
+    }
+   
+    public void PLAY_ENIMY_PUNCH()
+    {
+        enimy_animator_ref.SetTrigger(enimy_punch);
+    }
+
+    public void PLAY_ENIMY_PUNCH1()
+    {
+        enimy_animator_ref.SetTrigger(enimy_punch1);
+    }
+  
+    public void PLAY_ENIMY_DEATH()
+    {
+        enimy_animator_ref.SetTrigger(enimy_death);
 
     }
-    public void EXIT_ENIMY_GET_HIT()
+
+    public void PLAY_ENIMY_KICK()
     {
-        enimy_animator_ref.SetBool(enimy_get_hit, false);
+        enimy_animator_ref.SetTrigger(enimy_kick);
     }
-    public void PLAY_ENIMY_FALL_DOWN()
+
+    public void PLAY_ENIMY_NOCK_DOWN()
     {
-        enimy_animator_ref.SetTrigger(enimy_fall_down);
+        enimy_animator_ref.SetTrigger(enimy_nock_down);
     }
+
+    public void PLAY_ENIMY_STAND_UP()
+    {
+        enimy_animator_ref.SetTrigger(enimy_stand_up);
+    }
+
     #endregion
 
     private void Update()
@@ -73,8 +92,8 @@ public class enimy_animation_helper : MonoBehaviour
 
             // Update animation parameters
             enimy_animator_ref.SetBool(enimy_run, shouldMove);
-            enimy_animator_ref.SetFloat("x", velocity.x);
-            enimy_animator_ref.SetFloat("y", velocity.y);
+            enimy_animator_ref.SetFloat(x_input, velocity.x);
+            enimy_animator_ref.SetFloat(y_input, velocity.y);
             
     }
 

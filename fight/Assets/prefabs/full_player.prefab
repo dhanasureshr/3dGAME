@@ -164,7 +164,6 @@ GameObject:
   - component: {fileID: 2060232406}
   - component: {fileID: 2060232405}
   - component: {fileID: 2060232404}
-  - component: {fileID: 2060232403}
   - component: {fileID: 2060232402}
   m_Layer: 10
   m_Name: full_player
@@ -207,7 +206,7 @@ MonoBehaviour:
   didInit: 0
   canControl: 0
   iD: 0
-  charactercontroller: {fileID: 0}
+  charactercontroller: {fileID: 2060232406}
   Player_base_user_manager: {fileID: 9172442735454509178}
   PLAYER_HEALTH: 0
 --- !u!114 &9172442735454509178
@@ -291,22 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_animator_ref: {fileID: 1925238663393400147}
---- !u!114 &2060232403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925238662605357394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RIGHT_HAND_COLLIDER: {fileID: 1925238663087392761}
-  LEFT_HAND_COLLIDER: {fileID: 1925238663734621203}
-  RIGHT_LEG_COLLIDER: {fileID: 1925238663738476794}
-  LEFT_LEG_COLLIDER: {fileID: 1925238663901139203}
 --- !u!208 &2060232402
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -976,6 +959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1925238663393400144}
   - component: {fileID: 1925238663393400147}
+  - component: {fileID: 2142292814}
   m_Layer: 10
   m_Name: final_dhana_small@Breathing Idle
   m_TagString: Player
@@ -1025,6 +1009,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2142292814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925238663393400150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RIGHT_HAND_COLLIDER: {fileID: 1925238663087392761}
+  LEFT_HAND_COLLIDER: {fileID: 1925238663734621203}
+  RIGHT_LEG_COLLIDER: {fileID: 1925238663738476794}
+  LEFT_LEG_COLLIDER: {fileID: 1925238663901139203}
 --- !u!1 &1925238663417393169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,6 +2440,21 @@ PrefabInstance:
     - target: {fileID: 8310741321711787654, guid: c890a2e0893dc7a4ebafa9218c19587b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
+        type: 3}
+      propertyPath: collisionLayer.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
+        type: 3}
+      propertyPath: is_Player
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
+        type: 3}
+      propertyPath: is_Enemy
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,

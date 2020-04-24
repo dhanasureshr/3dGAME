@@ -14,12 +14,13 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     public int ENIMY_HEALTH;
     private void Start()
     {
-        Enimy_base_user_manager = gameObject.GetComponent<baseusermanager>();
+        Enimy_base_user_manager = this.GetComponent<baseusermanager>();
     }
-    private void Update()
+    public void Update()
     {
         ENIMY_HEALTH = Enimy_base_user_manager.GetHealth();
 
+        //Debug.Log(ENIMY_HEALTH);
 
     }
 }

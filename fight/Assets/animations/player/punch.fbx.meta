@@ -142,14 +142,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.19398311
-        functionName: LEFT_HAND_ENABLER
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.21274519
         functionName: Tag_left_hand_TAG
         data: 
@@ -160,14 +152,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.4669942
         functionName: Untag_left_hand_TAG
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.4873825
-        functionName: LEFT_HAND_DISABLER
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
           type: 3}

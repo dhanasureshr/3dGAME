@@ -15,13 +15,15 @@ public class playermanager : ExtendedCustomMonoBehavior
 
     private void Start()
     {
-        Player_base_user_manager = gameObject.GetComponent<baseusermanager>();
+        Player_base_user_manager = this.GetComponent<baseusermanager>();
         
     }
 
-    private void Update()
+    public void Update()
     {
         PLAYER_HEALTH = Player_base_user_manager.GetHealth();
+
+         //Debug.Log("player health"+PLAYER_HEALTH);
         
     }
 
