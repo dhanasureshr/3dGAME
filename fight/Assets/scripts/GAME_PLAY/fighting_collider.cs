@@ -32,6 +32,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     private void Start()
     {
         event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE, this);
+        event_manager.Instance.AddListener(EVENT_TYPE.NOCK_ENIMY, this);
     }
 
     private void Update()
@@ -59,6 +60,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     gameObject.CompareTag(tags.player_right_leg_tag))
                 {
                     Debug.Log("enimy_nock_down");
+                    event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);
                     
                 }
                
@@ -99,8 +101,11 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     //Debug.Log("APPLING DAMAGE TO THE ENIMY");
                     //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
                      baseusermanager enimy_health_reducer = ENIMY.GetComponent<baseusermanager>();
-                     enimy_animation_helper enimy_animation_helper_ref = ENIMY.GetComponent<enimy_animation_helper>();
-                     enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
+                    if (Random.Range(0, 3) == 1)
+                    {
+                        enimy_animation_helper enimy_animation_helper_ref = ENIMY.GetComponent<enimy_animation_helper>();
+                        enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
+                    }
                      enimy_health_reducer.ReduceHealth((int)Param);
                    //Debug.Log("enimy_current_health"+enimy_health_reducer.GetHealth());
                     
@@ -116,6 +121,16 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                    // Debug.Log("player_current_health" + player_health_reducer.GetHealth());
                     
                 }
+                break;
+
+
+            case EVENT_TYPE.NOCK_ENIMY:
+                
+                enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.GetComponent<enimy_animation_helper>();
+                enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
+                enimy_movement enimy_movement_ref = ENIMY.GetComponent<enimy_movement>();
+                enimy_movement_ref.enabled = false;
+                
                 break;
         }
     }

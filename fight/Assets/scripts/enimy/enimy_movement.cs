@@ -100,6 +100,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     public void common_enimy_movement(bool fig,bool cha,bool pet)
     {
+       
         if (fig)
         {
             enimy_nav_mesh_agent.updateRotation = false;
@@ -129,6 +130,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_movement()
     {
+      
         Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
         transform.LookAt(tar);
         yield return new WaitForSeconds(2);

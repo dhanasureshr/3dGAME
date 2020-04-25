@@ -539,7 +539,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &3770551446902762176
 BoxCollider:
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   enimy_rendrer: {fileID: 7557738453817564528}
   default_attack_time: 1
   current_attack_time: 0
+  stand_up_waiting_timer: 9
 --- !u!114 &5937239003941021552
 MonoBehaviour:
   m_ObjectHideFlags: 0

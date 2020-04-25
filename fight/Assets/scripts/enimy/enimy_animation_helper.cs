@@ -11,6 +11,9 @@ public class enimy_animation_helper : MonoBehaviour
     public float default_attack_time = 1.0f;
     [HideInInspector]
     public float current_attack_time;
+
+    [HideInInspector]
+    public float stand_up_waiting_timer = 9.0f;
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
     private static int enimy_run = Animator.StringToHash("move");
@@ -30,7 +33,7 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref = GetComponent<Animator>();
         enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
         enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
-      
+       
        
     }
 
@@ -67,6 +70,7 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref.SetTrigger(enimy_nock_down);
     }
 
+
     public void PLAY_ENIMY_STAND_UP()
     {
         enimy_animator_ref.SetTrigger(enimy_stand_up);
@@ -76,15 +80,15 @@ public class enimy_animation_helper : MonoBehaviour
 
     private void Update()
     {
-            //enimy blend tree movement
+        //enimy blend tree movement
         Vector3 worldDeltaPosition = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition - transform.position;
 
-            // Map 'worldDeltaPosition' to local space
+        // Map 'worldDeltaPosition' to local space
         float dx = Vector3.Dot(transform.right, worldDeltaPosition);
         float dy = Vector3.Dot(transform.forward, worldDeltaPosition);
         Vector2 deltaPosition = new Vector2(dx, dy);
 
-            // Low-pass filter the deltaMove
+        // Low-pass filter the deltaMove
         float smooth = Mathf.Min(1.0f, Time.deltaTime / 0.15f);
         smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
 
@@ -94,14 +98,20 @@ public class enimy_animation_helper : MonoBehaviour
             velocity = smoothDeltaPosition / Time.deltaTime;
         }
         bool shouldMove = velocity.magnitude > 0.5f && enimy_movement_reference.enimy_nav_mesh_agent.remainingDistance > enimy_movement_reference.enimy_nav_mesh_agent.radius;
-       
-            // Update animation parameters
+
+        // Update animation parameters
         enimy_animator_ref.SetBool(enimy_run, shouldMove);
         enimy_animator_ref.SetFloat(x_input, velocity.x);
         enimy_animator_ref.SetFloat(y_input, velocity.y);
-            
-    }
 
+    }
+    void OnAnimatorMove()
+    {
+       transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+    }
+    
+
+    #region enimy attack method
     public void enimy_attack(int attack_num)
     {
         if(attack_num == 0)
@@ -120,11 +130,27 @@ public class enimy_animation_helper : MonoBehaviour
         }
     }
 
+    #endregion
 
-    void OnAnimatorMove()
+
+    #region enimy stand up  code
+    public void STAND_UP_ENIMY_AFTER_TIME()
     {
-        transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+        StartCoroutine("stand_up_enimy");
     }
+
+    IEnumerator stand_up_enimy()
+    {
+        yield return new WaitForSeconds(stand_up_waiting_timer);
+        PLAY_ENIMY_STAND_UP();
+        yield return new WaitForEndOfFrame();
+        enimy_movement_reference.enabled = true;
+        
+
+    }
+
+    #endregion
+
 
 
 }

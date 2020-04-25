@@ -11,16 +11,22 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     /// by considering this script as a base for enimy to provide data to remaining modules
     /// </summary>
     public baseusermanager Enimy_base_user_manager;
+  
+   
     public int ENIMY_HEALTH;
+    
+   
     private void Start()
     {
         Enimy_base_user_manager = this.GetComponent<baseusermanager>();
+       
     }
     public void Update()
     {
         ENIMY_HEALTH = Enimy_base_user_manager.GetHealth();
 
-        Debug.Log(ENIMY_HEALTH+this.gameObject.name);
+        //Debug.Log(ENIMY_HEALTH+this.gameObject.name);
 
     }
+
 }
