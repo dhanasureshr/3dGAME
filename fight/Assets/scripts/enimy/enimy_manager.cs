@@ -20,7 +20,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     {
         ENIMY_HEALTH = Enimy_base_user_manager.GetHealth();
 
-        //Debug.Log(ENIMY_HEALTH);
+        Debug.Log(ENIMY_HEALTH+this.gameObject.name);
 
     }
 }

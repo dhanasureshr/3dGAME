@@ -18,7 +18,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     /// </summary>
     [TextArea]
     public string doc = "this script should be attatched to the player and enimy  collision points";
-
+    
     public LayerMask collisionLayer;
     public float radius = 0.005f;
     public float damage = 2f;
@@ -54,14 +54,14 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 /// now we hava to raise an event to update the enimy health
 
                 event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
-
+                
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
                 {
                     Debug.Log("enimy_nock_down");
                     
                 }
-                
+               
                 
            
 
@@ -99,8 +99,10 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     //Debug.Log("APPLING DAMAGE TO THE ENIMY");
                     //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
                      baseusermanager enimy_health_reducer = ENIMY.GetComponent<baseusermanager>();
+                     enimy_animation_helper enimy_animation_helper_ref = ENIMY.GetComponent<enimy_animation_helper>();
+                     enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
                      enimy_health_reducer.ReduceHealth((int)Param);
-                   // Debug.Log("enimy_current_health"+enimy_health_reducer.GetHealth());
+                   //Debug.Log("enimy_current_health"+enimy_health_reducer.GetHealth());
                     
                 }
 

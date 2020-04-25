@@ -155,9 +155,9 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -187,7 +187,32 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: Curve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0.2749939
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1.0083313
+            value: 0.49999237
+            inSlope: 2
+            outSlope: 2
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 4
       events: []
       transformMask: []
       maskType: 3
@@ -221,11 +246,11 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 2
+    normalImportMode: 0
     tangentImportMode: 2
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 2
+    blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
@@ -827,7 +852,7 @@ ModelImporter:
     - name: LeftHandThumb1
       parentName: LeftHand
       position: {x: -0.063832, y: -0.026343, z: 0.040362}
-      rotation: {x: -0.02751392, y: -0.57239103, z: -0.2064646, w: 0.793085}
+      rotation: {x: -0.027513921, y: -0.57239103, z: -0.20646462, w: 0.793085}
       scale: {x: 1, y: 1, z: 1}
     - name: LeftHandThumb2
       parentName: LeftHandThumb1
@@ -877,7 +902,7 @@ ModelImporter:
     - name: RightHand
       parentName: RightForeArm
       position: {x: 0.282893, y: 0, z: 0}
-      rotation: {x: 0.5316023, y: 0.094102934, z: 0.18901508, w: 0.8202541}
+      rotation: {x: 0.5316024, y: 0.09410295, z: 0.18901509, w: 0.8202542}
       scale: {x: 1, y: 1, z: 1}
     - name: RightHandIndex1
       parentName: RightHand
@@ -887,7 +912,7 @@ ModelImporter:
     - name: RightHandIndex2
       parentName: RightHandIndex1
       position: {x: 0.052824996, y: 0, z: 0}
-      rotation: {x: -0.0010457477, y: 0.0000512376, z: -0.03708114, w: 0.9993118}
+      rotation: {x: -0.0010457475, y: 0.0000512376, z: -0.037081137, w: 0.9993118}
       scale: {x: 1, y: 1, z: 1}
     - name: RightHandIndex3
       parentName: RightHandIndex2
@@ -922,12 +947,12 @@ ModelImporter:
     - name: RightHandPinky1
       parentName: RightHand
       position: {x: 0.17049, y: 0.004636, z: -0.073932}
-      rotation: {x: 0.036622103, y: 0.068476886, z: -0.04027749, w: 0.99616635}
+      rotation: {x: 0.036622107, y: 0.06847689, z: -0.040277492, w: 0.9961664}
       scale: {x: 1, y: 1, z: 1}
     - name: RightHandPinky2
       parentName: RightHandPinky1
       position: {x: 0.031343, y: 0, z: 0}
-      rotation: {x: 0.019853326, y: -0.0089613795, z: -0.031435918, w: 0.9992685}
+      rotation: {x: 0.019853324, y: -0.0089613795, z: -0.031435914, w: 0.9992685}
       scale: {x: 1, y: 1, z: 1}
     - name: RightHandPinky3
       parentName: RightHandPinky2

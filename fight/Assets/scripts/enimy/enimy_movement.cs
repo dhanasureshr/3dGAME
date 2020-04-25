@@ -16,6 +16,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public string objd = "this should be attatched to the enimy mesh where enimy animator and nav_mesh_agent";
     //this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
+    public enimy_animation_helper enimy_animation_helper_ref;
     public Transform target_position;
     [HideInInspector]
     public float max_distance;
@@ -49,6 +50,18 @@ public class enimy_movement : ExtendedCustomMonoBehavior
   
     private void Update()
     {
+        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
+        {
+            enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
+            if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
+            {
+                enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
+                enimy_animation_helper_ref.current_attack_time = 0.0f;
+            }
+
+        }
+
+
         distance = Vector3.Distance(transform.position, target_position.position);
         //Debug.Log(distance);
         if(distance > 10)
@@ -68,9 +81,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         {
             petrol = false;
         }
-        if (distance <= 2)
+        if (distance <= 1.3)
         {
-            fight_con = Random.Range(0, 8);
+            fight_con = Random.Range(0, 2);
             if (fight_con == 0 || fight_con == 1)
             {
                 fight = true;
@@ -124,6 +137,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         yield return StartCoroutine("start_enimy_movement");
     }
     #endregion
-    
-    
+
+
 }

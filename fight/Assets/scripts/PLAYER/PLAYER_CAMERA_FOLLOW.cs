@@ -37,17 +37,17 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
-    private float distance = 10.0f; //DEFAULT 10.0f
+    private float distance = 5.0f; //DEFAULT 10.0f
     
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f;
-    private float distanceMax = 3f;//DEFAULT 5
+    private float distanceMax = 5f;//DEFAULT 5
     private object hit;
     private float xspeed = 1.0f;
     private float yspeed = 1.0f;
     private float yMinLimit = 10f;
-    private float yMaxLimit = 30f; //DEFAULT 80
+    private float yMaxLimit = 20f; //DEFAULT 80
     private float xMinLimit = -360f;
     private float xMaxLimit = 360;
     private Quaternion rotation;
