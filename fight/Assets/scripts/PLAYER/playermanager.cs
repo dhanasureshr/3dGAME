@@ -23,7 +23,7 @@ public class playermanager : ExtendedCustomMonoBehavior
     {
         PLAYER_HEALTH = Player_base_user_manager.GetHealth();
 
-         //Debug.Log("player health"+PLAYER_HEALTH);
+         Debug.Log("player health"+PLAYER_HEALTH);
         
     }
 

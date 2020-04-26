@@ -18,6 +18,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public NavMeshAgent enimy_nav_mesh_agent;
     public enimy_animation_helper enimy_animation_helper_ref;
     public Transform target_position;
+ 
     [HideInInspector]
     public float max_distance;
     [HideInInspector]
@@ -39,11 +40,13 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private void Start()
     {
         enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-       // enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
+        // enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
+    
         StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 
         enimy_nav_mesh_agent.autoBraking = false;
+        
         destpoint = points.Length;
     }
 
@@ -135,7 +138,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         transform.LookAt(tar);
         yield return new WaitForSeconds(2);
         common_enimy_movement(fight,chase,petrol);
-       // Debug.Log("coroutine_running............");
+ 
         yield return StartCoroutine("start_enimy_movement");
     }
     #endregion

@@ -59,7 +59,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	public bool useOffsetValue;
 	public Vector3 offset;
 	public VirtualJoystick virtual_joystick_access;
-    public VirtualJoystick Camera_joystick_access;
+    
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;

@@ -34,11 +34,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: -29}
-  m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0079956055}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &4115625514840044910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88,9 +88,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eaa62a96a4ed73409d0b54f9f6a790b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgImg: {fileID: 4115625514840044911}
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  bgImg: {fileID: 0}
   jsImg: {fileID: 4115625515747213972}
   InputDirection: {x: 0, y: 0, z: 0}
+  isfingeronjoystick: 0
 --- !u!1 &4115625515747213970
 GameObject:
   m_ObjectHideFlags: 0
