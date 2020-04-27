@@ -23,7 +23,9 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public float radius = 0.005f;
     public float damage = 2f;
     public bool is_Player, is_Enemy;
-    public GameObject PLAYER, ENIMY;
+    [HideInInspector]
+    public GameObject PLAYER;
+    public GameObject ENIMY;
     public bool nock_down_the_enimy;
    // public GameObject hit_Fx;
 
@@ -33,6 +35,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     {
         event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE, this);
         event_manager.Instance.AddListener(EVENT_TYPE.NOCK_ENIMY, this);
+        PLAYER = GameObject.Find("full_player");
     }
 
     private void Update()

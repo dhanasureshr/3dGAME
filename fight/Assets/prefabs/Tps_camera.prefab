@@ -91,7 +91,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889248933799523033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e20db8d29d3a994f94536ac5b06790c, type: 3}
   m_Name: 
@@ -112,8 +112,9 @@ MonoBehaviour:
   inittouch_y: 0
   finaltouch_x: 0
   finaltouch_y: 0
-  target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a, type: 3}
-  look_target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+  target: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603, type: 3}
+  player_fps_target: {fileID: 0}
+  look_target: {fileID: 4272947402165268830, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
     type: 3}
   targetframe: 60
   layermask:
@@ -122,11 +123,13 @@ MonoBehaviour:
   positions: {x: 0, y: 0, z: 0}
   useOffsetValue: 0
   offset: {x: 0, y: 6, z: 5}
-  virtual_joystick_access: {fileID: 4932426885845639701, guid: c4a899e27e4df4c4d949f28bea97aaf4,
+  virtual_joystick_access: {fileID: 8246791209367087531, guid: 9b11dd7960f1d3e4d996a89ef5ba9866,
     type: 3}
+  joystck: {fileID: 0}
   camjoyrotateinput: {x: 0, y: 0, z: 0}
   speed: 3
-  pivot: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
+  pivot: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603, type: 3}
+  camera_pivot: {fileID: 0}
   is_player_fighting: 0
   ui_script_ref: {fileID: 5997146541894318145, guid: f8a2439c66dcc824cbb985e4bbfce7c4,
     type: 3}
@@ -139,7 +142,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889248933799523033}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56da461ebc37aeb4d9322044cd376c9f, type: 3}
   m_Name: 
@@ -152,7 +155,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   val: this script should attatch to the fps camera
-  player_target: {fileID: 1925238662605357395, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+  player_target: {fileID: 4272947402165268830, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
     type: 3}
   camera_switch_ui_script_ref: {fileID: 5997146541894318145, guid: f8a2439c66dcc824cbb985e4bbfce7c4,
     type: 3}

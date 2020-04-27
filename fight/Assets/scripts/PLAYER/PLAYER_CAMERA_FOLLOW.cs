@@ -31,7 +31,10 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public float finaltouch_x;
     public float finaltouch_y;
     //new *************************************
+    [HideInInspector]
     public Transform target;
+    [HideInInspector]
+    public GameObject player_fps_target;
     public Transform look_target;
     public int targetframe = 60;
     //this are for the caera collision detection
@@ -58,13 +61,18 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	// this is the end of the camera collision varables
 	public bool useOffsetValue;
 	public Vector3 offset;
+    [HideInInspector]
 	public VirtualJoystick virtual_joystick_access;
-    
+    [HideInInspector]
+    public GameObject joystck;
 	public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
     // this is for the movement camera controller variables
+    [HideInInspector]
     public Transform pivot;
+    [HideInInspector]
+    public GameObject camera_pivot;
     // this is for the fighting camera movement enabler variable
     public bool is_player_fighting = false;
     public camera_switch_ui_script ui_script_ref;
@@ -84,6 +92,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         QualitySettings.vSyncCount = 0;
         if (!useOffsetValue)
         {
+
+            camera_pivot = GameObject.Find("full_player");
+            pivot = camera_pivot.GetComponent<Transform>();
+            player_fps_target = GameObject.Find("player_pivot");
+            target = player_fps_target.GetComponent<Transform>();
             offset = target.position - transform.position;
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
@@ -92,6 +105,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             transform.rotation = pivot.rotation;
             
         }
+        joystck = GameObject.Find("player_joy");
+        virtual_joystick_access = joystck.GetComponent<VirtualJoystick>();
     }
     #endregion
 

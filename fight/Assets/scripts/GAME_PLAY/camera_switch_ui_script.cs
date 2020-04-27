@@ -19,6 +19,7 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
     void Start()
     {
         Toggles = gameObject.GetComponent<Toggle>();
+        Debug.Log("ui_script_running");
     }
     public void LateUpdate()
     {
@@ -30,19 +31,6 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
 
     public void camera_taugle_button_clicked()
     {
-        
-        //if (Toggles.isOn == true)
-        //{
-            
-        //    camera_swithch_controller_script_ref.fps_cam = true;
-        //}
-        //else
-        //{
-            
-        //    camera_swithch_controller_script_ref.fps_cam = false;
-        //}
-
-
         if(Toggles.isOn == true)
         {
             Player_camera_follow_script_ref.enabled = false;

@@ -14,8 +14,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public string var = "should be attatched to the player";
 	public float speed;
 	public Vector3 MoveDirection = Vector3.zero;
-	public VirtualJoystick joystickinputforplayermovement;///
-	
+	//public VirtualJoystick joystickinputforplayermovement;///
+	[HideInInspector]
+	public VirtualJoystick virtual_joystick_access;
+	[HideInInspector]
+	public GameObject joystck;
 	public float h_joy;
 	public float y_joy;
 	public CharacterController playercharactercontroller;
@@ -42,6 +45,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		playercharactercontroller = GetComponent<CharacterController>();
 		//player_animator = GetComponent<Animator>();
 		player_animator = GetComponentInChildren<Animator>();
+
+		joystck = GameObject.Find("player_joy");
+		virtual_joystick_access = joystck.GetComponent<VirtualJoystick>();
 	}
     #endregion
 
@@ -51,8 +57,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	{
 		/// this code is for the player movement with camera at back
 		/// --------------------------------------------------------
-		h_joy = joystickinputforplayermovement.InputDirection.x;
-		y_joy = joystickinputforplayermovement.InputDirection.z;
+		h_joy = virtual_joystick_access.InputDirection.x;
+		y_joy = virtual_joystick_access.InputDirection.z;
 		float yStore = MoveDirection.y;
 		MoveDirection = new Vector3(h_joy, 0, y_joy);
 		MoveDirection = transform.TransformDirection(MoveDirection);

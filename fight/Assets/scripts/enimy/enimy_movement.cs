@@ -17,8 +17,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     //this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
     public enimy_animation_helper enimy_animation_helper_ref;
+    [HideInInspector]
     public Transform target_position;
- 
+    [HideInInspector]
+    public GameObject main_player;
     [HideInInspector]
     public float max_distance;
     [HideInInspector]
@@ -46,7 +48,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 
         enimy_nav_mesh_agent.autoBraking = false;
-        
+        main_player = GameObject.Find("full_player");
+        target_position = main_player.GetComponent<Transform>();
         destpoint = points.Length;
     }
 

@@ -34,7 +34,7 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
     public float X_INPUT;
     public float Y_INPUT;
 
-    public VirtualJoystick joystic_input;
+   
 
 
       
@@ -198,9 +198,6 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
             }
 
         }
-
-        //X_INPUT = joystic_input.InputDirection.x;
-        //Y_INPUT = joystic_input.InputDirection.z;
 
 
     }

@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557738453906304287}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c, type: 3}
   m_Name: 
@@ -1084,6 +1084,7 @@ MonoBehaviour:
   enimy_nav_mesh_agent: {fileID: 6386128192542340340}
   enimy_animation_helper_ref: {fileID: 186708479}
   target_position: {fileID: 0}
+  main_player: {fileID: 0}
   max_distance: 10
   distance: 0
   points:
