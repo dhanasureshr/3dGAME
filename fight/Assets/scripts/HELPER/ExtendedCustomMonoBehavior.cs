@@ -6,12 +6,19 @@ public class ExtendedCustomMonoBehavior : MonoBehaviour
 {
 	// this extended coustom monobehavior is used in all scripts 
 	// those who need the monobehaviour
+	[HideInInspector]
 	public Transform myTransform;
+	[HideInInspector]
 	public GameObject myGo;
+	[HideInInspector]
 	public Rigidbody myBody;
+	[HideInInspector]
 	public bool didInit;
+	[HideInInspector]
 	public bool canControl;
+	[HideInInspector]
 	public int iD;
+	[HideInInspector]
 	public CharacterController charactercontroller;
 
 	[System.NonSerialized]
