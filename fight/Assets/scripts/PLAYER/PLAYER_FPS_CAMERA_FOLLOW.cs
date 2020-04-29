@@ -7,22 +7,30 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	//this is the code about the player fps camera follow
 	[TextArea]
 	public string val = "this script should attatch to the fps camera";
-    #region variables
-    // reference to the player 
-    public Transform player_target;
+	#region variables
+	// reference to the player 
+
+    private Transform player_target;
 	// this are the variable for the touch detecprion
 	private Vector2 fp;
 	private Vector2 lp;
 	private float angle;
 	private float swipeDistanceX;
 	private float swipeDistanceY;
+	[Inject(InjectFrom.Anywhere)]
 	public camera_switch_ui_script camera_switch_ui_script_ref;
+	[Inject(InjectFrom.Anywhere)]
 	public PLAYER_CAMERA_FOLLOW player_camer_follow;
+	[Inject(InjectFrom.Anywhere)]
+	public playermanager main_player;
+
+
 	#endregion
 
 	#region start method
 	void Start()
 	{
+		player_target = main_player.gameObject.GetComponent<Transform>();
 		transform.parent = player_target.transform;
 		transform.position = player_target.position;
 		transform.rotation = player_target.rotation;

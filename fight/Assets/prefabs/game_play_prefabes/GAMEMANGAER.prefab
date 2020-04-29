@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5396495976592766923}
   - component: {fileID: 5396495976592766922}
   - component: {fileID: 5396495976592766916}
+  - component: {fileID: 1982379977474255606}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -118,8 +119,6 @@ MonoBehaviour:
   end_y_tuch: 0
   X_INPUT: 0
   Y_INPUT: 0
-  joystic_input: {fileID: 4932426885845639701, guid: c4a899e27e4df4c4d949f28bea97aaf4,
-    type: 3}
   fp: {x: 0, y: 0, z: 0}
   lp: {x: 0, y: 0, z: 0}
   dragDistance: 0
@@ -162,4 +161,16 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   enimy_is_in_range: 0
-  event_manager_ref: {fileID: 5396495976592766922}
+  event_manager_ref: {fileID: 0}
+--- !u!114 &1982379977474255606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396495976592766926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e460b673b1665e74a9ce3f824eac65b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

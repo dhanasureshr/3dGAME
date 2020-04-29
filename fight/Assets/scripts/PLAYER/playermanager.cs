@@ -10,7 +10,9 @@ public class playermanager : ExtendedCustomMonoBehavior
     /// like player health,etc;
     /// by considering this script as a base for player to provide data to the another moudle like player UI
     /// </summary>
-    public baseusermanager Player_base_user_manager;
+    
+
+    private baseusermanager Player_base_user_manager;
     public int PLAYER_HEALTH;
 
     private void Start()

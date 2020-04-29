@@ -1759,7 +1759,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
-  Player_base_user_manager: {fileID: 6823038411544012919}
   PLAYER_HEALTH: 0
 --- !u!114 &6823038411544012919
 MonoBehaviour:
@@ -1817,22 +1816,14 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
-  touch_input_script: {fileID: 5396495976592766923, guid: 7e75190f27963e843b35410c97311877,
-    type: 3}
-  player_camera_follow_script: {fileID: 1889248934217394412, guid: 7b99832237bda4e419af1c5c41657475,
-    type: 3}
+  player_camera_follow_script: {fileID: 0}
   var: should be attatched to the player
   speed: 3
   MoveDirection: {x: 0, y: 0, z: 0}
   virtual_joystick_access: {fileID: 0}
-  joystck: {fileID: 0}
   h_joy: 0
   y_joy: 0
-  playercharactercontroller: {fileID: 2448653457280816859}
   rotate_speed: 0
-  camera_pos: {fileID: 1889248934217394415, guid: 7b99832237bda4e419af1c5c41657475,
-    type: 3}
-  player_animator: {fileID: 4272947401844893022}
 --- !u!114 &2448653457280816857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2014,6 +2005,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tps_pivot
       objectReference: {fileID: 0}
+    - target: {fileID: 2020533265284625701, guid: 68d123631824bee4895418f4e1f06f14,
+        type: 3}
+      propertyPath: m_TagString
+      value: tps_pivot
+      objectReference: {fileID: 0}
     - target: {fileID: 2020533265284625700, guid: 68d123631824bee4895418f4e1f06f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2087,6 +2083,11 @@ PrefabInstance:
     - target: {fileID: 7807080852499019751, guid: 37bc5bbb8e21b314d8275556a2186603,
         type: 3}
       propertyPath: m_Name
+      value: player_pivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807080852499019751, guid: 37bc5bbb8e21b314d8275556a2186603,
+        type: 3}
+      propertyPath: m_TagString
       value: player_pivot
       objectReference: {fileID: 0}
     - target: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603,
@@ -2314,16 +2315,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tps_camera
       objectReference: {fileID: 0}
-    - target: {fileID: 1889248934217394412, guid: 7b99832237bda4e419af1c5c41657475,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889248934217394412, guid: 7b99832237bda4e419af1c5c41657475,
-        type: 3}
-      propertyPath: look_target
-      value: 
-      objectReference: {fileID: 4272947402165268830}
     - target: {fileID: 1889248934217394415, guid: 7b99832237bda4e419af1c5c41657475,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2379,14 +2370,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1889248934217394413, guid: 7b99832237bda4e419af1c5c41657475,
+    - target: {fileID: 1889248934217394412, guid: 7b99832237bda4e419af1c5c41657475,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1889248934217394413, guid: 7b99832237bda4e419af1c5c41657475,
-        type: 3}
-      propertyPath: player_target
+      propertyPath: look_target
       value: 
       objectReference: {fileID: 4272947402165268830}
     m_RemovedComponents: []
@@ -2482,6 +2468,11 @@ PrefabInstance:
     - target: {fileID: 848655512321161349, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
       propertyPath: m_Name
+      value: fps_pivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 848655512321161349, guid: e581531b7d9278b4f8756eda622b7b4a,
+        type: 3}
+      propertyPath: m_TagString
       value: fps_pivot
       objectReference: {fileID: 0}
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,

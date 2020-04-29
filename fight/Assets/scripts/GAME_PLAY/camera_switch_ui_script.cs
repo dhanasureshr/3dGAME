@@ -7,18 +7,36 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
 {
     // Start is called before the first frame update
 
-    public Toggle Toggles;
+    [Inject(InjectFrom.Anywhere)]
     public PLAYER_CAMERA_FOLLOW Player_camera_follow_script_ref;
-    public Transform fps_camera_pivot;
-    public Transform main_camera;
-    public Transform tps_camera_pivot;
-    private Vector3 fps_pos_ref;
-    public  Vector3 tps_pos_ref =Vector3.forward;
-    public Transform player_target_for_fps;
+    [Inject(InjectFrom.Anywhere)]
     public PLAYER_FPS_CAMERA_FOLLOW Player_fps_camera_script_ref;
+
+    private Toggle Toggles;
+    private Vector3 fps_pos_ref;
+    private Vector3 tps_pos_ref = Vector3.forward;
+    private GameObject first_person_pivot;
+    private GameObject third_person_pivot;
+    private GameObject player_pivot_gameobject_ref;
+    private GameObject main_camera_gameobject_ref;
+
+
+   [HideInInspector] public Transform fps_camera_pivot;
+   [HideInInspector] public Transform main_camera;
+   [HideInInspector] public Transform tps_camera_pivot;
+   [HideInInspector] public Transform player_target_for_fps;
     void Start()
     {
         Toggles = gameObject.GetComponent<Toggle>();
+        first_person_pivot = GameObject.FindWithTag("fps_pivot");
+        third_person_pivot = GameObject.FindWithTag("tps_pivot");
+        player_pivot_gameobject_ref = GameObject.FindWithTag("player_pivot");
+        main_camera_gameobject_ref = GameObject.FindWithTag("MainCamera");
+        fps_camera_pivot = first_person_pivot.gameObject.GetComponent<Transform>();
+        tps_camera_pivot = third_person_pivot.gameObject.GetComponent<Transform>();
+        player_target_for_fps = player_pivot_gameobject_ref.gameObject.GetComponent<Transform>();
+        main_camera = main_camera_gameobject_ref.gameObject.GetComponent<Transform>();
+
         Debug.Log("ui_script_running");
     }
     public void LateUpdate()

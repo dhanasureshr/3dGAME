@@ -5,14 +5,14 @@ using UnityEngine;
 public class gamemanager : ExtendedCustomMonoBehavior,IListener
 {
     #region global variables to INTIMATE OTHER SCRIPTS
-    public bool isinputallowed = false;
-	public bool isgamestarted = false;
-	public bool isgameended = false;
-	public bool isplayerdead = false;
-	public bool isgamestoped = false;
-	public bool isenimydead  = false;
-	public bool Game_paused;
-	private bool is_paused;
+   [HideInInspector] public bool isinputallowed = false;
+   [HideInInspector] public bool isgamestarted = false;
+   [HideInInspector] public bool isgameended = false;
+   [HideInInspector] public bool isplayerdead = false;
+   [HideInInspector] public bool isgamestoped = false;
+   [HideInInspector] public bool isenimydead  = false;
+   [HideInInspector] public bool Game_paused;
+   [HideInInspector] private bool is_paused;
 
 	#endregion
 

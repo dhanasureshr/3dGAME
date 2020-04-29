@@ -27,7 +27,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     #endregion
 
     #region animation variables
-    public Animator player_animator_ref;
+    public  Animator player_animator_ref;
     // these all are one punch1 sets
     private static int cross_ounch = Animator.StringToHash("CROSS_OUNCH");
     private static int right_hook_punch = Animator.StringToHash("RIGHT_HOOK_PUNCH");
@@ -50,6 +50,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         current_combo_timer = default_combo_timer;
         current_combo_state = CombeState.NONE;
+        
     }
 
     private void Update()

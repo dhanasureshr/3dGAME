@@ -21,22 +21,23 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	 * */
     #region variables
     // new ********************************
-    public float rotx = 0.0f;
-    public float roty = 0.0f;
-    public Vector3 origrot;
-    public float rotspeed = 0.2f;
-    public float dir = -1;
-    public float inittouch_x;
-    public float inittouch_y;
-    public float finaltouch_x;
-    public float finaltouch_y;
+   
+   [HideInInspector] public float rotx = 0.0f;
+   [HideInInspector] public float roty = 0.0f;
+   [HideInInspector] public Vector3 origrot;
+   [HideInInspector] public float rotspeed = 0.2f;
+   [HideInInspector] public float dir = -1;
+   [HideInInspector] public float inittouch_x;
+   [HideInInspector] public float inittouch_y;
+   [HideInInspector] public float finaltouch_x;
+   [HideInInspector] public float finaltouch_y;
     //new *************************************
     [HideInInspector]
     public Transform target;
     [HideInInspector]
     public GameObject player_fps_target;
-    public Transform look_target;
-    public int targetframe = 60;
+   // public Transform look_target;
+   [HideInInspector] public int targetframe = 60;
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
@@ -55,17 +56,13 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private float xMaxLimit = 360;
     private Quaternion rotation;
     private Vector3 position;
-    public Vector3 positions;
+    [HideInInspector] public Vector3 positions;
     private float x = 0.0f;
     private float y = 0.0f;
 	// this is the end of the camera collision varables
-	public bool useOffsetValue;
-	public Vector3 offset;
-    [HideInInspector]
-	public VirtualJoystick virtual_joystick_access;
-    [HideInInspector]
-    public GameObject joystck;
-	public Vector3 camjoyrotateinput = Vector3.zero;
+	[HideInInspector] public bool useOffsetValue;
+	[HideInInspector] public Vector3 offset;
+	[HideInInspector] public Vector3 camjoyrotateinput = Vector3.zero;
 	Quaternion targetrotation;
 	public float speed;
     // this is for the movement camera controller variables
@@ -74,13 +71,23 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [HideInInspector]
     public GameObject camera_pivot;
     // this is for the fighting camera movement enabler variable
-    public bool is_player_fighting = false;
-    public camera_switch_ui_script ui_script_ref;
+    [HideInInspector] public bool is_player_fighting = false;
     protected float cameraAngle;
     protected float cameraAnglespeed = 1.0f; // DEFAULT 2.0F
-    public float deltax;
-    public float deltay;
+    [HideInInspector] public float deltax;
+    [HideInInspector] public float deltay;
     #endregion
+
+
+    [Inject(InjectFrom.Anywhere)]
+    public playermanager main_player;
+
+    [Inject(InjectFrom.Anywhere)]
+    public camera_switch_ui_script ui_script_ref;
+
+    [Inject(InjectFrom.Anywhere)]
+    public VirtualJoystick virtual_joystick_access;
+
 
     #region start metheod for initilization
     private void Start()
@@ -93,10 +100,14 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         if (!useOffsetValue)
         {
 
-            camera_pivot = GameObject.Find("full_player");
-            pivot = camera_pivot.GetComponent<Transform>();
-            player_fps_target = GameObject.Find("player_pivot");
+            pivot = main_player.gameObject.GetComponent<Transform>();
+            player_fps_target = GameObject.FindWithTag("player_pivot");
             target = player_fps_target.GetComponent<Transform>();
+
+
+            
+            
+            
             offset = target.position - transform.position;
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
@@ -105,8 +116,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             transform.rotation = pivot.rotation;
             
         }
-        joystck = GameObject.Find("player_joy");
-        virtual_joystick_access = joystck.GetComponent<VirtualJoystick>();
+        
+       
     }
     #endregion
 
@@ -144,7 +155,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                look_target.Rotate(0,horizontal,0);
+              //  look_target.Rotate(0,horizontal,0);
+                pivot.Rotate(0, horizontal, 0);
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
                 Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);

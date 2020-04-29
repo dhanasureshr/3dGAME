@@ -7,10 +7,10 @@ public class TimerClass : ExtendedCustomMonoBehavior
    // this is the timer class
 	[TextArea]
 	public string val = "TIMER CLASS FOR THE WHOLE PROJECT SHOULD BE ATTATCHED TO GAME MANAGER";
-	public bool isTimerRunning = false;
-	public float timeElapsed = 0.0f;
-	public float currentTime = 0.0f;
-	public float lastTime = 0.0f;
+    [HideInInspector] public bool isTimerRunning = false;
+	[HideInInspector] public float timeElapsed = 0.0f;
+	[HideInInspector] public float currentTime = 0.0f;
+	[HideInInspector] public float lastTime = 0.0f;
 	private float timeScaleFactor = 1.1f;
 	private string timeString;
 	private string hour;

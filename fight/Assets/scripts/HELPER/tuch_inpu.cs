@@ -12,27 +12,27 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
 	//public PLAYER_CAMERA_FOLLOW playercamerefollow;
 
     // public functions for accessing the touch input class
-    public bool swipe_up = false;
-    public bool swipe_down = false;
-    public bool swipe_right = false;
-    public bool swipe_left = false;
-    public bool swiping = false;
-	public bool touchbegin = false;
-	public bool touchended = false;
+   [HideInInspector] public bool swipe_up = false;
+   [HideInInspector] public bool swipe_down = false;
+   [HideInInspector] public bool swipe_right = false;
+   [HideInInspector] public bool swipe_left = false;
+   [HideInInspector] public bool swiping = false;
+   [HideInInspector] public bool touchbegin = false;
+   [HideInInspector] public bool touchended = false;
 
 
 	// this is the code to check the touch detect distance
-	public Vector2 deltaPosition;
+	[HideInInspector] public Vector2 deltaPosition;
 
     // this are the variables for the tuch positions 
-    public float bigin_x_tuch;
-    public float bigin_y_tuch;
-    public float end_x_tuch;
-    public float end_y_tuch;
+   [HideInInspector] public float bigin_x_tuch;
+   [HideInInspector] public float bigin_y_tuch;
+   [HideInInspector] public float end_x_tuch;
+   [HideInInspector] public float end_y_tuch;
 
     //this are the variables for joystic input
-    public float X_INPUT;
-    public float Y_INPUT;
+   [HideInInspector] public float X_INPUT;
+   [HideInInspector] public float Y_INPUT;
 
    
 
@@ -40,9 +40,9 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
       
     // this is the class for the checking the touch swipe input
 
-    public Vector3 fp; // first touch position
-    public Vector3 lp; // last touch position
-    public float dragDistance; // the minimum distance of the swipe to be restricted
+   [HideInInspector] public Vector3 fp; // first touch position
+   [HideInInspector] public Vector3 lp; // last touch position
+   [HideInInspector] public float dragDistance; // the minimum distance of the swipe to be restricted
 
 
     #endregion 

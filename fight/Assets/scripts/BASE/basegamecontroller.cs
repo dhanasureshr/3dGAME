@@ -9,7 +9,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	#endregion
 
 	#region Local variabels to provide communication with the scripts
-
+	[Inject(InjectFrom.Anywhere)]
 	public event_manager event_manager_ref;
 
 	#endregion
