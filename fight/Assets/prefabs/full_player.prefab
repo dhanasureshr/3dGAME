@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc73c4c52092e404a8969410ffa6e25b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_animator_ref: {fileID: 4272947401844893022}
+  player_animator_ref: {fileID: 0}
 --- !u!208 &2448653457280816863
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2005,11 +2005,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: tps_pivot
       objectReference: {fileID: 0}
-    - target: {fileID: 2020533265284625701, guid: 68d123631824bee4895418f4e1f06f14,
-        type: 3}
-      propertyPath: m_TagString
-      value: tps_pivot
-      objectReference: {fileID: 0}
     - target: {fileID: 2020533265284625700, guid: 68d123631824bee4895418f4e1f06f14,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2083,11 +2078,6 @@ PrefabInstance:
     - target: {fileID: 7807080852499019751, guid: 37bc5bbb8e21b314d8275556a2186603,
         type: 3}
       propertyPath: m_Name
-      value: player_pivot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7807080852499019751, guid: 37bc5bbb8e21b314d8275556a2186603,
-        type: 3}
-      propertyPath: m_TagString
       value: player_pivot
       objectReference: {fileID: 0}
     - target: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603,
@@ -2370,11 +2360,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1889248934217394412, guid: 7b99832237bda4e419af1c5c41657475,
-        type: 3}
-      propertyPath: look_target
-      value: 
-      objectReference: {fileID: 4272947402165268830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b99832237bda4e419af1c5c41657475, type: 3}
 --- !u!4 &5296603211801000671 stripped
@@ -2468,11 +2453,6 @@ PrefabInstance:
     - target: {fileID: 848655512321161349, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
       propertyPath: m_Name
-      value: fps_pivot
-      objectReference: {fileID: 0}
-    - target: {fileID: 848655512321161349, guid: e581531b7d9278b4f8756eda622b7b4a,
-        type: 3}
-      propertyPath: m_TagString
       value: fps_pivot
       objectReference: {fileID: 0}
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,

@@ -1004,7 +1004,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
-  Enimy_base_user_manager: {fileID: 601712917}
   ENIMY_HEALTH: 0
 --- !u!114 &601712917
 MonoBehaviour:
@@ -1068,7 +1067,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557738453906304287}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c, type: 3}
   m_Name: 

@@ -10,7 +10,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     /// like enimy_healht,etc;
     /// by considering this script as a base for enimy to provide data to remaining modules
     /// </summary>
-    public baseusermanager Enimy_base_user_manager;
+    private baseusermanager Enimy_base_user_manager;
   
    
     public int ENIMY_HEALTH;

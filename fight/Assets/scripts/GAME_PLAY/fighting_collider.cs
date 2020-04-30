@@ -131,9 +131,6 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 
                 enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.GetComponent<enimy_animation_helper>();
                 enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
-                enimy_movement enimy_movement_ref = ENIMY.GetComponent<enimy_movement>();
-                enimy_movement_ref.enabled = false;
-                
                 break;
         }
     }

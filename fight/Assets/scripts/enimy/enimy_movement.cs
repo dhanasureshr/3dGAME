@@ -41,9 +41,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     private void Start()
     {
-        enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-        // enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
-    
+       // enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
+       /// enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
+        //enimy_animation_helper_ref = GetComponent<enimy_animation_helper>(); 
+        
         StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 
@@ -89,7 +90,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
         if (distance <= 1.3)
         {
-            fight_con = Random.Range(0, 2);
+            fight_con = Random.Range(0, 3);
             if (fight_con == 0 || fight_con == 1)
             {
                 fight = true;
