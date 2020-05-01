@@ -15,7 +15,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     [TextArea]
     public string objd = "this should be attatched to the enimy mesh where enimy animator and nav_mesh_agent";
     //this are the variables for the enimy movement
+    
     public NavMeshAgent enimy_nav_mesh_agent;
+    
     public enimy_animation_helper enimy_animation_helper_ref;
     [HideInInspector]
     public Transform target_position;
@@ -25,7 +27,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public float max_distance;
     [HideInInspector]
     public float distance;
-
+    
     public Transform[] points;
     
     private int destpoint = 0;
