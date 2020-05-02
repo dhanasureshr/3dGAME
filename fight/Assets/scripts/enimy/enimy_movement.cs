@@ -29,6 +29,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public float distance;
     
     public Transform[] points;
+    public GameObject[] target_points;
     
     private int destpoint = 0;
     
@@ -44,23 +45,29 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
     private void Start()
-    {
-       // enimy_nav_mesh_agent = GetComponentInParent<NavMeshAgent>();
-       /// enimy_nav_mesh_agent = GetComponent<NavMeshAgent>();
-        //enimy_animation_helper_ref = GetComponent<enimy_animation_helper>(); 
+    {   
         
-        StartCoroutine("start_enimy_movement");
         enimy_nav_mesh_agent.updateRotation = true;
         // this is for the enimy petrol code 
         enimy_nav_mesh_agent.autoBraking = false;
-        main_player = GameObject.Find("full_player");
+        main_player = GameObject.FindWithTag("Player");
         target_position = main_player.GetComponent<Transform>();
+        StartCoroutine("start_enimy_movement");
+        target_points = GameObject.FindGameObjectsWithTag("p1");
+        for(int i = 0;i<target_points.Length;i++)
+        {
+            points[i] = target_points[i].gameObject.GetComponent<Transform>();
+        }
         destpoint = points.Length;
     }
 
   
     private void Update()
     {
+        if (target_position == null)
+        {
+            return;
+        }
         if (distance <= enimy_nav_mesh_agent.stoppingDistance)
         {
             enimy_animation_helper_ref.current_attack_time += Time.deltaTime;

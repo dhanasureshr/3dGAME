@@ -18,8 +18,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public VirtualJoystick virtual_joystick_access;
 	
-	public float h_joy;
-	public float y_joy;
+	[HideInInspector] public float h_joy;
+	[HideInInspector] public float y_joy;
 	[HideInInspector] private CharacterController playercharactercontroller;
 	private float plyer_rot_x;
 	public  float rotate_speed = 5.0f;
