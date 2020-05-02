@@ -105,10 +105,10 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref.SetFloat(y_input, velocity.y);
 
     }
-    void OnAnimatorMove()
-    {
-       transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
-    }
+    //void OnAnimatorMove()
+    //{
+      // transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+    //}
     
 
     #region enimy attack method
@@ -143,10 +143,6 @@ public class enimy_animation_helper : MonoBehaviour
     {
         yield return new WaitForSeconds(stand_up_waiting_timer);
         PLAY_ENIMY_STAND_UP();
-        yield return new WaitForEndOfFrame();
-        enimy_movement_reference.enabled = true;
-        
-
     }
 
     #endregion

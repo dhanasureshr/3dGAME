@@ -27,9 +27,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public GameObject PLAYER;
     public GameObject ENIMY;
     public bool nock_down_the_enimy;
-   // public GameObject hit_Fx;
-
-
+    //public GameObject hit_Fx;                         
     //this is for the game logic events using event manager
     private void Start()
     {
@@ -131,6 +129,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 
                 enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.GetComponent<enimy_animation_helper>();
                 enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
+              
                 break;
         }
     }

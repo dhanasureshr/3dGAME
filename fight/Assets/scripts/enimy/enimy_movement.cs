@@ -40,6 +40,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     private int fight_con = 0;
 
+   
+
 
     private void Start()
     {
@@ -90,22 +92,32 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         {
             petrol = false;
         }
-        if (distance <= 1.3)
-        {
-            fight_con = Random.Range(0, 3);
-            if (fight_con == 0 || fight_con == 1)
+
+        
+        
+            if (distance <= 1.3)
             {
-                fight = true;
-                
+                fight_con = Random.Range(0, 3);
+                if (fight_con == 0 || fight_con == 1)
+                {
+                    fight = true;
+
+                }
+                else
+                {
+                    fight = false;
+
+
+                }
             }
-            else
-            {
-                fight = false;
-              
-                
-            }
-        }
+        
     }
+
+    void OnAnimatorMove()
+    {
+     transform.position = enimy_nav_mesh_agent.nextPosition;
+    }
+
 
     public void common_enimy_movement(bool fig,bool cha,bool pet)
     {
