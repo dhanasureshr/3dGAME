@@ -46,6 +46,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
 
         if(hit.Length > 0)
         {
+            
 
             gameObject.SetActive(false);
            
@@ -70,6 +71,8 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
+                
+               
                // Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
             }
@@ -101,14 +104,16 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     //now reduce the enimy health
                     //Debug.Log("APPLING DAMAGE TO THE ENIMY");
                     //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
-                     baseusermanager enimy_health_reducer = ENIMY.GetComponent<baseusermanager>();
+                     baseusermanager enimy_health_reducer = ENIMY.gameObject.GetComponent<baseusermanager>();
                     if (Random.Range(0, 3) == 1)
                     {
-                        enimy_animation_helper enimy_animation_helper_ref = ENIMY.GetComponent<enimy_animation_helper>();
+                        enimy_animation_helper enimy_animation_helper_ref = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
                         enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
                     }
                      enimy_health_reducer.ReduceHealth((int)Param);
-                   //Debug.Log("enimy_current_health"+enimy_health_reducer.GetHealth());
+
+                    
+                   
                     
                 }
 
@@ -119,17 +124,23 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                     //baseusermanager player_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
                     baseusermanager player_health_reducer = PLAYER.GetComponent<baseusermanager>();
                     player_health_reducer.ReduceHealth((int)Param);
-                   // Debug.Log("player_current_health" + player_health_reducer.GetHealth());
+                  
                     
                 }
                 break;
 
 
             case EVENT_TYPE.NOCK_ENIMY:
-                
-                enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.GetComponent<enimy_animation_helper>();
+
+                enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
                 enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
-              
+                enimy_movement enimy_movement_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_movement>();
+                enimy_movement_ref_for_nock_down.StopCoroutine("start_enimy_movement");
+                enimy_movement_ref_for_nock_down.StopCoroutine("enimy_fighting");
+                Debug.Log(ENIMY.name);
+
+                
+
                 break;
         }
     }

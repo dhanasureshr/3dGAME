@@ -53,6 +53,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         main_player = GameObject.FindWithTag("Player");
         target_position = main_player.GetComponent<Transform>();
         StartCoroutine("start_enimy_movement");
+        StartCoroutine("enimy_fighting");
         target_points = GameObject.FindGameObjectsWithTag("p1");
         for(int i = 0;i<target_points.Length;i++)
         {
@@ -68,16 +69,17 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         {
             return;
         }
-        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
-        {
-            enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
-            if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
-            {
-                enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
-                enimy_animation_helper_ref.current_attack_time = 0.0f;
-            }
 
-        }
+        //if (distance <= enimy_nav_mesh_agent.stoppingDistance)
+        //{
+        //    enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
+        //    if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
+        //    {
+        //        enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
+        //        enimy_animation_helper_ref.current_attack_time = 0.0f;
+        //    }
+
+        //}
 
 
         distance = Vector3.Distance(transform.position, target_position.position);
@@ -102,21 +104,21 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         
         
-            if (distance <= 1.3)
+        if (distance <= 1.3)
+        {
+            fight_con = Random.Range(0, 3);
+            if (fight_con == 0 || fight_con == 1)
             {
-                fight_con = Random.Range(0, 3);
-                if (fight_con == 0 || fight_con == 1)
-                {
-                    fight = true;
-
-                }
-                else
-                {
-                    fight = false;
+                fight = true;
+                    
+        }
+            else
+            {
+                fight = false;
 
 
-                }
             }
+        }
         
     }
 
@@ -166,6 +168,45 @@ public class enimy_movement : ExtendedCustomMonoBehavior
  
         yield return StartCoroutine("start_enimy_movement");
     }
+
+
+    IEnumerator enimy_fighting()
+    {
+        yield return new WaitForEndOfFrame();
+        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
+        {
+            enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
+            if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
+            {
+                enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
+                enimy_animation_helper_ref.current_attack_time = 0.0f;
+            }
+        }
+
+        yield return StartCoroutine("enimy_fighting");
+
+    }
+
+
+
+    #region enimy stand up  code
+    public void STAND_UP_ENIMY_AFTER_TIME()
+    {
+        StartCoroutine("stand_up_enimy");
+    }
+
+    IEnumerator stand_up_enimy()
+    {
+        yield return new WaitForSeconds(9.0f);
+        enimy_animation_helper_ref.PLAY_ENIMY_STAND_UP();
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine("start_enimy_movement");
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine("enimy_fighting");
+    }
+
+    #endregion
+
     #endregion
 
 
