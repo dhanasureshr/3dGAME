@@ -203,6 +203,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         StartCoroutine("start_enimy_movement");
         yield return new WaitForSeconds(1.0f);
         StartCoroutine("enimy_fighting");
+        this.transform.gameObject.layer = 11;
     }
 
     #endregion

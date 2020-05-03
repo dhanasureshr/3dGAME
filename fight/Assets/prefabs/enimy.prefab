@@ -938,14 +938,13 @@ GameObject:
   - component: {fileID: 7557738453906304286}
   - component: {fileID: 6206694327141148716}
   - component: {fileID: 6918017674908570300}
-  - component: {fileID: 601712917}
   - component: {fileID: 6386128192542340340}
   - component: {fileID: 186708477}
   - component: {fileID: 186708476}
   - component: {fileID: 186708479}
   - component: {fileID: 5937239003941021552}
   - component: {fileID: 3761235864422323358}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: enimy
   m_TagString: ENIMY
   m_Icon: {fileID: 0}
@@ -1006,25 +1005,6 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   ENIMY_HEALTH: 0
---- !u!114 &601712917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7557738453906304287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58807392e0e2d1249bbb78b5879ee60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
 --- !u!195 &6386128192542340340
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1141,6 +1121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d6ed25d9ee2f542b0fdb27c79b7aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character_health: 100
+  enimy_movement_ref_for_enimyanimations: {fileID: 0}
+  is_player: 0
 --- !u!1001 &499608437966874385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1158,11 +1141,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5648937248969450721, guid: 5d206705924a794419ac5b7861e67579,
-        type: 3}
-      propertyPath: ENIMY
-      value: 
-      objectReference: {fileID: 7557738453906304287}
     - target: {fileID: 5648937248969450720, guid: 5d206705924a794419ac5b7861e67579,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1298,11 +1276,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574440187082015090, guid: eea8380a501f934438b8dc171276c2e9,
-        type: 3}
-      propertyPath: ENIMY
-      value: 
-      objectReference: {fileID: 7557738453906304287}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eea8380a501f934438b8dc171276c2e9, type: 3}
 --- !u!1 &2909837238981577597 stripped
@@ -1333,11 +1306,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8290779132368131069, guid: eaa430930558bf34fa51bcdf04e6ad2b,
-        type: 3}
-      propertyPath: ENIMY
-      value: 
-      objectReference: {fileID: 7557738453906304287}
     - target: {fileID: 8290779132368131042, guid: eaa430930558bf34fa51bcdf04e6ad2b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1740,22 +1708,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9500000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
 --- !u!1 &7557738453829128244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100068, guid: 7c6330b40539a244f8338c8af16ee33d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7557738453829031632}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7557738453829128242 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100066, guid: 7c6330b40539a244f8338c8af16ee33d,
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
@@ -1771,9 +1728,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7557738453829128664 stripped
+--- !u!1 &7557738453829128242 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100104, guid: 7c6330b40539a244f8338c8af16ee33d,
+  m_CorrespondingSourceObject: {fileID: 100066, guid: 7c6330b40539a244f8338c8af16ee33d,
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
@@ -1837,15 +1794,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7557738453829128204 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100060, guid: 7c6330b40539a244f8338c8af16ee33d,
-    type: 3}
-  m_PrefabInstance: {fileID: 7557738453829031632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7557738453829128294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100022, guid: 7c6330b40539a244f8338c8af16ee33d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7557738453829031632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7557738453829128204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100060, guid: 7c6330b40539a244f8338c8af16ee33d,
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
@@ -1858,6 +1815,12 @@ SkinnedMeshRenderer:
 --- !u!4 &7557738453829160040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400056, guid: 7c6330b40539a244f8338c8af16ee33d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7557738453829031632}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7557738453829128664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100104, guid: 7c6330b40539a244f8338c8af16ee33d,
     type: 3}
   m_PrefabInstance: {fileID: 7557738453829031632}
   m_PrefabAsset: {fileID: 0}
@@ -1883,17 +1846,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: PLAYER
-      value: 
-      objectReference: {fileID: 1925238662605357394, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-    - target: {fileID: 8310741321711787655, guid: c890a2e0893dc7a4ebafa9218c19587b,
-        type: 3}
-      propertyPath: ENIMY
-      value: 
-      objectReference: {fileID: 7557738453906304287}
     - target: {fileID: 8310741321711787654, guid: c890a2e0893dc7a4ebafa9218c19587b,
         type: 3}
       propertyPath: m_LocalPosition.x

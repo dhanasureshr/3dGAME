@@ -10,13 +10,12 @@ public enum EVENT_TYPE
                     {
                             GAME_INIT,
                             GAME_END,
-                            HEALTH_CHANAGE,
                             PLAYER_DEAD,
                             GAME_PAUSED,
                             GAME_RESUMED,
                             GAME_STOPED,
-                            ENIMY_DEAD,
-                            NOCK_ENIMY
+                            ENIMY_DEAD
+                      
 
                     };
 #endregion

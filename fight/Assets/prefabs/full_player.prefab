@@ -1704,7 +1704,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4272947402165268830}
   - component: {fileID: 7803401342356467749}
-  - component: {fileID: 6823038411544012919}
   - component: {fileID: 2448653457280816859}
   - component: {fileID: 2448653457280816856}
   - component: {fileID: 2448653457280816857}
@@ -1753,25 +1752,6 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
   PLAYER_HEALTH: 0
---- !u!114 &6823038411544012919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4272947402165268831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58807392e0e2d1249bbb78b5879ee60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
 --- !u!143 &2448653457280816859
 CharacterController:
   m_ObjectHideFlags: 0
