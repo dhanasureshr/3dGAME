@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fighting_collider : ExtendedCustomMonoBehavior, IListener 
+public class fighting_collider : ExtendedCustomMonoBehavior//, IListener 
 {
 
     /// <summary>
@@ -23,18 +23,21 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
     public float radius = 0.005f;
     public float damage = 2f;
     public bool is_Player, is_Enemy;
-    [HideInInspector]
-    public GameObject PLAYER;
-    public GameObject ENIMY;
     public bool nock_down_the_enimy;
-    //public GameObject hit_Fx;                         
-    //this is for the game logic events using event manager
-    private void Start()
-    {
-        event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE, this);
-        event_manager.Instance.AddListener(EVENT_TYPE.NOCK_ENIMY, this);
-        PLAYER = GameObject.Find("full_player");
-    }
+    //public GameObject hit_Fx;      
+
+
+    //[HideInInspector]
+    //public GameObject PLAYER;
+    //public GameObject ENIMY;
+                      
+    ////this is for the game logic events using event manager
+    //private void Start()
+    //{
+    //    event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE, this);
+    //    event_manager.Instance.AddListener(EVENT_TYPE.NOCK_ENIMY, this);
+    //    PLAYER = GameObject.Find("full_player");
+    //}
 
     private void Update()
     {
@@ -56,34 +59,39 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
                 /// hear we came to know that player is hiting enimy
                 /// now we hava to raise an event to update the enimy health
 
-                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
-                
+                // event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
+
+
+                //raise an event to randomely play hit animation on enimy
+                Vector3 hit_pos = hit[0].transform.position;
+                // Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
                 {
                     Debug.Log("enimy_nock_down");
-                    event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);
+                    // event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);
+
+
+                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, true);
                     
                 }
-               
-                
-           
-
-                //raise an event to randomely play hit animation on enimy
-                Vector3 hit_pos = hit[0].transform.position;
-                
-               
-               // Instantiate(hit_Fx, hit_pos, Quaternion.identity);
-
+                else
+                {
+                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                }
             }
-            else
+            
+            if(is_Enemy)
             {
-                //if above condition is false that means enimy is hutting the player 
-                /// hear we came to know that enimy is hiting the player
-                /// we have to raise an event to update the player health
+                //    //if above condition is false that means enimy is hutting the player 
+                //    /// hear we came to know that enimy is hiting the player
+                //    /// we have to raise an event to update the player health
 
-                // there will be no hit animations on enimy
-                event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
+                //    // there will be no hit animations on enimy
+                //  // event_manager.instance.postnotification(event_type.health_chanage, this, 2);
+
+                hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
 
             }
 
@@ -94,54 +102,54 @@ public class fighting_collider : ExtendedCustomMonoBehavior, IListener
         }
     }
 
-    public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param)
-    {
-        switch(Event_Type)
-        {
-            case EVENT_TYPE.HEALTH_CHANAGE:
-                if(Sender.gameObject.GetComponent<fighting_collider>().is_Player)
-                {
-                    //now reduce the enimy health
-                    //Debug.Log("APPLING DAMAGE TO THE ENIMY");
-                    //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
-                     baseusermanager enimy_health_reducer = ENIMY.gameObject.GetComponent<baseusermanager>();
-                    if (Random.Range(0, 3) == 1)
-                    {
-                        enimy_animation_helper enimy_animation_helper_ref = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
-                        enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
-                    }
-                     enimy_health_reducer.ReduceHealth((int)Param);
+    //public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param)
+    //{
+    //    switch(Event_Type)
+    //    {
+    //        case EVENT_TYPE.HEALTH_CHANAGE:
+    //            if(Sender.gameObject.GetComponent<fighting_collider>().is_Player)
+    //            {
+    //                //now reduce the enimy health
+    //                //Debug.Log("APPLING DAMAGE TO THE ENIMY");
+    //                //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
+    //                 baseusermanager enimy_health_reducer = ENIMY.gameObject.GetComponent<baseusermanager>();
+    //                if (Random.Range(0, 3) == 1)
+    //                {
+    //                    enimy_animation_helper enimy_animation_helper_ref = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
+    //                    enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
+    //                }
+    //                 enimy_health_reducer.ReduceHealth((int)Param);
 
                     
                    
                     
-                }
+    //            }
 
-                if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)
-                {
-                    // now reduce the palyer health
-                    //Debug.Log("APPLING DAMAGE TO THE PLAYER");
-                    //baseusermanager player_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
-                    baseusermanager player_health_reducer = PLAYER.GetComponent<baseusermanager>();
-                    player_health_reducer.ReduceHealth((int)Param);
+    //            if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)
+    //            {
+    //                // now reduce the palyer health
+    //                //Debug.Log("APPLING DAMAGE TO THE PLAYER");
+    //                //baseusermanager player_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
+    //                baseusermanager player_health_reducer = PLAYER.GetComponent<baseusermanager>();
+    //                player_health_reducer.ReduceHealth((int)Param);
                   
                     
-                }
-                break;
+    //            }
+    //            break;
 
 
-            case EVENT_TYPE.NOCK_ENIMY:
+    //        case EVENT_TYPE.NOCK_ENIMY:
 
-                enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
-                enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
-                enimy_movement enimy_movement_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_movement>();
-                enimy_movement_ref_for_nock_down.StopCoroutine("start_enimy_movement");
-                enimy_movement_ref_for_nock_down.StopCoroutine("enimy_fighting");
-                Debug.Log(ENIMY.name);
+    //            enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
+    //            enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
+    //            enimy_movement enimy_movement_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_movement>();
+    //            enimy_movement_ref_for_nock_down.StopCoroutine("start_enimy_movement");
+    //            enimy_movement_ref_for_nock_down.StopCoroutine("enimy_fighting");
+    //            Debug.Log(ENIMY.name);
 
                 
 
-                break;
-        }
-    }
+    //            break;
+    //    }
+    //}
 }
