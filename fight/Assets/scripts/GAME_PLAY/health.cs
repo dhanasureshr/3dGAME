@@ -50,7 +50,6 @@ public class health : MonoBehaviour
                     enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
                     enimy_movement_ref_for_enimyanimations.StopCoroutine("start_enimy_movement");
                     enimy_movement_ref_for_enimyanimations.StopCoroutine("enimy_fighting");
-                    //transform.parent.gameObject.layer = 0;\
                     enimy_movement_ref_for_enimyanimations.transform.gameObject.layer = 0;
 
                 }

@@ -23,15 +23,16 @@ public class enimy_animation_helper : MonoBehaviour
     private static int enimy_stand_up = Animator.StringToHash("stand_up");
     private static int x_input = Animator.StringToHash("x");
     private static int y_input = Animator.StringToHash("y");
-   
+
+
+    
+
     private void Start()
     {
         enimy_movement_reference = GetComponent<enimy_movement>();
         enimy_animator_ref = GetComponent<Animator>();
         enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
         enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
-       
-       
     }
 
     #region enimy_fighting_functions
@@ -102,10 +103,10 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref.SetFloat(y_input, velocity.y);
 
     }
-    //void OnAnimatorMove()
-    //{
-      // transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
-    //}
+    void OnAnimatorMove()
+    {
+       transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+    }
     
 
     #region enimy attack method

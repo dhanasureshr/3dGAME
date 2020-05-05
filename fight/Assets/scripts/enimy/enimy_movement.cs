@@ -15,9 +15,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     [TextArea]
     public string objd = "this should be attatched to the enimy mesh where enimy animator and nav_mesh_agent";
     //this are the variables for the enimy movement
-    
     public NavMeshAgent enimy_nav_mesh_agent;
-    
     public enimy_animation_helper enimy_animation_helper_ref;
     [HideInInspector]
     public Transform target_position;
@@ -27,27 +25,19 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public float max_distance;
     [HideInInspector]
     public float distance;
-    
     public Transform[] points;
     public GameObject[] target_points;
-    
     private int destpoint = 0;
-    
     public bool fight = false;
- 
     public bool petrol = false;
-   
     public bool chase = false;
-
     private int fight_con = 0;
 
-   
-
-
+    
     private void Start()
     {   
-        
         enimy_nav_mesh_agent.updateRotation = true;
+      
         // this is for the enimy petrol code 
         enimy_nav_mesh_agent.autoBraking = false;
         main_player = GameObject.FindWithTag("Player");
@@ -70,20 +60,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             return;
         }
 
-        //if (distance <= enimy_nav_mesh_agent.stoppingDistance)
-        //{
-        //    enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
-        //    if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
-        //    {
-        //        enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
-        //        enimy_animation_helper_ref.current_attack_time = 0.0f;
-        //    }
-
-        //}
-
-
         distance = Vector3.Distance(transform.position, target_position.position);
-        //Debug.Log(distance);
         if(distance > 10)
         {
             chase = true;
@@ -102,8 +79,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             petrol = false;
         }
 
-        
-        
         if (distance <= 1.3)
         {
             fight_con = Random.Range(0, 3);
@@ -122,12 +97,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         
     }
 
-    void OnAnimatorMove()
-    {
-     transform.position = enimy_nav_mesh_agent.nextPosition;
-    }
-
-
+    #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
     public void common_enimy_movement(bool fig,bool cha,bool pet)
     {
        
@@ -157,6 +127,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             enimy_nav_mesh_agent.SetDestination(points[Random.Range(0, destpoint)].position);
         }
     }
+
+    #endregion
+
     #region enimy_Ienumerator_methods
     IEnumerator start_enimy_movement()
     {

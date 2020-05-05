@@ -901,7 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4272947401520543064}
   - component: {fileID: 4272947401520543071}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: RIGHT__LEG_HIT_COLLIDER
   m_TagString: UN_TAG
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -1751,7 +1751,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
-  PLAYER_HEALTH: 0
 --- !u!143 &2448653457280816859
 CharacterController:
   m_ObjectHideFlags: 0
