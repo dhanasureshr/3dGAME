@@ -1092,7 +1092,6 @@ MonoBehaviour:
   enimy_rendrer: {fileID: 7557738453817564528}
   default_attack_time: 1
   current_attack_time: 0
-  ts: {fileID: 11400000, guid: 4813a3a9a19667042a3be8fe30415224, type: 2}
 --- !u!114 &5937239003941021552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,6 +1406,14 @@ PrefabInstance:
     - target: {fileID: 100120, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Materials.Array.data[0]

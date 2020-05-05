@@ -9,10 +9,16 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
     public GameObject LEFT_HAND_COLLIDER;
     public GameObject RIGHT_LEG_COLLIDER;
     public GameObject LEFT_LEG_COLLIDER;
-    
 
+    private void Start()
+    {
+        RIGHT_LEG_COLLIDER = transform.Find("RIGHT__LEG_HIT_COLLIDER").gameObject;
+        LEFT_LEG_COLLIDER = transform.Find("LEFT__LEG_HIT_COLLIDER").gameObject;
+        RIGHT_HAND_COLLIDER = transform.Find("RIGHT__HAND_HIT_COLLIDER").gameObject;
+        LEFT_HAND_COLLIDER = transform.Find("LEFT__HAND_HIT_COLLIDER").gameObject;
+    }
     // right hand 
-     void RIGHT_HAND_ENABLER()
+    void RIGHT_HAND_ENABLER()
     {
         RIGHT_HAND_COLLIDER.SetActive(true);
     }
