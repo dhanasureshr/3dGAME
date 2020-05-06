@@ -24,7 +24,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     public float damage = 2f;
     public bool is_Player, is_Enemy;
     public bool nock_down_the_enimy;
-    //public GameObject hit_Fx;      
+    public GameObject hit_Fx;      
 
 
     //[HideInInspector]
@@ -64,7 +64,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
-                // Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+                Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))

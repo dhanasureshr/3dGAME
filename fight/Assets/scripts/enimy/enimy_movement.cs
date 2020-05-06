@@ -97,6 +97,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         
     }
 
+
+
     #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
     public void common_enimy_movement(bool fig,bool cha,bool pet)
     {
@@ -182,6 +184,15 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #endregion
 
     #endregion
+
+    public void stopenimyMovement()
+    {
+
+        enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
+        StopCoroutine("start_enimy_movement");
+        StopCoroutine("enimy_fighting");
+        transform.gameObject.layer = 0;
+    }
 
 
 }
