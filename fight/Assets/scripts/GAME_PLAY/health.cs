@@ -51,13 +51,7 @@ public class health : MonoBehaviour
             {
                 if(Random.Range(0,3)>1)
                 {
-                    //playnockdown
-
-                    //enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
-                    //enimy_movement_ref_for_enimyanimations.StopCoroutine("start_enimy_movement");
-                    //enimy_movement_ref_for_enimyanimations.StopCoroutine("enimy_fighting");
-                    //enimy_movement_ref_for_enimyanimations.transform.gameObject.layer = 0;
-
+                    //playnockdon
                     enimy_movement_ref_for_enimyanimations.stopenimyMovement();
                 }
             }else
