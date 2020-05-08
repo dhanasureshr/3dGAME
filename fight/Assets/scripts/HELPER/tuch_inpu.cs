@@ -19,7 +19,7 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
    [HideInInspector] public bool swiping = false;
    [HideInInspector] public bool touchbegin = false;
    [HideInInspector] public bool touchended = false;
-
+   [HideInInspector] public float swiping_value = 0.0f;
 
 	// this is the code to check the touch detect distance
 	[HideInInspector] public Vector2 deltaPosition;
@@ -103,29 +103,28 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
 
 
 
-				//playercamerefollow.rotspeed = 0.5f;
 
                 
 
+                if (Input.touchCount == 1)
+                {
+                    Touch toucho = Input.GetTouch(0);
+                    if (toucho.phase == TouchPhase.Moved)
+                    {
+                        //  player_target.Rotate(0.0f, toucho.deltaPosition.x, 0.0f);
+                        swiping_value =  toucho.deltaPosition.x;
+                    }
+
+                }
 
 
-				lp = touch.position;
+                lp = touch.position;
                 swiping = true;
             }
             else if(touch.phase == TouchPhase.Ended)//user has removed his finger from the screen
             {
-               // swipe_up = false;
-                //swipe_down = false;
-               // swipe_right = false;
-               // swipe_left = false;
-
-
+               
 				touchended = true;
-
-
-				//playercamerefollow.rotspeed = 0.0f;
-                
-
 				swiping = false;
                
 
@@ -202,4 +201,7 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
 
     }
     #endregion
+
+
+    
 }

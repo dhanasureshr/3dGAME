@@ -36,8 +36,6 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
         tps_camera_pivot = third_person_pivot.gameObject.GetComponent<Transform>();
         player_target_for_fps = player_pivot_gameobject_ref.gameObject.GetComponent<Transform>();
         main_camera = main_camera_gameobject_ref.gameObject.GetComponent<Transform>();
-
-        Debug.Log("ui_script_running");
     }
     public void LateUpdate()
     {

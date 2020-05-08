@@ -24,6 +24,10 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public playermanager main_player;
 
+	//[Inject(InjectFrom.Anywhere)]
+	//public tuch_inpu touch_input;
+
+
 
 	#endregion
 
@@ -38,52 +42,79 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	}
 	#endregion
 	// this is the late update for the player fps move
+
+	public void Update()
+	{
+
+		if (Input.touchCount == 1)
+		{
+			Touch toucho = Input.GetTouch(0);
+			if (toucho.phase == TouchPhase.Moved)
+			{
+				player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+			}
+		}
+
+		
+	}
+
 	#region LateUpdate
 	void LateUpdate()
 	{
 		transform.parent = player_target.transform;
 		transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
 		transform.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation;
+		/*
 		foreach (Touch touch in Input.touches)
 		{
-			if(touch.phase == TouchPhase.Began)
+			if (touch.phase == TouchPhase.Began)
 			{
-				fp  = touch.position;
+				fp = touch.position;
 				lp = touch.position;
 
 			}
-			if(touch.phase == TouchPhase.Moved)
+			if (touch.phase == TouchPhase.Moved)
 			{
 				lp = touch.position;
 				swipeDistanceX = Mathf.Abs((lp.x - fp.x));
 				swipeDistanceY = Mathf.Abs((lp.y - fp.y));
 
 			}
-			
-			if(touch.phase == TouchPhase.Ended)
+
+			if (touch.phase == TouchPhase.Ended)
 			{
-				angle = Mathf.Atan2((lp.x - fp.x),(lp.y - fp.y)) * 57.2957795f;
-				if(angle > 60 && angle < 120 && swipeDistanceX > 40)
+				angle = Mathf.Atan2((lp.x - fp.x), (lp.y - fp.y)) * 57.2957795f;
+				if (angle > 60 && angle < 120 && swipeDistanceX > 40)
 				{
-					player_target.Rotate(0.0f,25,0.0f);
+					player_target.Rotate(0.0f, 25, 0.0f);
 				}
-				if(angle > 150 || angle < - 150 && swipeDistanceY > 40)
+				if (angle > 150 || angle < -150 && swipeDistanceY > 40)
 				{
-					
+
 				}
-				if(angle < -60  && angle > -120 && swipeDistanceX > 40)
+				if (angle < -60 && angle > -120 && swipeDistanceX > 40)
 				{
-					player_target.Rotate(0.0f,-25.0f,0.0f);
+					player_target.Rotate(0.0f, -25.0f, 0.0f);
 				}
-				if(angle > -30 && angle < 30 && swipeDistanceY > 40)
+				if (angle > -30 && angle < 30 && swipeDistanceY > 40)
 				{
-					
+
 				}
 			}
-			
-			
+
+		
 
 		}
+		*/
+
+		//if (Input.touchCount == 1)
+		//{
+		//	Touch toucho = Input.GetTouch(0);
+		//	if (toucho.phase == TouchPhase.Moved)
+		//	{
+		//		player_target.Rotate(0.0f, toucho.deltaPosition.x, 0.0f);
+		//	}
+		//}
 	}
 
     #endregion
@@ -104,5 +135,5 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #endregion
 
 
-
 }
+

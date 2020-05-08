@@ -103,11 +103,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             pivot = main_player.gameObject.GetComponent<Transform>();
             player_fps_target = GameObject.FindWithTag("player_pivot");
             target = player_fps_target.GetComponent<Transform>();
-
-
-            
-            
-            
             offset = target.position - transform.position;
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
@@ -132,6 +127,22 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     }
     #endregion
 
+    public void Update()
+    {
+        if (virtual_joystick_access.isfingeronjoystick)
+        {
+            if (Input.touchCount == 1)
+            {
+                Touch toucho = Input.GetTouch(0);
+                if (toucho.phase == TouchPhase.Moved)
+                {
+                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value *(speed) * Time.deltaTime, 0.0f);
+
+                }
+            }
+        }
+    }
+
     #region LateUpdate
     private void LateUpdate()
     {
@@ -155,7 +166,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
-              //  look_target.Rotate(0,horizontal,0);
+                //look_target.Rotate(0,horizontal,0);
                 pivot.Rotate(0, horizontal, 0);
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
@@ -170,7 +181,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
                     {
-                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *2f);
+                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *10f);
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);
                     positions = rotation * distanceVector + target.position;
