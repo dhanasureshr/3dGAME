@@ -64,7 +64,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
-                Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+                //Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
                 if (gameObject.CompareTag(tags.player_left_hand_tag)||
                     gameObject.CompareTag(tags.player_right_leg_tag))
@@ -74,11 +74,16 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
 
                     hit[0].GetComponentInParent<health>().ApplyDamage(damage, true);
-                    
+                    Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+
                 }
                 else
                 {
-                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                    if (Random.Range(0, 9) > 1)
+                    {
+                        hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                        Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+                    }
                 }
             }
             
@@ -91,7 +96,8 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 //    // there will be no hit animations on enimy
                 //  // event_manager.instance.postnotification(event_type.health_chanage, this, 2);
 
-                hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                if(Random.Range(0,9)>7)
+                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
 
             }
 

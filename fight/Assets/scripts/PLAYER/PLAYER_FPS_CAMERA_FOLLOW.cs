@@ -45,7 +45,9 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 	public void Update()
 	{
-
+		///featur plan
+		///hear before rotating the player we should check whether the is fingeron joystick    
+		/// if the finger on joystick then we should not run the below code;
 		if (Input.touchCount == 1)
 		{
 			Touch toucho = Input.GetTouch(0);

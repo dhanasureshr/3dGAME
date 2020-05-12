@@ -13,19 +13,33 @@ public class playermanager : ExtendedCustomMonoBehavior
     /// </summary>
 
     private health player_health_script_ref;
-    public Image health_bar_imager_ref;
+    private Image player_health_bar_image_ref;
+    private Image player_strength_bar_image_ref;
+
+    private void Awake()
+    {
+        player_health_bar_image_ref = GameObject.FindWithTag(tags.player_health_ui_tag).GetComponent<Image>();
+        player_strength_bar_image_ref = GameObject.FindWithTag(tags.Player_strength_ui_tag).GetComponent<Image>();
+    }
 
     private void Start()
     {
         player_health_script_ref = GetComponent<health>();
-        
+
     }
 
-    public void Update()
+
+   public void Display_player_health(float health_value)
     {
-        
-    }
+        health_value /= 100.0f;
 
+        if(health_value < 0.0f)
+        {
+            health_value = 0.0f;
+        }
+
+        player_health_bar_image_ref.fillAmount = health_value;
+    }
 
 
 }

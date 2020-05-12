@@ -6,7 +6,8 @@ public class health : MonoBehaviour
 {
 
     public float character_health = 100.0f;
-
+    private playermanager player_manager_ref;
+    private enimy_manager enimy_manager_ref;
    // [Inject(InjectFrom.Anywhere)]
     public enimy_movement enimy_movement_ref_for_enimyanimations;
     private bool characted_died;
@@ -15,6 +16,14 @@ public class health : MonoBehaviour
     public void Start()
     {
         enimy_movement_ref_for_enimyanimations = GetComponentInParent<enimy_movement>();
+        if(is_player)
+        {
+            player_manager_ref = GetComponent<playermanager>();
+        }
+        else
+        {
+            enimy_manager_ref = GetComponent<enimy_manager>();
+        }
     }
     public void ApplyDamage(float damage,bool KnockDown)
     {
@@ -29,8 +38,13 @@ public class health : MonoBehaviour
             return;
         }
 
-        character_health -= damage;
 
+        
+       character_health -= damage;
+
+        //player health ui displayer code
+        if(is_player)
+            player_manager_ref.Display_player_health(character_health);
         
         if (character_health <= 0.0f)
         {
@@ -56,11 +70,11 @@ public class health : MonoBehaviour
                 }
             }else
             {
-                if(Random.Range(0,3)>1)
-                {
+               // if(Random.Range(0,3)>1)
+               // {
                     //play hit
                     enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
-                }
+               // }
             }
         }
     }
