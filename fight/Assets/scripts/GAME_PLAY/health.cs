@@ -8,8 +8,10 @@ using UnityEngine;
 ///  
 /// 
 /// </summary>
-public class health : ExtendedCustomMonoBehavior
+public class health : ExtendedCustomMonoBehavior,IListener
 {
+    [Inject(InjectFrom.Anywhere)]
+    public basegamecontroller base_game_controller_to_intimate_game_state;
 
     public float character_health = 100.0f;
     private playermanager player_manager_ref;
@@ -18,7 +20,7 @@ public class health : ExtendedCustomMonoBehavior
     public enimy_movement enimy_movement_ref_for_enimyanimations;
     private bool characted_died;
     public bool is_player;
-
+    
     public void Start()
     {
         enimy_movement_ref_for_enimyanimations = GetComponentInParent<enimy_movement>();
@@ -26,6 +28,7 @@ public class health : ExtendedCustomMonoBehavior
         {
             player_manager_ref = GetComponent<playermanager>();
             baseusemanager_for_common_calculation = gameObject.GetComponentInParent<baseusermanager>();
+            event_manager.Instance.AddListener(EVENT_TYPE.PLAYER_DEAD, this);
 
         }
         else
@@ -64,7 +67,7 @@ public class health : ExtendedCustomMonoBehavior
             if(is_player)
             {
                 // deactivate the enimy movement scripts
-                Debug.Log("playr_died");
+                event_manager.Instance.PostNotification(EVENT_TYPE.PLAYER_DEAD, this);
             }
             return;
 
@@ -81,12 +84,20 @@ public class health : ExtendedCustomMonoBehavior
                 }
             }else
             {
-               // if(Random.Range(0,3)>1)
-               // {
-                    //play hit
+               
                     enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
-               // }
+               
             }
+        }
+    }
+
+    public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param = null)
+    {
+        switch(Event_Type)
+        {
+            case EVENT_TYPE.PLAYER_DEAD:
+                base_game_controller_to_intimate_game_state.PlayerLostLife_Handler_Method();
+                break;
         }
     }
 }

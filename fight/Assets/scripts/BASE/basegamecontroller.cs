@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 public class basegamecontroller : ExtendedCustomMonoBehavior
 {
-
-	#region global variables to INTIMATE OTHER SCRIPTS
-	public bool enimy_is_in_range;
-	#endregion
-
 	#region Local variabels to provide communication with the scripts
 	[Inject(InjectFrom.Anywhere)]
 	public event_manager event_manager_ref;
 
 	#endregion
 
+	
 
 	#region MAIN GAME HANDLING METHODS
 	public virtual void PlayerLostLife_Handler_Method()
 	{
 		// this deals about the player death and updating the ui
+		Debug.Log("player_lost_life___---from the basegamecontroller");
+		
 	}
 
 	public virtual void SpawnPlayer_Handler_Method()
