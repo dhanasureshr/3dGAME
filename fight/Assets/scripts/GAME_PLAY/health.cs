@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class health : MonoBehaviour
+/// <summary>
+///  this is the common health scirpt for both player and enimys
+///  the script is logically divided for both of them at run time
+///  
+/// 
+/// </summary>
+public class health : ExtendedCustomMonoBehavior
 {
 
     public float character_health = 100.0f;
     private playermanager player_manager_ref;
-    private enimy_manager enimy_manager_ref;
-   // [Inject(InjectFrom.Anywhere)]
+   // private enimy_manager enimy_manager_ref;
+    public baseusermanager baseusemanager_for_common_calculation;
     public enimy_movement enimy_movement_ref_for_enimyanimations;
     private bool characted_died;
     public bool is_player;
@@ -19,10 +25,14 @@ public class health : MonoBehaviour
         if(is_player)
         {
             player_manager_ref = GetComponent<playermanager>();
+            baseusemanager_for_common_calculation = gameObject.GetComponentInParent<baseusermanager>();
+
         }
         else
         {
-            enimy_manager_ref = GetComponent<enimy_manager>();
+            //enimy_manager_ref = GetComponent<enimy_manager>();
+            baseusemanager_for_common_calculation = gameObject.GetComponent<baseusermanager>();
+
         }
     }
     public void ApplyDamage(float damage,bool KnockDown)
@@ -38,9 +48,9 @@ public class health : MonoBehaviour
             return;
         }
 
+        baseusemanager_for_common_calculation.ReduceHealth(damage);
 
-        
-       character_health -= damage;
+        character_health = baseusemanager_for_common_calculation.GetHealth();
 
         //player health ui displayer code
         if(is_player)
@@ -54,6 +64,7 @@ public class health : MonoBehaviour
             if(is_player)
             {
                 // deactivate the enimy movement scripts
+                Debug.Log("playr_died");
             }
             return;
 

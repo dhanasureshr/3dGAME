@@ -1713,6 +1713,7 @@ GameObject:
   - component: {fileID: 2448653457280816857}
   - component: {fileID: 2448653457280816863}
   - component: {fileID: 4902920344203190771}
+  - component: {fileID: 1606148767}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -1842,8 +1843,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character_health: 100
+  baseusemanager_for_common_calculation: {fileID: 0}
   enimy_movement_ref_for_enimyanimations: {fileID: 0}
   is_player: 1
+--- !u!114 &1606148767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272947402165268831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58807392e0e2d1249bbb78b5879ee60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
 --- !u!1 &4272947402227349028
 GameObject:
   m_ObjectHideFlags: 0

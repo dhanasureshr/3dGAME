@@ -8,7 +8,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
     private int score;
 	private int highscore;
 	private  int level;
-	private int health = 100;
+	private float health = 100;
 	private bool isfinished;
 
     #endregion
@@ -60,22 +60,22 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		score = num;
 	}
 
-	public int GetHealth()
+	public float GetHealth()
 	{
 		return health;
 	}
 
-	public void AddHealth(int num)
+	public void AddHealth(float num)
 	{
 		health += num;
 	}
 
-	public void ReduceHealth(int num)
+	public void ReduceHealth(float num)
 	{
 		health -= num;
 	}
 
-	public void SetHealth(int num)
+	public void SetHealth(float num)
 	{
 		health += num;
 	}
