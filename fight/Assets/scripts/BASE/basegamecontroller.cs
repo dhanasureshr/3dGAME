@@ -7,6 +7,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public event_manager event_manager_ref;
 
+	public GameObject GAME_LOST_PANAL;
+	
 	#endregion
 
 	
@@ -16,6 +18,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		// this deals about the player death and updating the ui
 		Debug.Log("player_lost_life___---from the basegamecontroller");
+
+		GAME_LOST_PANAL.SetActive(true);
 		
 	}
 

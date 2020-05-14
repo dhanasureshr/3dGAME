@@ -8,7 +8,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
     private int score;
 	private int highscore;
 	private  int level;
-	private float health = 100;
+	public float health = 100;
 	private bool isfinished;
 
     #endregion

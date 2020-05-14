@@ -13,7 +13,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_intimate_game_state;
 
-    public float character_health = 100.0f;
+    public float character_health =0.0f;
     private playermanager player_manager_ref;
    // private enimy_manager enimy_manager_ref;
     public baseusermanager baseusemanager_for_common_calculation;
