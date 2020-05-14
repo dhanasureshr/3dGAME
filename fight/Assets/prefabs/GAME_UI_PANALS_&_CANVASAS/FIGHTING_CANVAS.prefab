@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2565351503252060522}
   - component: {fileID: 2565351503252060523}
   - component: {fileID: 2565351503252060521}
-  - component: {fileID: 2565351503252060520}
+  - component: {fileID: 2485686454866365335}
   m_Layer: 5
   m_Name: PUNCH1
   m_TagString: Untagged
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2565351503252060520}
+      - m_Target: {fileID: 2485686454866365335}
         m_MethodName: OnPunchButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -129,7 +129,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2565351503252060520
+--- !u!114 &2485686454866365335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b7eb8d457635d47bae06752a1228b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_animation_helper_for_uI_controllers: {fileID: 0}
+  t: {fileID: 0}
 --- !u!1 &2565351504412720995
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 2565351504412720992}
   - component: {fileID: 2565351504412720993}
   - component: {fileID: 2565351504412720999}
-  - component: {fileID: 2565351504412720998}
+  - component: {fileID: 2862963272362997249}
   m_Layer: 5
   m_Name: KICK
   m_TagString: Untagged
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2565351504412720998}
+      - m_Target: {fileID: 2862963272362997249}
         m_MethodName: OnKickButtonPressed
         m_Mode: 1
         m_Arguments:
@@ -271,7 +271,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2565351504412720998
+--- !u!114 &2862963272362997249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b7eb8d457635d47bae06752a1228b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_animation_helper_for_uI_controllers: {fileID: 0}
+  t: {fileID: 0}
 --- !u!1 &2565351504451875676
 GameObject:
   m_ObjectHideFlags: 0

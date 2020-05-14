@@ -8,6 +8,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	public event_manager event_manager_ref;
 
 	public GameObject GAME_LOST_PANAL;
+
+	public GameObject GAME_RESUME_PANAL;
 	
 	#endregion
 
@@ -60,12 +62,13 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public virtual void GamePaused_Handler_Method()
 	{
-		//
+		GAME_RESUME_PANAL.SetActive(true);
 	}
 
 	public virtual void GameResumed_Handler_Method()
 	{
 		// this delas about game controlls when the game is resumed
+		GAME_RESUME_PANAL.SetActive(false);
 	}
 
     #endregion

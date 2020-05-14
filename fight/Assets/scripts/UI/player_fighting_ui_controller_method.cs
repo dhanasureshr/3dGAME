@@ -5,18 +5,24 @@ using UnityEngine;
 public class player_fighting_ui_controller_method : MonoBehaviour
 {
     // Start is called before the first frame update
-    [Inject(InjectFrom.Anywhere)]
-    public PLAYER_ANIMATION_HELPER player_animation_helper_for_uI_controllers;
+    //[Inject(InjectFrom.Anywhere)]
+    //public PLAYER_ANIMATION_HELPER player_animation_helper_for_uI_controllers;
 
+    public main_ui_component_provider t;
     #region fingting_animation_botton_ui_controll_methods
+
+    private void Start()
+    {
+        t = gameObject.GetComponentInParent<main_ui_component_provider>();
+    }
     public void OnPunchButtonPressed()
     {
-        player_animation_helper_for_uI_controllers.PUNCH1_BUTTON_PRESSED();
+        t.player_animation_helper_for_uI_controllers.PUNCH1_BUTTON_PRESSED();
     }
 
     public void OnKickButtonPressed()
     {
-        player_animation_helper_for_uI_controllers.KICK_BUTTON_PRESSED();
+        t.player_animation_helper_for_uI_controllers.KICK_BUTTON_PRESSED();
     }
     #endregion
 }
