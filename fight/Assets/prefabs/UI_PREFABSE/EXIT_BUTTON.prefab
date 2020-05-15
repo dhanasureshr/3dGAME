@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 2782047126830971813}
   - component: {fileID: 2782047126830971814}
   - component: {fileID: 2782047126830971815}
+  - component: {fileID: 8778079119650008740}
   m_Layer: 5
   m_Name: EXIT_BUTTON
   m_TagString: Untagged
@@ -195,7 +196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8778079119650008740}
         m_MethodName: GAME_EXIT_BUTTON_PRESSED
         m_Mode: 1
         m_Arguments:
@@ -208,3 +209,23 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8778079119650008740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2782047126830971817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75fe16035e2cb64aa3b681725f0934f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  t: {fileID: 0}
