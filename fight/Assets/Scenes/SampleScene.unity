@@ -202,6 +202,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   health: 100
+  applible_damage: 0
 --- !u!224 &173639310 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8594794172053587230, guid: 103632e28f1b63447aca832e760e6c64,
@@ -1689,6 +1690,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GAME_RESUME_PANAL
       objectReference: {fileID: 0}
+    - target: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2234647747849578005, guid: 3c6edd4814c216741a43cf622de3d646,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2049,6 +2055,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GAME_LOST_PANAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5764820159033256441, guid: 7fa1617bc63f5e748a80874a6847ceec,
         type: 3}

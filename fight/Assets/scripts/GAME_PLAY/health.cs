@@ -67,6 +67,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             if(is_player)
             {
                 // deactivate the enimy movement scripts
+
                 event_manager.Instance.PostNotification(EVENT_TYPE.PLAYER_DEAD, this);
             }
             return;

@@ -8,14 +8,42 @@ public class baseusermanager : ExtendedCustomMonoBehavior
     private int score;
 	private int highscore;
 	private  int level;
-	public float health = 100;
 	private bool isfinished;
+	public float health = 100;
+	public float applible_damage = 0.0f;
+	#endregion
 
-    #endregion
+	#region IMPORTANT GAME LOGIC METHODS
+	// hear i am initilizing the default values
+	private health current_character_health_script_ref;
 
-    #region IMPORTANT GAME LOGIC METHODS
-    // hear i am initilizing the default values
-    public virtual void GetDefaultData()
+	private void Start()
+	{
+		current_character_health_script_ref = gameObject.GetComponent<health>();
+	}
+
+
+	public void apply_damage_on_enimy_with_nock_down()
+	{
+		current_character_health_script_ref.ApplyDamage(applible_damage,true);
+	}
+
+	public void apply_damage_on_enimy_with_gethit()
+	{
+		current_character_health_script_ref.ApplyDamage(applible_damage, false);
+	}
+
+	public void apply_damage_on_player()
+	{
+		current_character_health_script_ref.ApplyDamage(applible_damage, false);
+	}
+
+
+
+
+
+
+	public virtual void GetDefaultData()
 	{
 		score = 0;
 		level  = 1;

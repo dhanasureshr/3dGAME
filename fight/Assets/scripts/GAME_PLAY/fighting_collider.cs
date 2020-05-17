@@ -21,7 +21,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     
     public LayerMask collisionLayer;
     public float radius = 0.005f;
-    public float damage = 2f;
+   ///////////////////////////////// public float damage = 2f;
     public bool is_Player, is_Enemy;
     public bool nock_down_the_enimy;
     public GameObject hit_Fx;      
@@ -71,17 +71,18 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 {
                     Debug.Log("enimy_nock_down");
                     // event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);
-
-
-                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, true);
+                    ////////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, true);
+                    
+                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down();
                     Instantiate(hit_Fx, hit_pos, Quaternion.identity);
-
                 }
                 else
                 {
                     if (Random.Range(0, 9) > 1)
                     {
-                        hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                        ///////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+
+                        hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit();
                         Instantiate(hit_Fx, hit_pos, Quaternion.identity);
                     }
                 }
@@ -96,9 +97,12 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 //    // there will be no hit animations on enimy
                 //  // event_manager.instance.postnotification(event_type.health_chanage, this, 2);
 
-                if(Random.Range(0,9)>7)
-                    hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
+                if (Random.Range(0, 3) > 0)
+                {
+                    ///////////////////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
 
+                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_player();
+                }
             }
 
            
