@@ -39,7 +39,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
     private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
-		player_animator = GetComponentInChildren<Animator>();
+		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
+
+		player_animator = GetComponent<Animator>();
+
+
 		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();
 	}
     #endregion

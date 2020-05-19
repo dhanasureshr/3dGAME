@@ -53,7 +53,8 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         current_combo_timer = default_combo_timer;
         current_combo_state = CombeState.NONE;
-        player_animator_ref = GetComponentInChildren<Animator>();
+        //player_animator_ref = GetComponentInChildren<Animator>();
+        player_animator_ref = GetComponent<Animator>();
 
         
     }
