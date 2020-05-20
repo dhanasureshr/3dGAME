@@ -25,12 +25,24 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public float max_distance;
     [HideInInspector]
     public float distance;
-    public Transform[] points;
-    public GameObject[] target_points;
-    private int destpoint = 0;
+
+    public Transform[] fightpoints;
+    public GameObject[] target_fight_points;
+    private int destfightpoint = 0;
+
+    public Transform[] scenepoints; // ////////////////////////////////////////////////
+    public GameObject[] target_scene_points;// ////////////////////////////////////////
+    private int destscenepoint = 0;// ////////////////////////////////////////////////
+
+
     public bool fight = false;
-    public bool petrol = false;
+    public bool fightpetrol = false;
     public bool chase = false;
+    public bool sceenpetrol = false; // ///////////////////////////////////////////////////
+
+    private int scenepointcount = 0;
+    private float scenepointdistance;
+
     private int fight_con = 0;
 
     
@@ -44,12 +56,21 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         target_position = main_player.GetComponent<Transform>();
         StartCoroutine("start_enimy_movement");
         StartCoroutine("enimy_fighting");
-        target_points = GameObject.FindGameObjectsWithTag("p1");
-        for(int i = 0;i<target_points.Length;i++)
+        target_fight_points = GameObject.FindGameObjectsWithTag("p1");
+        for(int i = 0;i<target_fight_points.Length;i++)
         {
-            points[i] = target_points[i].gameObject.GetComponent<Transform>();
+            fightpoints[i] = target_fight_points[i].gameObject.GetComponent<Transform>();
         }
-        destpoint = points.Length;
+        destfightpoint = fightpoints.Length;
+
+        /////////////////////////////////////////////
+        target_scene_points = GameObject.FindGameObjectsWithTag("p2");
+        for(int j = 0; j<target_scene_points.Length;j++)
+        {
+            scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();
+        }
+        destscenepoint = scenepoints.Length;
+        /////////////////////////////////////////////
     }
 
   
@@ -61,22 +82,35 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
 
         distance = Vector3.Distance(transform.position, target_position.position);
+      /*
+        if(distance < 10)
+        {
+            //chase = true;
+            //sceenpetrol = false;
+        }
+        else
+        {
+           //chase = false;
+            //sceenpetrol = true;
+        }
+        */
         if(distance > 10)
         {
-            chase = true;
+            sceenpetrol = true;
         }
         else
         {
-            chase = false;
+            sceenpetrol = false;
         }
-
         if(distance < 6 && distance > 3)
         {
-            petrol = true;
+            fightpetrol = true;
+            //sceenpetrol = false; /////////////////////////////////////////////
         }
         else
         {
-            petrol = false;
+            fightpetrol = false;
+           // sceenpetrol = true; ///////////////////////////////////////////
         }
 
         if (distance <= 1.3)
@@ -100,7 +134,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
     #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
-    public void common_enimy_movement(bool fig,bool cha,bool pet)
+    public void common_enimy_movement(bool fig,/*bool cha,*/bool fpet,bool spet)
     {
        
         if (fig)
@@ -110,24 +144,51 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             transform.LookAt(tar);
             enimy_nav_mesh_agent.SetDestination(target_position.position); 
         }
-
+        /*
         if(cha)
         {
             enimy_nav_mesh_agent.updateRotation = true;
-            enimy_nav_mesh_agent.SetDestination(points[Random.Range(0, destpoint)].position);
+            enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
         }
-
-        if(pet)
+        */
+        if(fpet)
         {
-            if(points.Length == 0)
+            if(fightpoints.Length == 0)
             {
                 return;
             }
             enimy_nav_mesh_agent.updateRotation = false;
             Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
             transform.LookAt(tar);
-            enimy_nav_mesh_agent.SetDestination(points[Random.Range(0, destpoint)].position);
+            enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
         }
+        ///////////////////////////////////////////////////////////////////////
+        if(spet)
+        {
+            
+            if (scenepoints.Length == 0)
+            {
+                return;
+            }
+            enimy_nav_mesh_agent.updateRotation = true;
+            //Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+            //transform.LookAt(tar);
+            enimy_nav_mesh_agent.SetDestination(scenepoints[scenepointcount].position);
+            scenepointdistance = Vector3.Distance(transform.position, scenepoints[scenepointcount].position);
+            if(scenepointdistance < 10)
+            {
+                if(scenepointcount >= scenepoints.Length)
+                {
+                    scenepointcount = 0;
+                }
+                else
+                {
+                    scenepointcount++;
+                }
+            }
+            
+        }
+        /////////////////////////////////////////////////////////////////////
     }
 
     #endregion
@@ -139,7 +200,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
         transform.LookAt(tar);
         yield return new WaitForSeconds(2);
-        common_enimy_movement(fight,chase,petrol);
+        common_enimy_movement(fight,/*chase,*/fightpetrol,sceenpetrol);
  
         yield return StartCoroutine("start_enimy_movement");
     }

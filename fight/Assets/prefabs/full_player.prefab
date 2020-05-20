@@ -1774,6 +1774,8 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
+  t: {fileID: 0}
+  enimy: {fileID: 0}
 --- !u!143 &2448653457280816859
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1926,6 +1928,8 @@ RotationConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
+  - sourceTransform: {fileID: 0}
+    weight: 0
   - sourceTransform: {fileID: 0}
     weight: 1
 --- !u!1 &4272947402227349028

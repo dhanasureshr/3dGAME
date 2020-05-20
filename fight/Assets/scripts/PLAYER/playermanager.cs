@@ -37,7 +37,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         t = gameObject.GetComponent<RotationConstraint>();
 
         Debug.Log(t.sourceCount);
-        t.SetSource(1,st);
+        t.SetSource(0,st);
     }
 
 
