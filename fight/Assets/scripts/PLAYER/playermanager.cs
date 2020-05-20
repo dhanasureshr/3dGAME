@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class playermanager : ExtendedCustomMonoBehavior
+using UnityEngine.Animations;
+public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 {
     /// <summary>
     /// this is the player manager script which take cares about managing the player data 
@@ -15,6 +15,14 @@ public class playermanager : ExtendedCustomMonoBehavior
     private health player_health_script_ref;
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
+    public RotationConstraint t;
+    public ConstraintSource st;
+    public GameObject enimy;
+    public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    public bool locked { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+    public int sourceCount => throw new System.NotImplementedException();
 
     private void Awake()
     {
@@ -25,7 +33,11 @@ public class playermanager : ExtendedCustomMonoBehavior
     private void Start()
     {
         player_health_script_ref = GetComponent<health>();
+        st.sourceTransform = enimy.GetComponent<Transform>();
+        t = gameObject.GetComponent<RotationConstraint>();
 
+        Debug.Log(t.sourceCount);
+        t.SetSource(1,st);
     }
 
 
@@ -41,5 +53,34 @@ public class playermanager : ExtendedCustomMonoBehavior
         player_health_bar_image_ref.fillAmount = health_value;
     }
 
+    public int AddSource(ConstraintSource source)
+    {
+        throw new System.NotImplementedException();
+    }
 
+    public void RemoveSource(int index)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public ConstraintSource GetSource(int index)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetSource(int index, ConstraintSource source)
+    {
+        
+        throw new System.NotImplementedException();
+    }
+
+    public void GetSources(List<ConstraintSource> sources)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void SetSources(List<ConstraintSource> sources)
+    {
+        throw new System.NotImplementedException();
+    }
 }
