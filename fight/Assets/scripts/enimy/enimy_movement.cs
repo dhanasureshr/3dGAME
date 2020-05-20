@@ -177,14 +177,14 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             scenepointdistance = Vector3.Distance(transform.position, scenepoints[scenepointcount].position);
             if(scenepointdistance < 10)
             {
-                if(scenepointcount >= scenepoints.Length)
+                if(scenepointcount == scenepoints.Length)
                 {
                     scenepointcount = 0;
                 }
-                else
-                {
-                    scenepointcount++;
-                }
+
+
+                scenepointcount = Random.Range(0, scenepoints.Length);
+                
             }
             
         }
@@ -218,7 +218,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 enimy_animation_helper_ref.current_attack_time = 0.0f;
             }
         }
-
+        
         yield return StartCoroutine("enimy_fighting");
 
     }
@@ -237,9 +237,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         enimy_animation_helper_ref.PLAY_ENIMY_STAND_UP();
         yield return new WaitForSeconds(1.0f);
         StartCoroutine("start_enimy_movement");
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(5.0f);
         StartCoroutine("enimy_fighting");
         this.transform.gameObject.layer = 11;
+        yield break;
     }
 
     #endregion
@@ -251,7 +252,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
         StopCoroutine("start_enimy_movement");
-        StopCoroutine("enimy_fighting");
+       ///////////////////////////////////////////////////////// StopCoroutine("enimy_fighting");///////////////////////////////////////////
         transform.gameObject.layer = 0;
     }
 
