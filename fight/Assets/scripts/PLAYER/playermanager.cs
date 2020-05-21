@@ -15,9 +15,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private health player_health_script_ref;
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
-    public RotationConstraint t;
+   public RotationConstraint t;
     public ConstraintSource st;
-    public GameObject enimy;
+  //  public AimConstraint s;
+   // public GameObject enimy;
     public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool locked { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -33,13 +34,16 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private void Start()
     {
         player_health_script_ref = GetComponent<health>();
-        st.sourceTransform = enimy.GetComponent<Transform>();
+       // st.sourceTransform = enimy.GetComponent<Transform>();
         t = gameObject.GetComponent<RotationConstraint>();
-        t.enabled = false;
+        // s = gameObject.GetComponent<AimConstraint>();
 
-        Debug.Log(t.sourceCount);
-        t.SetSource(0,st);
-      
+        
+        //  Debug.Log(t.sourceCount);
+        // t.SetSource(0,st);
+        t.enabled = false;
+        t.weight = 1.0f;
+        t.rotationOffset = new Vector3(0, 180, 0);
     }
 
 
@@ -55,24 +59,26 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         player_health_bar_image_ref.fillAmount = health_value;
     }
 
-/*
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ENIMY")
         {
             Debug.Log("ENIMY_ENTERED");
             t.enabled = true;
-            t.constraintActive = true;
+            //t.constraintActive = true;
             
-            t.locked = true;
+           // t.locked = true;
             
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
-            if(t.sourceCount == 0)
-            {
-                t.AddSource(st);
-            }
+            st.weight = 1;
+            
+              //  t.AddSource(st);
+            
             t.constraintActive = gameObject.transform;
-            t.SetSource(0, st);
+           
+            t.SetSource(1, st);
+            
         }
        // Debug.Log("SOME ONE");
     }
@@ -82,15 +88,16 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         if (other.tag == "ENIMY")
         {
-            t.constraintActive = false;
-            t.locked = false;
+            //t.constraintActive = false;
+           // t.locked = false;
             t.enabled = false;
-            if(t.sourceCount != 0)
-            t.RemoveSource(0);
+            
+          //  t.RemoveSource(0);
+            
             
         }
     }
-    */
+    
     public int AddSource(ConstraintSource source)
     {
         throw new System.NotImplementedException();
@@ -108,7 +115,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     public void SetSource(int index, ConstraintSource source)
     {
-        
+        index = 1;
         throw new System.NotImplementedException();
     }
 

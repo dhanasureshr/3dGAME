@@ -1473,18 +1473,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184381578}
   m_CullTransparentMesh: 0
---- !u!1 &1189925852 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 7557738454431843339}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1189925861 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 7557738454431843339}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1304912128 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2565351504451875491, guid: 5d3fcafac00a18b4798f47a1eea3cd72,
@@ -3064,16 +3052,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7803401342356467749, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: enimy
-      value: 
-      objectReference: {fileID: 1189925852}
-    - target: {fileID: 2156242389758213579, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 1189925861}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}
 --- !u!1001 &5764820160050898652
@@ -3237,7 +3215,7 @@ PrefabInstance:
     - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.16
+      value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
         type: 3}
