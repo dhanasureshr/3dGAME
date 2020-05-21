@@ -252,7 +252,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
         StopCoroutine("start_enimy_movement");
-       ///////////////////////////////////////////////////////// StopCoroutine("enimy_fighting");///////////////////////////////////////////
+        StopCoroutine("enimy_fighting");///////////////////////////////////////////
+
         transform.gameObject.layer = 0;
     }
 

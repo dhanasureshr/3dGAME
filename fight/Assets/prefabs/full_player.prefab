@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 4272947402165268830}
   - component: {fileID: 1074391928}
   - component: {fileID: 7803401342356467749}
+  - component: {fileID: 260302762}
   - component: {fileID: 2448653457280816859}
   - component: {fileID: 2448653457280816856}
   - component: {fileID: 2448653457280816857}
@@ -1712,7 +1713,8 @@ GameObject:
   - component: {fileID: 4902920344203190771}
   - component: {fileID: 1606148767}
   - component: {fileID: 3696311001533824737}
-  - component: {fileID: 563704379}
+  - component: {fileID: 8522935976309594732}
+  - component: {fileID: 2156242389758213579}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -1776,6 +1778,19 @@ MonoBehaviour:
   charactercontroller: {fileID: 2448653457280816859}
   t: {fileID: 0}
   enimy: {fileID: 0}
+--- !u!135 &260302762
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272947402165268831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &2448653457280816859
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1911,7 +1926,7 @@ MonoBehaviour:
   LEFT_HAND_COLLIDER: {fileID: 4272947400591661445}
   RIGHT_LEG_COLLIDER: {fileID: 4272947401520543065}
   LEFT_LEG_COLLIDER: {fileID: 4272947400577866385}
---- !u!1818360609 &563704379
+--- !u!1818360609 &8522935976309594732
 RotationConstraint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1921,7 +1936,7 @@ RotationConstraint:
   m_Enabled: 1
   m_Weight: 1
   m_RotationAtRest: {x: 0, y: 0, z: 0}
-  m_RotationOffset: {x: 0, y: 180, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0}
   m_AffectRotationX: 1
   m_AffectRotationY: 1
   m_AffectRotationZ: 1
@@ -1930,6 +1945,28 @@ RotationConstraint:
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 0
+--- !u!895512359 &2156242389758213579
+AimConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272947402165268831}
+  m_Enabled: 1
+  m_Weight: 1
+  m_RotationAtRest: {x: -0, y: 0, z: 0}
+  m_RotationOffset: {x: -11.686494, y: -2.016756, z: 0.40866837}
+  m_AimVector: {x: 0, y: 0.13, z: 1}
+  m_UpVector: {x: 0, y: 1, z: 0}
+  m_WorldUpVector: {x: 0, y: 1, z: 0}
+  m_WorldUpObject: {fileID: 0}
+  m_UpType: 0
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1
 --- !u!1 &4272947402227349028

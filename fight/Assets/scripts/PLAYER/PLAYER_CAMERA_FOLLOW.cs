@@ -48,12 +48,12 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private float distanceMin = 1f;
     private float distanceMax = 5f;//DEFAULT 5
     private object hit;
-    private float xspeed = 1.0f;
-    private float yspeed = 1.0f;
-    private float yMinLimit = 10f;
-    private float yMaxLimit = 20f; //DEFAULT 80
-    private float xMinLimit = -360f;
-    private float xMaxLimit = 360;
+   // private float xspeed = 1.0f;
+    //private float yspeed = 1.0f;
+   // private float yMinLimit = 10f;
+    //private float yMaxLimit = 20f; //DEFAULT 80
+    //private float xMinLimit = -360f;
+    //private float xMaxLimit = 360;
     private Quaternion rotation;
     private Vector3 position;
     [HideInInspector] public Vector3 positions;

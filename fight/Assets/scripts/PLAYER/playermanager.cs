@@ -35,9 +35,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         player_health_script_ref = GetComponent<health>();
         st.sourceTransform = enimy.GetComponent<Transform>();
         t = gameObject.GetComponent<RotationConstraint>();
+        t.enabled = false;
 
         Debug.Log(t.sourceCount);
         t.SetSource(0,st);
+      
     }
 
 
@@ -53,6 +55,42 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         player_health_bar_image_ref.fillAmount = health_value;
     }
 
+/*
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ENIMY")
+        {
+            Debug.Log("ENIMY_ENTERED");
+            t.enabled = true;
+            t.constraintActive = true;
+            
+            t.locked = true;
+            
+            st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
+            if(t.sourceCount == 0)
+            {
+                t.AddSource(st);
+            }
+            t.constraintActive = gameObject.transform;
+            t.SetSource(0, st);
+        }
+       // Debug.Log("SOME ONE");
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "ENIMY")
+        {
+            t.constraintActive = false;
+            t.locked = false;
+            t.enabled = false;
+            if(t.sourceCount != 0)
+            t.RemoveSource(0);
+            
+        }
+    }
+    */
     public int AddSource(ConstraintSource source)
     {
         throw new System.NotImplementedException();
