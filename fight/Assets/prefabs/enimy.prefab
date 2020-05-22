@@ -27,7 +27,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000013690442, y: -0.0010458993, z: 0.008694494}
+  m_ConnectedAnchor: {x: -0.00000013690442, y: -0.0010458314, z: 0.008694494}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -116,7 +116,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.028352233, y: 0.000000057509162, z: 0.0000000037252899}
+  m_ConnectedAnchor: {x: -0.028352195, y: 0.0000000016298143, z: 0.0000000054715197}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -177,7 +177,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.016446007, y: -0.00000006705521, z: -0.0000000032014214}
+  m_ConnectedAnchor: {x: -0.016445898, y: 0.000000012107191, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -266,7 +266,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.026342357, y: 0.00062153745, z: -0.016544983}
+  m_ConnectedAnchor: {x: -0.026342357, y: 0.00062160636, z: -0.016544983}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -341,7 +341,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.020471783, y: 0.00000013189855, z: 0.000000009778887}
+  m_ConnectedAnchor: {x: -0.0204718, y: -0.0000000025611369, z: -0.000000011641532}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: 1}
   m_TwistLimitSpring:
@@ -416,7 +416,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.026342342, y: 0.00062153745, z: 0.016544983}
+  m_ConnectedAnchor: {x: -0.026342342, y: 0.00062160636, z: 0.016544983}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -491,7 +491,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.020471795, y: 0.00000013108367, z: -0.00000001303852}
+  m_ConnectedAnchor: {x: -0.020471817, y: 0.0000000029103835, z: 0.000000006053598}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -743,7 +743,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000014621764, y: -0.0010458977, z: -0.008694493}
+  m_ConnectedAnchor: {x: -0.00000014621764, y: -0.0010458297, z: -0.008694493}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -893,7 +893,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.016445857, y: 0.00000004656611, z: -0.0000000013969836}
+  m_ConnectedAnchor: {x: -0.016445914, y: 0.000000004656611, z: 3.492459e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -1157,8 +1157,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.371156
+  m_Center: {x: -0.031133413, y: 0.9568169, z: 0}
 --- !u!1001 &499608437966874385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1443,6 +1443,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8de63c79f713e4f45864b421a510f90f, type: 2}
     - target: {fileID: 400124, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1499,23 +1511,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
+    - target: {fileID: 100000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 0
+    - target: {fileID: 100056, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8de63c79f713e4f45864b421a510f90f, type: 2}
     - target: {fileID: 100058, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+    - target: {fileID: 100062, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1527,7 +1535,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 100104, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100108, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1539,39 +1555,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 033a72f446116214e9090af6f4091900, type: 2}
-    - target: {fileID: 100060, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100114, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100106, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100056, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100062, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100116, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100102, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100108, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 100050, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100060, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1615,11 +1603,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+    - target: {fileID: 100114, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100096, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1655,10 +1647,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100070, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 100074, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1667,15 +1655,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100024, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100112, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+    - target: {fileID: 100116, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1711,7 +1695,15 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 100070, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 100076, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1719,11 +1711,19 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+    - target: {fileID: 100006, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100100, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}

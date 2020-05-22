@@ -20,7 +20,8 @@ public class health : ExtendedCustomMonoBehavior,IListener
     public enimy_movement enimy_movement_ref_for_enimyanimations;
     private bool characted_died;
     public bool is_player;
-    
+
+    public bool nock_check;
     public void Start()
     {
         enimy_movement_ref_for_enimyanimations = GetComponentInParent<enimy_movement>();
@@ -38,8 +39,10 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
         }
     }
+    
     public void ApplyDamage(float damage,bool KnockDown)
     {
+        
         if(characted_died)
         {
             if(!is_player)
@@ -78,14 +81,15 @@ public class health : ExtendedCustomMonoBehavior,IListener
         {
             if(KnockDown)
             {
-                if(Random.Range(0,3)>1)
-                {
+                //transform.gameObject.layer = 0;
+                
                     //playnockdon
                     enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-                }
+
+                    nock_check = true;
             }else
             {
-               
+                    nock_check = false;
                     enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
                
             }

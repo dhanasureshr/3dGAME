@@ -1750,7 +1750,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f846976fd81495641a70f8ca30bd3444, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1922,7 +1922,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1818360609 &6823421251394268928
 RotationConstraint:
@@ -1940,11 +1940,7 @@ RotationConstraint:
   m_AffectRotationZ: 1
   m_IsContraintActive: 1
   m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 0}
-    weight: 0
-  - sourceTransform: {fileID: 0}
-    weight: 1
+  m_Sources: []
 --- !u!1 &4272947402227349028
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,18 +71,26 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
            // t.locked = true;
             
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
-            st.weight = 1;
-            
-              //  t.AddSource(st);
+            if(t.sourceCount > 0)
+                t.RemoveSource(0);
+
+            t.AddSource(st);
             
             t.constraintActive = gameObject.transform;
            
-            t.SetSource(1, st);
+            t.SetSource(0, st);
             
         }
        // Debug.Log("SOME ONE");
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "ENIMY")
+        {
+            st.weight = Mathf.Lerp(0.0f, 1.0f, 1.0f);
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -91,8 +99,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             //t.constraintActive = false;
            // t.locked = false;
             t.enabled = false;
-            
-          //  t.RemoveSource(0);
+            if (t.sourceCount > 0)
+                t.RemoveSource(0);
             
             
         }
@@ -115,7 +123,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     public void SetSource(int index, ConstraintSource source)
     {
-        index = 1;
+        
         throw new System.NotImplementedException();
     }
 
