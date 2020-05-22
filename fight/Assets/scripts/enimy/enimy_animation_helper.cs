@@ -101,14 +101,16 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref.SetBool(enimy_run, shouldMove);
         enimy_animator_ref.SetFloat(x_input, velocity.x);
         enimy_animator_ref.SetFloat(y_input, velocity.y);
-
+        transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
     }
+
+    /*
     void OnAnimatorMove()
     {
        transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
     }
     
-
+    */
     #region enimy attack method
     public void enimy_attack(int attack_num)
     {

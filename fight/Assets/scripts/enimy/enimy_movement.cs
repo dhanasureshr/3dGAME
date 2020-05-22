@@ -36,6 +36,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     public bool should_fight_with_player;
     private bool nock_check_ref;
+
+
     #region scene petrol variables
 
     //  public Transform[] scenepoints; // ////////////////////////////////////////////////
@@ -87,6 +89,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         #endregion
     }
 
+    #region update
 
     private void Update()
     {
@@ -148,7 +151,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
         else
         {
-           
+            should_fight_with_player = false;
         }
 
         if(should_fight_with_player)
@@ -159,7 +162,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
     }
+    #endregion
 
+    #region enimy fighting method
     public void Fight_with_player_method()
     {
         enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
@@ -169,6 +174,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             enimy_animation_helper_ref.current_attack_time = 0.0f;
         }
     }
+    #endregion
 
 
     #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
@@ -252,26 +258,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     }
     #endregion
 
-    IEnumerator enimy_fighting()
-    {
-        //Debug.Log("fighting coroutine called");
-        yield return new WaitForEndOfFrame();
-        if (distance <= enimy_nav_mesh_agent.stoppingDistance)
-        {
-            enimy_animation_helper_ref.current_attack_time += Time.deltaTime;
-            if (enimy_animation_helper_ref.current_attack_time > enimy_animation_helper_ref.default_attack_time)
-            {
-                enimy_animation_helper_ref.enimy_attack(Random.Range(0, 3));
-                enimy_animation_helper_ref.current_attack_time = 0.0f;
-            }
-        }
-        
-      //  yield return StartCoroutine("enimy_fighting");
-
-    }
-
-
-
     #region enimy stand up  code
     public void STAND_UP_ENIMY_AFTER_TIME()
     {
@@ -288,15 +274,13 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         yield return new WaitForSeconds(1.0f);
         StartCoroutine("start_enimy_movement");
         yield return new WaitForSeconds(5.0f);
-        StartCoroutine("enimy_fighting");
+       // StartCoroutine("enimy_fighting");
         transform.gameObject.layer = 11;
-        nock_check_ref = false;
+        transform.gameObject.GetComponent<health>().nock_check = false;
         if (distance <= enimy_nav_mesh_agent.stoppingDistance)
         {
             should_fight_with_player = true;
         }
-
-       // should_fight_with_player = true;
         yield break;
     }
 
@@ -304,20 +288,15 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     #endregion
 
-
-
-
+    #region stop enimy movement code
     public void stopenimyMovement()
     {
         should_fight_with_player = false;
         transform.gameObject.layer = 0;
-     
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
         StopCoroutine("start_enimy_movement");
-       /////////////////////////////////////////////// StopCoroutine("enimy_fighting");///////////////////////////////////////////
-       // Debug.Log("stopcoroutine function call");
-      
     }
 
+    #endregion
 
 }
