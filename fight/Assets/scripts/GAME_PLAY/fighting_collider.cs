@@ -26,7 +26,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     public bool nock_down_the_enimy;
     public GameObject hit_Fx;      
 
-
+    
     //[HideInInspector]
     //public GameObject PLAYER;
     //public GameObject ENIMY;

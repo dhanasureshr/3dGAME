@@ -15,10 +15,12 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private health player_health_script_ref;
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
-   public RotationConstraint t;
+    public RotationConstraint t;
     public ConstraintSource st;
-  //  public AimConstraint s;
-   // public GameObject enimy;
+
+    public LayerMask test_layer_mask;
+    private float radius = 1.157126f;
+
     public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool locked { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -59,34 +61,36 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         player_health_bar_image_ref.fillAmount = health_value;
     }
 
-    
+
+    #region this is the working code for the player rotation constraint
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ENIMY")
+        if (other.tag == "rot")
         {
             Debug.Log("ENIMY_ENTERED");
             t.enabled = true;
             //t.constraintActive = true;
-            
-           // t.locked = true;
-            
+
+            // t.locked = true;
+
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
-            if(t.sourceCount > 0)
+            st.weight = 1.0f;
+            if (t.sourceCount > 0)
                 t.RemoveSource(0);
 
             t.AddSource(st);
-            
+
             t.constraintActive = gameObject.transform;
-           
+
             t.SetSource(0, st);
-            
+
         }
-       // Debug.Log("SOME ONE");
+        // Debug.Log("SOME ONE");
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "ENIMY")
+        if (other.tag == "rot")
         {
             st.weight = Mathf.Lerp(0.0f, 1.0f, 1.0f);
         }
@@ -94,18 +98,32 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ENIMY")
+        if (other.tag == "rot")
         {
             //t.constraintActive = false;
-           // t.locked = false;
+            // t.locked = false;
             t.enabled = false;
             if (t.sourceCount > 0)
                 t.RemoveSource(0);
-            
-            
+
+
         }
     }
-    
+    #endregion
+
+
+    #region this is the test code for player roataion constraint
+    public void Update()
+    {
+      
+
+    }
+
+
+
+    #endregion
+
+
     public int AddSource(ConstraintSource source)
     {
         throw new System.NotImplementedException();

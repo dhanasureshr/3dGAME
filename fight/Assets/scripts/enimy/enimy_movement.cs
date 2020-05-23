@@ -38,22 +38,22 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     private bool nock_check_ref;
 
 
-    #region scene petrol variables
+    //#region scene petrol variables
 
-    //  public Transform[] scenepoints; // ////////////////////////////////////////////////
-    // public GameObject[] target_scene_points;// ////////////////////////////////////////
-    // //private int destscenepoint = 0;// ////////////////////////////////////////////////
+    //public Transform[] scenepoints; // ////////////////////////////////////////////////
+    //public GameObject[] target_scene_points;// ////////////////////////////////////////
+    //private int destscenepoint = 0;// ////////////////////////////////////////////////
 
 
-    // public bool sceenpetrol = false; // ///////////////////////////////////////////////////
+    //// public bool sceenpetrol = false; // ///////////////////////////////////////////////////
 
     //private int scenepointcount = 0;
-    // private float scenepointdistance;
+    //private float scenepointdistance;
 
-    #endregion
+    //#endregion
 
 
-     
+
     private void Start()
     {
        
@@ -73,20 +73,20 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         destfightpoint = fightpoints.Length;
 
 
-        #region sceen petrol initial checks
-        /*
-        /////////////////////////////////////////////
-        target_scene_points = GameObject.FindGameObjectsWithTag("p2");
-        for(int j = 0; j<target_scene_points.Length;j++)
-        {
-            scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();
-        }
-        destscenepoint = scenepoints.Length;
-        /////////////////////////////////////////////
-        ///*/
-        ///
+        //#region sceen petrol initial checks
 
-        #endregion
+        ///////////////////////////////////////////////
+        //target_scene_points = GameObject.FindGameObjectsWithTag("p2");
+        //for (int j = 0; j < target_scene_points.Length; j++)
+        //{
+        //    scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();
+        //}
+        //destscenepoint = scenepoints.Length;
+        ///////////////////////////////////////////////
+        /////
+        /////
+
+        //#endregion
     }
 
     #region update
@@ -101,7 +101,19 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         distance = Vector3.Distance(transform.position, target_position.position);
       
-        if(distance > 10)
+        //if(distance >= 25)
+        //{
+        //    if (scenepoints.Length == 0)
+        //    {
+        //        return;
+        //    }
+        //    enimy_nav_mesh_agent.updateRotation = false;
+        //    //Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+        //   // transform.LookAt(tar);
+        //    enimy_nav_mesh_agent.SetDestination(scenepoints[0].position);
+        //}
+
+        if(distance > 10 && distance < 25)
         {
             chase = true;
             
@@ -112,6 +124,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
          
         }
         
+
         
 
         if(distance < 6 && distance > 3)
@@ -274,7 +287,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         yield return new WaitForSeconds(1.0f);
         StartCoroutine("start_enimy_movement");
         yield return new WaitForSeconds(5.0f);
-       // StartCoroutine("enimy_fighting");
         transform.gameObject.layer = 11;
         transform.gameObject.GetComponent<health>().nock_check = false;
         if (distance <= enimy_nav_mesh_agent.stoppingDistance)
@@ -297,6 +309,14 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         StopCoroutine("start_enimy_movement");
     }
 
+    public void stopenimy_movement_for_death()
+    {
+
+        should_fight_with_player = false;
+        transform.gameObject.layer = 0;
+        transform.gameObject.GetComponent<Animator>().enabled = false;
+        StopCoroutine("start_enimy_movement");
+    }
     #endregion
 
 }

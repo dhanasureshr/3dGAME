@@ -47,8 +47,8 @@ public class health : ExtendedCustomMonoBehavior,IListener
         {
             if(!is_player)
             {
-                enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-                enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_DEATH();                
+                
+                enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
                 Destroy(gameObject, 10.0f);
             }
             return;

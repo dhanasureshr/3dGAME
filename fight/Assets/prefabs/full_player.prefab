@@ -1874,6 +1874,7 @@ MonoBehaviour:
   baseusemanager_for_common_calculation: {fileID: 0}
   enimy_movement_ref_for_enimyanimations: {fileID: 0}
   is_player: 1
+  nock_check: 0
 --- !u!114 &1606148767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1895,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   health: 100
-  applible_damage: 0
+  applible_damage: 0.1
 --- !u!114 &3696311001533824737
 MonoBehaviour:
   m_ObjectHideFlags: 0
