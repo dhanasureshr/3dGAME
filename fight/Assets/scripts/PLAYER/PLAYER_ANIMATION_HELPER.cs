@@ -44,6 +44,9 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     private static int round_kick = Animator.StringToHash("ROUND_KICK");
     private static int right_forword_kick = Animator.StringToHash("RIGHT_FORWORD_KICK");
 
+    // this are the variables for the player hit animation
+    private static int player_body_hit = Animator.StringToHash("HIT_TO_BODY");
+    private static int player_face_hit = Animator.StringToHash("PUNCH_TO_FACE");
 
     #endregion
 
@@ -108,10 +111,28 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(right_forword_kick);
     }
 
+    public void PLAY_PLAYER_BODY_HIT()
+    {
+        player_animator_ref.SetTrigger(player_body_hit);
+    }
     
+    public void PLAY_PLAYER_FACE_HIT()
+    {
+        player_animator_ref.SetTrigger(player_face_hit);
+    }
     #endregion
 
-
+    public void PLAY_PLAYER_GET_HIT(int val)
+    {
+        if(val == 0)
+        {
+            PLAY_PLAYER_BODY_HIT();
+        }
+        if(val == 1)
+        {
+            PLAY_PLAYER_FACE_HIT();
+        }
+    }
 
     #region prayer fighting functions
     public void PUNCH1_BUTTON_PRESSED()
