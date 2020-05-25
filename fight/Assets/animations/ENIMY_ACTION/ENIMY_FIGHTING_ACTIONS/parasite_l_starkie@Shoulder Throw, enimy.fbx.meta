@@ -188,7 +188,31 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.88945657
+        functionName: enable_nav_mesh_agent
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9174778
+        functionName: STAND_UP_ENIMY_AFTER_TIME
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: disable_enimy_get_hit_animation
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

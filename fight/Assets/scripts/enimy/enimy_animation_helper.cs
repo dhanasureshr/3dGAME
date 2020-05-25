@@ -26,8 +26,9 @@ public class enimy_animation_helper : MonoBehaviour
     private static int y_input = Animator.StringToHash("y");
 
     private static int enimy_sholder_dute = Animator.StringToHash("sholder_throw_enimy");
-    
 
+
+    private bool play_get_hit;
     private void Start()
     {
         enimy_movement_reference = GetComponent<enimy_movement>();
@@ -107,13 +108,16 @@ public class enimy_animation_helper : MonoBehaviour
         {
             velocity = smoothDeltaPosition / Time.deltaTime;
         }
-        bool shouldMove = velocity.magnitude > 0.5f && enimy_movement_reference.enimy_nav_mesh_agent.remainingDistance > enimy_movement_reference.enimy_nav_mesh_agent.radius;
+        if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == true)
+        {
+            bool shouldMove = velocity.magnitude > 0.5f && enimy_movement_reference.enimy_nav_mesh_agent.remainingDistance > enimy_movement_reference.enimy_nav_mesh_agent.radius;
 
-        // Update animation parameters
-        enimy_animator_ref.SetBool(enimy_run, shouldMove);
-        enimy_animator_ref.SetFloat(x_input, velocity.x);
-        enimy_animator_ref.SetFloat(y_input, velocity.y);
-        transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+            // Update animation parameters
+            enimy_animator_ref.SetBool(enimy_run, shouldMove);
+            enimy_animator_ref.SetFloat(x_input, velocity.x);
+            enimy_animator_ref.SetFloat(y_input, velocity.y);
+            transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+        }
     }
 
     /*
@@ -123,6 +127,23 @@ public class enimy_animation_helper : MonoBehaviour
     }
     
     */
+
+    public void enable_nav_mesh_agent()
+    {
+        if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
+        {
+            enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
+            play_get_hit = true;
+        }
+    }
+
+    public void disable_enimy_get_hit_animation()
+    {
+        play_get_hit = false;
+    }
+
+
+
     #region enimy attack method
     public void enimy_attack(int attack_num)
     {
@@ -147,14 +168,17 @@ public class enimy_animation_helper : MonoBehaviour
     // enimy hit reaction method
     public void ENIMY_HIT_REACTION(int n)
     {
-        if(n == 0)
+        if (play_get_hit)
         {
-            PLAY_ENIMY_FACE_HIT();
-        }
-        
-        if(n == 1)
-        {
-            PLAY_ENIMY_GET_HIT();
+            if (n == 0)
+            {
+                PLAY_ENIMY_FACE_HIT();
+            }
+
+            if (n == 1)
+            {
+                PLAY_ENIMY_GET_HIT();
+            }
         }
     }
 

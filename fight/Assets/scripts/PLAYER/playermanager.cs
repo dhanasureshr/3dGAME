@@ -123,18 +123,35 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public void PLAY_DUTE_ANIMATIONS1()
     {
         Disable_enimy_movement_before_dute_animation();
+        transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_SHOLDER_DUTE();
+        targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_SHOLDER_DUTE();
+
     }
 
-    void Disable_enimy_movement_before_dute_animation()
+    public void Disable_enimy_movement_before_dute_animation()
     {
-        transform.gameObject.layer = 0;
         targeted_enimy_movement_script_ref.enimy_nav_mesh_agent.enabled = false;
     }
 
-    public void Enabel_enimy_movement_after_dute_animations()
+
+
+    public void Enable_player_collider_layer()
     {
-        transform.gameObject.layer = 10;
-        targeted_enimy_movement_script_ref.enimy_nav_mesh_agent.enabled = true;
+        this.transform.gameObject.layer = 10;
+    }
+
+    public void Disable_player_collider_layer()
+    {
+        this.transform.gameObject.layer = 0;
+    }
+    public void Setup_player_hand_Ik()
+    {
+
+    }
+
+    public void Remove_player_hand_Ik()
+    {
+
     }
     #endregion
 
