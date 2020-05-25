@@ -96,45 +96,46 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
 
         distance = Vector3.Distance(transform.position, target_position.position);
+        if (enimy_nav_mesh_agent.enabled == true)
+        {
+            if (distance >= 25)
+            {
+                sceenpetrol = true;
+            }
+            else
+            {
+                sceenpetrol = false;
+            }
 
-        if (distance >= 25)
-        {
-            sceenpetrol = true;
-        }
-        else
-        {
-            sceenpetrol = false;
-        }
+            if (distance > 10 && distance < 25)
+            {
+                chase = true;
 
-        if (distance > 10 && distance < 25)
-        {
-            chase = true;
-            
-        }
-        else
-        {
-           chase = false;
-         
-        }
-        
+            }
+            else
+            {
+                chase = false;
 
-        
+            }
 
-        if(distance < 6 && distance > 3)
-        {
-            fightpetrol = true;
-          
-        }
-        else
-        {
-            fightpetrol = false;
-          
-        }
 
-        //this is for the fighting movement controller check 
-        if (distance <= 1.3)
-        {
-            
+
+
+            if (distance < 6 && distance > 3)
+            {
+                fightpetrol = true;
+
+            }
+            else
+            {
+                fightpetrol = false;
+
+            }
+
+            //this is for the fighting movement controller check 
+            if (distance <= 1.3)
+            {
+
 
                 fight_con = Random.Range(0, 3);
                 if (fight_con == 0 || fight_con == 1)
@@ -148,25 +149,25 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
                 }
-            
-        }
-      
-        if(distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
-        {
-            should_fight_with_player = true;
-        }
-        else
-        {
-            should_fight_with_player = false;
-        }
 
-        if(should_fight_with_player)
-        {
-            Fight_with_player_method();
+            }
+
+            if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
+            {
+                should_fight_with_player = true;
+            }
+            else
+            {
+                should_fight_with_player = false;
+            }
+
+            if (should_fight_with_player)
+            {
+                Fight_with_player_method();
+            }
+
+
         }
-        
-
-
     }
     #endregion
 
@@ -186,62 +187,63 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
     public void common_enimy_movement(bool fig,bool cha,bool fpet,bool spet)
     {
-       
-        if (fig)
+        if (enimy_nav_mesh_agent.enabled == true)
         {
-            enimy_nav_mesh_agent.updateRotation = false;
-            Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
-            transform.LookAt(tar);
-            enimy_nav_mesh_agent.SetDestination(target_position.position); 
-        }
-        
-        if(cha)
-        {
-            enimy_nav_mesh_agent.updateRotation = true;
-            enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
-        }
-        
-        if(fpet)
-        {
-            if(fightpoints.Length == 0)
+            if (fig)
             {
-                return;
+                enimy_nav_mesh_agent.updateRotation = false;
+                Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                transform.LookAt(tar);
+                enimy_nav_mesh_agent.SetDestination(target_position.position);
             }
-            enimy_nav_mesh_agent.updateRotation = false;
-            Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
-            transform.LookAt(tar);
-            enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
-        }
 
-        #region scene petrol actual code
-
-        ///////////////////////////////////////////////////////////////////////
-        if (spet)
-        {
-
-            if (scenepoints.Length == 0)
+            if (cha)
             {
-                return;
+                enimy_nav_mesh_agent.updateRotation = true;
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
             }
-          //  enimy_nav_mesh_agent.updateRotation = true;
-            enimy_nav_mesh_agent.SetDestination(scenepoints[scenepointcount].position);
-            scenepointdistance = Vector3.Distance(transform.position, scenepoints[scenepointcount].position);
-            if (scenepointdistance < 10)
+
+            if (fpet)
             {
-                if (scenepointcount == scenepoints.Length)
+                if (fightpoints.Length == 0)
                 {
-                    scenepointcount = 0;
+                    return;
+                }
+                enimy_nav_mesh_agent.updateRotation = false;
+                Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                transform.LookAt(tar);
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+            }
+
+            #region scene petrol actual code
+
+            ///////////////////////////////////////////////////////////////////////
+            if (spet)
+            {
+
+                if (scenepoints.Length == 0)
+                {
+                    return;
+                }
+                //  enimy_nav_mesh_agent.updateRotation = true;
+                enimy_nav_mesh_agent.SetDestination(scenepoints[scenepointcount].position);
+                scenepointdistance = Vector3.Distance(transform.position, scenepoints[scenepointcount].position);
+                if (scenepointdistance < 10)
+                {
+                    if (scenepointcount == scenepoints.Length)
+                    {
+                        scenepointcount = 0;
+                    }
+
+
+                    scenepointcount = Random.Range(0, scenepoints.Length);
+
                 }
 
-
-                scenepointcount = Random.Range(0, scenepoints.Length);
-
             }
-
+            /////////////////////////////////////////////////////////////////////
+            ///
         }
-        /////////////////////////////////////////////////////////////////////
-        ///
-
         #endregion
     }
 
@@ -252,13 +254,20 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #region enimy Movement method
     IEnumerator start_enimy_movement()
     {
-      
-       // Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
-      //  transform.LookAt(tar);
-        yield return new WaitForSeconds(2);
-        common_enimy_movement(fight,chase,fightpetrol,sceenpetrol);
- 
-        yield return StartCoroutine("start_enimy_movement");
+
+        // Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+        //  transform.LookAt(tar);
+        if (enimy_nav_mesh_agent.enabled == true)
+        {
+            yield return new WaitForSeconds(2);
+            common_enimy_movement(fight, chase, fightpetrol, sceenpetrol);
+
+            yield return StartCoroutine("start_enimy_movement");
+        }
+        else
+        {
+            yield break;
+        }
     }
     #endregion
 

@@ -48,6 +48,9 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     private static int player_body_hit = Animator.StringToHash("HIT_TO_BODY");
     private static int player_face_hit = Animator.StringToHash("PUNCH_TO_FACE");
 
+
+    // this are the variavels for the player dute animations
+    private static int player_showlder_dute = Animator.StringToHash("SHOLDER_THROW_PLAYER");
     #endregion
 
     #region mono methods
@@ -119,6 +122,11 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     public void PLAY_PLAYER_FACE_HIT()
     {
         player_animator_ref.SetTrigger(player_face_hit);
+    }
+
+    public void PLAY_PLAYER_SHOLDER_DUTE()
+    {
+        player_animator_ref.SetTrigger(player_showlder_dute);
     }
     #endregion
 

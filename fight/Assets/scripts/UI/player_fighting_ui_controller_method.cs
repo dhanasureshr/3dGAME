@@ -24,5 +24,11 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     {
         t.player_animation_helper_for_uI_controllers.KICK_BUTTON_PRESSED();
     }
+
+
+    public void On_Dute_Animation()
+    {
+        t.player_mangaer_for_dute.PLAY_DUTE_ANIMATIONS1();
+    }
     #endregion
 }

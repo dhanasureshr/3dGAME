@@ -15,6 +15,7 @@ public class enimy_animation_helper : MonoBehaviour
     Vector2 velocity = Vector2.zero;
     private static int enimy_run = Animator.StringToHash("move");
     private static int enimy_get_hit = Animator.StringToHash("get_hit");
+    private static int enimy_face_hit = Animator.StringToHash("punch_to_face_enimy");
     private static int enimy_death = Animator.StringToHash("death");
     private static int enimy_punch = Animator.StringToHash("punch");
     private static int enimy_punch1 = Animator.StringToHash("punch1");
@@ -24,7 +25,7 @@ public class enimy_animation_helper : MonoBehaviour
     private static int x_input = Animator.StringToHash("x");
     private static int y_input = Animator.StringToHash("y");
 
-
+    private static int enimy_sholder_dute = Animator.StringToHash("sholder_throw_enimy");
     
 
     private void Start()
@@ -40,6 +41,11 @@ public class enimy_animation_helper : MonoBehaviour
     public void PLAY_ENIMY_GET_HIT()
     {
         enimy_animator_ref.SetTrigger(enimy_get_hit);
+    }
+
+    public void PLAY_ENIMY_FACE_HIT()
+    {
+        enimy_animator_ref.SetTrigger(enimy_face_hit);
     }
    
     public void PLAY_ENIMY_PUNCH()
@@ -72,6 +78,12 @@ public class enimy_animation_helper : MonoBehaviour
     public void PLAY_ENIMY_STAND_UP()
     {
         enimy_animator_ref.SetTrigger(enimy_stand_up);
+    }
+
+
+    public void PLAY_ENIMY_SHOLDER_DUTE()
+    {
+        enimy_animator_ref.SetTrigger(enimy_sholder_dute);
     }
 
     #endregion
@@ -132,7 +144,19 @@ public class enimy_animation_helper : MonoBehaviour
 
     #endregion
 
-
+    // enimy hit reaction method
+    public void ENIMY_HIT_REACTION(int n)
+    {
+        if(n == 0)
+        {
+            PLAY_ENIMY_FACE_HIT();
+        }
+        
+        if(n == 1)
+        {
+            PLAY_ENIMY_GET_HIT();
+        }
+    }
 
 
 }

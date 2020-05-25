@@ -7,6 +7,8 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public PLAYER_ANIMATION_HELPER player_animation_helper_for_uI_controllers;
 
+    [Inject(InjectFrom.Anywhere)]
+    public playermanager player_mangaer_for_dute;
 
     [Inject(InjectFrom.Anywhere)]
     public gamemanager game_manager_ref;

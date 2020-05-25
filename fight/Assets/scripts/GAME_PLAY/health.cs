@@ -90,7 +90,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             }else
             {
                     nock_check = false;
-                    enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
+                enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.ENIMY_HIT_REACTION(Random.Range(0, 3));
                
             }
         }
