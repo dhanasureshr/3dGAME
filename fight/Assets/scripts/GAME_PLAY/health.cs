@@ -21,6 +21,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
     private bool characted_died;
     public bool is_player;
 
+    public bool disable_enimy_Rotation_collider;
     public bool nock_check;
     public void Start()
     {
@@ -45,12 +46,6 @@ public class health : ExtendedCustomMonoBehavior,IListener
         
         if(characted_died)
         {
-            if(!is_player)
-            {
-                
-                enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
-                Destroy(gameObject, 10.0f);
-            }
             return;
         }
 
@@ -66,8 +61,18 @@ public class health : ExtendedCustomMonoBehavior,IListener
         {
            
             characted_died = true;
+            if (!is_player)
+            {
+                disable_enimy_Rotation_collider = true;
+                enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
+                Destroy(gameObject, 10.0f);
+            }
+            else
+            {
+                disable_enimy_Rotation_collider = false;
+            }
 
-            if(is_player)
+            if (is_player)
             {
                 // deactivate the enimy movement scripts
 
@@ -84,12 +89,13 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 //transform.gameObject.layer = 0;
                 
                     //playnockdon
-                    enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-
-                    nock_check = true;
+                enimy_movement_ref_for_enimyanimations.stopenimyMovement();
+                disable_enimy_Rotation_collider = true;
+                nock_check = true;
             }else
             {
-                    nock_check = false;
+                nock_check = false;
+                disable_enimy_Rotation_collider = false;
                 enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.ENIMY_HIT_REACTION(Random.Range(0, 3));
                
             }

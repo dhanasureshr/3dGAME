@@ -64,6 +64,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region palyer dute variables
     private Transform targeted_enimy_ref;
     private enimy_movement targeted_enimy_movement_script_ref;
+    private bool disable_enimy_rot_colider;
     #endregion
     #region player rotation constraint 
     private void OnTriggerEnter(Collider other)
@@ -75,16 +76,21 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
             targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>();
             targeted_enimy_movement_script_ref = targeted_enimy_ref.gameObject.GetComponentInParent<enimy_movement>();
+            disable_enimy_rot_colider = targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider;
             st.weight = 1.0f;
-            if (t.sourceCount > 0)
-            {
-                t.RemoveSource(0);
-            }
-            t.AddSource(st);
-            t.SetSource(0, st);
+            if(!disable_enimy_rot_colider)
+            { 
 
-           
-            //enimy.gameObject.SetActive(false);
+                if (t.sourceCount > 0)
+                {
+                   
+                    
+                    t.RemoveSource(0);
+                    
+                }
+                t.AddSource(st);
+                t.SetSource(0, st);
+            }
         }
         // Debug.Log("SOME ONE");
     }
@@ -96,11 +102,34 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
 
 
-
         if (other.tag == "ENIMY")
         {
-            st.weight = Mathf.Lerp(0.0f, 1.0f, 1.0f);
+            //t.weight = 1.0f;
+            st.weight = 1.0f;
+
+            //if (t.sourceCount >= 0)
+            //{
+
+            //    t.RemoveSource(0);
+
+            //}
+
+
+            if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+            {
+                if (t.sourceCount >= 0)
+                {
+                    if(t.enabled == true)
+                        t.enabled = false;
+                    return;
+                }
+            }
         }
+
+
+
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -113,6 +142,12 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             if (t.sourceCount > 0)
                 t.RemoveSource(0);
 
+            if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+            {
+                if (t.sourceCount > 0)
+                    t.RemoveSource(0);
+                
+            }
 
         }
     }
@@ -122,6 +157,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     
     public void PLAY_DUTE_ANIMATIONS1()
     {
+        disable_enimy_rot_colider = true;
         Disable_enimy_movement_before_dute_animation();
         transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_SHOLDER_DUTE();
         targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_SHOLDER_DUTE();

@@ -130,8 +130,10 @@ public class enimy_animation_helper : MonoBehaviour
 
     public void enable_nav_mesh_agent()
     {
+        
         if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
         {
+            this.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
             enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
             play_get_hit = true;
         }

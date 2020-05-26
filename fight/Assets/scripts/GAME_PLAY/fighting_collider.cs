@@ -114,50 +114,50 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
         }
     }
 
-    //public void OnEvent(EVENT_TYPE Event_Type, Component Sender, object Param)
+    //public void onevent(event_type event_type, component sender, object param)
     //{
-    //    switch(Event_Type)
+    //    switch(event_type)
     //    {
-    //        case EVENT_TYPE.HEALTH_CHANAGE:
-    //            if(Sender.gameObject.GetComponent<fighting_collider>().is_Player)
+    //        case event_type.health_chanage:
+    //            if(sender.gameobject.getcomponent<fighting_collider>().is_player)
     //            {
     //                //now reduce the enimy health
-    //                //Debug.Log("APPLING DAMAGE TO THE ENIMY");
-    //                //baseusermanager enimy_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
-    //                 baseusermanager enimy_health_reducer = ENIMY.gameObject.GetComponent<baseusermanager>();
-    //                if (Random.Range(0, 3) == 1)
+    //                //debug.log("appling damage to the enimy");
+    //                //baseusermanager enimy_health_reducer = sender.gameobject.getcomponentinparent<baseusermanager>();
+    //                 baseusermanager enimy_health_reducer = enimy.gameobject.getcomponent<baseusermanager>();
+    //                if (random.range(0, 3) == 1)
     //                {
-    //                    enimy_animation_helper enimy_animation_helper_ref = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
-    //                    enimy_animation_helper_ref.PLAY_ENIMY_GET_HIT();
+    //                    enimy_animation_helper enimy_animation_helper_ref = enimy.gameobject.getcomponent<enimy_animation_helper>();
+    //                    enimy_animation_helper_ref.play_enimy_get_hit();
     //                }
-    //                 enimy_health_reducer.ReduceHealth((int)Param);
+    //                 enimy_health_reducer.reducehealth((int)param);
 
                     
                    
                     
     //            }
 
-    //            if(Sender.gameObject.GetComponent<fighting_collider>().is_Enemy)
+    //            if(sender.gameobject.getcomponent<fighting_collider>().is_enemy)
     //            {
     //                // now reduce the palyer health
-    //                //Debug.Log("APPLING DAMAGE TO THE PLAYER");
-    //                //baseusermanager player_health_reducer = Sender.gameObject.GetComponentInParent<baseusermanager>();
-    //                baseusermanager player_health_reducer = PLAYER.GetComponent<baseusermanager>();
-    //                player_health_reducer.ReduceHealth((int)Param);
+    //                //debug.log("appling damage to the player");
+    //                //baseusermanager player_health_reducer = sender.gameobject.getcomponentinparent<baseusermanager>();
+    //                baseusermanager player_health_reducer = player.getcomponent<baseusermanager>();
+    //                player_health_reducer.reducehealth((int)param);
                   
                     
     //            }
     //            break;
 
 
-    //        case EVENT_TYPE.NOCK_ENIMY:
+    //        case event_type.nock_enimy:
 
-    //            enimy_animation_helper enimy_animation_helper_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_animation_helper>();
-    //            enimy_animation_helper_ref_for_nock_down.PLAY_ENIMY_NOCK_DOWN();
-    //            enimy_movement enimy_movement_ref_for_nock_down = ENIMY.gameObject.GetComponent<enimy_movement>();
-    //            enimy_movement_ref_for_nock_down.StopCoroutine("start_enimy_movement");
-    //            enimy_movement_ref_for_nock_down.StopCoroutine("enimy_fighting");
-    //            Debug.Log(ENIMY.name);
+    //            enimy_animation_helper enimy_animation_helper_ref_for_nock_down = enimy.gameobject.getcomponent<enimy_animation_helper>();
+    //            enimy_animation_helper_ref_for_nock_down.play_enimy_nock_down();
+    //            enimy_movement enimy_movement_ref_for_nock_down = enimy.gameobject.getcomponent<enimy_movement>();
+    //            enimy_movement_ref_for_nock_down.stopcoroutine("start_enimy_movement");
+    //            enimy_movement_ref_for_nock_down.stopcoroutine("enimy_fighting");
+    //            debug.log(enimy.name);
 
                 
 
