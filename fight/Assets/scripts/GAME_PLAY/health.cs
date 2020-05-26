@@ -54,9 +54,10 @@ public class health : ExtendedCustomMonoBehavior,IListener
         character_health = baseusemanager_for_common_calculation.GetHealth();
 
         //player health ui displayer code
-        if(is_player)
+        if (is_player)
+        {
             player_manager_ref.Display_player_health(character_health);
-        
+        }
         if (character_health <= 0.0f)
         {
            

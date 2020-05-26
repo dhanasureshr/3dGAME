@@ -189,10 +189,18 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.88945657
-        functionName: enable_nav_mesh_agent
+      - time: 0
+        functionName: disable_enimy_get_hit_animation
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.031602714
+        functionName: stop
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -205,8 +213,8 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0
-        functionName: disable_enimy_get_hit_animation
+      - time: 0.9980708
+        functionName: enable_nav_mesh_agent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
           type: 3}
@@ -245,11 +253,11 @@ ModelImporter:
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 3
+    normalImportMode: 2
+    tangentImportMode: 2
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
+    blendShapeNormalImportMode: 2
     normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0

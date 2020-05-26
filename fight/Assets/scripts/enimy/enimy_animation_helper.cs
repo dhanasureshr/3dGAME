@@ -133,14 +133,15 @@ public class enimy_animation_helper : MonoBehaviour
         
         if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
         {
-            this.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
-            enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
+            transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
+          //  enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
             play_get_hit = true;
         }
     }
 
     public void disable_enimy_get_hit_animation()
     {
+        transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = true;
         play_get_hit = false;
     }
 

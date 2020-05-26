@@ -72,6 +72,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         if (other.tag == "ENIMY")
         {
             Debug.Log("ENIMY_ENTERED");
+            
             t.enabled = true;
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
             targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>();
@@ -83,8 +84,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
                 if (t.sourceCount > 0)
                 {
-                   
-                    
+
                     t.RemoveSource(0);
                     
                 }
@@ -92,43 +92,34 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
                 t.SetSource(0, st);
             }
         }
-        // Debug.Log("SOME ONE");
+        
     }
 
     private void OnTriggerStay(Collider other)
     {
         ///hear we can remove the player rotation constraint scorce when enimy dead
 
-
-
-
         if (other.tag == "ENIMY")
         {
-            //t.weight = 1.0f;
             st.weight = 1.0f;
-
-            //if (t.sourceCount >= 0)
-            //{
-
-            //    t.RemoveSource(0);
-
-            //}
-
-
-            if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+            if (targeted_enimy_movement_script_ref != null)
             {
-                if (t.sourceCount >= 0)
+                if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
-                    if(t.enabled == true)
-                        t.enabled = false;
-                    return;
+                    if (t.sourceCount >= 0)
+                    {
+                        if (t.enabled == true)
+                            t.enabled = false;
+
+
+                        st.sourceTransform = null;
+                        targeted_enimy_ref = null;
+                        targeted_enimy_movement_script_ref = null;
+                        return;
+                    }
                 }
             }
         }
-
-
-
-
 
     }
 
@@ -136,19 +127,24 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         if (other.tag == "ENIMY")
         {
-            //t.constraintActive = false;
-            // t.locked = false;
+
             t.enabled = false;
             if (t.sourceCount > 0)
-                t.RemoveSource(0);
-
-            if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
             {
-                if (t.sourceCount > 0)
-                    t.RemoveSource(0);
-                
+                t.RemoveSource(0);
+            }
+            if (targeted_enimy_movement_script_ref != null)
+            {
+                if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+                {
+                    if (t.sourceCount > 0)
+                        t.RemoveSource(0);
+                }
             }
 
+            st.sourceTransform = null;
+            targeted_enimy_ref = null;
+            targeted_enimy_movement_script_ref = null;
         }
     }
     #endregion
@@ -157,19 +153,27 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     
     public void PLAY_DUTE_ANIMATIONS1()
     {
-        disable_enimy_rot_colider = true;
-        Disable_enimy_movement_before_dute_animation();
-        transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_SHOLDER_DUTE();
-        targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_SHOLDER_DUTE();
+        if (targeted_enimy_movement_script_ref != null)
+        {
+            targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider = true;
+        }
+        if (targeted_enimy_movement_script_ref != null)
+        {
+            Disable_enimy_movement_before_dute_animation();
+        }
 
+        
+        if (targeted_enimy_ref != null)
+        {
+            transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_SHOLDER_DUTE();
+            targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_SHOLDER_DUTE();
+        }
     }
 
     public void Disable_enimy_movement_before_dute_animation()
     {
         targeted_enimy_movement_script_ref.enimy_nav_mesh_agent.enabled = false;
     }
-
-
 
     public void Enable_player_collider_layer()
     {

@@ -281,10 +281,11 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     IEnumerator stand_up_enimy()
     {
-        
+       // transform.gameObject.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(9.0f);
         enimy_animation_helper_ref.PLAY_ENIMY_STAND_UP();
         yield return new WaitForSeconds(1.0f);
+        enimy_nav_mesh_agent.enabled = true;
         StartCoroutine("start_enimy_movement");
         yield return new WaitForSeconds(5.0f);
         transform.gameObject.layer = 11;
@@ -306,7 +307,18 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         should_fight_with_player = false;
         transform.gameObject.layer = 0;
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
-        StopCoroutine("start_enimy_movement");
+        enimy_nav_mesh_agent.enabled = false;
+        //StopCoroutine("start_enimy_movement");
+    }
+
+    public void stop()
+    {
+
+        should_fight_with_player = false;
+        //transform.gameObject.layer = 0;
+        enimy_nav_mesh_agent.enabled = false;
+       // transform.gameObject.GetComponent<Animator>().enabled = false;
+        // StopCoroutine("start_enimy_movement");
     }
 
     public void stopenimy_movement_for_death()
@@ -315,7 +327,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         should_fight_with_player = false;
         transform.gameObject.layer = 0;
         transform.gameObject.GetComponent<Animator>().enabled = false;
-        StopCoroutine("start_enimy_movement");
+        enimy_nav_mesh_agent.enabled = false;
+        //StopCoroutine("start_enimy_movement");
     }
     #endregion
 
