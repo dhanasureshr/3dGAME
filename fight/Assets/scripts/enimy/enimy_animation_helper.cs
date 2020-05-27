@@ -26,9 +26,9 @@ public class enimy_animation_helper : MonoBehaviour
     private static int y_input = Animator.StringToHash("y");
 
     private static int enimy_sholder_dute = Animator.StringToHash("sholder_throw_enimy");
+    private static int enimy_hell_dute = Animator.StringToHash("enimy_hell_slammer");
 
-
-    private bool play_get_hit;
+    public bool play_get_hit;
     private void Start()
     {
         enimy_movement_reference = GetComponent<enimy_movement>();
@@ -87,6 +87,11 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_animator_ref.SetTrigger(enimy_sholder_dute);
     }
 
+    public void PLAY_ENIMY_HELL_DUTE()
+    {
+        enimy_animator_ref.SetTrigger(enimy_hell_dute);
+    }
+
     #endregion
 
     private void Update()
@@ -134,8 +139,8 @@ public class enimy_animation_helper : MonoBehaviour
         if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
         {
             transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
-          //  enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
-            play_get_hit = true;
+            //enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
+            //play_get_hit = true;
         }
     }
 
@@ -145,7 +150,10 @@ public class enimy_animation_helper : MonoBehaviour
         play_get_hit = false;
     }
 
-
+    public void enimy_get_hit_rotation_constraint_disabler()
+    {
+        transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = true;
+    }
 
     #region enimy attack method
     public void enimy_attack(int attack_num)

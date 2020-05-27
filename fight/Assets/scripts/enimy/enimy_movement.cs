@@ -107,7 +107,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 sceenpetrol = false;
             }
 
-            if (distance > 10 && distance < 25)
+            if (distance > 6 && distance < 25)
             {
                 chase = true;
 
@@ -121,7 +121,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
 
-            if (distance < 6 && distance > 3)
+            if (distance > 3 && distance < 6)
             {
                 fightpetrol = true;
 
@@ -290,10 +290,12 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         yield return new WaitForSeconds(5.0f);
         transform.gameObject.layer = 11;
         transform.gameObject.GetComponent<health>().nock_check = false;
+        transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
         if (distance <= enimy_nav_mesh_agent.stoppingDistance)
         {
             should_fight_with_player = true;
         }
+        enimy_animation_helper_ref.play_get_hit = true;
         yield break;
     }
 

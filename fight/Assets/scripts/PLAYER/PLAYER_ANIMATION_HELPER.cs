@@ -51,6 +51,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     // this are the variavels for the player dute animations
     private static int player_showlder_dute = Animator.StringToHash("SHOLDER_THROW_PLAYER");
+    private static int player_hell_dute = Animator.StringToHash("PLAYER_HELL_SLAMMER");
     #endregion
 
     #region mono methods
@@ -128,6 +129,12 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         player_animator_ref.SetTrigger(player_showlder_dute);
     }
+
+    public void PLAY_PLAYER_HELL_DUTE()
+    {
+        player_animator_ref.SetTrigger(player_hell_dute);
+    }
+
     #endregion
 
     public void PLAY_PLAYER_GET_HIT(int val)

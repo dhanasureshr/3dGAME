@@ -20,7 +20,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public RotationConstraint t;
     public ConstraintSource st;
     public LayerMask test_layer_mask;
-    private float radius = 1.157126f;
+    //private float radius = 1.157126f;
     public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool locked { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -75,10 +75,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             
             t.enabled = true;
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
+            st.weight = 1.0f;
             targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>();
             targeted_enimy_movement_script_ref = targeted_enimy_ref.gameObject.GetComponentInParent<enimy_movement>();
             disable_enimy_rot_colider = targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider;
-            st.weight = 1.0f;
+            
             if(!disable_enimy_rot_colider)
             { 
 
@@ -101,6 +102,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
         if (other.tag == "ENIMY")
         {
+
             st.weight = 1.0f;
             if (targeted_enimy_movement_script_ref != null)
             {
@@ -110,7 +112,6 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
                     {
                         if (t.enabled == true)
                             t.enabled = false;
-
 
                         st.sourceTransform = null;
                         targeted_enimy_ref = null;
@@ -165,11 +166,29 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         
         if (targeted_enimy_ref != null)
         {
+            play_dute(Random.Range(0,2));
+
+            //transform.gameobject.getcomponentinparent<player_animation_helper>().play_player_sholder_dute();
+            //targeted_enimy_ref.gameobject.getcomponentinparent<enimy_animation_helper>().play_enimy_sholder_dute();
+
+            //transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_HELL_DUTE();
+            //targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_HELL_DUTE();
+        }
+    }
+    void play_dute(int n)
+    {
+        if(n ==0)
+        {
             transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_SHOLDER_DUTE();
             targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_SHOLDER_DUTE();
         }
-    }
+        if(n == 1)
+        {
 
+            transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_HELL_DUTE();
+            targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_HELL_DUTE();
+        }
+    }
     public void Disable_enimy_movement_before_dute_animation()
     {
         targeted_enimy_movement_script_ref.enimy_nav_mesh_agent.enabled = false;
@@ -177,12 +196,12 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     public void Enable_player_collider_layer()
     {
-        this.transform.gameObject.layer = 10;
+        transform.gameObject.layer = 10;
     }
 
     public void Disable_player_collider_layer()
     {
-        this.transform.gameObject.layer = 0;
+        transform.gameObject.layer = 0;
     }
     public void Setup_player_hand_Ik()
     {
