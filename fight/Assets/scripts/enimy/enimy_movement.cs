@@ -135,21 +135,26 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             //this is for the fighting movement controller check 
             if (distance <= 1.3)
             {
-
-
-                fight_con = Random.Range(0, 3);
-                if (fight_con == 0 || fight_con == 1)
+                if (!nock_check_ref)
                 {
-                    fight = true;
 
+                    fight_con = Random.Range(0, 3);
+                    if (fight_con == 0 || fight_con == 1)
+                    {
+                        fight = true;
+
+                    }
+                    else
+                    {
+                        fight = false;
+
+
+                    }
                 }
-                else
-                {
-                    fight = false;
 
-
-                }
-
+            }else
+            {
+                fight = false;
             }
 
             if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)

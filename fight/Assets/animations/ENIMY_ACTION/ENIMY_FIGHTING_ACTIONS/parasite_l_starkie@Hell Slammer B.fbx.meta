@@ -168,7 +168,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Hell Slammer B
       takeName: mixamo.com
-      firstFrame: 162
+      firstFrame: 198
       lastFrame: 453
       wrapMode: 0
       orientationOffsetY: 0
@@ -178,9 +178,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -197,7 +197,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.025846155
+      - time: 0.021038463
         functionName: stop
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c,
@@ -205,7 +205,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.97584164
+      - time: 0.9830532
         functionName: enable_nav_mesh_agent
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,

@@ -992,7 +992,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 630e8565a0463844293e274d82c4677d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   health: 100
-  applible_damage: 10
+  applible_damage: 0
 --- !u!1001 &499608437966874385
 PrefabInstance:
   m_ObjectHideFlags: 0

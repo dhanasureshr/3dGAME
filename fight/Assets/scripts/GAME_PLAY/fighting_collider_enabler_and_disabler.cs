@@ -93,6 +93,18 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
     }
 
 
+    void Tag_left_leg_TAG()
+    {
+        LEFT_LEG_COLLIDER.tag = tags.player_right_leg_tag;
+
+    }
+
+    void Untag_left_leg_TAG()
+    {
+        LEFT_LEG_COLLIDER.tag = tags.un_tag;
+    }
+
+
     void Tag_left_hand_TAG()
     {
         LEFT_HAND_COLLIDER.tag = tags.player_left_hand_tag;

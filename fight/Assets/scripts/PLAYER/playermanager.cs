@@ -20,6 +20,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public RotationConstraint t;
     public ConstraintSource st;
     public LayerMask test_layer_mask;
+    
     //private float radius = 1.157126f;
     public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -75,6 +76,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             
             t.enabled = true;
             st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
+            
+            
             st.weight = 1.0f;
             targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>();
             targeted_enimy_movement_script_ref = targeted_enimy_ref.gameObject.GetComponentInParent<enimy_movement>();
