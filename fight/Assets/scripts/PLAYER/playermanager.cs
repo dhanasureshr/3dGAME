@@ -47,7 +47,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #endregion
 
     #region player ui display methods
-
+//this is the code to display the player health
     public void Display_player_health(float health_value)
     {
         health_value /= 100.0f;
@@ -67,47 +67,60 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private enimy_movement targeted_enimy_movement_script_ref;
     private bool disable_enimy_rot_colider;
     #endregion
+    
+    ///<summery>
+    /// this is the code to rotate the player towords the enimy when the enimy enters in to the fight range
+    /// and also this code will help to set the rotation cosstraint sorces at run time when the enimy with in range
+    ///</summery>
+    
     #region player rotation constraint 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ENIMY")
+        if (other.tag == "ENIMY") // to check weather enimy is entered or not
         {
             Debug.Log("ENIMY_ENTERED");
             
-            t.enabled = true;
-            st.sourceTransform = other.gameObject.GetComponentInParent<Transform>();
+            t.enabled = true; // now i enabled the rotation constraint when entered into the fighting range
             
+            st.sourceTransform = other.gameObject.GetComponentInParent<Transform>(); // placing enimy transform and placing 
+                                                                                     // in constraint sorce
+                                                                                     
+            st.weight = 1.0f; //appling wait to the sorce transform now player will rotate towords enimy
             
-            st.weight = 1.0f;
-            targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>();
-            targeted_enimy_movement_script_ref = targeted_enimy_ref.gameObject.GetComponentInParent<enimy_movement>();
-            disable_enimy_rot_colider = targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider;
-            
-            if(!disable_enimy_rot_colider)
+            targeted_enimy_ref = st.sourceTransform.GetComponentInParent<Transform>(); // getting exact enimy transform 
+                                                                                       // from the setted constraint sorce
+                                                                                       
+            targeted_enimy_movement_script_ref = targeted_enimy_ref.gameObject.GetComponentInParent<enimy_movement>();//getting the enimy 
+                                                                                        // movement script from the targeted_enimy_ref 
+            disable_enimy_rot_colider = targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider;// a 
+                                                                // bool variable to determine whether to disable enimy rotation collider 
+                                                                      
+            if(!disable_enimy_rot_colider) // if  disable_enimy_rot_colider is false 
             { 
 
-                if (t.sourceCount > 0)
+                if (t.sourceCount > 0) // if rotation constraint sorce count grater than 0 then this will execute
                 {
 
-                    t.RemoveSource(0);
+                    t.RemoveSource(0); // this will remove all the sorces form the Rotation constraint
                     
                 }
-                t.AddSource(st);
-                t.SetSource(0, st);
+                t.AddSource(st); // this will creat a sorce container on the Rotation constraint
+                t.SetSource(0, st); // this will set the current enimy sorce transform to the Rotation constraint at index 0
             }
         }
         
-    }
+    } // end of ontriggerenter method
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other) 
     {
         ///hear we can remove the player rotation constraint scorce when enimy dead
 
-        if (other.tag == "ENIMY")
+        if (other.tag == "ENIMY") // check whether the enimy entered or not
         {
 
-            st.weight = 1.0f;
-            if (targeted_enimy_movement_script_ref != null)
+            st.weight = 1.0f; // now player will rotate towords enimy
+            
+            if (targeted_enimy_movement_script_ref != null) // if there is a enimy_movement script 
             {
                 if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
