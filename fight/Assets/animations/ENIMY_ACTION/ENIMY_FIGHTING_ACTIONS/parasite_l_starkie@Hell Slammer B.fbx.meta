@@ -178,9 +178,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 1
+      loopBlendOrientation: 0
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
@@ -197,7 +197,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.021038463
+      - time: 0.74127656
         functionName: stop
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c,
@@ -205,15 +205,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9830532
-        functionName: enable_nav_mesh_agent
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.997942
+      - time: 0.91758484
         functionName: STAND_UP_ENIMY_AFTER_TIME
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 66e4f22885ff95346af434e30eb48a8c,

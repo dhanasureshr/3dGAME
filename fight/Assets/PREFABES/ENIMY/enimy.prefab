@@ -992,7 +992,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 630e8565a0463844293e274d82c4677d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   health: 100
-  applible_damage: 0
+  applible_damage: 5
 --- !u!1001 &499608437966874385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,6 +1419,10 @@ PrefabInstance:
       value: Mesh
       objectReference: {fileID: 0}
     - target: {fileID: 100124, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100124, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_TagString
       value: ENIMY
       objectReference: {fileID: 0}
@@ -1431,10 +1435,6 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100110, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100118, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -1510,10 +1510,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 100056, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1530,10 +1526,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 100126, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 100102, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -1543,10 +1535,6 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100108, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 100128, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}

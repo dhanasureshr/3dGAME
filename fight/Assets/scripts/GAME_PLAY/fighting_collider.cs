@@ -65,8 +65,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 Vector3 hit_pos = hit[0].transform.position;
                 //Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
-                if (gameObject.CompareTag(
-                    tags.player_right_leg_tag))
+                if (gameObject.CompareTag(tags.player_left_leg_tag))
                 {
                     Debug.Log("enimy_nock_down");
                     // event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);

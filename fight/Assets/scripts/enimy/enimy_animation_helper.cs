@@ -133,16 +133,6 @@ public class enimy_animation_helper : MonoBehaviour
     
     */
 
-    public void enable_nav_mesh_agent()
-    {
-        
-        if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
-        {
-            transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
-            //enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
-            //play_get_hit = true;
-        }
-    }
 
     public void disable_enimy_get_hit_animation()
     {
@@ -150,10 +140,41 @@ public class enimy_animation_helper : MonoBehaviour
         play_get_hit = false;
     }
 
+
+    public void enable_enimy_get_hit_animation()
+    {
+        transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
+        play_get_hit = true;
+    }
+
+
+    /// <summary>
+    /// ///////////////////////////////////////////////////////////////////////////
+    /// </summary>
     public void enimy_get_hit_rotation_constraint_disabler()
     {
         transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = true;
     }
+
+
+    public void enable_nav_mesh_agent()
+    {
+
+        if (enimy_movement_reference.enimy_nav_mesh_agent.enabled == false)
+        {
+            transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
+            enimy_movement_reference.enimy_nav_mesh_agent.enabled = true;
+            play_get_hit = true;
+        }
+    }
+    /// <summary>
+    /// //////////////////////////////////////////////////////////////////////////////
+    /// </summary>
+    /// <param name="attack_num"></param>
+    /// 
+
+
+
 
     #region enimy attack method
     public void enimy_attack(int attack_num)

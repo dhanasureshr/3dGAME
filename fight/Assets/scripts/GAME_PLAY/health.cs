@@ -91,12 +91,14 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 
                     //playnockdon
                 enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-                disable_enimy_Rotation_collider = true;
-                nock_check = true;
+                //disable_enimy_Rotation_collider = true;
+                //nock_check = true;
+                enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.disable_enimy_get_hit_animation();
+
             }else
             {
-                nock_check = false;
-                disable_enimy_Rotation_collider = false;
+                //nock_check = false;
+                //disable_enimy_Rotation_collider = false;
                 enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.ENIMY_HIT_REACTION(Random.Range(0, 3));
                
             }

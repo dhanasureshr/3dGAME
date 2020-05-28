@@ -52,7 +52,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     #endregion
 
-
+    private Transform chi;
 
     private void Start()
     {
@@ -293,14 +293,17 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         enimy_nav_mesh_agent.enabled = true;
         StartCoroutine("start_enimy_movement");
         yield return new WaitForSeconds(5.0f);
-        transform.gameObject.layer = 11;
+        //transform.gameObject.layer = 11;
+        SetLayerRecursively(transform.gameObject, 11);
+        ///////////////////////////transform.gameObject.GetComponent<health>().nock_check = false;
+        ////////transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
+        transform.gameObject.GetComponent<enimy_animation_helper>().enable_enimy_get_hit_animation();
         transform.gameObject.GetComponent<health>().nock_check = false;
-        transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = false;
         if (distance <= enimy_nav_mesh_agent.stoppingDistance)
         {
             should_fight_with_player = true;
         }
-        enimy_animation_helper_ref.play_get_hit = true;
+        
         yield break;
     }
 
@@ -312,30 +315,41 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public void stopenimyMovement()
     {
         should_fight_with_player = false;
-        transform.gameObject.layer = 0;
+        //transform.gameObject.layer = 0;
+        SetLayerRecursively(transform.gameObject, 0);
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
         enimy_nav_mesh_agent.enabled = false;
-        //StopCoroutine("start_enimy_movement");
+        StopCoroutine("start_enimy_movement");
     }
 
     public void stop()
     {
-
         should_fight_with_player = false;
         //transform.gameObject.layer = 0;
+        SetLayerRecursively(transform.gameObject, 0);
         enimy_nav_mesh_agent.enabled = false;
-       // transform.gameObject.GetComponent<Animator>().enabled = false;
-        // StopCoroutine("start_enimy_movement");
+        transform.gameObject.GetComponent<health>().nock_check = true ;
+        StopCoroutine("start_enimy_movement");
     }
 
     public void stopenimy_movement_for_death()
     {
-
         should_fight_with_player = false;
-        transform.gameObject.layer = 0;
+        //transform.gameObject.layer = 0;
+        SetLayerRecursively(transform.gameObject, 0);
         transform.gameObject.GetComponent<Animator>().enabled = false;
         enimy_nav_mesh_agent.enabled = false;
         //StopCoroutine("start_enimy_movement");
+    }
+
+
+
+    public static void SetLayerRecursively(GameObject go, int layerNumber)
+    {
+        foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+        {
+            trans.gameObject.layer = layerNumber;
+        }
     }
     #endregion
 

@@ -153,8 +153,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event STAND_UP_ENIMY_AFTER_TIME has a time (2.115949)
-      outside the clip's valid range (0.000000..1.700000). It will never be fired
+    animationImportWarnings: Event enable_nav_mesh_agent has a time (1.992548) outside
+      the clip's valid range (0.000000..1.700000). It will never be firedEvent STAND_UP_ENIMY_AFTER_TIME
+      has a time (2.115949) outside the clip's valid range (0.000000..1.700000). It
+      will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -191,22 +193,6 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.017153975
-        functionName: enimy_get_hit_rotation_constraint_disabler
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.9340066
-        functionName: enable_nav_mesh_agent
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 38eed22a6bfeed24a99ad04ecf8fc301,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.991851
         functionName: STAND_UP_ENIMY_AFTER_TIME
         data: 
