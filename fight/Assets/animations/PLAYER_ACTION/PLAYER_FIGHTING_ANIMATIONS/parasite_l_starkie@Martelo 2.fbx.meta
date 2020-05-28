@@ -190,6 +190,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.0013684356
+        functionName: LEFT_LEG_ENABLER
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.30721787
         functionName: LEFT_LEG_DISABLER
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 5fac9d224629cf34ba845c9ed44eb9b9,
