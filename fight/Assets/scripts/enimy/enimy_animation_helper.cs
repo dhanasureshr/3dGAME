@@ -156,7 +156,7 @@ public class enimy_animation_helper : MonoBehaviour
         transform.gameObject.GetComponent<health>().disable_enimy_Rotation_collider = true;
     }
 
-
+    // i think the below code can be delet
     public void enable_nav_mesh_agent()
     {
 

@@ -98,10 +98,10 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 if (Random.Range(0, 3) > 0)
                 {
                     ///////////////////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
-                    if(Random.Range(0,5)>0)
-                    {
+                   // if(Random.Range(0,5)>0)
+                   // {
                         hit[0].GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_GET_HIT(Random.Range(0,4));
-                    }
+                    //}
                     hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_player();
                 }
             }

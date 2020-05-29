@@ -549,7 +549,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7557738453829128306}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.021692418, y: 0.012326856, z: 0.009593891}
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   enimy_rendrer: {fileID: 7557738453817564528}
   default_attack_time: 1
   current_attack_time: 0
-  play_get_hit: 0
+  play_get_hit: 1
 --- !u!114 &5937239003941021552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1451,6 +1451,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8de63c79f713e4f45864b421a510f90f, type: 2}
@@ -1539,9 +1543,33 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 033a72f446116214e9090af6f4091900, type: 2}
+    - target: {fileID: 13700004, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700004, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700004, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100050, guid: 7c6330b40539a244f8338c8af16ee33d, type: 3}
       propertyPath: m_Layer
       value: 11
