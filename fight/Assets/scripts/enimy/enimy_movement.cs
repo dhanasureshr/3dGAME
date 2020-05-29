@@ -348,6 +348,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     {
         foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
         {
+            
             trans.gameObject.layer = layerNumber;
         }
     }

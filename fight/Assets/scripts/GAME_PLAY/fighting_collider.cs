@@ -63,6 +63,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
+                hit_pos = hit_pos + new Vector3(0.0f, 0.5f, 0.0f);
                 //Instantiate(hit_Fx, hit_pos, Quaternion.identity);
 
                 if (gameObject.CompareTag(tags.player_left_leg_tag))
