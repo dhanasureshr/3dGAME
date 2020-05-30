@@ -10,20 +10,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     /// like enimy_healht,etc;
     /// by considering this script as a base for enimy to provide data to remaining modules
     /// </summary>
-    
-  
-   
-    
-   
-    private void Start()
-    {
-       
-       
-    }
-    public void Update()
-    {
-       
 
-    }
+    public enimy_common_data enimy_properties;
 
 }

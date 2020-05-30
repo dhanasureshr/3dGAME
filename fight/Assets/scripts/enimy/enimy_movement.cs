@@ -13,65 +13,91 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     /// chasing state
     /// </summary>
     [TextArea]
-    public string objd = "this should be attatched to the enimy mesh where enimy animator and nav_mesh_agent";
-    //this are the variables for the enimy movement
+    public string objd = "this should be attatched to the enimy parent where enimy animator and nav_mesh_agent";
+    #region Enimy_properties
+    private float fighting_petrol_distance_ref;
+    private float chase_distance_ref;
+    private float scene_petrol_distance_ref;
+    private float attack_distance_ref;
+    private enimy_manager eimy_manager_ref_for_enimy_properties;
+
+    private float stoping_distance_ref;
+    private bool near_attacker_ref;
+    private bool far_attacker_ref;
+    #endregion
+
+
+    #region this are the variables for the enimy movement
     public NavMeshAgent enimy_nav_mesh_agent;
     public enimy_animation_helper enimy_animation_helper_ref;
-    [HideInInspector]
-    public Transform target_position;
-    [HideInInspector]
-    public GameObject main_player;
-    [HideInInspector]
-    public float max_distance;
-    [HideInInspector]
-    public float distance;
+    [HideInInspector]public Transform target_position;
+    [HideInInspector]public GameObject main_player;
+    [HideInInspector]public float max_distance;
+    [HideInInspector] public float distance;
+    public bool fight = false;
+    public bool chase = false;
+    public bool should_fight_with_player;
+    private int fight_con = 0;
+    private Transform chi;
+    private bool nock_check_ref;
+    #endregion
+
+    #region fight petrol variables
     public Transform[] fightpoints;
     public GameObject[] target_fight_points;
-    private int destfightpoint = 0;
-
-    public bool fight = false;
     public bool fightpetrol = false;
-    public bool chase = false;
-    private int fight_con = 0;
-
-    public bool should_fight_with_player;
-    private bool nock_check_ref;
-
+    private int destfightpoint = 0;
+    #endregion
 
     #region scene petrol variables
 
-    public Transform[] scenepoints; // ////////////////////////////////////////////////
-    public GameObject[] target_scene_points;// ////////////////////////////////////////
-    private int destscenepoint = 0;// ////////////////////////////////////////////////
-
-
-    public bool sceenpetrol = false; // ///////////////////////////////////////////////////
-
+    public Transform[] scenepoints;
+    public GameObject[] target_scene_points;
+    private int destscenepoint = 0;
+    public bool sceenpetrol = false; 
     private int scenepointcount = 0;
     private float scenepointdistance;
 
     #endregion
 
-    private Transform chi;
+    
 
     private void Start()
     {
-       
+        #region Enimy_properties_initlizer
+
+        eimy_manager_ref_for_enimy_properties = gameObject.GetComponent<enimy_manager>();
+
+        fighting_petrol_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.FIGHTING_PETROL_DISTANCE;
+        chase_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.CHASE_DISTANCE;
+        scene_petrol_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.SENEPETROL_DISTANCE;
+        attack_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.ATTACK_DISTANCE;
+
+        stoping_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.STOPING_DISTANCE_REF;
+
+
+        near_attacker_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.NEAR_ATTACKER;
+        far_attacker_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.FAR_ATTACKER;
+
+        #endregion
+
+
+        #region this is the enimy common code 
         enimy_nav_mesh_agent.updateRotation = true;
-      
-        // this is for the enimy petrol code 
         enimy_nav_mesh_agent.autoBraking = false;
         main_player = GameObject.FindWithTag("Player");
         target_position = main_player.GetComponent<Transform>();
         StartCoroutine("start_enimy_movement");
-        //StartCoroutine("enimy_fighting");
+        #endregion
+
+        #region fight petrol initial checks
         target_fight_points = GameObject.FindGameObjectsWithTag("p1");
         for(int i = 0;i<target_fight_points.Length;i++)
         {
             fightpoints[i] = target_fight_points[i].gameObject.GetComponent<Transform>();
         }
         destfightpoint = fightpoints.Length;
-
+        #endregion
 
         #region sceen petrol initial checks
         /////////////////////////////////////////////
@@ -96,53 +122,134 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
 
         distance = Vector3.Distance(transform.position, target_position.position);
+       // Debug.Log(distance);
+
+        #region OLD VERSION CODE FOR ENIMY AI
+        //if (enimy_nav_mesh_agent.enabled == true)
+        //{
+        //    if (distance >= 25)
+        //    {
+        //        sceenpetrol = true;
+        //    }
+        //    else
+        //    {
+        //        sceenpetrol = false;
+        //    }
+
+        //    if (distance > 6 && distance < 25)
+        //    {
+        //        chase = true;
+
+        //    }
+        //    else
+        //    {
+        //        chase = false;
+
+        //    }
+
+
+
+
+        //    if (distance > 3 && distance < 6)
+        //    {
+        //        fightpetrol = true;
+
+        //    }
+        //    else
+        //    {
+        //        fightpetrol = false;
+
+        //    }
+
+        //    //this is for the fighting movement controller check 
+        //    if (distance <= 1.3)
+        //    {
+        //       // if (!nock_check_ref)
+        //       // {
+        //            fight_con = Random.Range(0, 3);
+        //            if (fight_con == 0 || fight_con == 1)
+        //            {
+        //                fight = true;
+
+        //            }
+        //            else
+        //            {
+        //                fight = false;
+
+
+        //            }
+        //       // }
+
+        //    }else
+        //    {
+        //        fight = false;
+        //    }
+
+        //    if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
+        //    {
+        //        should_fight_with_player = true;
+        //    }
+        //    else
+        //    {
+        //        should_fight_with_player = false;
+        //    }
+
+        //    if (should_fight_with_player)
+        //    {
+        //        Fight_with_player_method();
+        //    }
+
+
+        //}//end of movement conditions checking
+        #endregion
+
+
         if (enimy_nav_mesh_agent.enabled == true)
         {
-            if (distance >= 25)
+            enimy_nav_mesh_agent.stoppingDistance = stoping_distance_ref;
+            if (near_attacker_ref)
             {
-                sceenpetrol = true;
-            }
-            else
-            {
-                sceenpetrol = false;
-            }
+                if (distance >= scene_petrol_distance_ref)
+                {
+                    sceenpetrol = true;
+                    enimy_nav_mesh_agent.speed = 3.0f;
+                }
+                else
+                {
+                    sceenpetrol = false;
+                }
 
-            if (distance > 6 && distance < 25)
-            {
-                chase = true;
+                if (distance > chase_distance_ref && distance < scene_petrol_distance_ref)
+                {
+                    chase = true;
+                    enimy_nav_mesh_agent.speed = 2.5f;
+                }
+                else
+                {
+                    chase = false;
 
-            }
-            else
-            {
-                chase = false;
+                }
 
-            }
+                if (distance > fighting_petrol_distance_ref && distance < chase_distance_ref)
+                {
+                    fightpetrol = true;
+                    enimy_nav_mesh_agent.speed = 2.0f;
+                }
+                else
+                {
+                    fightpetrol = false;
+
+                }
 
 
-
-
-            if (distance > 3 && distance < 6)
-            {
-                fightpetrol = true;
-
-            }
-            else
-            {
-                fightpetrol = false;
-
-            }
-
-            //this is for the fighting movement controller check 
-            if (distance <= 1.3)
-            {
-               // if (!nock_check_ref)
-               // {
-
+                //this is for the fighting movement controller check 
+                if (distance <= attack_distance_ref)
+                {
                     fight_con = Random.Range(0, 3);
                     if (fight_con == 0 || fight_con == 1)
                     {
                         fight = true;
-
+                        enimy_nav_mesh_agent.speed = 1.5f;
                     }
                     else
                     {
@@ -150,29 +257,69 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
                     }
-               // }
+                }
+                else
+                {
+                    fight = false;
+                }
 
-            }else
-            {
-                fight = false;
+                if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
+                {
+                    should_fight_with_player = true;
+                }
+                else
+                {
+                    should_fight_with_player = false;
+                }
+
+                if (should_fight_with_player)
+                {
+                    Fight_with_player_method();
+                }
+
             }
 
-            if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
-            {
-                should_fight_with_player = true;
-            }
-            else
-            {
-                should_fight_with_player = false;
-            }
 
-            if (should_fight_with_player)
+            if (far_attacker_ref)
             {
-                Fight_with_player_method();
+                if (distance > chase_distance_ref)
+                {
+                    fight = true;
+
+                }
+                else
+                {
+                    fight  = false;
+
+                }
+                
+
+
+                if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
+                {
+                    should_fight_with_player = true;
+                    Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                    transform.LookAt(tar);
+                    if(distance < attack_distance_ref)
+                    {
+                        should_fight_with_player = false;
+                    }
+                }
+                else
+                {
+                    should_fight_with_player = false;
+                }
+
+                if (should_fight_with_player)
+                {
+                    Fight_with_player_method();
+                }
+
             }
+        }//end of movement conditions checking
 
 
-        }
+
     }
     #endregion
 
@@ -206,6 +353,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             {
                 enimy_nav_mesh_agent.updateRotation = true;
                 enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+              
             }
 
             if (fpet)
