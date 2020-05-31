@@ -28,8 +28,11 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
     #region this are the variables for the enimy movement
-    public NavMeshAgent enimy_nav_mesh_agent;
-    public enimy_animation_helper enimy_animation_helper_ref;
+
+    [HideInInspector] public NavMeshAgent enimy_nav_mesh_agent;
+    [HideInInspector] public enimy_animation_helper enimy_animation_helper_ref;
+
+
     [HideInInspector]public Transform target_position;
     [HideInInspector]public GameObject main_player;
     [HideInInspector]public float max_distance;
@@ -68,6 +71,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         eimy_manager_ref_for_enimy_properties = gameObject.GetComponent<enimy_manager>();
 
+        enimy_nav_mesh_agent = eimy_manager_ref_for_enimy_properties.E__manager_ref_NavMeshAgent;
+        enimy_animation_helper_ref = eimy_manager_ref_for_enimy_properties.E__manager_ref_enimy_animation_helper;
+
         fighting_petrol_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.FIGHTING_PETROL_DISTANCE;
         chase_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.CHASE_DISTANCE;
         scene_petrol_distance_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.SENEPETROL_DISTANCE;
@@ -79,6 +85,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         near_attacker_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.NEAR_ATTACKER;
         far_attacker_ref = eimy_manager_ref_for_enimy_properties.enimy_properties.FAR_ATTACKER;
 
+        
         #endregion
 
 
@@ -124,7 +131,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         distance = Vector3.Distance(transform.position, target_position.position);
        // Debug.Log(distance);
 
-        #region OLD VERSION CODE FOR ENIMY AI
+        #region OLD VERSION CODE FOR ENIMY AI DEDEKATED TO BASE ENIMY
         //if (enimy_nav_mesh_agent.enabled == true)
         //{
         //    if (distance >= 25)
@@ -207,6 +214,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         if (enimy_nav_mesh_agent.enabled == true)
         {
             enimy_nav_mesh_agent.stoppingDistance = stoping_distance_ref;
+
+            #region NEAR_ATTACKER MOVEMENT CONDITIONS
             if (near_attacker_ref)
             {
                 if (distance >= scene_petrol_distance_ref)
@@ -278,8 +287,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 }
 
             }
+            #endregion
 
-
+            #region FAR_ATTACKER MOVEMENT CONDITIONS
             if (far_attacker_ref)
             {
                 if (distance > chase_distance_ref)
@@ -293,17 +303,19 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
                 }
                 
-
-
-                if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
+                if (distance <= attack_distance_ref && !nock_check_ref)
                 {
                     should_fight_with_player = true;
                     Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
                     transform.LookAt(tar);
-                    if(distance < attack_distance_ref)
-                    {
-                        should_fight_with_player = false;
-                    }
+                    //if (distance <= attack_distance_ref)
+                    //{
+                    //    should_fight_with_player = true;
+                    //}
+                    //else
+                    //{
+                    //    should_fight_with_player = false;
+                    //}
                 }
                 else
                 {
@@ -316,6 +328,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 }
 
             }
+            #endregion
+
         }//end of movement conditions checking
 
 
@@ -336,7 +350,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     #endregion
 
 
-    #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods
+    #region common_enimy_movement_controlled_by_the_enimy_Ienumrator_methods  NEAR_ATTACKER
     public void common_enimy_movement(bool fig,bool cha,bool fpet,bool spet)
     {
         if (enimy_nav_mesh_agent.enabled == true)
@@ -402,6 +416,24 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
     #endregion
 
+    #region common_enimy_movement_contolled_by_the_enimy_Ienmrator_methods FAR_ATTACKER
+    public void common_enimy_movement_far_attacker(bool fig)
+    {
+        if(enimy_nav_mesh_agent.enabled == true)
+        {
+            if(fig)
+            {
+                
+                enimy_nav_mesh_agent.updateRotation = false;
+                Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                transform.LookAt(tar);
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+                
+            }
+        }
+    }
+    #endregion
+
     #region enimy_Ienumerator_methods
 
     #region enimy Movement method
@@ -413,8 +445,15 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         if (enimy_nav_mesh_agent.enabled == true)
         {
             yield return new WaitForSeconds(2);
-            common_enimy_movement(fight, chase, fightpetrol, sceenpetrol);
+            if (near_attacker_ref)
+            {
+                common_enimy_movement(fight, chase, fightpetrol, sceenpetrol);
+            }
 
+            if(far_attacker_ref)
+            {
+                common_enimy_movement_far_attacker(fight);
+            }
             yield return StartCoroutine("start_enimy_movement");
         }
         else

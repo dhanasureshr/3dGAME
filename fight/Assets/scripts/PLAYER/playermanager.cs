@@ -68,10 +68,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private bool disable_enimy_rot_colider;
     #endregion
     
-    ///<summery>
+    /// <summary>
     /// this is the code to rotate the player towords the enimy when the enimy enters in to the fight range
     /// and also this code will help to set the rotation cosstraint sorces at run time when the enimy with in range
-    ///</summery>
+    /// /</summary>
     
     #region player rotation constraint 
     private void OnTriggerEnter(Collider other)

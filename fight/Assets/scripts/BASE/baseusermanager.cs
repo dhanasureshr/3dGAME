@@ -11,6 +11,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 	private bool isfinished;
 	public float health = 100;
 	public float applible_damage = 0.0f;
+	public bool isplayer;
 	#endregion
 
 	#region IMPORTANT GAME LOGIC METHODS
@@ -19,7 +20,15 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 
 	private void Start()
 	{
-		current_character_health_script_ref = gameObject.GetComponent<health>();
+		if (isplayer)
+		{
+			current_character_health_script_ref = gameObject.GetComponent<health>();
+		}
+		else
+		{
+			current_character_health_script_ref = gameObject.GetComponent<enimy_manager>().E__manager_ref_health;
+			applible_damage = gameObject.GetComponent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;
+		}
 	}
 
 

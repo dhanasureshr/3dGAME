@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class enimy_animation_helper : MonoBehaviour
 {
-    public enimy_movement enimy_movement_reference;
-    public Animator enimy_animator_ref;
-    public Renderer enimy_rendrer;
+    [HideInInspector] public Animator enimy_animator_ref; //controlled by enimy manager
+    [HideInInspector] public Renderer enimy_rendrer; // controlled by enimy manger
+
+    private enimy_movement enimy_movement_reference;
+   
+
+    private enimy_manager enimy_manger_ref_for_component_shareng;
+
     [HideInInspector]
     public float default_attack_time = 1.0f;
     [HideInInspector]
     public float current_attack_time;
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
+
+
     private static int enimy_run = Animator.StringToHash("move");
     private static int enimy_get_hit = Animator.StringToHash("get_hit");
     private static int enimy_face_hit = Animator.StringToHash("punch_to_face_enimy");
@@ -28,17 +35,35 @@ public class enimy_animation_helper : MonoBehaviour
     private static int enimy_sholder_dute = Animator.StringToHash("sholder_throw_enimy");
     private static int enimy_hell_dute = Animator.StringToHash("enimy_hell_slammer");
 
+
+
+
     public bool play_get_hit;
+
+
+    // test to changer the animator controller at run time
+   //////////////////////////////////////////////////////////// public RuntimeAnimatorController rp;
+
+
     private void Start()
     {
-        enimy_movement_reference = GetComponent<enimy_movement>();
-        enimy_animator_ref = GetComponent<Animator>();
-        enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
+       // enimy_movement_reference = GetComponent<enimy_movement>();
+       // enimy_animator_ref = GetComponent<Animator>();  // this is controlled by the enimy manager 
+        //enimy_rendrer = GetComponentInChildren<SkinnedMeshRenderer>();
+        //enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
+
+        // test to changer the animator controller at run time
+        ////////////////////////////////////////////////////// enimy_animator_ref.runtimeAnimatorController = rp;
+
+
+        enimy_manger_ref_for_component_shareng = gameObject.GetComponent<enimy_manager>();
+        enimy_movement_reference = enimy_manger_ref_for_component_shareng.E__manager_ref_enimy_movement;
         enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
+        
     }
 
     #region enimy_fighting_functions
-    
+
     public void PLAY_ENIMY_GET_HIT()
     {
         enimy_animator_ref.SetTrigger(enimy_get_hit);
