@@ -104,21 +104,13 @@ public class health : ExtendedCustomMonoBehavior,IListener
         {
             if(KnockDown)
             {
-                //transform.gameObject.layer = 0;
-                
-                    //playnockdon
                 enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-                //disable_enimy_Rotation_collider = true;
-                //nock_check = true;
-                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();//////////////////////////////
+                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();
                 enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.disable_enimy_get_hit_animation();
 
             }else
             {
-                //nock_check = false;
-                //disable_enimy_Rotation_collider = false;
-                enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.ENIMY_HIT_REACTION(Random.Range(0, 3));
-               
+                enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.ENIMY_HIT_REACTION(Random.Range(0, 3));  
             }
         }
     }

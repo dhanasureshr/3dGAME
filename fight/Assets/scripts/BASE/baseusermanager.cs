@@ -10,7 +10,7 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 	private  int level;
 	private bool isfinished;
 	public float health = 100;
-	public float applible_damage = 0.0f;
+
 	public bool isplayer;
 	#endregion
 
@@ -27,24 +27,41 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		else
 		{
 			current_character_health_script_ref = gameObject.GetComponent<enimy_manager>().E__manager_ref_health;
-			applible_damage = gameObject.GetComponent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;
+	
 		}
 	}
 
 
-	public void apply_damage_on_enimy_with_nock_down()
+	//public void apply_damage_on_enimy_with_nock_down()
+	//{
+	//	current_character_health_script_ref.ApplyDamage(applible_damage,true);
+	//}
+
+	//public void apply_damage_on_enimy_with_gethit()
+	//{
+	//	current_character_health_script_ref.ApplyDamage(applible_damage, false);
+	//}
+
+	//public void apply_damage_on_player()
+	//{
+	//	current_character_health_script_ref.ApplyDamage(applible_damage, false);
+	//}
+
+
+
+	public void apply_damage_on_enimy_with_nock_down(float damage_can_be_applied_on_enimy)
 	{
-		current_character_health_script_ref.ApplyDamage(applible_damage,true);
+		current_character_health_script_ref.ApplyDamage(damage_can_be_applied_on_enimy, true);
 	}
 
-	public void apply_damage_on_enimy_with_gethit()
+	public void apply_damage_on_enimy_with_gethit(float damage_can_be_applied_on_enimy)
 	{
-		current_character_health_script_ref.ApplyDamage(applible_damage, false);
+		current_character_health_script_ref.ApplyDamage(damage_can_be_applied_on_enimy, false);
 	}
 
-	public void apply_damage_on_player()
+	public void apply_damage_on_player(float damage_can_be_applied_on_player)
 	{
-		current_character_health_script_ref.ApplyDamage(applible_damage, false);
+		current_character_health_script_ref.ApplyDamage(damage_can_be_applied_on_player, false);
 	}
 
 

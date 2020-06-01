@@ -5,15 +5,14 @@ using UnityEngine.UI;
 public class basegamecontroller : ExtendedCustomMonoBehavior
 {
 	#region Local variabels to provide communication with the scripts
+
 	[Inject(InjectFrom.Anywhere)]
 	public event_manager event_manager_ref;
 
-	public GameObject GAME_LOST_PANAL;
+	[Inject(InjectFrom.Anywhere)]
+	public ui_prefabs_provider_to_gamemanager ui_prefabs_provider;
 
-	public GameObject GAME_RESUME_PANAL;
 
-	public GameObject Enimy_health_bar_prefab; // enimy_health bar to activate and deactivate accordingely;
-	public Image E_health_bar_image;
 	#endregion
 
 	
@@ -24,7 +23,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 		// this deals about the player death and updating the ui
 		Debug.Log("player_lost_life___---from the basegamecontroller");
 
-		GAME_LOST_PANAL.SetActive(true);
+		
+		Enable_object_in_hirichery(ui_prefabs_provider.Game_lost_panal_prefab);
 		
 	}
 
@@ -66,25 +66,38 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public virtual void GamePaused_Handler_Method()
 	{
-		GAME_RESUME_PANAL.SetActive(true);
+		
+		Enable_object_in_hirichery(ui_prefabs_provider.Game_resume_panal_prefab);
 	}
 
 	public virtual void GameResumed_Handler_Method()
 	{
 		// this delas about game controlls when the game is resumed
-		GAME_RESUME_PANAL.SetActive(false);
+		Disable_object_in_hirichery(ui_prefabs_provider.Game_resume_panal_prefab);
 	}
 
 
 	public virtual void Enable_enimy_health_bar()
 	{
-		Enimy_health_bar_prefab.SetActive(true);
+		Enable_object_in_hirichery(ui_prefabs_provider.Enimy_health_bar_prefab);
 	}
 
 	public virtual void Disable_enimy_health_bar()
 	{
-		Enimy_health_bar_prefab.SetActive(false);
+		
+		Disable_object_in_hirichery(ui_prefabs_provider.Enimy_health_bar_prefab);
 	}
-    #endregion
+
+
+	public virtual void Enable_object_in_hirichery(GameObject ref_gameobject_to_activate_in_hirichey)
+	{
+		ref_gameobject_to_activate_in_hirichey.SetActive(true);
+	}
+
+	public virtual void Disable_object_in_hirichery(GameObject ref_gameobject_to_deactivate_in_hirichey)
+	{
+		ref_gameobject_to_deactivate_in_hirichey.SetActive(false);
+	}
+	#endregion
 
 }

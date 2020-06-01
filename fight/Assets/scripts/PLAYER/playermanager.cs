@@ -16,6 +16,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
 
+    #region changin the applible damage code to set it on opponent
+    public float AApplible_damage = 2.0f;
+    #endregion
+
     #region Rotation constraint variables
     public RotationConstraint t;
     public ConstraintSource st;

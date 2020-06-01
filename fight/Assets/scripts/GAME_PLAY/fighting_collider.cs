@@ -21,27 +21,22 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     
     public LayerMask collisionLayer;
     public float radius = 0.005f;
-   ///////////////////////////////// public float damage = 2f;
     public bool is_Player, is_Enemy;
     public bool nock_down_the_enimy;
     public GameObject hit_Fx;
 
-    //[HideInInspector]
-    //public GameObject PLAYER;
-    //public GameObject ENIMY;
-                      
-    ////this is for the game logic events using event manager
-    //private void Start()
-    //{
-    //    event_manager.Instance.AddListener(EVENT_TYPE.HEALTH_CHANAGE, this);
-    //    event_manager.Instance.AddListener(EVENT_TYPE.NOCK_ENIMY, this);
-    //    PLAYER = GameObject.Find("full_player");
-    //}
+    #region changin the applible damage code to set it on opponent
+    public enimy_manager enimy_manageer_ref_for_applible_damage;
+    #endregion
+
+
+
 
     private void Update()
     {
         DetectCollision();
     }
+
     void DetectCollision()
     {
         Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
@@ -58,35 +53,37 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 /// hear we came to know that player is hiting enimy
                 /// now we hava to raise an event to update the enimy health
 
-                // event_manager.Instance.PostNotification(EVENT_TYPE.HEALTH_CHANAGE, this, 2);
-
 
                 //raise an event to randomely play hit animation on enimy
                 Vector3 hit_pos = hit[0].transform.position;
                 hit_pos = hit_pos + new Vector3(0.0f, 0.5f, 0.0f);
-                //Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+             
+
+                #region changin the applible damage code to set it on opponent
+                
+                float player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>().AApplible_damage;// hear we take the player 
+                                                                     // applible damage and apply it to enimy to subtract it  from enimy health
+                #endregion
 
                 if (gameObject.CompareTag(tags.player_left_leg_tag))
                 {
                     Debug.Log("enimy_nock_down");
-                    // event_manager.Instance.PostNotification(EVENT_TYPE.NOCK_ENIMY, this);
-                    ////////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, true);
-                    
-                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down();
+                   
+                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down(player_hit_impact_on_enimy);
                     Instantiate(hit_Fx, hit_pos, Quaternion.identity);
                 }
                 else
                 {
                     if (Random.Range(0, 9) > 1)
                     {
-                        ///////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
-
-                        hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit();
+                        hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit(player_hit_impact_on_enimy);
                         Instantiate(hit_Fx, hit_pos, Quaternion.identity);
                     }
                 }
             }
             
+
+
             if(is_Enemy)
             {
                 //    //if above condition is false that means enimy is hutting the player 
@@ -96,14 +93,14 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 //    // there will be no hit animations on enimy
                 //  // event_manager.instance.postnotification(event_type.health_chanage, this, 2);
 
+                float enimy_hit_impact_on_player = gameObject.GetComponentInParent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;// hear we take
+                                                               // the enimy applible damage and apply it to player to subtract it  from player health
+
                 if (Random.Range(0, 3) > 0)
                 {
-                    ///////////////////////////// hit[0].GetComponentInParent<health>().ApplyDamage(damage, false);
-                   // if(Random.Range(0,5)>0)
-                   // {
-                        hit[0].GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_GET_HIT(Random.Range(0,4));
-                    //}
-                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_player();
+                    
+                    hit[0].GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_GET_HIT(Random.Range(0,4));
+                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_player(enimy_hit_impact_on_player);
                 }
             }
 

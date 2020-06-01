@@ -39,19 +39,14 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     #endregion
 
     #region enimy_ui_variables
-    private Image enimy_health_bar_image_ref;
+    //private Image enimy_health_bar_image_ref;
 
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_get_enimy_health_bar;
 
     #endregion
 
-    private void Awake()
-    {
-        /// enimy_health_bar_image_ref = GameObject.FindWithTag(tags.enimy_health_ui_tag).GetComponent<Image>();
-     //   enimy_health_bar_image_ref = base_game_controller_to_get_enimy_health_bar.E_health_bar_image;
-       
-    }
+
 
     #region Enimy main controllers initilizer
     private void Start()
@@ -80,7 +75,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     public void Display_enimy_health(float health_value)
     {
 
-        base_game_controller_to_get_enimy_health_bar.E_health_bar_image.fillAmount = health_value;
+        base_game_controller_to_get_enimy_health_bar.ui_prefabs_provider.E_health_bar_image.fillAmount = health_value;
        
     }
 

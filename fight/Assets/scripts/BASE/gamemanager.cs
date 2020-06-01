@@ -101,7 +101,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 			event_manager.Instance.PostNotification(EVENT_TYPE.GAME_INIT, this);
 		}
 
-		if(!base_game_controller_ref.GAME_LOST_PANAL.activeInHierarchy)
+		if(!base_game_controller_ref.ui_prefabs_provider.Game_lost_panal_prefab.activeInHierarchy)
 		{
 			Debug.Log("game_lost_panal is not active in game");
 		}
@@ -112,7 +112,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
 	private void Update()
 	{
-		if(base_game_controller_ref.GAME_LOST_PANAL.activeInHierarchy)
+		if(base_game_controller_ref.ui_prefabs_provider.Game_lost_panal_prefab.activeInHierarchy)
 		{
 			Debug.Log("game lost panal actavated in the game");
 		}

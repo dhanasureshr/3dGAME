@@ -1024,7 +1024,7 @@ MonoBehaviour:
   E__manger_ref_baseusermanager: {fileID: 687796595}
   E__manager_ref_NavMeshAgent: {fileID: 6386128192542340340}
   E__manager_ref_Enimy_Renderer: {fileID: 7557738453817564528}
-  enimy_health_bar_object: {fileID: 0}
+  base_game_controller_to_get_enimy_health_bar: {fileID: 0}
 --- !u!195 &6386128192542340340
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1169,7 +1169,6 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   health: 100
-  applible_damage: 0
   isplayer: 0
 --- !u!1001 &499608437966874385
 PrefabInstance:
