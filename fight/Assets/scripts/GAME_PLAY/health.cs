@@ -19,6 +19,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
     public float character_health =0.0f;
     private playermanager player_manager_ref;
+    private enimy_manager enimy_manger_ref;
    // private enimy_manager enimy_manager_ref;
     public baseusermanager baseusemanager_for_common_calculation;
     public enimy_movement enimy_movement_ref_for_enimyanimations;
@@ -39,9 +40,9 @@ public class health : ExtendedCustomMonoBehavior,IListener
         }
         else // if this script attatched to the enimy
         {
-            
-            baseusemanager_for_common_calculation = gameObject.GetComponent<enimy_manager>().E__manger_ref_baseusermanager;
-            enimy_movement_ref_for_enimyanimations = gameObject.GetComponent<enimy_manager>().E__manager_ref_enimy_movement;
+            enimy_manger_ref = GetComponent<enimy_manager>();
+            baseusemanager_for_common_calculation = enimy_manger_ref.E__manger_ref_baseusermanager;
+            enimy_movement_ref_for_enimyanimations = enimy_manger_ref.E__manager_ref_enimy_movement;
 
         }
     }
@@ -62,6 +63,11 @@ public class health : ExtendedCustomMonoBehavior,IListener
         if (is_player)
         {
             player_manager_ref.Display_player_health(character_health);
+        }
+
+        if(!is_player)
+        {
+            enimy_manger_ref.Display_enimy_health(character_health);
         }
         if (character_health <= 0.0f)
         {

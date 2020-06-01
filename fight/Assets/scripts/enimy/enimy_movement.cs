@@ -275,6 +275,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 if (distance <= enimy_nav_mesh_agent.stoppingDistance && !nock_check_ref)
                 {
                     should_fight_with_player = true;
+                    Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                    transform.LookAt(tar);
                 }
                 else
                 {

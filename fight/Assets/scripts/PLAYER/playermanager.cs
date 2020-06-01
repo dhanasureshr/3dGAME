@@ -50,13 +50,6 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 //this is the code to display the player health
     public void Display_player_health(float health_value)
     {
-        health_value /= 100.0f;
-
-        if(health_value < 0.0f)
-        {
-            health_value = 0.0f;
-        }
-
         player_health_bar_image_ref.fillAmount = health_value;
     }
     #endregion

@@ -10,6 +10,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	public GameObject GAME_LOST_PANAL;
 
 	public GameObject GAME_RESUME_PANAL;
+
+
 	
 	#endregion
 
@@ -41,6 +43,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		
 		event_manager_ref.RemoveRedundancies();
+		
 		//this deals about the starting the game
 	}
 

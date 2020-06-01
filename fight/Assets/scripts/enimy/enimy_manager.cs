@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class enimy_manager :ExtendedCustomMonoBehavior
 {
@@ -37,6 +38,16 @@ public class enimy_manager :ExtendedCustomMonoBehavior
 
     #endregion
 
+    #region enimy_ui_variables
+    private Image enimy_health_bar_image_ref;
+   
+    #endregion
+
+    private void Awake()
+    {
+        enimy_health_bar_image_ref = GameObject.FindWithTag(tags.enimy_health_ui_tag).GetComponent<Image>();
+    }
+
     #region Enimy main controllers initilizer
     private void Start()
     {
@@ -60,6 +71,13 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     }
 
     #endregion
+
+    public void Display_enimy_health(float health_value)
+    {
+
+        enimy_health_bar_image_ref.fillAmount = health_value;
+       
+    }
 
     private void Update()
     {

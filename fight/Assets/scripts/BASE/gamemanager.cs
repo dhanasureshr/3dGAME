@@ -4,6 +4,41 @@ using UnityEngine;
 
 public class gamemanager : ExtendedCustomMonoBehavior,IListener
 {
+	/// <summary>
+	/// this is the main game manager script in which it knows about every dynamic objcts reference is stored hear 
+	/// in order to provide that reference to the another scripts 
+	/// some of the references it stores:-------------------
+	/// 1) array of fighting petrol points
+	/// 2) array of scene petrol points
+	/// 3) No enimy types in the scene
+	/// 4) main player reference
+	/// 5) player Health bar
+	/// 6) player Strength bar
+	/// 7) enimy Health bar
+	/// 
+	/// This game manager also take cares about instantating the deferent enimyes at run time 
+	/// by defing some properties at level start because  the game manager has full control over the game from start to end 
+	/// by taking this as an advantage I came to know that every enimy type has reference to  this game manager 
+	/// 
+	/// before starting a level I will set some properties that are specific to that level 
+	/// depending up on that properites our game manager is going to spawan enimyes
+	/// 
+	/// at the same time our game manager is also has the reference to the health_booster prefabes,
+	/// strength_booster prefabes and Ammo_prefabs
+	/// 
+	/// when it comes to Ammos it needs to be instantiated at the place of enimy _current_death position
+	/// 
+	/// 
+	/// ==========================================================================================================================================
+	/// ------------------------------------------------------------------------------------------------------------------------------------------
+	/// MAIN IMPORTANT THING IS WE SHOULD ALSO DEFINE WHICH AMMO PREFAB SHOULD PRESANT AT CURRENT LEVLE SO WE SHOULD DEFINE THIS CONDITION ALSO IN 
+	/// LEVEL PROPERTIES
+	/// BUT health_booster,strength_booster,score_boosters are common for every level
+	/// -------------------------------------------------------------------------------------------------------------------------------------------
+	/// ===========================================================================================================================================
+	/// 
+	/// 
+	/// </summary>
     #region global variables to INTIMATE OTHER SCRIPTS
    [HideInInspector] public bool isinputallowed = false;
    [HideInInspector] public bool isgamestarted = false;
@@ -13,7 +48,6 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
    [HideInInspector] public bool isenimydead  = false;
    [HideInInspector] public bool Game_paused;
    [HideInInspector] private bool is_paused;
-
 	#endregion
 
 
@@ -66,15 +100,29 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 		{
 			event_manager.Instance.PostNotification(EVENT_TYPE.GAME_INIT, this);
 		}
+
+		if(!base_game_controller_ref.GAME_LOST_PANAL.activeInHierarchy)
+		{
+			Debug.Log("game_lost_panal is not active in game");
+		}
 	}
 
 
-    #endregion
+	#endregion
+
+	private void Update()
+	{
+		if(base_game_controller_ref.GAME_LOST_PANAL.activeInHierarchy)
+		{
+			Debug.Log("game lost panal actavated in the game");
+		}
 
 
-    #region Application quite detection to post GAME_STOPED notification
+	}
 
-    void OnApplicationQuit()
+	#region Application quite detection to post GAME_STOPED notification
+
+	void OnApplicationQuit()
 	{
 
 
