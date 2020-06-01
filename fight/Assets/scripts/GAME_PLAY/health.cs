@@ -67,7 +67,12 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
         if(!is_player)
         {
+            base_game_controller_to_intimate_game_state.Enable_enimy_health_bar();/////////////////////
             enimy_manger_ref.Display_enimy_health(character_health);
+        }
+        else
+        {
+            base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();//////////////////////////
         }
         if (character_health <= 0.0f)
         {
@@ -76,6 +81,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             if (!is_player)
             {
                 disable_enimy_Rotation_collider = true;
+                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();////////////////////////
                 enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
                 Destroy(gameObject, 10.0f);
             }
@@ -104,6 +110,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 enimy_movement_ref_for_enimyanimations.stopenimyMovement();
                 //disable_enimy_Rotation_collider = true;
                 //nock_check = true;
+                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();//////////////////////////////
                 enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.disable_enimy_get_hit_animation();
 
             }else

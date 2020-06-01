@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 168516860}
   - component: {fileID: 168516859}
   m_Layer: 5
-  m_Name: PLAYR_HEALTH_BAR_FG
+  m_Name: ENIMY_HEALTH_BAR_FG
   m_TagString: E_health_tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,6 +770,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998279580}
   m_CullTransparentMesh: 0
+--- !u!1001 &1005141082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_Name
+      value: enimy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.40119264
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.91599375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918017674908570300, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: enimy_health_bar_object
+      value: 
+      objectReference: {fileID: 1778570386}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
 --- !u!1 &1110411804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,7 +1337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1778570387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1326,8 +1405,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1825307459}
-  - component: {fileID: 1825307460}
   - component: {fileID: 1825307461}
+  - component: {fileID: 1825307460}
   - component: {fileID: 1825307463}
   - component: {fileID: 1825307462}
   - component: {fileID: 1825307464}
@@ -1481,8 +1560,8 @@ MonoBehaviour:
   event_manager_ref: {fileID: 0}
   GAME_LOST_PANAL: {fileID: 1156058916}
   GAME_RESUME_PANAL: {fileID: 702580771}
-  enimy_type1: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
-    type: 3}
+  Enimy_health_bar_prefab: {fileID: 1778570386}
+  E_health_bar_image: {fileID: 168516859}
 --- !u!1 &1895408218
 GameObject:
   m_ObjectHideFlags: 0

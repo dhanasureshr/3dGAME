@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public class basegamecontroller : ExtendedCustomMonoBehavior
 {
 	#region Local variabels to provide communication with the scripts
@@ -11,8 +12,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public GameObject GAME_RESUME_PANAL;
 
-
-	
+	public GameObject Enimy_health_bar_prefab; // enimy_health bar to activate and deactivate accordingely;
+	public Image E_health_bar_image;
 	#endregion
 
 	
@@ -74,6 +75,16 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 		GAME_RESUME_PANAL.SetActive(false);
 	}
 
+
+	public virtual void Enable_enimy_health_bar()
+	{
+		Enimy_health_bar_prefab.SetActive(true);
+	}
+
+	public virtual void Disable_enimy_health_bar()
+	{
+		Enimy_health_bar_prefab.SetActive(false);
+	}
     #endregion
 
 }

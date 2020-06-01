@@ -117,7 +117,6 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 			Debug.Log("game lost panal actavated in the game");
 		}
 
-
 	}
 
 	#region Application quite detection to post GAME_STOPED notification
