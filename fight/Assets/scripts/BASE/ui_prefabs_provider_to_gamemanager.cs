@@ -15,11 +15,14 @@ public class ui_prefabs_provider_to_gamemanager : ExtendedCustomMonoBehavior
 	[Tooltip("Enimy health bar fillable image")] public Image P_health_bar_image;
 
 	[Space(15)]
+	[Tooltip("Player strength bar prefab")] public GameObject player_stenght_bar_prefab;
+	[Tooltip("player strength bar fillable image")] public Image P_strength_bar_image;
+
+
+ 	[Space(15)]
 	[TextArea]
 	public  string objt2 = "main game panal prefabes are hear";
 	[Tooltip("Game lost panal prefab")] public GameObject Game_lost_panal_prefab;
 	[Tooltip("Game resum panal prefab")] public GameObject Game_resume_panal_prefab;
-
-
 
 }

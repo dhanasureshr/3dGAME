@@ -42,7 +42,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     //private Image enimy_health_bar_image_ref;
 
     [Inject(InjectFrom.Anywhere)]
-    public basegamecontroller base_game_controller_to_get_enimy_health_bar;
+    public basegamecontroller base_game_controller_to_provide_asserts;
 
     #endregion
 
@@ -75,7 +75,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     public void Display_enimy_health(float health_value)
     {
 
-        base_game_controller_to_get_enimy_health_bar.ui_prefabs_provider.E_health_bar_image.fillAmount = health_value;
+        base_game_controller_to_provide_asserts.ui_prefabs_provider.E_health_bar_image.fillAmount = health_value;
        
     }
 

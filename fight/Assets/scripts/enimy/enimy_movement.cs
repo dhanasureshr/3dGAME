@@ -12,6 +12,10 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     /// petrolling state
     /// chasing state
     /// </summary>
+
+    [Inject(InjectFrom.Anywhere)]
+    public basegamecontroller base_game_controller_to_provide_assets;
+
     [TextArea]
     public string objd = "this should be attatched to the enimy parent where enimy animator and nav_mesh_agent";
     #region Enimy_properties
@@ -92,13 +96,14 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         #region this is the enimy common code 
         enimy_nav_mesh_agent.updateRotation = true;
         enimy_nav_mesh_agent.autoBraking = false;
-        main_player = GameObject.FindWithTag("Player");
+        main_player = GameObject.FindWithTag("Player"); ////////////////////////////////////// this should be done
         target_position = main_player.GetComponent<Transform>();
         StartCoroutine("start_enimy_movement");
         #endregion
 
         #region fight petrol initial checks
-        target_fight_points = GameObject.FindGameObjectsWithTag("p1");
+        target_fight_points = base_game_controller_to_provide_assets.game_object_prefabes_provider.fighting_petrol_points_prefabes;
+        
         for(int i = 0;i<target_fight_points.Length;i++)
         {
             fightpoints[i] = target_fight_points[i].gameObject.GetComponent<Transform>();
@@ -107,8 +112,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         #endregion
 
         #region sceen petrol initial checks
-        /////////////////////////////////////////////
-        target_scene_points = GameObject.FindGameObjectsWithTag("p2");
+        target_scene_points = base_game_controller_to_provide_assets.game_object_prefabes_provider.scene_petrol_points_prefabes;
         for (int j = 0; j < target_scene_points.Length; j++)
         {
             scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();
@@ -129,8 +133,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         }
 
         distance = Vector3.Distance(transform.position, target_position.position);
-       // Debug.Log(distance);
-
+       
         #region OLD VERSION CODE FOR ENIMY AI DEDEKATED TO BASE ENIMY
         //if (enimy_nav_mesh_agent.enabled == true)
         //{
@@ -210,6 +213,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         //}//end of movement conditions checking
         #endregion
 
+        #region UPDATED CODE VERSION FOR ENIMY AI DEDEKATED TO BASE ENIMY
 
         if (enimy_nav_mesh_agent.enabled == true)
         {
@@ -310,14 +314,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                     should_fight_with_player = true;
                     Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
                     transform.LookAt(tar);
-                    //if (distance <= attack_distance_ref)
-                    //{
-                    //    should_fight_with_player = true;
-                    //}
-                    //else
-                    //{
-                    //    should_fight_with_player = false;
-                    //}
+                   
                 }
                 else
                 {
@@ -334,7 +331,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         }//end of movement conditions checking
 
-
+        #endregion
 
     }
     #endregion

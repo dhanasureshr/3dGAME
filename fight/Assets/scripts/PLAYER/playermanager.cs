@@ -12,6 +12,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     /// by considering this script as a base for player to provide data to the another moudle like player UI
     /// </summary>
 
+    [Inject(InjectFrom.Anywhere)]
+    public basegamecontroller base_game_controller_to_provide_asserts;
+
     private health player_health_script_ref;
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
@@ -35,7 +38,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region initilizing methods
     private void Awake()
     {
-        player_health_bar_image_ref = GameObject.FindWithTag(tags.player_health_ui_tag).GetComponent<Image>();
+        //player_health_bar_image_ref = GameObject.FindWithTag(tags.player_health_ui_tag).GetComponent<Image>();
         player_strength_bar_image_ref = GameObject.FindWithTag(tags.Player_strength_ui_tag).GetComponent<Image>();
     }
 
@@ -54,7 +57,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 //this is the code to display the player health
     public void Display_player_health(float health_value)
     {
-        player_health_bar_image_ref.fillAmount = health_value;
+        base_game_controller_to_provide_asserts.ui_prefabs_provider.P_health_bar_image.fillAmount = health_value;
     }
     #endregion
 

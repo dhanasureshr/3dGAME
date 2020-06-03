@@ -12,18 +12,19 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public ui_prefabs_provider_to_gamemanager ui_prefabs_provider;
 
+	[Inject(InjectFrom.Anywhere)]
+	public game_objects_prefabes_provider_to_gamemanager game_object_prefabes_provider;
 
 	#endregion
+
 
 	
 
 	#region MAIN GAME HANDLING METHODS
 	public virtual void PlayerLostLife_Handler_Method()
 	{
-		// this deals about the player death and updating the ui
+	
 		Debug.Log("player_lost_life___---from the basegamecontroller");
-
-		
 		Enable_object_in_hirichery(ui_prefabs_provider.Game_lost_panal_prefab);
 		
 	}
