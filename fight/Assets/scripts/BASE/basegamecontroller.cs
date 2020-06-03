@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class basegamecontroller : ExtendedCustomMonoBehavior
 {
-	#region Local variabels to provide communication with the scripts
+	#region globlal variables to get communacated with other scripts
 
 	[Inject(InjectFrom.Anywhere)]
 	public event_manager event_manager_ref;
@@ -15,13 +15,22 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public game_objects_prefabes_provider_to_gamemanager game_object_prefabes_provider;
 
+
+	#endregion
+
+	#region local  variables  fro testing baseenimymanager
+	[Inject(InjectFrom.Anywhere)]
+	public baseenimymanager base_enimy_manager;
+
+	public List<GameObject> active_enimyes;
+
+	public Transform pos_to_instantiate_eimy;
 	#endregion
 
 
-	
 
-	#region MAIN GAME HANDLING METHODS
-	public virtual void PlayerLostLife_Handler_Method()
+    #region MAIN GAME HANDLING METHODS
+    public virtual void PlayerLostLife_Handler_Method()
 	{
 	
 		Debug.Log("player_lost_life___---from the basegamecontroller");
@@ -45,7 +54,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		
 		event_manager_ref.RemoveRedundancies();
-		
+		active_enimyes =  base_enimy_manager.instantiate_enimy(game_object_prefabes_provider.enimy_prefab1, 5, pos_to_instantiate_eimy);
 		//this deals about the starting the game
 	}
 
@@ -100,5 +109,13 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 		ref_gameobject_to_deactivate_in_hirichey.SetActive(false);
 	}
 	#endregion
+
+	private void Update()
+	{
+		if(active_enimyes.Count == 0)
+		{
+			Debug.Log("all_enimyes_dead");
+		}
+	}
 
 }

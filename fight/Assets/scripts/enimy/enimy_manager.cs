@@ -41,9 +41,10 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     #region enimy_ui_variables
     //private Image enimy_health_bar_image_ref;
 
-    [Inject(InjectFrom.Anywhere)]
+    //[Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
 
+    public GameObject g_man;
     #endregion
 
 
@@ -51,6 +52,9 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     #region Enimy main controllers initilizer
     private void Start()
     {
+        g_man = GameObject.FindWithTag("gamemanager");
+        base_game_controller_to_provide_asserts = g_man.GetComponent<basegamecontroller>();
+
 
         E__manager_ref_enimy_movement = gameObject.GetComponent<enimy_movement>();
 
@@ -68,6 +72,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
         E__manager_ref_enimy_animation_helper.enimy_rendrer = E__manager_ref_Enimy_Renderer;
         #endregion
 
+       
     }
 
     #endregion

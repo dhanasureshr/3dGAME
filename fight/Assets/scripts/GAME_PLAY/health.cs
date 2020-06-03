@@ -14,6 +14,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
     [TextArea]
     public string objd = "THIS SCRIPT IS COMMON FOR BOTH ENIMY AND PLAYER SO NEVER CHANGE DATA EXTERNALLY";
+   
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_intimate_game_state;
 
@@ -30,6 +31,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
     public bool nock_check;
     public void Start()
     {
+        
        // enimy_movement_ref_for_enimyanimations = GetComponentInParent<enimy_movement>();
         if(is_player) // if this script attatched to the player
         {
@@ -43,6 +45,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             enimy_manger_ref = GetComponent<enimy_manager>();
             baseusemanager_for_common_calculation = enimy_manger_ref.E__manger_ref_baseusermanager;
             enimy_movement_ref_for_enimyanimations = enimy_manger_ref.E__manager_ref_enimy_movement;
+            base_game_controller_to_intimate_game_state = enimy_manger_ref.base_game_controller_to_provide_asserts;///changed
 
         }
     }
@@ -83,6 +86,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 disable_enimy_Rotation_collider = true;
                 base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();////////////////////////
                 enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
+                base_game_controller_to_intimate_game_state.active_enimyes.Remove(gameObject);
                 Destroy(gameObject, 10.0f);
             }
             else
@@ -124,4 +128,6 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 break;
         }
     }
+
+    
 }
