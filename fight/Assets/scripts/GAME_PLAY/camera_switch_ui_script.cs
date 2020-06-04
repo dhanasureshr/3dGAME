@@ -25,9 +25,14 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
    [HideInInspector] public Transform main_camera;
    [HideInInspector] public Transform tps_camera_pivot;
    [HideInInspector] public Transform player_target_for_fps;
+
+    public GameObject playerobject;
+    private SkinnedMeshRenderer player_meshrenderer;
     void Start()
     {
         Toggles = gameObject.GetComponent<Toggle>();
+        playerobject = GameObject.FindWithTag("Player");
+        player_meshrenderer = playerobject.GetComponentInChildren<SkinnedMeshRenderer>();
         first_person_pivot = GameObject.FindWithTag("fps_pivot");
         third_person_pivot = GameObject.FindWithTag("tps_pivot");
         player_pivot_gameobject_ref = GameObject.FindWithTag("player_pivot");
@@ -50,11 +55,13 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
         if(Toggles.isOn == true)
         {
             Player_camera_follow_script_ref.enabled = false;
+            player_meshrenderer.enabled = false;
             Player_fps_camera_script_ref.enabled = true;
           
         }
         else
         {
+            player_meshrenderer.enabled = true;
             Player_camera_follow_script_ref.enabled = true;
             Player_fps_camera_script_ref.enabled = false;
             

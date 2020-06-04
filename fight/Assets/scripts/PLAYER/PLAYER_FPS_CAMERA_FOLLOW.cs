@@ -24,6 +24,9 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 	public playermanager main_player;
 
+	[Inject(InjectFrom.Anywhere)]
+	public VirtualJoystick virtual_joystick_access_for_fps;
+
 	//[Inject(InjectFrom.Anywhere)]
 	//public tuch_inpu touch_input;
 
@@ -48,16 +51,18 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 		///featur plan
 		///hear before rotating the player we should check whether the is fingeron joystick    
 		/// if the finger on joystick then we should not run the below code;
-		if (Input.touchCount == 1)
+		if (!virtual_joystick_access_for_fps.isfingeronjoystick)
 		{
-			Touch toucho = Input.GetTouch(0);
-			if (toucho.phase == TouchPhase.Moved)
+			if (Input.touchCount == 1)
 			{
-				player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+				Touch toucho = Input.GetTouch(0);
+				if (toucho.phase == TouchPhase.Moved)
+				{
+					player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+				}
 			}
 		}
 
-		
 	}
 
 	#region LateUpdate
@@ -66,63 +71,12 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 		transform.parent = player_target.transform;
 		transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
 		transform.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation;
-		/*
-		foreach (Touch touch in Input.touches)
-		{
-			if (touch.phase == TouchPhase.Began)
-			{
-				fp = touch.position;
-				lp = touch.position;
-
-			}
-			if (touch.phase == TouchPhase.Moved)
-			{
-				lp = touch.position;
-				swipeDistanceX = Mathf.Abs((lp.x - fp.x));
-				swipeDistanceY = Mathf.Abs((lp.y - fp.y));
-
-			}
-
-			if (touch.phase == TouchPhase.Ended)
-			{
-				angle = Mathf.Atan2((lp.x - fp.x), (lp.y - fp.y)) * 57.2957795f;
-				if (angle > 60 && angle < 120 && swipeDistanceX > 40)
-				{
-					player_target.Rotate(0.0f, 25, 0.0f);
-				}
-				if (angle > 150 || angle < -150 && swipeDistanceY > 40)
-				{
-
-				}
-				if (angle < -60 && angle > -120 && swipeDistanceX > 40)
-				{
-					player_target.Rotate(0.0f, -25.0f, 0.0f);
-				}
-				if (angle > -30 && angle < 30 && swipeDistanceY > 40)
-				{
-
-				}
-			}
-
-		
-
-		}
-		*/
-
-		//if (Input.touchCount == 1)
-		//{
-		//	Touch toucho = Input.GetTouch(0);
-		//	if (toucho.phase == TouchPhase.Moved)
-		//	{
-		//		player_target.Rotate(0.0f, toucho.deltaPosition.x, 0.0f);
-		//	}
-		//}
 	}
 
-    #endregion
-    // this is the calampAngles script
-    #region ClampAngle
-    public float ClampAngle(float angle,float min,float max)
+	#endregion
+	// this is the calampAngles script
+	#region ClampAngle
+	public float ClampAngle(float angle,float min,float max)
 	{
 		if(angle < -360f)
 		{

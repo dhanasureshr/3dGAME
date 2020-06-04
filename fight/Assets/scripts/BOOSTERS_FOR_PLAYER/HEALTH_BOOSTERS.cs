@@ -6,8 +6,12 @@ public class HEALTH_BOOSTERS : ExtendedCustomMonoBehavior
 {
     // This is the health booster script that is going to  boost up the player health when player hits this health booster game object
 
-    public GameObject Health_pick_up_vfx;
+    public GameObject pick_up_vfx;
 
+    private void Start()
+    {
+        Destroy(gameObject, 20);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -15,6 +19,7 @@ public class HEALTH_BOOSTERS : ExtendedCustomMonoBehavior
             Debug.Log("player hited the health booster");
             if (other.gameObject.GetComponentInParent<baseusermanager>().health == 100)
             {
+                
                 return;
             }
             else
@@ -22,7 +27,7 @@ public class HEALTH_BOOSTERS : ExtendedCustomMonoBehavior
                 float d = other.gameObject.GetComponentInParent<baseusermanager>().health = 100;
                 other.gameObject.GetComponentInParent<playermanager>().Display_player_health(d);
                 Destroy(gameObject);
-                Instantiate(Health_pick_up_vfx,other.transform.position + new Vector3(0,1,0),other.transform.rotation);
+                Instantiate(pick_up_vfx,other.transform.position + new Vector3(0,1,0),other.transform.rotation);
             }
         }
     }

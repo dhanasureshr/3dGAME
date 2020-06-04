@@ -13,6 +13,11 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public gamemanager game_manager_ref;
 
-    
+    [Inject(InjectFrom.Anywhere)]
+    public PLAYER_CAMERA_FOLLOW third_person_camera;
+
+    [Inject(InjectFrom.Anywhere)]
+    public PLAYER_FPS_CAMERA_FOLLOW first_person_camera;
+
 
 }

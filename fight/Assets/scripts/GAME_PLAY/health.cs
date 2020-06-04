@@ -86,6 +86,8 @@ public class health : ExtendedCustomMonoBehavior,IListener
                 disable_enimy_Rotation_collider = true;
                 base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();////////////////////////
                 enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
+               
+                base_game_controller_to_intimate_game_state.player_supplyers_spanner(gameObject.transform);
                 base_game_controller_to_intimate_game_state.active_enimyes.Remove(gameObject);
                 Destroy(gameObject, 10.0f);
             }

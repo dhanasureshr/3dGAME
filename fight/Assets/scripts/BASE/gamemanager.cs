@@ -54,6 +54,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	#region local variables to communicate  other scripts with the game manager
 
 	public basegamecontroller base_game_controller_ref;
+
 	private static gamemanager instance;
 	
     #endregion

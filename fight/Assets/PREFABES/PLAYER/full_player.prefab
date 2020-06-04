@@ -1782,7 +1782,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
   base_game_controller_to_provide_asserts: {fileID: 0}
-  AApplible_damage: 20
+  AApplible_damage: 5
   t: {fileID: 0}
   test_layer_mask:
     serializedVersion: 2
@@ -2645,17 +2645,17 @@ PrefabInstance:
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.031
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.477
+      value: 1.323
       objectReference: {fileID: 0}
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.49
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 848655512321161348, guid: e581531b7d9278b4f8756eda622b7b4a,
         type: 3}
