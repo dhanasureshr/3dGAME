@@ -52,6 +52,11 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     // this are the variavels for the player dute animations
     private static int player_showlder_dute = Animator.StringToHash("SHOLDER_THROW_PLAYER");
     private static int player_hell_dute = Animator.StringToHash("PLAYER_HELL_SLAMMER");
+
+
+    // this are the variables for the player shiled effect animations
+    private static int player_shield = Animator.StringToHash("PLAYER_SHIELD");
+
     #endregion
 
     #region mono methods
@@ -60,10 +65,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         current_combo_timer = default_combo_timer;
         current_combo_state = CombeState.NONE;
-        //player_animator_ref = GetComponentInChildren<Animator>();
         player_animator_ref = GetComponent<Animator>();
-
-        
     }
 
     private void Update()
@@ -133,6 +135,11 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     public void PLAY_PLAYER_HELL_DUTE()
     {
         player_animator_ref.SetTrigger(player_hell_dute);
+    }
+
+    public void PLAY_PLAYER_SHIELD()
+    {
+        player_animator_ref.SetTrigger(player_shield);
     }
 
     #endregion
@@ -381,6 +388,12 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         #endregion
 
     }
+
+    public void SHIELD_BUTTON_PRESSED()
+    {
+        PLAY_PLAYER_SHIELD();
+    }
+
     #endregion
 
     #region combo helper funciton

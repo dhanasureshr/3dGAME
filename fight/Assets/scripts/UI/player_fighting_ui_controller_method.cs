@@ -30,5 +30,13 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     {
         t.player_mangaer_for_dute.PLAY_DUTE_ANIMATIONS1();
     }
+
+    public void On_shield_button_pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.SHIELD_BUTTON_PRESSED();
+    }
+   
+
+
     #endregion
 }

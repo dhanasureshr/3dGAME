@@ -43,7 +43,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 		player_animator = GetComponent<Animator>();
 
-
+		
 		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();
 	}
     #endregion
