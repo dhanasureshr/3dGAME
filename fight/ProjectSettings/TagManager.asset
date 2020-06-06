@@ -21,7 +21,11 @@ TagManager:
   - rot
   - P_health_tag
   - E_health_tag
-  - fps_gun_pivot
+  - gun_player
+  - fight_player
+  - fps_switcher
+  - fighting_canvas
+  - gun_canvas
   layers:
   - Default
   - TransparentFX

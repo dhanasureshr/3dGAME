@@ -42,8 +42,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
 
 		player_animator = GetComponent<Animator>();
-		player_animator.SetLayerWeight(0, 0);
-		player_animator.SetLayerWeight(1, 1);
+	
 		
 		//Debug.Log(player_animator.GetLayerName(1));
 		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();

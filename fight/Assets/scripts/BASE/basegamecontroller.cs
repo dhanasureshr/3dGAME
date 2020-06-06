@@ -59,7 +59,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 		// below code is to spawn the enimyes
 
-		////////////////////////////////////////active_enimyes =  base_enimy_manager.instantiate_enimy(game_object_prefabes_provider.enimy_prefab1, 5, pos_to_instantiate_eimy);
+	    ///////////////////////////////active_enimyes =  base_enimy_manager.instantiate_enimy(game_object_prefabes_provider.enimy_prefab1, 5, pos_to_instantiate_eimy);
 		//this deals about the starting the game
 	}
 
