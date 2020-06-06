@@ -1787,7 +1787,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: f846976fd81495641a70f8ca30bd3444, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   charactercontroller: {fileID: 2448653457280816859}
   player_camera_follow_script: {fileID: 0}
   var: should be attatched to the player
-  speed: 3
+  speed: 10
   MoveDirection: {x: 0, y: 0, z: 0}
   virtual_joystick_access: {fileID: 0}
   h_joy: 0
@@ -2376,7 +2376,7 @@ PrefabInstance:
     - target: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.003
+      value: 1.824
       objectReference: {fileID: 0}
     - target: {fileID: 7807080852499019750, guid: 37bc5bbb8e21b314d8275556a2186603,
         type: 3}
