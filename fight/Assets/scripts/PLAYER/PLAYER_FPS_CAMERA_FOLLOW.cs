@@ -32,6 +32,10 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
 
+	private Rect TopRight;
+	private Rect bottom_Right;
+
+
 	#endregion
 
 	#region start method
@@ -42,6 +46,9 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 		transform.position = player_target.position;
 		transform.rotation = player_target.rotation;
 		player_target.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation; // changed to fps from tps
+		
+		TopRight = new Rect(0,Screen.height /2,Screen.width/2,Screen.height/2);
+		bottom_Right = new Rect(Screen.width/2,0,Screen.width/2,Screen.height/2);
 	}
 	#endregion
 	// this is the late update for the player fps move
@@ -51,17 +58,20 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 		///featur plan
 		///hear before rotating the player we should check whether the is fingeron joystick    
 		/// if the finger on joystick then we should not run the below code;
-		if (!virtual_joystick_access_for_fps.isfingeronjoystick)
-		{
-			if (Input.touchCount == 1)
-			{
-				Touch toucho = Input.GetTouch(0);
-				if (toucho.phase == TouchPhase.Moved)
-				{
-					player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
-				}
-			}
-		}
+		//if (!virtual_joystick_access_for_fps.isfingeronjoystick)
+		//{
+			//if (Input.touchCount == 1)
+			//{
+			//	Touch toucho = Input.GetTouch(0);
+			//	if (toucho.phase == TouchPhase.Moved)
+			//	{
+			//		if (TopRight.Contains(toucho.position) || bottom_Right.Contains(toucho.position))
+			//		{
+			//			player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+			//		}
+			//	}
+			//}
+		//}
 
 	}
 
@@ -69,8 +79,21 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	void LateUpdate()
 	{
 		transform.parent = player_target.transform;
-		transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
+	    transform.position = camera_switch_ui_script_ref.fps_camera_pivot.position;
+		
 		transform.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation;
+
+		if (Input.touchCount == 1)
+		{
+			Touch toucho = Input.GetTouch(0);
+			if (toucho.phase == TouchPhase.Moved)
+			{
+				if (bottom_Right.Contains(toucho.position))
+				{
+					player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+				}
+			}
+		}
 	}
 
 	#endregion
