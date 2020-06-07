@@ -195,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626179749}
   - component: {fileID: 1618700105}
+  - component: {fileID: 1625953414}
   m_Layer: 0
   m_Name: arms_assault_rifle_01
   m_TagString: gun_player
@@ -237,6 +238,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1625953414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625953413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f8e939bc913c7499d3a85283ca9c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerjoymovement_for_gun_movement_animation: {fileID: 0}
+  aim_the_gun: 0
 --- !u!1 &1625953415
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +302,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1efa98054c65cd4f81ab8661805e3cd, type: 2}
+  - {fileID: 2100000, guid: a4d58a654347a194e908a76ff0f9c379, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -645,7 +660,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6631ae84f0faa7442b3fdea3f7f1473b, type: 2}
+  - {fileID: 2100000, guid: a4d58a654347a194e908a76ff0f9c379, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -758,7 +773,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6631ae84f0faa7442b3fdea3f7f1473b, type: 2}
+  - {fileID: 2100000, guid: a4d58a654347a194e908a76ff0f9c379, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -832,7 +847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626179773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,13 +861,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625953437}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.4671271e-16, y: 0.17866261, z: 1.0855757}
-  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0.879}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 1626179745}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1625953439
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626179815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1626179817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1252,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6631ae84f0faa7442b3fdea3f7f1473b, type: 2}
+  - {fileID: 2100000, guid: d42231600c864634cb39f67ae17c334b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

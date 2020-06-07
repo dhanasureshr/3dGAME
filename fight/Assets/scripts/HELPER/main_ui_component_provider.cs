@@ -20,4 +20,12 @@ public class main_ui_component_provider : MonoBehaviour
     public PLAYER_FPS_CAMERA_FOLLOW first_person_camera;
 
 
+    // GUN_PLAYER_COMPONENTS
+    [Inject(InjectFrom.Anywhere)]
+    public camera_switch_ui_script camera_swithc_ui_script_for_gun_ui;
+
+    [Inject(InjectFrom.Anywhere)]
+    public gun_animation_script player_gun_animation_script;
+
+
 }
