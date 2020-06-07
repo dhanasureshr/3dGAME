@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5396495976592766926
+--- !u!1 &4512449123914293125
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5396495976592766927}
-  - component: {fileID: 5396495976592766920}
-  - component: {fileID: 5396495976592766921}
-  - component: {fileID: 5396495976592766923}
-  - component: {fileID: 5396495976592766922}
-  - component: {fileID: 5396495976592766916}
-  - component: {fileID: 1982379977474255606}
+  - component: {fileID: 4512449123914293124}
+  - component: {fileID: 4512449123914293122}
+  - component: {fileID: 4512449123914293123}
+  - component: {fileID: 4512449123914293120}
+  - component: {fileID: 4512449123914293121}
+  - component: {fileID: 4512449123914293135}
+  - component: {fileID: 4512449123914293134}
+  - component: {fileID: 4512449123914293133}
+  - component: {fileID: 4512449123914293132}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -22,13 +24,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!4 &5396495976592766927
+--- !u!4 &4512449123914293124
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,37 +38,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5396495976592766920
+--- !u!114 &4512449123914293122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21b6e5f0175bd4a40a3ffdde6122b5bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
-  val: TIMER CLASS FOR THE WHOLE PROJECT SHOULD BE ATTATCHED TO GAME MANAGER
-  isTimerRunning: 0
-  timeElapsed: 0
-  currentTime: 0
-  lastTime: 0
---- !u!114 &5396495976592766921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64c708a872c927743b3d6a88dc873ab7, type: 3}
@@ -86,13 +64,38 @@ MonoBehaviour:
   isgamestoped: 0
   isenimydead: 0
   Game_paused: 0
---- !u!114 &5396495976592766923
+  base_game_controller_ref: {fileID: 0}
+--- !u!114 &4512449123914293123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21b6e5f0175bd4a40a3ffdde6122b5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  val: TIMER CLASS FOR THE WHOLE PROJECT SHOULD BE ATTATCHED TO GAME MANAGER
+  isTimerRunning: 0
+  timeElapsed: 0
+  currentTime: 0
+  lastTime: 0
+--- !u!114 &4512449123914293120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b995b1aaf1c4bb439a5163746dcc0d4, type: 3}
@@ -123,13 +126,13 @@ MonoBehaviour:
   fp: {x: 0, y: 0, z: 0}
   lp: {x: 0, y: 0, z: 0}
   dragDistance: 0
---- !u!114 &5396495976592766922
+--- !u!114 &4512449123914293121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1544e60f9695c64fa1cc6520ecf982d, type: 3}
@@ -142,13 +145,13 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
---- !u!114 &5396495976592766916
+--- !u!114 &4512449123914293135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3a0d54a483ab06459b2b31b20f6dad2, type: 3}
@@ -162,17 +165,79 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   event_manager_ref: {fileID: 0}
-  GAME_LOST_PANAL: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
-    type: 3}
---- !u!114 &1982379977474255606
+  ui_prefabs_provider: {fileID: 0}
+  game_object_prefabes_provider: {fileID: 0}
+  base_enimy_manager: {fileID: 0}
+  active_enimyes: []
+  pos_to_instantiate_eimy: {fileID: 0}
+--- !u!114 &4512449123914293134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396495976592766926}
+  m_GameObject: {fileID: 4512449123914293125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e460b673b1665e74a9ce3f824eac65b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c92acc6c1b74074e88ae7463d6f3d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  Enimy_health_bar_prefab: {fileID: 0}
+  E_health_bar_image: {fileID: 0}
+  Player_health_bar_prefab: {fileID: 0}
+  P_health_bar_image: {fileID: 0}
+  player_stenght_bar_prefab: {fileID: 0}
+  P_strength_bar_image: {fileID: 0}
+  Game_lost_panal_prefab: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
+    type: 3}
+  Game_resume_panal_prefab: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
+    type: 3}
+  Game_fighting_panal: {fileID: 0}
+  Game_gun_panal: {fileID: 0}
+--- !u!114 &4512449123914293133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a6f37eb5a5130409eff0accf1b2de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  full_player_prefab: {fileID: 4272947402165268831, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+    type: 3}
+  fighting_petrol_points_prefabes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  scene_petrol_points_prefabes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  enimy_prefab1: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
+    type: 3}
+  health_booster: {fileID: 8498606026199842714, guid: fc89c0289d2a6b4459644296c5d1d6ab,
+    type: 3}
+--- !u!114 &4512449123914293132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6536c6d5cc92a7f429e41efa709f6425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloned_enimy_list: []

@@ -15,6 +15,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
 
+    
+
     private health player_health_script_ref;
     private Image player_health_bar_image_ref;
     private Image player_strength_bar_image_ref;
@@ -49,6 +51,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         t.enabled = false;
         t.weight = 1.0f;
         t.rotationOffset = new Vector3(0, 180, 0);
+
+      
     }
 
     #endregion

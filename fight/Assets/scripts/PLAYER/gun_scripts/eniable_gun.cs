@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// this script entirely about the gun prefab;
+
 public class eniable_gun : MonoBehaviour
 {
 
@@ -33,12 +35,12 @@ public class eniable_gun : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            gun_canveas.gameObject.SetActive(true);
-            fps_switcher_canvas.gameObject.SetActive(false);
+            gun_canveas.SetActive(true);
+            fps_switcher_canvas.SetActive(false);
             camera_switcher._enable_fps_mode();
-            arms_assault_rifile_01.gameObject.SetActive(true);
+            arms_assault_rifile_01.SetActive(true);
             arms_assault_rifil_player_meshrenderer.enabled = false;
-
+            Destroy(gameObject);
         }
     }
 }

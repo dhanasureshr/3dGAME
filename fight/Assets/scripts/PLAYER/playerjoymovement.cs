@@ -10,6 +10,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
     // this are for the player movement with joustick without animations
 	[Inject(InjectFrom.Anywhere)]
 	public PLAYER_CAMERA_FOLLOW player_camera_follow_script;
+
     [TextArea]
 	public string var = "should be attatched to the player";
 	public float speed;

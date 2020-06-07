@@ -21,6 +21,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	public camera_switch_ui_script camera_switch_ui_script_ref;
 	[Inject(InjectFrom.Anywhere)]
 	public PLAYER_CAMERA_FOLLOW player_camer_follow;
+	
 	[Inject(InjectFrom.Anywhere)]
 	public playermanager main_player;
 

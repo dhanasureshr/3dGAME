@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class camera_switch_ui_script : ExtendedCustomMonoBehavior
 {
     // Start is called before the first frame update
-
+    #region camera_switch_variables
     [Inject(InjectFrom.Anywhere)]
     public PLAYER_CAMERA_FOLLOW Player_camera_follow_script_ref;
     [Inject(InjectFrom.Anywhere)]
@@ -26,6 +26,11 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
    [HideInInspector] public Transform tps_camera_pivot;
    [HideInInspector] public Transform player_target_for_fps;
 
+    #endregion
+
+
+
+    #region gun_variables
     public GameObject playerobject;
     private SkinnedMeshRenderer final_dhana_small_player_meshrenderer;
   
@@ -36,6 +41,9 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
 
 
     private GameObject gun_canveas;
+
+    #endregion
+
     void Start()
     {
         Toggles = gameObject.GetComponent<Toggle>();
@@ -50,6 +58,7 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
         player_target_for_fps = player_pivot_gameobject_ref.gameObject.GetComponent<Transform>();
         main_camera = main_camera_gameobject_ref.gameObject.GetComponent<Transform>();
 
+        // gun code
 
         fps_switcher_canvas = GameObject.FindWithTag("fps_switcher");
         final_dhana_small_game_object = GameObject.FindWithTag("fight_player");
@@ -103,6 +112,8 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
         Player_fps_camera_script_ref.enabled = false;
     }
 
+
+    // gun code;
     public void Remove_gun_mode()
     {
         _enable_tps_mode();

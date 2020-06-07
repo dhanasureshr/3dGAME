@@ -52,10 +52,10 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
 
 	#region local variables to communicate  other scripts with the game manager
-
+	[Inject(InjectFrom.Anywhere)]
 	public basegamecontroller base_game_controller_ref;
 
-	private static gamemanager instance;
+	public static gamemanager instance;
 	
     #endregion
 
@@ -95,7 +95,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 		event_manager.Instance.AddListener(EVENT_TYPE.GAME_STOPED, this);
 
 
-		base_game_controller_ref = gameObject.GetComponent<basegamecontroller>();
+		//base_game_controller_ref = gameObject.GetComponent<basegamecontroller>();
 
 		if (Application.isPlaying)
 		{

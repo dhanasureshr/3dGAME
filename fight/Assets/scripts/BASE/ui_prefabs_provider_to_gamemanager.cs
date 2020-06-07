@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ui_prefabs_provider_to_gamemanager : ExtendedCustomMonoBehavior
 {
-	[TextArea]
-	public  string objt1 = "ui_bar prefabes are hear";
+	[Space(15)]
+	[Header("HEALTH_BAR_FOR_PLAYER_AND_ENIMY")]
 	[Tooltip("Enimy health bar prefab")] public GameObject Enimy_health_bar_prefab; // enimy_health bar to activate and deactivate accordingely;
 	[Tooltip("Enimy health bar fillable image")] public Image E_health_bar_image;
 	
@@ -20,9 +20,13 @@ public class ui_prefabs_provider_to_gamemanager : ExtendedCustomMonoBehavior
 
 
  	[Space(15)]
-	[TextArea]
-	public  string objt2 = "main game panal prefabes are hear";
+	[Header("GAME_UI_PANAL_PREFABS")]
 	[Tooltip("Game lost panal prefab")] public GameObject Game_lost_panal_prefab;
 	[Tooltip("Game resum panal prefab")] public GameObject Game_resume_panal_prefab;
+
+	[Space(15)]
+	[Header("GAME ACTION PANAL PREFABES")]
+	[Tooltip("Game fightng panal prefab")] public GameObject Game_fighting_panal;
+	[Tooltip("Game gun panal prefab")] public GameObject Game_gun_panal;
 
 }
