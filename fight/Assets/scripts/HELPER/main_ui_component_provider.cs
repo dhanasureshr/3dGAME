@@ -10,8 +10,8 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public playermanager player_mangaer_for_dute;
 
-    [Inject(InjectFrom.Anywhere)]
-    public gamemanager game_manager_ref;
+
+    
 
     [Inject(InjectFrom.Anywhere)]
     public PLAYER_CAMERA_FOLLOW third_person_camera;
@@ -24,8 +24,15 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public camera_switch_ui_script camera_swithc_ui_script_for_gun_ui;
 
+
+
     [Inject(InjectFrom.Anywhere)]
     public gun_animation_script player_gun_animation_script;
 
+
+    
+    
+       
+   
 
 }

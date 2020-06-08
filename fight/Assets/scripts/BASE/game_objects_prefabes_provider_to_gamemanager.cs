@@ -23,4 +23,6 @@ public class game_objects_prefabes_provider_to_gamemanager : MonoBehaviour
 
 	public GameObject health_booster;
 
+
+
 }

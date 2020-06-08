@@ -121,11 +121,11 @@ RectTransform:
   m_Father: {fileID: 3673237511939206021}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1798641639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -352,7 +352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_animation_helper_for_uI_controllers: {fileID: 0}
   player_mangaer_for_dute: {fileID: 0}
-  game_manager_ref: {fileID: 0}
   third_person_camera: {fileID: 0}
   first_person_camera: {fileID: 0}
   camera_swithc_ui_script_for_gun_ui: {fileID: 0}
@@ -874,11 +873,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GAME_RESUME_PANAL
       objectReference: {fileID: 0}
-    - target: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2234647747849578005, guid: 3c6edd4814c216741a43cf622de3d646,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1004,6 +998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUN_CANVAS
       objectReference: {fileID: 0}
+    - target: {fileID: 7282648488349669946, guid: 90581d8aedbddf14c8fe20446505f79e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7282648488349669945, guid: 90581d8aedbddf14c8fe20446505f79e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1108,6 +1107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282648489143975040, guid: 90581d8aedbddf14c8fe20446505f79e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -238.2998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90581d8aedbddf14c8fe20446505f79e, type: 3}
@@ -1378,6 +1382,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GAME_LOST_PANAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5764820159033256441, guid: 7fa1617bc63f5e748a80874a6847ceec,
         type: 3}

@@ -9,11 +9,11 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     /// some buttons related to the scenes(levels of the game)
 
 
-    //[Inject(InjectFrom.Anywhere)]
-    //public gamemanager game_manager_ref;
-
+    
 
     public main_ui_component_provider t;
+
+
     public void Start()
     {
         t = gameObject.GetComponentInParent<main_ui_component_provider>();
@@ -38,7 +38,7 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     public void GAME_RESUME_BUTTON_PRESSED()
     {
         // this method is to resume the game
-        t.game_manager_ref.ispaused = false;
+        gamemanager.instance.ispaused = false;
     }
 
     public void GAME_BACK_BUTTON_PRESSED()

@@ -41,7 +41,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     #region enimy_ui_variables
     //private Image enimy_health_bar_image_ref;
 
-    //[Inject(InjectFrom.Anywhere)]
+    [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
 
     public GameObject g_man;
@@ -94,7 +94,7 @@ public class enimy_manager :ExtendedCustomMonoBehavior
 
         if(enimy_properties.FAR_ATTACKER)
         {
-            if(E__manager_ref_enimy_movement.distance <E__manager_ref_enimy_movement.enimy_nav_mesh_agent.stoppingDistance)
+            if(E__manager_ref_enimy_movement.distance < E__manager_ref_enimy_movement.enimy_nav_mesh_agent.stoppingDistance)
             {
                 E__manager_ref_enimy_animation_helper.enimy_animator_ref.runtimeAnimatorController = enimy_properties.R_A__CONTROLLERS_ENIMY[0];
             }

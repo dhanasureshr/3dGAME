@@ -9,8 +9,12 @@ public class tags : ExtendedCustomMonoBehavior
     public const string player_right_leg_tag = "PLAYER_RIGHT_LEG_TAG";
     public const string player_left_hand_tag = "PLAYER_LEFT_HAND_TAG";
     public const string player_right_hand_tag = "PLAYER_RIGHT_HAND_TAG";
+
+
     public const string player_health_ui_tag = "P_health_tag";
-    public const string enimy_health_ui_tag = "E_health_tag";
     public const string Player_strength_ui_tag = "strength_tag";
-    
+
+    public const string enimy_health_bg_tag = "E_health_tag";
+    public const string enimy_health_fg_tag = "E_health_fg";
+
 }
