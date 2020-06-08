@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class baseenimymanager : MonoBehaviour
+public class Emimy_instantiator : ExtendedCustomMonoBehavior
 {
-    private GameObject enimy_prefab_to_instantiate;
+    public  GameObject enimy_prefab_to_instantiate;
     
-    private int instantation_count;
+    public int instantation_count;
 
     private Transform position_to_instantiate_enimy;
 
@@ -14,11 +14,15 @@ public class baseenimymanager : MonoBehaviour
 
     public List<GameObject> cloned_enimy_list;
 
+    public void Start()
+    {
+        cloned_enimy_list = instantiate_enimy(enimy_prefab_to_instantiate, instantation_count, gameObject.transform);
+    }
 
 
     public List<GameObject> instantiate_enimy(GameObject enimy_game_object, int ins_count,Transform position_to_instantiate)
     {
-        for(int i = 0;i<=ins_count;i++)
+        for(int i = 1;i<=ins_count;i++)
         {
             cloned_enimy_list.Add(Instantiate(enimy_game_object, position_to_instantiate.position, Quaternion.identity));
 

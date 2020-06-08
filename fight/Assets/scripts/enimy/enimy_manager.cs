@@ -44,7 +44,10 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
 
-    public GameObject g_man;
+    
+    public GameObject enimy_component_from_current_scene;
+    [HideInInspector] public ENIMY_COMPONENT_PROVIDER enimy_component_provider;
+    [HideInInspector] public Emimy_instantiator enimy_instantiator_from_enimy_component_provider;
     #endregion
 
 
@@ -52,8 +55,12 @@ public class enimy_manager :ExtendedCustomMonoBehavior
     #region Enimy main controllers initilizer
     private void Start()
     {
-        g_man = GameObject.FindWithTag("gamemanager");
-        base_game_controller_to_provide_asserts = g_man.GetComponent<basegamecontroller>();
+        enimy_component_from_current_scene = GameObject.FindWithTag(tags.enimy_component_provider_tag);// game object
+        enimy_component_provider = enimy_component_from_current_scene.GetComponent<ENIMY_COMPONENT_PROVIDER>();//script
+        enimy_instantiator_from_enimy_component_provider = enimy_component_provider.enimy_instantiator;//variable access from above script
+
+
+        base_game_controller_to_provide_asserts = gamemanager.instance.GetComponent<basegamecontroller>();
 
 
         E__manager_ref_enimy_movement = gameObject.GetComponent<enimy_movement>();
@@ -66,8 +73,11 @@ public class enimy_manager :ExtendedCustomMonoBehavior
 
         E__manager_ref_NavMeshAgent = gameObject.GetComponent<NavMeshAgent>();
 
-        E__manager_ref_Enimy_Renderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
 
+
+        //i hava stored the enimy renderer to play the enimy animations if enimy render is visible then enimy aimations will play
+        // else not 
+        E__manager_ref_Enimy_Renderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
         #region Enimy static properties setter
         E__manager_ref_enimy_animation_helper.enimy_rendrer = E__manager_ref_Enimy_Renderer;
         #endregion
@@ -77,12 +87,26 @@ public class enimy_manager :ExtendedCustomMonoBehavior
 
     #endregion
 
+    #region ENIMY HEALTH BAR CODE
     public void Display_enimy_health(float health_value)
     {
 
-        base_game_controller_to_provide_asserts.ui_prefabs_provider.E_health_bar_image.fillAmount = health_value;
+        //base_game_controller_to_provide_asserts.ui_prefabs_provider.E_health_bar_image.fillAmount = health_value;
+        enimy_component_provider.E_health_bar_image.fillAmount = health_value;
        
     }
+
+    public void disable_enimy_health_bar()
+    {
+        enimy_component_provider.Enimy_health_bar_Game_object.SetActive(false);
+    }
+
+    public void enable_enimy_health_bar()
+    {
+        enimy_component_provider.Enimy_health_bar_Game_object.SetActive(true);
+    }
+
+    #endregion
 
     private void Update()
     {

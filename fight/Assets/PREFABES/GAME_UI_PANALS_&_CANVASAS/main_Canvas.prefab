@@ -618,6 +618,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLAYER_STRENGTH_BG
       objectReference: {fileID: 0}
+    - target: {fileID: 2814385560627313421, guid: c7dcea86c568f584eb181e755dae9955,
+        type: 3}
+      propertyPath: m_TagString
+      value: P_strength_tag
+      objectReference: {fileID: 0}
     - target: {fileID: 2814385560627313420, guid: c7dcea86c568f584eb181e755dae9955,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -723,6 +728,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2814385561879668108, guid: c7dcea86c568f584eb181e755dae9955,
+        type: 3}
+      propertyPath: m_TagString
+      value: P_strength_fg
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dcea86c568f584eb181e755dae9955, type: 3}
 --- !u!224 &3673237513142226017 stripped
@@ -742,11 +752,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ENIM_HEALTH_BG
-      objectReference: {fileID: 0}
-    - target: {fileID: 3224934327891129129, guid: 9f9afe071b50341419afa8e5ede0846d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3224934327891129128, guid: 9f9afe071b50341419afa8e5ede0846d,
         type: 3}
@@ -997,11 +1002,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GUN_CANVAS
-      objectReference: {fileID: 0}
-    - target: {fileID: 7282648488349669946, guid: 90581d8aedbddf14c8fe20446505f79e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7282648488349669945, guid: 90581d8aedbddf14c8fe20446505f79e,
         type: 3}
@@ -1258,6 +1258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLAYER_HEALTH_BG
       objectReference: {fileID: 0}
+    - target: {fileID: 7761821798584974690, guid: 41b22d68197f8994ba92210483e09bb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: P_health_tag
+      objectReference: {fileID: 0}
     - target: {fileID: 7761821798584974701, guid: 41b22d68197f8994ba92210483e09bb7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1362,6 +1367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761821797749481591, guid: 41b22d68197f8994ba92210483e09bb7,
+        type: 3}
+      propertyPath: m_TagString
+      value: P_health_fg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b22d68197f8994ba92210483e09bb7, type: 3}

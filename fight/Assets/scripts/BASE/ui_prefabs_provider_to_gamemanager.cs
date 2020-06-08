@@ -5,19 +5,8 @@ using UnityEngine.UI;
 
 public class ui_prefabs_provider_to_gamemanager : ExtendedCustomMonoBehavior
 {
-	[Space(15)]
-	[Header("HEALTH_BAR_FOR_PLAYER_AND_ENIMY")]
-	[Tooltip("Enimy health bar prefab")] public GameObject Enimy_health_bar_prefab; // enimy_health bar to activate and deactivate accordingely;
-	[Tooltip("Enimy health bar fillable image")] public Image E_health_bar_image;
+
 	
-	[Space(15)]
-	[Tooltip("Player health bar prefab")] public GameObject Player_health_bar_prefab;
-	[Tooltip("Enimy health bar fillable image")] public Image P_health_bar_image;
-
-	[Space(15)]
-	[Tooltip("Player strength bar prefab")] public GameObject player_stenght_bar_prefab;
-	[Tooltip("player strength bar fillable image")] public Image P_strength_bar_image;
-
 
  	[Space(15)]
 	[Header("GAME_UI_PANAL_PREFABS")]

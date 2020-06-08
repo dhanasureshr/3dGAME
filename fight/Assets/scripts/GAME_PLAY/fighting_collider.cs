@@ -26,6 +26,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     public GameObject hit_Fx;
 
     #region changin the applible damage code to set it on opponent
+    [Inject(InjectFrom.Anywhere)]
     public enimy_manager enimy_manageer_ref_for_applible_damage;
     #endregion
 

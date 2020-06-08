@@ -19,12 +19,12 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	#endregion
 
 	#region local  variables  fro testing baseenimymanager
-	[Inject(InjectFrom.Anywhere)]
-	public baseenimymanager base_enimy_manager;
+	//[Inject(InjectFrom.Anywhere)]
+	//public baseenimymanager base_enimy_manager;
 
-	public List<GameObject> active_enimyes;
+	//public List<GameObject> active_enimyes;
 
-	public Transform pos_to_instantiate_eimy;
+	//public Transform pos_to_instantiate_eimy;
 	#endregion
 
 	#region global variables to instantiate prefabes at the position of dead enimy
@@ -57,10 +57,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 		
 		event_manager_ref.RemoveRedundancies();
 
-		// below code is to spawn the enimyes
-
-	    active_enimyes =  base_enimy_manager.instantiate_enimy(game_object_prefabes_provider.enimy_prefab1, 0, pos_to_instantiate_eimy);
-		//this deals about the starting the game
+	
 	}
 
 	public virtual void RestartGameButtonPressed_Handler_Method()
@@ -92,18 +89,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	}
 
 
-	public virtual void Enable_enimy_health_bar()
-	{
-		Enable_object_in_hirichery(ui_prefabs_provider.Enimy_health_bar_prefab);
-	}
-
-	public virtual void Disable_enimy_health_bar()
-	{
-		
-		Disable_object_in_hirichery(ui_prefabs_provider.Enimy_health_bar_prefab);
-	}
-
-
+	#region OBJECT DISABLERS AND ENABLERS
 	public virtual void Enable_object_in_hirichery(GameObject ref_gameobject_to_activate_in_hirichey)
 	{
 		ref_gameobject_to_activate_in_hirichey.SetActive(true);
@@ -113,7 +99,10 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		ref_gameobject_to_deactivate_in_hirichey.SetActive(false);
 	}
-	#endregion
+    #endregion
+
+
+    #endregion
 
     public void player_supplyers_spanner(Transform position_to_spane)
 	{

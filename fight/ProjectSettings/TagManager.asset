@@ -16,7 +16,6 @@ TagManager:
   - tps_pivot
   - p1
   - FxTemporaire
-  - strength_tag
   - p2
   - rot
   - P_health_tag
@@ -27,6 +26,11 @@ TagManager:
   - fighting_canvas
   - gun_canvas
   - E_health_fg
+  - E_Scene_components
+  - P_health_fg
+  - P_strength_tag
+  - P_strength_fg
+  - P_Scene_components
   layers:
   - Default
   - TransparentFX

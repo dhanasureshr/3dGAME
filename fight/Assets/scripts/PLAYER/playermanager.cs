@@ -12,24 +12,27 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     /// by considering this script as a base for player to provide data to the another moudle like player UI
     /// </summary>
 
+    #region variables
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
 
-    
-
     private health player_health_script_ref;
-    private Image player_health_bar_image_ref;
-    private Image player_strength_bar_image_ref;
 
     #region changin the applible damage code to set it on opponent
     public float AApplible_damage = 2.0f;
     #endregion
 
+    #region player component provider variables
+    public GameObject player_components_from_current_scene;
+    [HideInInspector] public PLAYER_COMPONENT_PROVIDER player_component_provider;
+    #endregion
+
+
     #region Rotation constraint variables
     public RotationConstraint t;
     public ConstraintSource st;
     public LayerMask test_layer_mask;
-    
+
     //private float radius = 1.157126f;
     public float weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
@@ -37,15 +40,16 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public int sourceCount => throw new System.NotImplementedException();
     #endregion
 
+    #endregion
+
     #region initilizing methods
-    private void Awake()
-    {
-        //player_health_bar_image_ref = GameObject.FindWithTag(tags.player_health_ui_tag).GetComponent<Image>();
-        player_strength_bar_image_ref = GameObject.FindWithTag(tags.Player_strength_ui_tag).GetComponent<Image>();
-    }
+
 
     private void Start()
     {
+        player_components_from_current_scene = GameObject.FindWithTag(tags.player_component_provider_tag);
+        player_component_provider = player_components_from_current_scene.GetComponent<PLAYER_COMPONENT_PROVIDER>();
+
         player_health_script_ref = GetComponent<health>();
         t = gameObject.GetComponent<RotationConstraint>();
         t.enabled = false;
@@ -61,10 +65,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 //this is the code to display the player health
     public void Display_player_health(float health_value)
     {
-        base_game_controller_to_provide_asserts.ui_prefabs_provider.P_health_bar_image.fillAmount = health_value;
+        
+        player_component_provider.P_health_bar_image.fillAmount = health_value;
     }
     #endregion
-
 
     #region palyer dute variables
     private Transform targeted_enimy_ref;
@@ -187,12 +191,6 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         if (targeted_enimy_ref != null)
         {
             play_dute(Random.Range(0,2));
-
-            //transform.gameobject.getcomponentinparent<player_animation_helper>().play_player_sholder_dute();
-            //targeted_enimy_ref.gameobject.getcomponentinparent<enimy_animation_helper>().play_enimy_sholder_dute();
-
-            //transform.gameObject.GetComponentInParent<PLAYER_ANIMATION_HELPER>().PLAY_PLAYER_HELL_DUTE();
-            //targeted_enimy_ref.gameObject.GetComponentInParent<enimy_animation_helper>().PLAY_ENIMY_HELL_DUTE();
         }
     }
     void play_dute(int n)
@@ -223,15 +221,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         transform.gameObject.layer = 0;
     }
-    public void Setup_player_hand_Ik()
-    {
-
-    }
-
-    public void Remove_player_hand_Ik()
-    {
-
-    }
+    
     #endregion
 
     #region player rotation constraint override metods

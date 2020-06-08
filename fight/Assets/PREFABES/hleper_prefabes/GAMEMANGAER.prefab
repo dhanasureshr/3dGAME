@@ -167,9 +167,6 @@ MonoBehaviour:
   event_manager_ref: {fileID: 0}
   ui_prefabs_provider: {fileID: 0}
   game_object_prefabes_provider: {fileID: 0}
-  base_enimy_manager: {fileID: 0}
-  active_enimyes: []
-  pos_to_instantiate_eimy: {fileID: 0}
 --- !u!114 &4512449123914293134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,12 +186,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
-  Enimy_health_bar_prefab: {fileID: 0}
-  E_health_bar_image: {fileID: 0}
-  Player_health_bar_prefab: {fileID: 0}
-  P_health_bar_image: {fileID: 0}
-  player_stenght_bar_prefab: {fileID: 0}
-  P_strength_bar_image: {fileID: 0}
   Game_lost_panal_prefab: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
     type: 3}
   Game_resume_panal_prefab: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
@@ -224,7 +215,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 5986557794989459408, guid: e7f875488f8523b45a9a16c01e3616c7, type: 3}
   enimy_prefab1: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
     type: 3}
   health_booster: {fileID: 8498606026199842714, guid: fc89c0289d2a6b4459644296c5d1d6ab,
@@ -241,4 +231,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6536c6d5cc92a7f429e41efa709f6425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  enimy_prefab_to_instantiate: {fileID: 0}
+  instantation_count: 0
   cloned_enimy_list: []

@@ -70,28 +70,30 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
         if(!is_player)
         {
-            base_game_controller_to_intimate_game_state.Enable_enimy_health_bar();/////////////////////
+            enimy_manger_ref.enable_enimy_health_bar();
             enimy_manger_ref.Display_enimy_health(character_health);
         }
         else
         {
-            base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();//////////////////////////
+            //enimy_manger_ref.disable_enimy_health_bar();
         }
         if (character_health <= 0.0f)
         {
            
             characted_died = true;
+            // enimy death code
             if (!is_player)
             {
                 disable_enimy_Rotation_collider = true;
-                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();////////////////////////
+                enimy_manger_ref.disable_enimy_health_bar();////////////////////////
                 enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
                
                 base_game_controller_to_intimate_game_state.player_supplyers_spanner(gameObject.transform);
-                base_game_controller_to_intimate_game_state.active_enimyes.Remove(gameObject);
+
+                enimy_manger_ref.enimy_instantiator_from_enimy_component_provider.cloned_enimy_list.Remove(gameObject);// removed the died enimy from the cloned_enimy_list
                 Destroy(gameObject, 10.0f);
             }
-            else
+            else // player death code
             {
                 disable_enimy_Rotation_collider = false;
             }
@@ -111,7 +113,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             if(KnockDown)
             {
                 enimy_movement_ref_for_enimyanimations.stopenimyMovement();
-                base_game_controller_to_intimate_game_state.Disable_enimy_health_bar();
+                enimy_manger_ref.disable_enimy_health_bar();
                 enimy_movement_ref_for_enimyanimations.enimy_animation_helper_ref.disable_enimy_get_hit_animation();
 
             }else
