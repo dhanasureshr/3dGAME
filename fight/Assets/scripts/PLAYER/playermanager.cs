@@ -86,7 +86,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         if (other.tag == "ENIMY") // to check weather enimy is entered or not
         {
-            Debug.Log("ENIMY_ENTERED");
+
             
             t.enabled = true; // now i enabled the rotation constraint when entered into the fighting range
             

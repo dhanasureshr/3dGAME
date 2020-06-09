@@ -493,6 +493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIGHTING_CANVAS
       objectReference: {fileID: 0}
+    - target: {fileID: 2565351504451875676, guid: 5d3fcafac00a18b4798f47a1eea3cd72,
+        type: 3}
+      propertyPath: m_TagString
+      value: fighting_canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 2565351504451875491, guid: 5d3fcafac00a18b4798f47a1eea3cd72,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -877,6 +882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GAME_RESUME_PANAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
+        type: 3}
+      propertyPath: m_TagString
+      value: G_resume_Panal
       objectReference: {fileID: 0}
     - target: {fileID: 2234647747849578005, guid: 3c6edd4814c216741a43cf622de3d646,
         type: 3}
@@ -1395,8 +1405,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_TagString
+      value: G_lost_Panal
       objectReference: {fileID: 0}
     - target: {fileID: 5764820159033256441, guid: 7fa1617bc63f5e748a80874a6847ceec,
         type: 3}

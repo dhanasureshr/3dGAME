@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4512449123914293135}
   - component: {fileID: 4512449123914293134}
   - component: {fileID: 4512449123914293133}
-  - component: {fileID: 4512449123914293132}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -206,38 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   full_player_prefab: {fileID: 4272947402165268831, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
     type: 3}
-  fighting_petrol_points_prefabes:
-  - {fileID: 5986557794989459408, guid: e7f875488f8523b45a9a16c01e3616c7, type: 3}
-  - {fileID: 5986557794989459408, guid: e7f875488f8523b45a9a16c01e3616c7, type: 3}
-  - {fileID: 5986557794989459408, guid: e7f875488f8523b45a9a16c01e3616c7, type: 3}
-  - {fileID: 5986557794989459408, guid: e7f875488f8523b45a9a16c01e3616c7, type: 3}
-  scene_petrol_points_prefabes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   enimy_prefab1: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
     type: 3}
   health_booster: {fileID: 8498606026199842714, guid: fc89c0289d2a6b4459644296c5d1d6ab,
     type: 3}
---- !u!114 &4512449123914293132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4512449123914293125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6536c6d5cc92a7f429e41efa709f6425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
-  enimy_prefab_to_instantiate: {fileID: 0}
-  instantation_count: 0
-  cloned_enimy_list: []

@@ -111,26 +111,25 @@ public class enimy_movement : ExtendedCustomMonoBehavior
         #endregion
 
         #region fight petrol initial checks
-        ///////////////////////////////////////////
-                                // target_fight_points = base_game_controller_to_provide_assets.game_object_prefabes_provider.fighting_petrol_points_prefabes;
+      
         target_fight_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_fighting_petrol_points;
         for(int i = 0;i<target_fight_points.Length;i++)
         {
             fightpoints[i] = target_fight_points[i].gameObject.GetComponent<Transform>();
         }
         destfightpoint = fightpoints.Length;
+
         #endregion
 
         #region sceen petrol initial checks
 
-                               // target_scene_points = base_game_controller_to_provide_assets.game_object_prefabes_provider.scene_petrol_points_prefabes;
         target_scene_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_scene_petorl_points;
         for (int j = 0; j < target_scene_points.Length; j++)
         {
             scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();
         }
         destscenepoint = scenepoints.Length;
-        /////////////////////////////////////////////
+       
         #endregion
     }
 

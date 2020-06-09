@@ -22,17 +22,13 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
 
     public void REMOVE_GUN_MODE_BUTTON()
     {
-        t.camera_swithc_ui_script_for_gun_ui.Remove_gun_mode();
+      //  t.camera_swithc_ui_script_for_gun_ui.Remove_gun_mode();
       
     }
 
     public void FIRE_RIFIL_BUTTON()
     {
-        //if(aim_fire)
-        //{
-        //    t.player_gun_animation_script.PLAY_GUN_PLAYER_AIM__FIRE();
-        //}
-        //else
+        
         {
             t.player_gun_animation_script.PLAY_GUN_PLAYER_FIRE_RIFIL();
         }

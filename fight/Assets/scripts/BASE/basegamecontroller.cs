@@ -10,8 +10,8 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	public event_manager event_manager_ref;
 
 	[Inject(InjectFrom.Anywhere)]
-	public ui_prefabs_provider_to_gamemanager ui_prefabs_provider;
-
+	public CANVAS_COMPONENT_PROVIDER canvas_component_provider;
+	
 	[Inject(InjectFrom.Anywhere)]
 	public game_objects_prefabes_provider_to_gamemanager game_object_prefabes_provider;
 
@@ -35,8 +35,9 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
     public virtual void PlayerLostLife_Handler_Method()
 	{ 
 	
+		
 		Debug.Log("player_lost_life___---from the basegamecontroller");
-		Enable_object_in_hirichery(ui_prefabs_provider.Game_lost_panal_prefab);
+		Enable_object_in_hirichery(canvas_component_provider.GAME_LOST_PANAL);
 		
 	}
 
@@ -78,14 +79,14 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public virtual void GamePaused_Handler_Method()
 	{
-		
-		Enable_object_in_hirichery(ui_prefabs_provider.Game_resume_panal_prefab);
+
+		Enable_object_in_hirichery(canvas_component_provider.GAME_RESUME_PANAL);
 	}
 
 	public virtual void GameResumed_Handler_Method()
 	{
 		// this delas about game controlls when the game is resumed
-		Disable_object_in_hirichery(ui_prefabs_provider.Game_resume_panal_prefab);
+		Disable_object_in_hirichery(canvas_component_provider.GAME_RESUME_PANAL);
 	}
 
 
