@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1080779388}
   - component: {fileID: 1080779387}
   - component: {fileID: 1390230157}
-  - component: {fileID: 6521474906534867984}
+  - component: {fileID: 938512622}
   m_Layer: 5
   m_Name: inventory_panal
   m_TagString: Untagged
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &6521474906534867984
+--- !u!114 &938512622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,10 +187,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1080779385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f84f4fd69706a429644df5c3f06106, type: 3}
+  m_Script: {fileID: 11500000, guid: e16260ecd0f8dd442894f73c3f0e3c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
+  _Inventory: {fileID: 0}
 --- !u!1 &1088156626
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 1088156629}
   - component: {fileID: 1088156628}
   - component: {fileID: 8173548045191785196}
+  - component: {fileID: 9156571926674263113}
   m_Layer: 5
   m_Name: bordar
   m_TagString: Untagged
@@ -309,6 +310,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &9156571926674263113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088156626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 0}
+  _Key: 0
 --- !u!1 &1529975225
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +422,7 @@ GameObject:
   - component: {fileID: 1597821491}
   - component: {fileID: 1597821493}
   - component: {fileID: 1597821492}
-  - component: {fileID: 643462571}
+  - component: {fileID: 1130507571}
   m_Layer: 5
   m_Name: itemimage
   m_TagString: Untagged
@@ -449,7 +464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597821490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -471,7 +486,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &643462571
+--- !u!114 &1130507571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -480,10 +495,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1597821490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef2f88402867254289add70f748fd84, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3c0482e1f6d104aa165fe65ba8b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
 --- !u!1 &1798641635
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +725,7 @@ GameObject:
   - component: {fileID: 7023084580906037104}
   - component: {fileID: 4244498384558673839}
   - component: {fileID: 317794631188013466}
-  - component: {fileID: 984882383}
+  - component: {fileID: 1300331837}
   m_Layer: 5
   m_Name: itemimage
   m_TagString: Untagged
@@ -753,7 +767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624679224426379995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -775,7 +789,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &984882383
+--- !u!114 &1300331837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -784,10 +798,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 624679224426379995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef2f88402867254289add70f748fd84, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3c0482e1f6d104aa165fe65ba8b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
 --- !u!1 &702703745649954224
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +813,7 @@ GameObject:
   - component: {fileID: 8232928777801195055}
   - component: {fileID: 704446932663519247}
   - component: {fileID: 4276050098389498507}
+  - component: {fileID: 2350283442424038986}
   m_Layer: 5
   m_Name: bordar
   m_TagString: Untagged
@@ -906,6 +920,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2350283442424038986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702703745649954224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 0}
+  _Key: 0
 --- !u!1 &1700123450528661547
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +945,7 @@ GameObject:
   - component: {fileID: 6806922501975675097}
   - component: {fileID: 4069646864565831358}
   - component: {fileID: 969435732676321414}
-  - component: {fileID: 671599369}
+  - component: {fileID: 2003712891}
   m_Layer: 5
   m_Name: itemimage
   m_TagString: Untagged
@@ -959,7 +987,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700123450528661547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -981,7 +1009,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &671599369
+--- !u!114 &2003712891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -990,10 +1018,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700123450528661547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef2f88402867254289add70f748fd84, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3c0482e1f6d104aa165fe65ba8b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
 --- !u!1 &2707020197547862510
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1184,7 @@ GameObject:
   - component: {fileID: 3673237511939206027}
   - component: {fileID: 3673237511939206026}
   - component: {fileID: 3673237511939206022}
-  - component: {fileID: 7362573411960212264}
+  - component: {fileID: 1789523957281533538}
   m_Layer: 5
   m_Name: main_Canvas
   m_TagString: Untagged
@@ -1275,7 +1302,7 @@ MonoBehaviour:
   camera_swithc_ui_script_for_gun_ui: {fileID: 0}
   player_gun_animation_script: {fileID: 0}
   canvas_component_provider: {fileID: 0}
---- !u!114 &7362573411960212264
+--- !u!114 &1789523957281533538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1284,10 +1311,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3673237511939206025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7efdd109e4c854a9b8f12f7dd0e646, type: 3}
+  m_Script: {fileID: 11500000, guid: 02b9452b3157a344d9e19e7f2f61f59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 0}
+  MessagePanel: {fileID: 0}
 --- !u!1 &3887952533696256554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,6 +1328,7 @@ GameObject:
   - component: {fileID: 6899520843566325438}
   - component: {fileID: 2983511183978399064}
   - component: {fileID: 1135707299350209005}
+  - component: {fileID: 8790420663522226298}
   m_Layer: 5
   m_Name: bordar
   m_TagString: Untagged
@@ -1403,9 +1432,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2983511183978399064}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8790420663522226298}
+        m_MethodName: OnItemClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &8790420663522226298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887952533696256554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 0}
+  _Key: 0
 --- !u!1 &7363771351444208116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1472,7 @@ GameObject:
   - component: {fileID: 2804743508553082476}
   - component: {fileID: 6695106625067794708}
   - component: {fileID: 2140405867803622103}
+  - component: {fileID: 7652147635666792348}
   m_Layer: 5
   m_Name: bordar
   m_TagString: Untagged
@@ -1524,6 +1579,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7652147635666792348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363771351444208116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6a3b4aa18452248ab1a2369ed0cc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Inventory: {fileID: 0}
+  _Key: 0
 --- !u!1 &8287717500589314877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,7 +1604,7 @@ GameObject:
   - component: {fileID: 2962308883524515274}
   - component: {fileID: 7025841847833909529}
   - component: {fileID: 7783324614761192464}
-  - component: {fileID: 759016567}
+  - component: {fileID: 577735181}
   m_Layer: 5
   m_Name: itemimage
   m_TagString: Untagged
@@ -1577,7 +1646,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8287717500589314877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1599,7 +1668,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &759016567
+--- !u!114 &577735181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1608,10 +1677,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8287717500589314877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eef2f88402867254289add70f748fd84, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3c0482e1f6d104aa165fe65ba8b206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
 --- !u!1001 &358048239106762021
 PrefabInstance:
   m_ObjectHideFlags: 0

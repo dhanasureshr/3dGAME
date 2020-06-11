@@ -3370,6 +3370,7 @@ GameObject:
   - component: {fileID: 3696311001533824737}
   - component: {fileID: 2592301411167073245}
   - component: {fileID: 6823421251394268928}
+  - component: {fileID: 6482110583994941436}
   m_Layer: 10
   m_Name: full_player
   m_TagString: Player
@@ -3439,6 +3440,8 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
+  Inventory: {fileID: 0}
+  Hud: {fileID: 0}
   base_game_controller_to_provide_asserts: {fileID: 0}
   AApplible_damage: 5
   player_components_from_current_scene: {fileID: 0}
@@ -3447,7 +3450,6 @@ MonoBehaviour:
   test_layer_mask:
     serializedVersion: 2
     m_Bits: 0
-  Inventory: {fileID: 0}
 --- !u!143 &2448653457280816859
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3616,6 +3618,19 @@ RotationConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources: []
+--- !u!65 &6482110583994941436
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272947402165268831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.4045508, z: 1.5638758}
+  m_Center: {x: 0, y: 0.88235056, z: 0.2819379}
 --- !u!1 &4272947402227349028
 GameObject:
   m_ObjectHideFlags: 0

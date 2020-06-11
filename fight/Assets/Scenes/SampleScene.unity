@@ -155,18 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b2f00f3c411914ab902e94922bef81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &118882019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4512449123914293120, guid: 7e75190f27963e843b35410c97311877,
-    type: 3}
-  m_PrefabInstance: {fileID: 4512449122223318215}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b995b1aaf1c4bb439a5163746dcc0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,11 +413,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 712182510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5cd2a81f106c584e8099b75109e82a9, type: 3}
+  m_Script: {fileID: 11500000, guid: e34d78b822635ab43902bdf063c5ed6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 118882019}
-  _Image: {fileID: 21300000, guid: fef7449ea05e8c04b81b097e7e0ff67a, type: 3}
+  Name: f
+  Image: {fileID: 21300000, guid: e364656f334eb9643a85c248ee0c8136, type: 3}
+  InteractText: Press F to pickup the item
+  ItemType: 0
+  PickPosition: {x: 0, y: 0, z: 0}
+  PickRotation: {x: 0, y: 0, z: 0}
+  DropRotation: {x: 0, y: 0, z: 0}
+  UseItemAfterPickup: 0
 --- !u!135 &712182512
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -438,7 +432,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712182510}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -10385,16 +10379,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1901201902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec876af89d636e4c988c303e1b34f02, type: 3}
+  m_Script: {fileID: 11500000, guid: be1b6f52a2d824d49b01f8505d9e0ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
 --- !u!1 &1954752658
 GameObject:
   m_ObjectHideFlags: 0
@@ -11199,6 +11186,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482110583994941436, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}

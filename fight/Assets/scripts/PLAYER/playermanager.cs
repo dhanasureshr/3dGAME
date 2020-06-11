@@ -12,6 +12,17 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     /// by considering this script as a base for player to provide data to the another moudle like player UI
     /// </summary>
 
+        
+    #region inventory variables
+    [Inject(InjectFrom.Anywhere)]
+    public Inventory Inventory;
+    private InteractableItemBase mIntractItem = null;
+    private InventoryItemBase mCurrentItem = null;
+    [Inject(InjectFrom.Anywhere)]
+    public HUD Hud;
+
+    #endregion
+
     #region variables
     [Inject(InjectFrom.Anywhere)]
     public basegamecontroller base_game_controller_to_provide_asserts;
@@ -56,13 +67,55 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         t.weight = 1.0f;
         t.rotationOffset = new Vector3(0, 180, 0);
 
-      
+
+        #region inventory initilization
+        Inventory.ItemUsed += Inventory_ItemUsed;
+        Inventory.ItemRemoved += Inventory_ItemRemoved;
+        #endregion
+
     }
 
     #endregion
 
+
+    #region Inventory event methods
+
+    private void Inventory_ItemRemoved(object sender,InventoryEventArgs e)
+    {
+        InventoryItemBase item = e.Item;
+
+        GameObject goItem = (item as MonoBehaviour).gameObject;
+        goItem.SetActive(true);
+        goItem.transform.parent = null;
+
+        if (item == mCurrentItem)
+            mCurrentItem = null;
+    }
+
+    private void SetItemActive(InventoryItemBase item,bool active)
+    {
+        GameObject currentItem = (item as MonoBehaviour).gameObject;
+        currentItem.SetActive(active);
+       // currentItem.transform.parent = active ? Hand.transform : null;
+    }
+    private void Inventory_ItemUsed(object sender,InventoryEventArgs e)
+    {
+        if(e.Item.ItemType != EItemType.Consumable)
+        {
+            SetItemActive(mCurrentItem, false);
+        }
+
+        InventoryItemBase item = e.Item;
+
+        SetItemActive(item, true);
+        mCurrentItem = e.Item;
+    }
+
+
+    #endregion
+
     #region player ui display methods
-//this is the code to display the player health
+    //this is the code to display the player health
     public void Display_player_health(float health_value)
     {
         
@@ -82,11 +135,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     /// /</summary>
 
 
-    #region inventory variables
-    [Inject(InjectFrom.Anywhere)]
-    public inventory Inventory;
-    #endregion
     #region player rotation constraint 
+
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ENIMY") // to check weather enimy is entered or not
@@ -121,7 +173,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
                 t.SetSource(0, st); // this will set the current enimy sorce transform to the Rotation constraint at index 0
             }
         }
-        
+
+        //inventory code;////////////////////////////////////////////////////////////////////////////////
+        TryIntraction(other);
+        Debug.Log("inventory working");
     } // end of ontriggerenter method
 
     private void OnTriggerStay(Collider other) 
@@ -175,6 +230,13 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             st.sourceTransform = null;
             targeted_enimy_ref = null;
             targeted_enimy_movement_script_ref = null;
+        }
+
+        //inventory code;///////////////////////////////////////////////////////////
+        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
+        if(item != null)
+        {
+            mIntractItem = null;
         }
     }
     #endregion
@@ -262,14 +324,43 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     }
     #endregion
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    
+    
+    private void TryIntraction(Collider other)
     {
-        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>(); 
+        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
         if(item != null)
         {
-            Inventory.AddItem(item);
+            if(item.CanInteract(other))
+            {
+                mIntractItem = item;
+
+            }
         }
     }
 
+    public InventoryItemBase GetCurrentItem()
+    {
+        return mCurrentItem;
+    }
+    public void IntractWithItem()
+    {
+        if(mIntractItem != null)
+        {
+            mIntractItem.OnInteract();
+            if(mIntractItem is InventoryItemBase)
+            {
+                InventoryItemBase inventoryItem = mIntractItem as InventoryItemBase;
+                Inventory.AddItem(inventoryItem);
+                inventoryItem.OnPickup();
+                
+                if(inventoryItem.UseItemAfterPickup)
+                {
+                    Inventory.UseItem(inventoryItem);
+                }
+                mIntractItem = null;
+            }
+        }
+    }
 }//enimy manager class
 
