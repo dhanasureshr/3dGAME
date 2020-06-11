@@ -9448,7 +9448,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8498606026199842714}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.848754, y: 0.85283065, z: 0.8823941}
@@ -9465,12 +9465,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c0405fb5fd3ae42bc78cf99ce2114b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myTransform: {fileID: 0}
-  myGo: {fileID: 0}
-  myBody: {fileID: 0}
-  didInit: 0
-  canControl: 0
-  iD: 0
-  charactercontroller: {fileID: 0}
   pick_up_vfx: {fileID: 2761543801502921674, guid: 3af6f68141914ca43ba39b2403757bd0,
     type: 3}

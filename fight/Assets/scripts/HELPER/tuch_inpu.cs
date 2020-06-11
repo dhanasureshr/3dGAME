@@ -34,11 +34,11 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
    [HideInInspector] public float X_INPUT;
    [HideInInspector] public float Y_INPUT;
 
-   
 
 
-      
-    // this is the class for the checking the touch swipe input
+    public Touch touch;
+
+   // this is the class for the checking the touch swipe input
 
    [HideInInspector] public Vector3 fp; // first touch position
    [HideInInspector] public Vector3 lp; // last touch position
@@ -90,7 +90,7 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
     {
         if(Input.touchCount == 1) // user is touching the screen with the single finger
         {
-            Touch touch = Input.GetTouch(0); //get that touch
+            touch = Input.GetTouch(0); //get that touch
             if(touch.phase == TouchPhase.Began) // checking for the first touch 
             {
 				touchbegin = true;

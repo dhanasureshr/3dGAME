@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HEALTH_BOOSTERS : ExtendedCustomMonoBehavior
+public class HEALTH_BOOSTERS : MonoBehaviour
 {
     // This is the health booster script that is going to  boost up the player health when player hits this health booster game object
-
+    
     public GameObject pick_up_vfx;
 
     private void Start()
@@ -31,4 +31,8 @@ public class HEALTH_BOOSTERS : ExtendedCustomMonoBehavior
             }
         }
     }
+
+    
+    
+
 }

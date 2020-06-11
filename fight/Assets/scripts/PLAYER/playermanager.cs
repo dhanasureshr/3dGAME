@@ -75,12 +75,17 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private enimy_movement targeted_enimy_movement_script_ref;
     private bool disable_enimy_rot_colider;
     #endregion
-    
+
     /// <summary>
     /// this is the code to rotate the player towords the enimy when the enimy enters in to the fight range
     /// and also this code will help to set the rotation cosstraint sorces at run time when the enimy with in range
     /// /</summary>
-    
+
+
+    #region inventory variables
+    [Inject(InjectFrom.Anywhere)]
+    public inventory Inventory;
+    #endregion
     #region player rotation constraint 
     private void OnTriggerEnter(Collider other)
     {
@@ -257,6 +262,14 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     }
     #endregion
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>(); 
+        if(item != null)
+        {
+            Inventory.AddItem(item);
+        }
+    }
 
 }//enimy manager class
 
