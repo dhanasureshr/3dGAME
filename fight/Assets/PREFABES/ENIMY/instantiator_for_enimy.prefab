@@ -90,7 +90,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6536c6d5cc92a7f429e41efa709f6425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
   enimy_prefab_to_instantiate: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
     type: 3}
-  instantation_count: 1
+  instantation_count: 5
   cloned_enimy_list: []

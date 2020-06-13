@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b2f00f3c411914ab902e94922bef81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_component_access: {fileID: 0}
+  canvas_component_access: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -392,6 +394,7 @@ MonoBehaviour:
   PickRotation: {x: 0, y: 0, z: 0}
   DropRotation: {x: 0, y: 0, z: 0}
   UseItemAfterPickup: 0
+  game_action_swither_script: {fileID: 0}
 --- !u!65 &494668695
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10827,11 +10830,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: instantiator_for_enimy
       objectReference: {fileID: 0}
-    - target: {fileID: 1087622554201810603, guid: 9d81516facc63bd458f019c46dc8c816,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1087622554201810600, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10890,11 +10888,6 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11303,6 +11296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482110583994941436, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bde02d0f3c247c4187e3734c5e9df0e, type: 3}

@@ -9,6 +9,9 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
 
     private Toggle aim_toggle_button;
 
+    [Inject(InjectFrom.Anywhere)]
+    public game_action_swithcer game_action_swither_script;
+
     [HideInInspector] public bool aim_fire;
     private void Start()
     {
@@ -22,7 +25,9 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
 
     public void REMOVE_GUN_MODE_BUTTON()
     {
-      //  t.camera_swithc_ui_script_for_gun_ui.Remove_gun_mode();
+        //  t.camera_swithc_ui_script_for_gun_ui.Remove_gun_mode();
+        game_action_swither_script.REMOVE_GUN_MODE();
+        game_action_swither_script.FIGHTING_MODE();
       
     }
 

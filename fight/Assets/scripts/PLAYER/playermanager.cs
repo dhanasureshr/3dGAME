@@ -177,7 +177,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         //inventory code;////////////////////////////////////////////////////////////////////////////////
         TryIntraction(other);
         IntractWithItem();
-        Debug.Log("inventory working");
+
     } // end of ontriggerenter method
 
     private void OnTriggerStay(Collider other) 
@@ -346,7 +346,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     }
     public void IntractWithItem()
     {
-        Debug.Log("working well ");
+
         if (mIntractItem != null)
         {
             

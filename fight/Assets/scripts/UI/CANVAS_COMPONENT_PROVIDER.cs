@@ -13,6 +13,12 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject FIGHTING_CANVAS;
     public GameObject GUN_CANVAS;
 
+    [Space(15)]
+    [Header("main canvas scripts")]
+    [Inject(InjectFrom.Anywhere)]
+    public main_ui_component_provider main_ui_script_components;
+
+
     public void Start()
     {
         GAME_LOST_PANAL = GameObject.FindWithTag(tags.game_lost_panal_tag);
@@ -30,8 +36,8 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     {
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GAME_LOST_PANAL);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GAME_RESUME_PANAL);
-        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
+       // gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
     }
-        
+
 }

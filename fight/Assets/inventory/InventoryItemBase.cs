@@ -27,7 +27,7 @@ public class InteractableItemBase : MonoBehaviour
 
     public virtual void OnInteract()
     {
-        Debug.Log("intracting with item");
+
     }
 
     public virtual bool CanInteract(Collider other)
