@@ -7,5 +7,7 @@ public class Axe : InventoryItemBase {
     public override void OnUse()
     {
         base.OnUse();
+
+        base.OnInteract();
     }
 }

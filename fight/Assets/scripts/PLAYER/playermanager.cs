@@ -18,8 +18,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public Inventory Inventory;
     private InteractableItemBase mIntractItem = null;
     private InventoryItemBase mCurrentItem = null;
-    [Inject(InjectFrom.Anywhere)]
-    public HUD Hud;
+   // [Inject(InjectFrom.Anywhere)]
+   // public HUD Hud;
 
     #endregion
 
@@ -102,12 +102,12 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         if(e.Item.ItemType != EItemType.Consumable)
         {
-            SetItemActive(mCurrentItem, false);
+           // SetItemActive(mCurrentItem, false);
         }
 
         InventoryItemBase item = e.Item;
 
-        SetItemActive(item, true);
+      //  SetItemActive(item, true);
         mCurrentItem = e.Item;
     }
 
@@ -176,6 +176,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
         //inventory code;////////////////////////////////////////////////////////////////////////////////
         TryIntraction(other);
+        IntractWithItem();
         Debug.Log("inventory working");
     } // end of ontriggerenter method
 
@@ -345,8 +346,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     }
     public void IntractWithItem()
     {
-        if(mIntractItem != null)
+        Debug.Log("working well ");
+        if (mIntractItem != null)
         {
+            
             mIntractItem.OnInteract();
             if(mIntractItem is InventoryItemBase)
             {

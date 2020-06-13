@@ -18,7 +18,7 @@ public class HUD : MonoBehaviour {
 
     private void InventoryScript_ItemAdded(object sender, InventoryEventArgs e)
     {
-        Transform inventoryPanel = transform.Find("InventoryPanel");
+        Transform inventoryPanel = transform.Find("inventory_panal");
         int index = -1;
         foreach (Transform slot in inventoryPanel)
         {
@@ -26,9 +26,9 @@ public class HUD : MonoBehaviour {
 
             // Border... Image
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-            Transform textTransform = slot.GetChild(0).GetChild(1);
+           // Transform textTransform = slot.GetChild(0).GetChild(1);
             Image image = imageTransform.GetComponent<Image>();
-            Text txtCount = textTransform.GetComponent<Text>();
+          //  Text txtCount = textTransform.GetComponent<Text>();
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
             if(index == e.Item.Slot.Id)
@@ -37,11 +37,7 @@ public class HUD : MonoBehaviour {
                 image.sprite = e.Item.Image;
 
                 int itemCount = e.Item.Slot.Count;
-                if (itemCount > 1)
-                    txtCount.text = itemCount.ToString();
-                else
-                    txtCount.text = "";
-                         
+                    
 
                 // Store a reference to the item
                 itemDragHandler.Item = e.Item;
@@ -53,7 +49,7 @@ public class HUD : MonoBehaviour {
 
     private void Inventory_ItemRemoved(object sender, InventoryEventArgs e)
     {
-        Transform inventoryPanel = transform.Find("InventoryPanel");
+        Transform inventoryPanel = transform.Find("inventory_panal");
 
         int index = -1;
         foreach (Transform slot in inventoryPanel)
@@ -61,10 +57,10 @@ public class HUD : MonoBehaviour {
             index++;
 
             Transform imageTransform = slot.GetChild(0).GetChild(0);
-            Transform textTransform = slot.GetChild(0).GetChild(1);
+           // Transform textTransform = slot.GetChild(0).GetChild(1);
 
             Image image = imageTransform.GetComponent<Image>();
-            Text txtCount = textTransform.GetComponent<Text>();
+           // Text txtCount = textTransform.GetComponent<Text>();
 
             ItemDragHandler itemDragHandler = imageTransform.GetComponent<ItemDragHandler>();
 
@@ -80,11 +76,11 @@ public class HUD : MonoBehaviour {
 
                 if(itemCount < 2)
                 {
-                    txtCount.text = "";
+                  // txtCount.text = "";
                 }
                 else
                 {
-                    txtCount.text = itemCount.ToString();
+                  //  txtCount.text = itemCount.ToString();
                 }
 
                 if(itemCount == 0)

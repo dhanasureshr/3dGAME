@@ -47,6 +47,8 @@ public class InventoryItemBase : InteractableItemBase
     {
         transform.localPosition = PickPosition;
         transform.localEulerAngles = PickRotation;
+
+        
     }
 
     public virtual void OnDrop()

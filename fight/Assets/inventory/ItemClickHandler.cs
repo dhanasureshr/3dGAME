@@ -42,8 +42,7 @@ public class ItemClickHandler : MonoBehaviour
     {
         get
         {
-            ItemDragHandler dragHandler =
-            gameObject.transform.Find("ItemImage").GetComponent<ItemDragHandler>();
+            ItemDragHandler dragHandler = gameObject.transform.Find("itemimage").GetComponent<ItemDragHandler>();
 
             return dragHandler.Item;
         }
