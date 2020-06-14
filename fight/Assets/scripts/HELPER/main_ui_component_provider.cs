@@ -33,7 +33,8 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public CANVAS_COMPONENT_PROVIDER canvas_component_provider;
 
-    
+    [Inject(InjectFrom.Anywhere)]
+    public gun_controller gun_script;
     
        
    

@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &170076734
 Light:
   m_ObjectHideFlags: 0
@@ -605,8 +605,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712182510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 1.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.1122, y: 1.2139, z: 0.7657}
+  m_LocalScale: {x: 0.039868835, y: 0.039868835, z: 0.039868835}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
@@ -10888,7 +10888,7 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 0
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d81516facc63bd458f019c46dc8c816, type: 3}
@@ -11290,16 +11290,6 @@ PrefabInstance:
     - target: {fileID: 4272947402165268830, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482110583994941436, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6482110583994941436, guid: 2bde02d0f3c247c4187e3734c5e9df0e,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 971831780}
   m_Layer: 10
   m_Name: gun_camera
-  m_TagString: Untagged
+  m_TagString: Gun_camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 1626179749}
   - component: {fileID: 1618700105}
   - component: {fileID: 1625953414}
+  - component: {fileID: 1698505477}
   m_Layer: 8
   m_Name: arms_assault_rifle_01
   m_TagString: gun_player
@@ -303,6 +304,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerjoymovement_for_gun_movement_animation: {fileID: 0}
   aim_the_gun: 0
+--- !u!114 &1698505477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625953413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340e7e6448773a04a95c4ca1f261453c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  player_component_provider: {fileID: 0}
+  bulletForce: 400
+  Ammo: 90
+  OutOfAmmo: 0
+  shootAudioSource: {fileID: 0}
+  MainAudioSource: {fileID: 0}
+  BulletSpawnPoint:
+    bulletSpawnPoint: {fileID: 3509228289234208824}
+  SoundClipsGun:
+    ShootSound: {fileID: 0}
+    ReloadSoundoutOfAmmo: {fileID: 0}
+    AimSound: {fileID: 0}
+  bullet_prefabes:
+    bulletPrefab: {fileID: 180088330461850862, guid: a79d2983475de0e45844a12a3eeebe04,
+      type: 3}
 --- !u!1 &1625953415
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625953433}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -0.9999999, z: 0}
+  m_LocalPosition: {x: 0.1049, y: -0.99236, z: 0.296}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 1626179751}
@@ -800,9 +835,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625953435}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: -0.9999999, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1122, y: 1.2139, z: 0.7657}
+  m_LocalScale: {x: 0.039868835, y: 0.039868835, z: 0.039868835}
   m_Children: []
   m_Father: {fileID: 1626179751}
   m_RootOrder: 1
@@ -1069,6 +1104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999999}
   m_Children:
   - {fileID: 1626179817}
+  - {fileID: 3509228289234208824}
   m_Father: {fileID: 1626179745}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1657,6 +1693,36 @@ Transform:
   m_Father: {fileID: 1626179725}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3846543901415068653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3509228289234208824}
+  m_Layer: 8
+  m_Name: bullet_span_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3509228289234208824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846543901415068653}
+  m_LocalRotation: {x: -0.2698703, y: -0.0014268798, z: -0.0044784816, w: 0.9628852}
+  m_LocalPosition: {x: 0, y: 0.38552582, z: 0.48502305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1626179815}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -31.314001, y: -0.022000002, z: -0.527}
 --- !u!1 &4272947400273903860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,7 +3507,6 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 2448653457280816859}
   Inventory: {fileID: 0}
-  Hud: {fileID: 0}
   base_game_controller_to_provide_asserts: {fileID: 0}
   AApplible_damage: 5
   player_components_from_current_scene: {fileID: 0}
@@ -3627,7 +3692,7 @@ BoxCollider:
   m_GameObject: {fileID: 4272947402165268831}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4045508, z: 1.5638758}
   m_Center: {x: 0, y: 0.88235056, z: 0.2819379}

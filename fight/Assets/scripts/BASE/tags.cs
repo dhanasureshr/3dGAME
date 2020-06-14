@@ -35,6 +35,7 @@ public class tags : ExtendedCustomMonoBehavior
     public const string tps_pivot_tag = "tps_pivot";
     public const string player_pivot_tag = "player_pivot";
     public const string main_camera_tag = "MainCamera";
+    public const string gun_camera_tag = "Gun_camera";
 
     public const string fighting_canvas_tag = "fighting_canvas";
     public const string gun_canvas_tag = "gun_canvas";
@@ -42,5 +43,5 @@ public class tags : ExtendedCustomMonoBehavior
     public const string game_resume_panal_tag = "G_resume_Panal";
     public const string game_lost_panal_tag = "G_lost_Panal";
 
-
+    
 }

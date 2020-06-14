@@ -12,7 +12,7 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public game_action_swithcer game_action_swither_script;
 
-    [HideInInspector] public bool aim_fire;
+    [HideInInspector] public bool aim_fire = false;
     private void Start()
     {
         t = gameObject.GetComponentInParent<main_ui_component_provider>();
@@ -33,33 +33,34 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
 
     public void FIRE_RIFIL_BUTTON()
     {
-        
+
+        if (!t.gun_script.OutOfAmmo)
         {
             t.player_gun_animation_script.PLAY_GUN_PLAYER_FIRE_RIFIL();
+            t.gun_script.fire();
         }
-        Debug.Log(aim_fire);
+
     }
 
     public void RELOAD_RIFIL_BUTTON()
     {
         t.player_gun_animation_script.PLAY_GUN_PLAYER_RELOAD_RIFIL();
+        t.gun_script.Ammo = 90;
     }
 
     public void AIM_RIFIL_BUTTON()
     {
        
-       
-        
-        if(aim_toggle_button.isOn == true)
-        {
-            t.player_gun_animation_script.PLAY_GUN_PLAYER_AIM_OUT_RIFIL();
-            aim_fire = false;
-        }
-        if(aim_toggle_button.isOn == false)
+        aim_fire = !aim_fire;
+
+        if(aim_fire)
         {
             t.player_gun_animation_script.PLAY_GUN_PLAYER_AIM_IN_RIFIL();
-            aim_fire = true;
-           
         }
+        else
+        {
+            t.player_gun_animation_script.PLAY_GUN_PLAYER_AIM_OUT_RIFIL();
+        }
+
     }
 }

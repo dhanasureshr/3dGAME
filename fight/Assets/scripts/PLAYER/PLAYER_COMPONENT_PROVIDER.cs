@@ -32,6 +32,9 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject TPS_PIVOT;
     public GameObject PLAYER_PIVOT;
     public GameObject MAIN_CAMERA;
+    public GameObject GUN_CAMERA;
+
+
 
     public void Start()
     {
@@ -54,7 +57,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         TPS_PIVOT = GameObject.FindWithTag(tags.tps_pivot_tag);
         PLAYER_PIVOT = GameObject.FindWithTag(tags.player_pivot_tag);
         MAIN_CAMERA = GameObject.FindWithTag(tags.main_camera_tag);
-
+        GUN_CAMERA = GameObject.FindWithTag(tags.gun_camera_tag);
 
 
         Default_player_disabler();
