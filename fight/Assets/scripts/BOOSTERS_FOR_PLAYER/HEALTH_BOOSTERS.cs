@@ -16,7 +16,7 @@ public class HEALTH_BOOSTERS : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Debug.Log("player hited the health booster");
+
             if (other.gameObject.GetComponentInParent<baseusermanager>().health == 100)
             {
                 
