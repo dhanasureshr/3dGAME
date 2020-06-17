@@ -58,7 +58,7 @@ public class InventoryItemBase : InteractableItemBase
         if (Physics.Raycast(ray, out hit, 1000))
         {
             gameObject.SetActive(true);
-            gameObject.transform.position = hit.point;
+            gameObject.transform.position = new Vector3(hit.point.x, hit.point.y + 0.5f, hit.point.z);
             gameObject.transform.eulerAngles = DropRotation;
         }
     }

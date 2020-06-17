@@ -17,5 +17,9 @@ public class gun_switch_controller : InventoryItemBase
         Debug.Log("switched gun mode");
     }
 
-    
+    private void Update()
+    {
+        transform.Rotate(0, 10 * Time.deltaTime, 0);
+    }
+
 }
