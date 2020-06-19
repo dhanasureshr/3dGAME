@@ -31,24 +31,6 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		}
 	}
 
-
-	//public void apply_damage_on_enimy_with_nock_down()
-	//{
-	//	current_character_health_script_ref.ApplyDamage(applible_damage,true);
-	//}
-
-	//public void apply_damage_on_enimy_with_gethit()
-	//{
-	//	current_character_health_script_ref.ApplyDamage(applible_damage, false);
-	//}
-
-	//public void apply_damage_on_player()
-	//{
-	//	current_character_health_script_ref.ApplyDamage(applible_damage, false);
-	//}
-
-
-
 	public void apply_damage_on_enimy_with_nock_down(float damage_can_be_applied_on_enimy)
 	{
 		current_character_health_script_ref.ApplyDamage(damage_can_be_applied_on_enimy, true);
@@ -63,11 +45,6 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 	{
 		current_character_health_script_ref.ApplyDamage(damage_can_be_applied_on_player, false);
 	}
-
-
-
-
-
 
 	public virtual void GetDefaultData()
 	{
@@ -103,7 +80,6 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 		score += num;
 	}
 
-
 	public void LostScore(int num)
 	{
 		score -= num;
@@ -113,11 +89,6 @@ public class baseusermanager : ExtendedCustomMonoBehavior
 	{
 		score = num;
 	}
-
-	//public float GetHealth()
-	//{
-	//	return health;
-	//}
 
 	public float  GetHealth()
 	{

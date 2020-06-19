@@ -1324,6 +1324,7 @@ MonoBehaviour:
   camera_swithc_ui_script_for_gun_ui: {fileID: 0}
   player_gun_animation_script: {fileID: 0}
   canvas_component_provider: {fileID: 0}
+  gun_script: {fileID: 0}
 --- !u!114 &1789523957281533538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2094,6 +2095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: P_strength_fg
+      objectReference: {fileID: 0}
+    - target: {fileID: 2814385561879668110, guid: c7dcea86c568f584eb181e755dae9955,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7dcea86c568f584eb181e755dae9955, type: 3}
@@ -2869,6 +2875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764820158695263413, guid: 7fa1617bc63f5e748a80874a6847ceec,
+        type: 3}
+      propertyPath: m_Text
+      value: MENU
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa1617bc63f5e748a80874a6847ceec, type: 3}

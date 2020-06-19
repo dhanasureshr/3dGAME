@@ -28,8 +28,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public basegamecontroller base_game_controller_to_provide_asserts;
 
     private health player_health_script_ref;
+    [Inject(InjectFrom.Anywhere)]
+    public baseusermanager base_user_manger_for_player_strength_calculation;
 
-    #region changin the applible damage code to set it on opponent
+    #region chang the below applible damage code to set it on opponent
     public float AApplible_damage = 2.0f;
     #endregion
 
@@ -51,9 +53,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public int sourceCount => throw new System.NotImplementedException();
     #endregion
 
+    public float player_strength = 100.0f;
+
     #endregion
 
-    #region initilizing methods
+    #region initilizing methods start
 
 
     private void Start()
@@ -67,6 +71,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         t.weight = 1.0f;
         t.rotationOffset = new Vector3(0, 180, 0);
 
+        StartCoroutine("Playerstrength_calculator"); // player strength calculator coroutine
 
         #region inventory initilization
         Inventory.ItemUsed += Inventory_ItemUsed;
@@ -120,6 +125,21 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         
         player_component_provider.P_health_bar_image.fillAmount = health_value;
+    }
+
+    public void Display_player_strength(float strength_value)
+    {
+        player_component_provider.P_strength_bar_image.fillAmount = strength_value;
+    }
+
+    public IEnumerator Playerstrength_calculator()
+    {
+        
+        yield return new WaitForSeconds(2);
+        float current_strength_value = player_strength - 0.20f;
+        Display_player_strength(base_user_manger_for_player_strength_calculation.calculat_character_health_for_health_BAR(current_strength_value));
+        player_strength = current_strength_value;
+        StartCoroutine("Playerstrength_calculator");
     }
     #endregion
 
@@ -290,6 +310,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         transform.gameObject.layer = 0;
     }
     
+
+
     #endregion
 
     #region player rotation constraint override metods
@@ -325,8 +347,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     }
     #endregion
 
-    
-    
+
+    #region Inventory intraction methods
     private void TryIntraction(Collider other)
     {
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
@@ -365,5 +387,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             }
         }
     }
-}//enimy manager class
+
+    #endregion
+
+
+}//player manager class
 

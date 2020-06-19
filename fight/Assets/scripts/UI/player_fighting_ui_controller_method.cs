@@ -9,6 +9,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     //public PLAYER_ANIMATION_HELPER player_animation_helper_for_uI_controllers;
 
     public main_ui_component_provider t;
+
     #region fingting_animation_botton_ui_controll_methods
 
     private void Start()
@@ -39,4 +40,5 @@ public class player_fighting_ui_controller_method : MonoBehaviour
 
 
     #endregion
+
 }

@@ -20,6 +20,8 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         KICK_3
     }
 
+
+
     private bool activateTimerToReset;
     private float default_combo_timer = 0.6f;
     private float current_combo_timer;
@@ -237,9 +239,9 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         }
         #endregion
 
+        
+
     }
-
-
 
     #region three button setup button
     public void PUNCH2_BUTTON_PRESSED()
@@ -392,6 +394,13 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     public void SHIELD_BUTTON_PRESSED()
     {
         PLAY_PLAYER_SHIELD();
+        StartCoroutine(Disable_player_shield_protection());
+    }
+
+    public IEnumerator Disable_player_shield_protection()
+    {
+        yield return new WaitForSeconds(4);
+        gameObject.GetComponent<playermanager>().Enable_player_collider_layer();
     }
 
     #endregion
