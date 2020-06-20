@@ -9,15 +9,8 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     /// some buttons related to the scenes(levels of the game)
 
 
-    
-
-    public main_ui_component_provider t;
-
-
-    public void Start()
-    {
-        t = gameObject.GetComponentInParent<main_ui_component_provider>();
-    }
+    [Inject(InjectFrom.Anywhere)]
+    public CANVAS_COMPONENT_PROVIDER canvas_component_provider_script;
     public void GAME_PLAY_BUTTON_PRESSED()
     {
         // this method is to play the current seclected scene
@@ -33,12 +26,15 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     public void GAME_PAUSE_BUTTON_PRESSED()
     {
         // this method is to pause the game
+        gamemanager.instance.ispaused = true;
+        canvas_component_provider_script.Disable_main_canvas_for_pause_and_lost_panels();
     }
 
     public void GAME_RESUME_BUTTON_PRESSED()
     {
         // this method is to resume the game
         gamemanager.instance.ispaused = false;
+        canvas_component_provider_script.Enable_main_canvas_for_pause_and_lost_panels();
     }
 
     public void GAME_BACK_BUTTON_PRESSED()

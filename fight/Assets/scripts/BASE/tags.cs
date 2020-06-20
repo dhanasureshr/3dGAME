@@ -43,5 +43,6 @@ public class tags : ExtendedCustomMonoBehavior
     public const string game_resume_panal_tag = "G_resume_Panal";
     public const string game_lost_panal_tag = "G_lost_Panal";
 
+    public const string game_panals_tag = "PANALS";
     
 }
