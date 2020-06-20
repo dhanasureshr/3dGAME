@@ -16,7 +16,7 @@ public class game_pause_script : ExtendedCustomMonoBehavior
         gamemanager.instance.ispaused = true;
        // gamemanager.instance.base_game_controller_ref.Enable_object_in_hirichery(ui_component_provider.canvas_component_provider.GAME_RESUME_PANAL);
 
-
+// TEST EDIT TO CORRECT THE MASTER
     }
 
 }
