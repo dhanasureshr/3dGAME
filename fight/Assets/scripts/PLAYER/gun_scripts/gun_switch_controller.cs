@@ -14,7 +14,7 @@ public class gun_switch_controller : InventoryItemBase
 
         game_action_swither_script.GUN_MODE();
         
-        Debug.Log("switched gun mode");
+        
        
     }
 

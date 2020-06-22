@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         }
         if(collision.transform.tag == "ENIMY")
         {
-            Debug.Log("hited the enimy");
+            
             collision.transform.gameObject.GetComponent<health>().ApplyDamage(bullet_applible_damage, false);
             Destroy(gameObject);
         }

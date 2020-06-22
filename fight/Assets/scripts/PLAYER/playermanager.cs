@@ -308,9 +308,15 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public void Disable_player_collider_layer()
     {
         transform.gameObject.layer = 0;
+        StartCoroutine(player_dute_condition_controller());
     }
     
-
+    public IEnumerator player_dute_condition_controller()
+    {
+        yield return new WaitForSeconds(2.45f);
+        Enable_player_collider_layer();
+        yield break;
+    }
 
     #endregion
 
