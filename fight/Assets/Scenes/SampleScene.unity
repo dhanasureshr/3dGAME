@@ -345,6 +345,80 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &130508453
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_Name
+      value: enimy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304287, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09476636
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0037384252
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7586518
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.65149635
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -47.305004
+      objectReference: {fileID: 0}
+    - target: {fileID: 7557738453906304286, guid: 5f3a4044c65f30e44a84063efee041d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f3a4044c65f30e44a84063efee041d6, type: 3}
 --- !u!1 &151704454
 GameObject:
   m_ObjectHideFlags: 0
@@ -4597,6 +4671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 0}
+  dute_button: {fileID: 0}
 --- !u!114 &164124946291616484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4663,6 +4738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 0}
+  dute_button: {fileID: 0}
 --- !u!1001 &389805268728730180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5241,6 +5317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 0}
+  dute_button: {fileID: 0}
 --- !u!114 &2979458721191012628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6636,6 +6713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   t: {fileID: 0}
+  dute_button: {fileID: 0}
 --- !u!1 &7248293531522723082
 GameObject:
   m_ObjectHideFlags: 0

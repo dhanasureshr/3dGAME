@@ -200,6 +200,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     } // end of ontriggerenter method
 
+
+    /*
+    
     private void OnTriggerStay(Collider other) 
     {
         ///hear we can remove the player rotation constraint scorce when enimy dead
@@ -208,10 +211,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         {
 
             st.weight = 1.0f; // now player will rotate towords enimy
-            
+
             if (targeted_enimy_movement_script_ref != null) // if there is a enimy_movement script 
             {
-                if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+                if (disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
                     if (t.sourceCount >= 0)
                     {
@@ -225,9 +228,13 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
                     }
                 }
             }
-        }
 
+            
+        }
     }
+
+    */
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -241,7 +248,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             }
             if (targeted_enimy_movement_script_ref != null)
             {
-                if (targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+                if(disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
                     if (t.sourceCount > 0)
                         t.RemoveSource(0);

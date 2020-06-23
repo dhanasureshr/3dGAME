@@ -512,7 +512,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public void stopenimyMovement()
     {
         should_fight_with_player = false;
-        //transform.gameObject.layer = 0;
         SetLayerRecursively(transform.gameObject, 0);
         enimy_animation_helper_ref.PLAY_ENIMY_NOCK_DOWN();
         enimy_nav_mesh_agent.enabled = false;
@@ -522,7 +521,6 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public void stop()
     {
         should_fight_with_player = false;
-        //transform.gameObject.layer = 0;
         SetLayerRecursively(transform.gameObject, 0);
         enimy_nav_mesh_agent.enabled = false;
         transform.gameObject.GetComponent<health>().nock_check = true ;
@@ -532,11 +530,9 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     public void stopenimy_movement_for_death()
     {
         should_fight_with_player = false;
-        //transform.gameObject.layer = 0;
         SetLayerRecursively(transform.gameObject, 0);
         transform.gameObject.GetComponent<Animator>().enabled = false;
         enimy_nav_mesh_agent.enabled = false;
-        //StopCoroutine("start_enimy_movement");
     }
 
 

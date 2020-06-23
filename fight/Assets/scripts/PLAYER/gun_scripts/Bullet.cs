@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 
     public float destroyAfter = 15.0f;
 
-    public bool destroyOnImpact = false;
+    //public bool destroyOnImpact = false;
 
 
     public float bullet_applible_damage = 10.0f;
@@ -22,15 +22,15 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!destroyOnImpact)
-        {
-            StartCoroutine("DestroyTimer");
+        //if (!destroyonimpact)
+        //{
+        //    startcoroutine("destroytimer");
 
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
         if(collision.transform.tag == "ENIMY")
         {
             
