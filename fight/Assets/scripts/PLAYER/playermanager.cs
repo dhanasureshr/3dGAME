@@ -201,7 +201,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     } // end of ontriggerenter method
 
 
-    /*
+    
     
     private void OnTriggerStay(Collider other) 
     {
@@ -233,7 +233,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         }
     }
 
-    */
+    
 
 
     private void OnTriggerExit(Collider other)
