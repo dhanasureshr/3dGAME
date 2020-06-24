@@ -84,12 +84,14 @@ public class health : ExtendedCustomMonoBehavior,IListener
             // enimy death code
             if (!is_player)
             {
+                //enimy_manger_ref.E__manager_ref_enimy_movement.SetLayerRecursively(gameObject, 0); // removes the collision layer
+                gameObject.tag = tags.un_tag;
                 disable_enimy_Rotation_collider = true;
                 enimy_manger_ref.disable_enimy_health_bar();////////////////////////
                 enimy_movement_ref_for_enimyanimations.stopenimy_movement_for_death();
                
                 base_game_controller_to_intimate_game_state.player_supplyers_spanner(gameObject.transform);
-
+              
                 enimy_manger_ref.enimy_instantiator_from_enimy_component_provider.cloned_enimy_list.Remove(gameObject);// removed the died enimy from the cloned_enimy_list
                 Destroy(gameObject, 10.0f);
             }

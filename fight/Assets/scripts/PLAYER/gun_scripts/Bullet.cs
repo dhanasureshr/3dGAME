@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     public float bullet_applible_damage = 10.0f;
 
-    public Transform[] impactPrefabs;
+    public GameObject[] impactPrefabs;
 
     private void Start()
     {
@@ -27,6 +27,12 @@ public class Bullet : MonoBehaviour
 
             collision.transform.gameObject.GetComponent<health>().ApplyDamage(bullet_applible_damage, false);
             Destroy(gameObject);
+            Instantiate(impactPrefabs[1], transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
+        }
+        else if (collision.transform.tag == "Untagged")
+        {
+            Destroy(gameObject);
+            Instantiate(impactPrefabs[0], transform.position, Quaternion.LookRotation(collision.contacts [0].normal));
         }
         else
         {

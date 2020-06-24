@@ -44,10 +44,17 @@ public class player_gun_fighting_ui_controller_method : MonoBehaviour
 
     public void RELOAD_RIFIL_BUTTON()
     {
+        t.gun_script.Ammo = 0;
         t.player_gun_animation_script.PLAY_GUN_PLAYER_RELOAD_RIFIL();
-        t.gun_script.Ammo = 90;
+        StartCoroutine(Reload_after_delay_to_complet_reload_animation());
     }
 
+    IEnumerator Reload_after_delay_to_complet_reload_animation()
+    {
+        yield return new WaitForSeconds(3.01f);
+        t.gun_script.Ammo = 90;
+        yield break;
+    }
     public void AIM_RIFIL_BUTTON()
     {
        

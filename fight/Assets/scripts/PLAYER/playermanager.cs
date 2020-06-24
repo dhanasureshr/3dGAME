@@ -240,7 +240,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         if (other.tag == "ENIMY")
         {
-
+            /*
             t.enabled = false;
             if (t.sourceCount > 0)
             {
@@ -258,14 +258,40 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             st.sourceTransform = null;
             targeted_enimy_ref = null;
             targeted_enimy_movement_script_ref = null;
+            */
+            Remove_palyer_rotation_constraint();
         }
 
+
+        
         //inventory code;///////////////////////////////////////////////////////////
         InteractableItemBase item = other.GetComponent<InteractableItemBase>();
         if(item != null)
         {
             mIntractItem = null;
         }
+    }
+
+    public void Remove_palyer_rotation_constraint()
+    {
+
+        t.enabled = false;
+        if (t.sourceCount > 0)
+        {
+            t.RemoveSource(0);
+        }
+        if (targeted_enimy_movement_script_ref != null)
+        {
+            if (disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+            {
+                if (t.sourceCount > 0)
+                    t.RemoveSource(0);
+            }
+        }
+
+        st.sourceTransform = null;
+        targeted_enimy_ref = null;
+        targeted_enimy_movement_script_ref = null;
     }
     #endregion
 
@@ -286,6 +312,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         if (targeted_enimy_ref != null)
         {
             play_dute(Random.Range(0,2));
+            Remove_palyer_rotation_constraint();
         }
     }
     void play_dute(int n)

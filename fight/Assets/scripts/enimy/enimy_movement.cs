@@ -537,7 +537,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
 
 
-    public static void SetLayerRecursively(GameObject go, int layerNumber)
+    public void SetLayerRecursively(GameObject go, int layerNumber)
     {
         foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
         {

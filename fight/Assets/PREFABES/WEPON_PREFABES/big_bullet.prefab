@@ -96,7 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyAfter: 15
   bullet_applible_damage: 10
-  impactPrefabs: []
+  impactPrefabs:
+  - {fileID: 7264895914665332194, guid: f4a485b38f4a03a419148ae5b031c685, type: 3}
+  - {fileID: 3278920563003827372, guid: d942cc093bdc3e643a2fc01d8e9d1743, type: 3}
 --- !u!54 &2849953964135157834
 Rigidbody:
   m_ObjectHideFlags: 0
