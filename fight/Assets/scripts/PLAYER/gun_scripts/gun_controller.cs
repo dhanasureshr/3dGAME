@@ -48,15 +48,12 @@ public class gun_controller : ExtendedCustomMonoBehavior
     {
         public Transform bulletPrefab;
 
+       
     }
 
     public bullet_prefab bullet_prefabes;
 
-    private void Awake()
-    {
-        
-    }
-
+    public GameObject nozil_flash_prefab;
 
     private void Start()
     {
@@ -89,6 +86,9 @@ public class gun_controller : ExtendedCustomMonoBehavior
                 BulletSpawnPoint.bulletSpawnPoint.transform.rotation
                 );
 
+            Instantiate(nozil_flash_prefab, BulletSpawnPoint.bulletSpawnPoint.transform.position,BulletSpawnPoint.bulletSpawnPoint.transform.rotation);
+            
+             
             bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletForce;
 
             Ammo--;

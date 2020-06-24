@@ -324,7 +324,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   player_component_provider: {fileID: 0}
-  bulletForce: 400
+  bulletForce: 900
   Ammo: 90
   OutOfAmmo: 0
   shootAudioSource: {fileID: 0}
@@ -336,8 +336,10 @@ MonoBehaviour:
     ReloadSoundoutOfAmmo: {fileID: 0}
     AimSound: {fileID: 0}
   bullet_prefabes:
-    bulletPrefab: {fileID: 4593327229273716955, guid: 65b283341848b9a4d9173bd4ebb96541,
+    bulletPrefab: {fileID: 4897123988808279318, guid: 65b283341848b9a4d9173bd4ebb96541,
       type: 3}
+  nozil_flash_prefab: {fileID: 308791313543989420, guid: b4bb40eea6055b744a769185cc39ee67,
+    type: 3}
 --- !u!1 &1625953415
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,19 +22,14 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (!destroyonimpact)
-        //{
-        //    startcoroutine("destroytimer");
-
-        //}
-        //else
-        //{
-        //    Destroy(gameObject);
-        //}
-        if(collision.transform.tag == "ENIMY")
+        if (collision.transform.tag == "ENIMY")
         {
-            
+
             collision.transform.gameObject.GetComponent<health>().ApplyDamage(bullet_applible_damage, false);
+            Destroy(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }
