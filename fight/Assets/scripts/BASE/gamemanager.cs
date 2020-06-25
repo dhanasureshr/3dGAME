@@ -40,14 +40,15 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	/// 
 	/// </summary>
     #region global variables to INTIMATE OTHER SCRIPTS
-   [HideInInspector] public bool isinputallowed = false;
-   [HideInInspector] public bool isgamestarted = false;
-   [HideInInspector] public bool isgameended = false;
-   [HideInInspector] public bool isplayerdead = false;
-   [HideInInspector] public bool isgamestoped = false;
-   [HideInInspector] public bool isenimydead  = false;
-   [HideInInspector] public bool Game_paused;
-   [HideInInspector] private bool is_paused;
+	[HideInInspector] public bool isinputallowed = false;
+	[HideInInspector] public bool isgamestarted = false;
+	[HideInInspector] public bool isgameended = false;
+	[HideInInspector] public bool isplayerdead = false;
+	[HideInInspector] public bool isgamestoped = false;
+	[HideInInspector] public bool isenimydead  = false;
+	[HideInInspector] public bool Game_paused;
+	[HideInInspector] private bool is_paused;
+	[HideInInspector] public bool play_sfx = true;
 	#endregion
 
 

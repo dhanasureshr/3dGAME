@@ -57,7 +57,11 @@ public class gun_controller : ExtendedCustomMonoBehavior
 
     private void Start()
     {
-      //  shootAudioSource.clip = SoundClipsGun.ShootSound;
+        if(gamemanager.instance.play_sfx)
+        {
+            shootAudioSource.clip = SoundClipsGun.ShootSound;
+        }
+      
     }
 
     private void Update()
@@ -79,6 +83,7 @@ public class gun_controller : ExtendedCustomMonoBehavior
     {
         if (!OutOfAmmo)
         {
+            
             var bullet = (Transform)Instantiate
                 (
                 bullet_prefabes.bulletPrefab,
