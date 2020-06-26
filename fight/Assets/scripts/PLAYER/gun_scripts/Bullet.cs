@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Instantiate(impactPrefabs[1], transform.position, Quaternion.LookRotation(collision.contacts[0].normal));
         }
-        else if (collision.transform.tag == "Untagged")
+        else if (collision.transform.tag == "cam")
         {
             Destroy(gameObject);
             Instantiate(impactPrefabs[0], transform.position, Quaternion.LookRotation(collision.contacts [0].normal));
