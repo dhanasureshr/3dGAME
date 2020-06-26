@@ -44,5 +44,7 @@ public class tags : ExtendedCustomMonoBehavior
     public const string game_lost_panal_tag = "G_lost_Panal";
 
     public const string game_panals_tag = "PANALS";
+
+    public const string full_enimy_tag = "ENIMY";
     
 }

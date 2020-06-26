@@ -18,8 +18,12 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public Inventory Inventory;
     private InteractableItemBase mIntractItem = null;
     private InventoryItemBase mCurrentItem = null;
-   // [Inject(InjectFrom.Anywhere)]
-   // public HUD Hud;
+
+    public InventoryItemBase inventoryItem;
+    public InteractableItemBase item;
+    public GameObject goItem;
+    // [Inject(InjectFrom.Anywhere)]
+    // public HUD Hud;
 
     #endregion
 
@@ -54,6 +58,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #endregion
 
     public float player_strength = 100.0f;
+    private float current_strength_value;
 
     #endregion
 
@@ -87,9 +92,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     private void Inventory_ItemRemoved(object sender,InventoryEventArgs e)
     {
-        InventoryItemBase item = e.Item;
+       // InventoryItemBase
+            item = e.Item;
 
-        GameObject goItem = (item as MonoBehaviour).gameObject;
+       // GameObject 
+        goItem = (item as MonoBehaviour).gameObject;
         goItem.SetActive(true);
         goItem.transform.parent = null;
 
@@ -136,7 +143,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         
         yield return new WaitForSeconds(2);
-        float current_strength_value = player_strength - 0.20f;
+        current_strength_value = player_strength - 0.20f;
         Display_player_strength(base_user_manger_for_player_strength_calculation.calculat_character_health_for_health_BAR(current_strength_value));
         player_strength = current_strength_value;
         StartCoroutine("Playerstrength_calculator");
@@ -161,7 +168,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ENIMY") // to check weather enimy is entered or not
+        #region player rotation constraint code trigger enter code
+        if (other.CompareTag(tags.full_enimy_tag)) // to check weather enimy is entered or not
         {
 
             
@@ -194,6 +202,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             }
         }
 
+        #endregion
         //inventory code;////////////////////////////////////////////////////////////////////////////////
         TryIntraction(other);
         IntractWithItem();
@@ -206,8 +215,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private void OnTriggerStay(Collider other) 
     {
         ///hear we can remove the player rotation constraint scorce when enimy dead
+        #region player rotation constraint tregger exit code
 
-        if (other.tag == "ENIMY") // check whether the enimy entered or not
+        if (other.CompareTag(tags.full_enimy_tag)) // check whether the enimy entered or not
         {
 
             st.weight = 1.0f; // now player will rotate towords enimy
@@ -231,14 +241,16 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
             
         }
+        #endregion
     }
 
-    
+
 
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ENIMY")
+        #region player rotation constraint trigger exit code
+        if (other.CompareTag(tags.full_enimy_tag))
         {
             /*
             t.enabled = false;
@@ -262,10 +274,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             Remove_palyer_rotation_constraint();
         }
 
+        #endregion
 
-        
         //inventory code;///////////////////////////////////////////////////////////
-        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
+       // InteractableItemBase 
+        item = other.GetComponent<InteractableItemBase>();
         if(item != null)
         {
             mIntractItem = null;
@@ -391,7 +404,11 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region Inventory intraction methods
     private void TryIntraction(Collider other)
     {
-        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
+        //InteractableItemBase 
+        item = other.GetComponent<InteractableItemBase>();
+       
+        
+        
         if(item != null)
         {
             if(item.CanInteract(other))
@@ -415,7 +432,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             mIntractItem.OnInteract();
             if(mIntractItem is InventoryItemBase)
             {
-                InventoryItemBase inventoryItem = mIntractItem as InventoryItemBase;
+                //InventoryItemBase
+                inventoryItem = mIntractItem as InventoryItemBase;
                 Inventory.AddItem(inventoryItem);
                 inventoryItem.OnPickup();
                 

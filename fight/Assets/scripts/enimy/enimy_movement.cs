@@ -39,6 +39,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
     [HideInInspector] public NavMeshAgent enimy_nav_mesh_agent;
     [HideInInspector] public enimy_animation_helper enimy_animation_helper_ref;
 
+    private Vector3 tar;
 
     [HideInInspector]public Transform target_position;
     [HideInInspector]public GameObject main_player;
@@ -368,7 +369,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             if (fig)
             {
                 enimy_nav_mesh_agent.updateRotation = false;
-                Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+               // tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                tar = target_position.position;
                 transform.LookAt(tar);
                 enimy_nav_mesh_agent.SetDestination(target_position.position);
             }
@@ -387,7 +389,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                     return;
                 }
                 enimy_nav_mesh_agent.updateRotation = false;
-                Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                // tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
+                tar = target_position.position;
                 transform.LookAt(tar);
                 enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
             }

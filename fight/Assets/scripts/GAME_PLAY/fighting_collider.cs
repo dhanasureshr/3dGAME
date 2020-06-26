@@ -30,20 +30,49 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     public enimy_manager enimy_manageer_ref_for_applible_damage;
     #endregion
 
+    private Collider[] hit;
 
+    private Vector3 hit_pos;
 
+    private float player_hit_impact_on_enimy;
+
+    private float enimy_hit_impact_on_player;
+
+    private Vector3 hit_effect_pos_added = new Vector3(0.0f, 0.5f, 0.0f);
+
+    private void Start()
+    {
+       if(is_Player)
+        {
+            player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>().AApplible_damage;
+        }
+
+       if(is_Enemy)
+        {
+            enimy_hit_impact_on_player = gameObject.GetComponentInParent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;
+        }
+    }
 
     private void Update()
     {
-        DetectCollision();
+        hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
+        if(hit.Length > 0)
+        {
+            if(hit[0].CompareTag(tags.full_player_tag)|| hit[0].CompareTag(tags.full_enimy_tag))
+            {
+                DetectCollision();
+            }
+            
+        }
+        
     }
 
     void DetectCollision()
     {
-        Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
+        //hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
 
-        if(hit.Length > 0)
-        {
+       // if(hit.Length > 0)
+      //  {
             
 
             gameObject.SetActive(false);
@@ -56,19 +85,19 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
 
                 //raise an event to randomely play hit animation on enimy
-                Vector3 hit_pos = hit[0].transform.position;
-                hit_pos = hit_pos + new Vector3(0.0f, 0.5f, 0.0f);
+                hit_pos = hit[0].transform.position;
+                hit_pos = hit_pos + hit_effect_pos_added;
              
 
                 #region changin the applible damage code to set it on opponent
                 
-                float player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>().AApplible_damage;// hear we take the player 
+               ///////////////////////////////changed to rectify gc problem///////////////////////////float player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>().AApplible_damage;// hear we take the player 
                                                                      // applible damage and apply it to enimy to subtract it  from enimy health
                 #endregion
 
                 if (gameObject.CompareTag(tags.player_left_leg_tag))
                 {
-                    Debug.Log("enimy_nock_down");
+                   // Debug.Log("enimy_nock_down");
                    
                     hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down(player_hit_impact_on_enimy);
                     Instantiate(hit_Fx, hit_pos, Quaternion.identity);
@@ -94,7 +123,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 //    // there will be no hit animations on enimy
                 //  // event_manager.instance.postnotification(event_type.health_chanage, this, 2);
 
-                float enimy_hit_impact_on_player = gameObject.GetComponentInParent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;// hear we take
+               //////////////////////////changed to retify gc problem////////////////////////////////// float enimy_hit_impact_on_player = gameObject.GetComponentInParent<enimy_manager>().enimy_properties.APPLIBLE_DAMAGE;// hear we take
                                                                // the enimy applible damage and apply it to player to subtract it  from player health
 
                 if (Random.Range(0, 3) > 0)
@@ -109,57 +138,8 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
 
             
-        }
+        //}
     }
 
-    //public void onevent(event_type event_type, component sender, object param)
-    //{
-    //    switch(event_type)
-    //    {
-    //        case event_type.health_chanage:
-    //            if(sender.gameobject.getcomponent<fighting_collider>().is_player)
-    //            {
-    //                //now reduce the enimy health
-    //                //debug.log("appling damage to the enimy");
-    //                //baseusermanager enimy_health_reducer = sender.gameobject.getcomponentinparent<baseusermanager>();
-    //                 baseusermanager enimy_health_reducer = enimy.gameobject.getcomponent<baseusermanager>();
-    //                if (random.range(0, 3) == 1)
-    //                {
-    //                    enimy_animation_helper enimy_animation_helper_ref = enimy.gameobject.getcomponent<enimy_animation_helper>();
-    //                    enimy_animation_helper_ref.play_enimy_get_hit();
-    //                }
-    //                 enimy_health_reducer.reducehealth((int)param);
 
-                    
-                   
-                    
-    //            }
-
-    //            if(sender.gameobject.getcomponent<fighting_collider>().is_enemy)
-    //            {
-    //                // now reduce the palyer health
-    //                //debug.log("appling damage to the player");
-    //                //baseusermanager player_health_reducer = sender.gameobject.getcomponentinparent<baseusermanager>();
-    //                baseusermanager player_health_reducer = player.getcomponent<baseusermanager>();
-    //                player_health_reducer.reducehealth((int)param);
-                  
-                    
-    //            }
-    //            break;
-
-
-    //        case event_type.nock_enimy:
-
-    //            enimy_animation_helper enimy_animation_helper_ref_for_nock_down = enimy.gameobject.getcomponent<enimy_animation_helper>();
-    //            enimy_animation_helper_ref_for_nock_down.play_enimy_nock_down();
-    //            enimy_movement enimy_movement_ref_for_nock_down = enimy.gameobject.getcomponent<enimy_movement>();
-    //            enimy_movement_ref_for_nock_down.stopcoroutine("start_enimy_movement");
-    //            enimy_movement_ref_for_nock_down.stopcoroutine("enimy_fighting");
-    //            debug.log(enimy.name);
-
-                
-
-    //            break;
-    //    }
-    //}
 }
