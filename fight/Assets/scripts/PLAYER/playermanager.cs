@@ -117,7 +117,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
            // SetItemActive(mCurrentItem, false);
         }
 
-        InventoryItemBase item = e.Item;
+       // InventoryItemBase
+        item = e.Item;
 
       //  SetItemActive(item, true);
         mCurrentItem = e.Item;
@@ -277,7 +278,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         #endregion
 
         //inventory code;///////////////////////////////////////////////////////////
-       // InteractableItemBase 
+      //  InteractableItemBase 
         item = other.GetComponent<InteractableItemBase>();
         if(item != null)
         {
@@ -404,8 +405,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region Inventory intraction methods
     private void TryIntraction(Collider other)
     {
-        //InteractableItemBase 
-        item = other.GetComponent<InteractableItemBase>();
+       // InteractableItemBase
+            item = other.GetComponent<InteractableItemBase>();
        
         
         
@@ -432,8 +433,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             mIntractItem.OnInteract();
             if(mIntractItem is InventoryItemBase)
             {
-                //InventoryItemBase
-                inventoryItem = mIntractItem as InventoryItemBase;
+               // InventoryItemBase 
+                    inventoryItem = mIntractItem as InventoryItemBase;
                 Inventory.AddItem(inventoryItem);
                 inventoryItem.OnPickup();
                 

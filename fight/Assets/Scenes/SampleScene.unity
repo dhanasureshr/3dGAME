@@ -1088,11 +1088,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: assault_rifle_01
       objectReference: {fileID: 0}
-    - target: {fileID: 5401697101356159572, guid: c63eab16fe74e94429c5f6b506de5a5c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5401697101355732596, guid: c63eab16fe74e94429c5f6b506de5a5c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1146,16 +1141,6 @@ PrefabInstance:
     - target: {fileID: 5401697101355732596, guid: c63eab16fe74e94429c5f6b506de5a5c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401697101356159568, guid: c63eab16fe74e94429c5f6b506de5a5c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5401697101356159574, guid: c63eab16fe74e94429c5f6b506de5a5c,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1295,11 +1280,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
-        type: 3}
-      propertyPath: instantation_count
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d81516facc63bd458f019c46dc8c816, type: 3}

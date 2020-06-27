@@ -37,7 +37,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [HideInInspector]
     public GameObject player_fps_target;
    // public Transform look_target;
-   [HideInInspector] public int targetframe = 60;
+   [HideInInspector] public int targetframe = 75;
     //this are for the caera collision detection
     private float thinRadius = 0.15f;
     private float thickRadius = 0.3f;
@@ -96,7 +96,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         Vector3 angles = this.transform.eulerAngles;
         x = angles.y;
         y = angles.x;
-        QualitySettings.vSyncCount = 0;
+       // QualitySettings.vSyncCount = 0;
         if (!useOffsetValue)
         {
 

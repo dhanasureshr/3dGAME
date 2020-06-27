@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
     public event EventHandler<InventoryEventArgs> ItemRemoved;
     public event EventHandler<InventoryEventArgs> ItemUsed;
 
+    
+
     public Inventory()
     {
         for (int i = 0; i < SLOTS; i++)
@@ -55,6 +57,7 @@ public class Inventory : MonoBehaviour
             if (ItemAdded != null)
             {
                 ItemAdded(this, new InventoryEventArgs(item));
+                
             }
 
         }
