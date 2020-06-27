@@ -3698,6 +3698,7 @@ MonoBehaviour:
   test_layer_mask:
     serializedVersion: 2
     m_Bits: 0
+  fade_dute_button: 0
   player_strength: 100
 --- !u!143 &2448653457280816859
 CharacterController:
@@ -3767,7 +3768,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.33, y: 0.52, z: 0.33}
+  m_Extents: {x: 0.3, y: 0.52, z: 0.3}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1

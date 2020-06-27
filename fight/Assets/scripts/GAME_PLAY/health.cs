@@ -27,7 +27,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
     private bool characted_died;
     public bool is_player;
 
-    public bool disable_enimy_Rotation_collider;
+    public bool disable_enimy_Rotation_collider; // this variable is accessed by the playermanager to determine whether to enable or disable the player rotation constraint so be care full suresh :-)
     public bool nock_check;
     public void Start()
     {

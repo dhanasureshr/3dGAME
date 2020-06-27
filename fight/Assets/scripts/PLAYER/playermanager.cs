@@ -22,6 +22,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public InventoryItemBase inventoryItem;
     public InteractableItemBase item;
     public GameObject goItem;
+
+
     // [Inject(InjectFrom.Anywhere)]
     // public HUD Hud;
 
@@ -55,6 +57,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     public bool constraintActive { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public bool locked { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public int sourceCount => throw new System.NotImplementedException();
+
+    public bool fade_dute_button = false;
+
     #endregion
 
     public float player_strength = 100.0f;
@@ -172,7 +177,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         #region player rotation constraint code trigger enter code
         if (other.CompareTag(tags.full_enimy_tag)) // to check weather enimy is entered or not
         {
-
+            
             
             t.enabled = true; // now i enabled the rotation constraint when entered into the fighting range
             
@@ -225,7 +230,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
             if (targeted_enimy_movement_script_ref != null) // if there is a enimy_movement script 
             {
-                if (disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+                if(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
                     if (t.sourceCount >= 0)
                     {
@@ -240,9 +245,13 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
                 }
             }
 
+
+            fade_dute_button = true;
             
         }
         #endregion
+        
+        
     }
 
 
@@ -253,7 +262,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         #region player rotation constraint trigger exit code
         if (other.CompareTag(tags.full_enimy_tag))
         {
-            /*
+            
             t.enabled = false;
             if (t.sourceCount > 0)
             {
@@ -261,7 +270,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             }
             if (targeted_enimy_movement_script_ref != null)
             {
-                if(disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
+                if(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
                 {
                     if (t.sourceCount > 0)
                         t.RemoveSource(0);
@@ -271,8 +280,10 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             st.sourceTransform = null;
             targeted_enimy_ref = null;
             targeted_enimy_movement_script_ref = null;
-            */
-            Remove_palyer_rotation_constraint();
+            
+            
+
+            fade_dute_button = false;
         }
 
         #endregion
@@ -286,27 +297,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         }
     }
 
-    public void Remove_palyer_rotation_constraint()
-    {
-
-        t.enabled = false;
-        if (t.sourceCount > 0)
-        {
-            t.RemoveSource(0);
-        }
-        if (targeted_enimy_movement_script_ref != null)
-        {
-            if (disable_enimy_rot_colider) //(targeted_enimy_movement_script_ref.GetComponent<health>().disable_enimy_Rotation_collider)
-            {
-                if (t.sourceCount > 0)
-                    t.RemoveSource(0);
-            }
-        }
-
-        st.sourceTransform = null;
-        targeted_enimy_ref = null;
-        targeted_enimy_movement_script_ref = null;
-    }
+   
     #endregion
 
     #region player and current enimy dute animation
@@ -326,7 +317,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         if (targeted_enimy_ref != null)
         {
             play_dute(Random.Range(0,2));
-            Remove_palyer_rotation_constraint();
+           
         }
     }
     void play_dute(int n)

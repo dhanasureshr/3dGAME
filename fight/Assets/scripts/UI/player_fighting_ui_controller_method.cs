@@ -11,7 +11,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
 
     public main_ui_component_provider t;
 
-    public Button dute_button;
+    
     #region fingting_animation_botton_ui_controll_methods
 
     private void Start()
@@ -32,11 +32,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     public void On_Dute_Animation()
     {
         t.player_mangaer_for_dute.PLAY_DUTE_ANIMATIONS1();
-        dute_button =this.gameObject.GetComponent<Button>();
-        dute_button.interactable = false;
-        StartCoroutine(
-        set_ui_button_intractable(dute_button)
-        );
+
     }
 
     public void On_shield_button_pressed()
@@ -48,10 +44,4 @@ public class player_fighting_ui_controller_method : MonoBehaviour
 
     #endregion
 
-    public IEnumerator set_ui_button_intractable(Button go)
-    {
-        yield return new WaitForSeconds(4.0f);
-        go.interactable = true;
-        yield break;
-    }
 }
