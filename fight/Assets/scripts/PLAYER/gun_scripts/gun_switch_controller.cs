@@ -10,7 +10,8 @@ public class gun_switch_controller : InventoryItemBase
     
     public override void OnUse()
     {
-        base.OnUse();
+        //base.OnUse();
+        base.OnPickup();
 
         game_action_swither_script.GUN_MODE();
         

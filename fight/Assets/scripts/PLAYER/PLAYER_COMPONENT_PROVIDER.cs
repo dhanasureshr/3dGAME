@@ -24,6 +24,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject FULL_PLAYER;
     public GameObject FIGHTING_PLAYER;
     public GameObject GUN_PLAYER;
+    public GameObject BOW_PLAYER;
     public SkinnedMeshRenderer player_skinned_mesh_renderer;
 
     [Space(15)]
@@ -50,6 +51,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         FULL_PLAYER = GameObject.FindWithTag(tags.full_player_tag);
         FIGHTING_PLAYER = GameObject.FindWithTag(tags.fighting_player_tag);
         GUN_PLAYER = GameObject.FindWithTag(tags.gun_player_tag);
+        BOW_PLAYER = GameObject.FindWithTag(tags.bow_player_tag);
         player_skinned_mesh_renderer = FULL_PLAYER.GetComponentInChildren<SkinnedMeshRenderer>();
 
 
@@ -68,6 +70,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     private void Default_player_disabler()
     {
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_PLAYER);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_PLAYER);
     }
 
 }

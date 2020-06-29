@@ -68,6 +68,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         current_combo_timer = default_combo_timer;
         current_combo_state = CombeState.NONE;
         player_animator_ref = GetComponent<Animator>();
+        //player_animator_ref.SetLayerWeight(1, 1);
     }
 
     private void Update()

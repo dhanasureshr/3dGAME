@@ -13,6 +13,8 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject FIGHTING_CANVAS;
     public GameObject GUN_CANVAS;
 
+    public GameObject BOW_CANVAS;
+
     [Space(15)]
     [Header("main canvas scripts")]
     [Inject(InjectFrom.Anywhere)]
@@ -28,19 +30,28 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
 
         FIGHTING_CANVAS = GameObject.FindWithTag(tags.fighting_canvas_tag);
         GUN_CANVAS = GameObject.FindWithTag(tags.gun_canvas_tag);
+        BOW_CANVAS = GameObject.FindWithTag(tags.bow_canvas_tag);
 
         GAME_PANALS = GameObject.FindWithTag(tags.game_panals_tag);
 
         Default_canvas_disabler();
     }
-    
+
 
     void Default_canvas_disabler()
     {
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GAME_LOST_PANAL);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GAME_RESUME_PANAL);
-       // gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
+        // gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_CANVAS);
+    }
+
+    public void Disable_game_action_canvas()
+    {
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_CANVAS);
     }
 
     public void Disable_main_canvas_for_pause_and_lost_panels()

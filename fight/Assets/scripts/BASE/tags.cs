@@ -30,6 +30,7 @@ public class tags : ExtendedCustomMonoBehavior
     public const string full_player_tag = "Player";
     public const string fighting_player_tag = "fight_player";
     public const string gun_player_tag = "gun_player";
+    public const string bow_player_tag = "bow_player";
 
     public const string fps_pivot_tag = "fps_pivot";
     public const string tps_pivot_tag = "tps_pivot";
@@ -39,6 +40,7 @@ public class tags : ExtendedCustomMonoBehavior
 
     public const string fighting_canvas_tag = "fighting_canvas";
     public const string gun_canvas_tag = "gun_canvas";
+    public const string bow_canvas_tag = "bow_canvas";
 
     public const string game_resume_panal_tag = "G_resume_Panal";
     public const string game_lost_panal_tag = "G_lost_Panal";

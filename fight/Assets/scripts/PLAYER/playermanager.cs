@@ -19,9 +19,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private InteractableItemBase mIntractItem = null;
     private InventoryItemBase mCurrentItem = null;
 
-    public InventoryItemBase inventoryItem;
-    public InteractableItemBase item;
-    public GameObject goItem;
+    //public InventoryItemBase inventoryItem;
+    //public InteractableItemBase item;
+    //public GameObject goItem;
 
 
     // [Inject(InjectFrom.Anywhere)]
@@ -97,10 +97,9 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     private void Inventory_ItemRemoved(object sender,InventoryEventArgs e)
     {
-       // InventoryItemBase
-            item = e.Item;
+        InventoryItemBase item = e.Item;
 
-       // GameObject 
+        GameObject 
         goItem = (item as MonoBehaviour).gameObject;
         goItem.SetActive(true);
         goItem.transform.parent = null;
@@ -122,7 +121,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
            // SetItemActive(mCurrentItem, false);
         }
 
-       // InventoryItemBase
+        InventoryItemBase
         item = e.Item;
 
       //  SetItemActive(item, true);
@@ -289,8 +288,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
         #endregion
 
         //inventory code;///////////////////////////////////////////////////////////
-      //  InteractableItemBase 
-        item = other.GetComponent<InteractableItemBase>();
+        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
         if(item != null)
         {
             mIntractItem = null;
@@ -396,8 +394,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region Inventory intraction methods
     private void TryIntraction(Collider other)
     {
-       // InteractableItemBase
-            item = other.GetComponent<InteractableItemBase>();
+        InteractableItemBase item = other.GetComponent<InteractableItemBase>();
        
         
         
@@ -424,8 +421,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
             mIntractItem.OnInteract();
             if(mIntractItem is InventoryItemBase)
             {
-               // InventoryItemBase 
-                    inventoryItem = mIntractItem as InventoryItemBase;
+                InventoryItemBase  inventoryItem = mIntractItem as InventoryItemBase;
                 Inventory.AddItem(inventoryItem);
                 inventoryItem.OnPickup();
                 

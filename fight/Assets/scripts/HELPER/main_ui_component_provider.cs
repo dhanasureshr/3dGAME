@@ -29,6 +29,8 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public gun_animation_script player_gun_animation_script;
 
+    [Inject(InjectFrom.Anywhere)]
+    public bow_controller bow_controller_animator;
 
     [Inject(InjectFrom.Anywhere)]
     public CANVAS_COMPONENT_PROVIDER canvas_component_provider;
