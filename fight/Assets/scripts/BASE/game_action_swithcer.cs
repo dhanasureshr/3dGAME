@@ -10,8 +10,6 @@ public class game_action_swithcer : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public CANVAS_COMPONENT_PROVIDER canvas_component_access;
 
-   
-
     public  void FIGHTING_MODE()
     {
         canvas_component_access.FIGHTING_CANVAS.SetActive(true);
@@ -32,13 +30,27 @@ public class game_action_swithcer : MonoBehaviour
 
     }
 
-    public void BAT_MODE()
+    public void REMOVE_MAGIC_MODE()
+    {
 
+    }
+
+    public void BAT_MODE()
+    {
+
+    }
+
+    public void REMOVE_BAT_MODE()
     {
 
     }
 
     public void SWARD_MODE()
+    {
+
+    }
+
+    public void REMOVE_SWARD_MODE()
     {
 
     }
@@ -57,6 +69,7 @@ public class game_action_swithcer : MonoBehaviour
     // main logic methods to switch the GAME actions  are hear
     void switch_gun()
     {
+        Remove_all_game_action_modes();
         player_component_access.GUN_PLAYER.SetActive(true);
         canvas_component_access.GUN_CANVAS.SetActive(true);
         canvas_component_access.FIGHTING_CANVAS.SetActive(false);
@@ -74,6 +87,7 @@ public class game_action_swithcer : MonoBehaviour
 
     void switch_bow()
     {
+        Remove_all_game_action_modes();
         //player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 1);
         canvas_component_access.Disable_game_action_canvas();
         player_component_access.BOW_PLAYER.SetActive(true);
@@ -92,4 +106,13 @@ public class game_action_swithcer : MonoBehaviour
         canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_tps_mode(); 
     }
 
+
+    public void Remove_all_game_action_modes()
+    {
+        REMOVE_GUN_MODE();
+        REMOVE_MAGIC_MODE();
+        REMOVE_BAT_MODE();
+        REMOVE_SWARD_MODE();
+        REMOVEA_ARCHARY_MODE();
+    }
 }
