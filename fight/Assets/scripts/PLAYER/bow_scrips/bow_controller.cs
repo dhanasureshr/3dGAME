@@ -5,10 +5,6 @@ using UnityEngine;
 public class bow_controller : MonoBehaviour
 {
     public GameObject bow_arow;
-
-    public Transform vertical_bow_position;
-    public Transform horizontal_bow_position;
-
     public Animator bow_animation_controller;
 
     private bool vertical_bow_shoot = false;
@@ -23,8 +19,14 @@ public class bow_controller : MonoBehaviour
     private static int horthash = Animator.StringToHash("x");
     private static int verthash = Animator.StringToHash("y");
 
-    private static int fire_arrow = Animator.StringToHash("fire_arrow");
-    private static int aim_arrow = Animator.StringToHash("aim_arrow");
+    private static int fire_arrow = Animator.StringToHash("fire_rifil");
+    private static int aim_arrow = Animator.StringToHash("aim");
+
+    public Transform arrow_prefab;
+    public Transform arrowspanpoint;
+    public Transform arrow_rotation;
+    public float arrowforce = 20.0f;
+
     public void Start()
     {
         bow_arow = GameObject.FindWithTag("n");
@@ -40,34 +42,34 @@ public class bow_controller : MonoBehaviour
 
     public void PLAY_ARCHARY_PLAYER_FIRE_ARROW()
     {
-        if (vertical_bow_shoot)
-        {
+       
+       
             //player_component_provider_script.BOW_PLAYER.transform.position = vertical_bow_position.position;
             bow_animation_controller.SetTrigger(fire_arrow);
 
-        }
-        else
-        {
+
+
+       // shoot_arrow();
 
            // player_component_provider_script.BOW_PLAYER.transform.position = horizontal_bow_position.position;
-            bow_animation_controller.SetTrigger(fire_arrow);
-        }
+           
+        
     }
 
 
     public void PLAY_ARCHARY_PLAYER_AIM_IN_VERTICAL_ARROW()
     {
         bow_animation_controller.SetBool(aim_arrow, true);
-        player_component_provider_script.BOW_PLAYER.transform.position = vertical_bow_position.position;
-        vertical_bow_shoot = true;
+       // player_component_provider_script.BOW_PLAYER.transform.position = vertical_bow_position.position;
+        
 
     }
 
     public void PLAY_ARCHARY_PLAYER_AIM_OUT_VERTICAL_ARROW()
     {
         bow_animation_controller.SetBool(aim_arrow, false);
-        player_component_provider_script.BOW_PLAYER.transform.position = horizontal_bow_position.position;
-        vertical_bow_shoot = false;
+       // player_component_provider_script.BOW_PLAYER.transform.position = horizontal_bow_position.position;
+       
 
     }
 
@@ -80,6 +82,14 @@ public class bow_controller : MonoBehaviour
     public void disable_arrow()
     {
         bow_arow.SetActive(false);
+        shoot_arrow();
     }
 
+
+    public void shoot_arrow()
+    {
+        var arrows  =(Transform)Instantiate(arrow_prefab, arrow_rotation.transform.position,arrow_rotation.transform.rotation);
+        arrows.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+
+    }
 }
