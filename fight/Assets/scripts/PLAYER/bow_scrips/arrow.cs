@@ -6,10 +6,13 @@ public class arrow : ExtendedCustomMonoBehavior
 {
     private Rigidbody mybody;
     private bool hitsomething;
+    public float destroyAfter = 15.0f;
+    public float arrow_appliable_damage = 10.0f;
 
     private void Start()
     {
         mybody = gameObject.GetComponent<Rigidbody>();
+        StartCoroutine("DestroyTimer");
     }
 
     private void Update()
@@ -19,11 +22,29 @@ public class arrow : ExtendedCustomMonoBehavior
            // transform.rotation = Quaternion.LookRotation(mybody.velocity);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision colision)
     {
         hitsomething = true;
+        if (colision.transform.CompareTag(tags.full_enimy_tag))
+        {
+            colision.transform.gameObject.GetComponent<health>().ApplyDamage(arrow_appliable_damage, false);
+            Destroy(gameObject);
+            return;
+        }
+        else if (colision.transform.tag != transform.gameObject.tag)
+        {
+            stick();
+           // return;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        mybody.mass = 100.0f;
+        mybody.useGravity = true;
         
-        stick();
+       // stick();
     }
 
     //  code to stick the arrow to stop when collider with other objects
@@ -32,5 +53,13 @@ public class arrow : ExtendedCustomMonoBehavior
     {
         mybody.constraints = RigidbodyConstraints.FreezeAll;
 
+    }
+
+
+
+    private IEnumerator DestroyTimer()
+    {
+        yield return new WaitForSeconds(destroyAfter);
+        Destroy(gameObject);
     }
 }

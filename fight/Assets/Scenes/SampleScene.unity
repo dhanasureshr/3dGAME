@@ -7833,8 +7833,14 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
+        type: 3}
+      propertyPath: enimy_prefab_to_instantiate
+      value: 
+      objectReference: {fileID: 7113736230619165277, guid: 44ad25141d831c54589898160b74042a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d81516facc63bd458f019c46dc8c816, type: 3}
 --- !u!136 &1532275651010207590
@@ -17444,7 +17450,7 @@ MonoBehaviour:
     type: 3}
   arrowspanpoint: {fileID: 980213903}
   arrow_rotation: {fileID: 886579912}
-  arrowforce: 40
+  arrowforce: 30
 --- !u!1 &7464430026138737252
 GameObject:
   m_ObjectHideFlags: 0
