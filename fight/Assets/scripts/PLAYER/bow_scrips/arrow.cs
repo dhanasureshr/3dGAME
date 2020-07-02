@@ -31,14 +31,14 @@ public class arrow : ExtendedCustomMonoBehavior
             Destroy(gameObject);
             return;
         }
-        else if (colision.transform.tag != transform.gameObject.tag)
+        else if (colision.transform.tag != tags.full_enimy_tag )
         {
             stick();
            // return;
         }
         else
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
         mybody.mass = 100.0f;
