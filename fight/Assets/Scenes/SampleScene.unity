@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 18053245}
   - component: {fileID: 18053244}
   - component: {fileID: 18053247}
-  - component: {fileID: 18053246}
   m_Layer: 5
   m_Name: aim_arrow
   m_TagString: Untagged
@@ -188,21 +187,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18053242}
   m_CullTransparentMesh: 0
---- !u!114 &18053246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18053242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00205329d92d96144b6f2c3ff69d4d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 0}
-  aim_arrow_shoot: 0
-  game_action_swither_script: {fileID: 0}
 --- !u!114 &18053247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +227,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18053246}
+      - m_Target: {fileID: 1933405819}
         m_MethodName: AIM_ARCHARY_BUTTON
         m_Mode: 1
         m_Arguments:
@@ -2322,7 +2306,6 @@ GameObject:
   - component: {fileID: 260582912}
   - component: {fileID: 260582911}
   - component: {fileID: 260582913}
-  - component: {fileID: 260582914}
   m_Layer: 5
   m_Name: fire_arrow
   m_TagString: Untagged
@@ -2426,7 +2409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 260582914}
+      - m_Target: {fileID: 1933405819}
         m_MethodName: FIRE_ARROW_BUTTON
         m_Mode: 1
         m_Arguments:
@@ -2439,21 +2422,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &260582914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260582909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00205329d92d96144b6f2c3ff69d4d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 0}
-  aim_arrow_shoot: 0
-  game_action_swither_script: {fileID: 0}
 --- !u!114 &264406646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6713,6 +6681,7 @@ GameObject:
   - component: {fileID: 1933405814}
   - component: {fileID: 1933405818}
   - component: {fileID: 3038905555795766174}
+  - component: {fileID: 1933405819}
   m_Layer: 5
   m_Name: main_Canvas
   m_TagString: PANALS
@@ -6826,10 +6795,26 @@ MonoBehaviour:
   third_person_camera: {fileID: 0}
   first_person_camera: {fileID: 0}
   camera_swithc_ui_script_for_gun_ui: {fileID: 0}
+  player_archary_ui_controller_method_script: {fileID: 0}
   player_gun_animation_script: {fileID: 0}
   bow_controller_animator: {fileID: 0}
   canvas_component_provider: {fileID: 0}
   gun_script: {fileID: 0}
+--- !u!114 &1933405819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933405813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00205329d92d96144b6f2c3ff69d4d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  t: {fileID: 0}
+  aim_arrow_shoot: 0
+  game_action_swither_script: {fileID: 0}
 --- !u!1 &1954752658
 GameObject:
   m_ObjectHideFlags: 0
@@ -7094,7 +7079,6 @@ GameObject:
   - component: {fileID: 2006131211}
   - component: {fileID: 2006131210}
   - component: {fileID: 2006131212}
-  - component: {fileID: 2006131213}
   m_Layer: 5
   m_Name: REMOVE_ARCHARY_MODE
   m_TagString: Untagged
@@ -7199,7 +7183,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2006131213}
+      - m_Target: {fileID: 1933405819}
         m_MethodName: REMOVE_AURCHARY_BUTTON
         m_Mode: 1
         m_Arguments:
@@ -7212,21 +7196,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2006131213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006131208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00205329d92d96144b6f2c3ff69d4d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 0}
-  aim_arrow_shoot: 0
-  game_action_swither_script: {fileID: 0}
 --- !u!1 &2079017563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7833,7 +7802,7 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
@@ -17450,7 +17419,7 @@ MonoBehaviour:
     type: 3}
   arrowspanpoint: {fileID: 980213903}
   arrow_rotation: {fileID: 886579912}
-  arrowforce: 30
+  arrowforce: 100
 --- !u!1 &7464430026138737252
 GameObject:
   m_ObjectHideFlags: 0

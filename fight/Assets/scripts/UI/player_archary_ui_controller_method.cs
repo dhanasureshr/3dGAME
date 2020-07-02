@@ -13,7 +13,7 @@ public class player_archary_ui_controller_method : MonoBehaviour
 
     private void Start()
     {
-        t = gameObject.GetComponentInParent<main_ui_component_provider>();
+        t = gameObject.GetComponent<main_ui_component_provider>();
     }
 
     public void REMOVE_AURCHARY_BUTTON()
@@ -32,11 +32,16 @@ public class player_archary_ui_controller_method : MonoBehaviour
         aim_arrow_shoot = !aim_arrow_shoot;
         if(aim_arrow_shoot)
         {
+
             t.bow_controller_animator.PLAY_ARCHARY_PLAYER_AIM_IN_VERTICAL_ARROW();
+           
         }
         else
         {
-            t.bow_controller_animator.PLAY_ARCHARY_PLAYER_AIM_OUT_VERTICAL_ARROW();
+           t.bow_controller_animator.PLAY_ARCHARY_PLAYER_AIM_OUT_VERTICAL_ARROW();
+
         }
     }
+
+
 }

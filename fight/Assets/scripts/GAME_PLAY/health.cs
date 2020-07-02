@@ -85,6 +85,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
             if (!is_player)
             {
                 //enimy_manger_ref.E__manager_ref_enimy_movement.SetLayerRecursively(gameObject, 0); // removes the collision layer
+                
                 gameObject.tag = tags.un_tag;
                 disable_enimy_Rotation_collider = true;
                 enimy_manger_ref.disable_enimy_health_bar();////////////////////////

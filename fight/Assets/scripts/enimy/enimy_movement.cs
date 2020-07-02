@@ -548,6 +548,21 @@ public class enimy_movement : ExtendedCustomMonoBehavior
             trans.gameObject.layer = layerNumber;
         }
     }
+
+
+
+
+    public void SettagRecursively(GameObject go, string tagNumber)
+    {
+        foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+        {
+
+            trans.gameObject.tag  = tagNumber;
+        }
+    }
+
+
+
     #endregion
 
 }

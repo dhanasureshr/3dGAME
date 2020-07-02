@@ -25,6 +25,9 @@ public class main_ui_component_provider : MonoBehaviour
     public camera_switch_ui_script camera_swithc_ui_script_for_gun_ui;
 
 
+    [Inject(InjectFrom.Anywhere)]
+    public player_archary_ui_controller_method player_archary_ui_controller_method_script;
+
 
     [Inject(InjectFrom.Anywhere)]
     public gun_animation_script player_gun_animation_script;

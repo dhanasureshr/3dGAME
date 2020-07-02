@@ -31,20 +31,16 @@ public class arrow : ExtendedCustomMonoBehavior
             Destroy(gameObject);
             return;
         }
-        else if (colision.transform.tag != tags.full_enimy_tag )
+        else if (colision.transform.tag != gameObject.transform.tag  && colision.transform.tag != tags.un_tag)
         {
             stick();
            // return;
         }
-        else
-        {
-           // Destroy(gameObject);
-        }
-
+        
         mybody.mass = 100.0f;
         mybody.useGravity = true;
         
-       // stick();
+       
     }
 
     //  code to stick the arrow to stop when collider with other objects

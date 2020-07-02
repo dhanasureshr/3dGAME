@@ -10,6 +10,9 @@ public class bow_switch_controller : InventoryItemBase
     public override void OnUse()
     {
         base.OnUse();
+
         game_action_switcher_script.ARCHARY_MODE();
+      
+       
     }
 }
