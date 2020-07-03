@@ -7,10 +7,11 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	//this is the code about the player fps camera follow
 	[TextArea]
 	public string val = "this script should attatch to the fps camera";
+	
 	#region variables
 	// reference to the player 
 
-    private Transform player_target;
+    public Transform player_target;
 	// this are the variable for the touch detecprion
 	private Vector2 fp;
 	private Vector2 lp;
@@ -38,9 +39,20 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
 	#endregion
+	
 
-	#region start method
-	void Start()
+	#region camera vertical rotation variables
+	public float rotatspeed = 10.0f;
+	public int invertpitch = 1;
+	private float pitch = 0.0f, raw = 0.0f;
+
+
+
+
+    #endregion
+
+    #region start method
+    void Start()
 	{
 		player_target = main_player.gameObject.GetComponent<Transform>();
 		transform.parent = player_target.transform;
@@ -91,10 +103,17 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			{
 				if (bottom_Right.Contains(toucho.position))
 				{
-					player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+					//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+					pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
+					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
+
+					pitch = Mathf.Clamp(pitch, -80, 80);
+				player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
+				
 				}
 			}
 		}
+		
 	}
 
 	#endregion

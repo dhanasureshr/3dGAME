@@ -7802,7 +7802,7 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
@@ -16288,10 +16288,13 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   val: this script should attatch to the fps camera
+  player_target: {fileID: 0}
   camera_switch_ui_script_ref: {fileID: 0}
   player_camer_follow: {fileID: 0}
   main_player: {fileID: 0}
   virtual_joystick_access_for_fps: {fileID: 0}
+  rotatspeed: 10
+  invertpitch: 1
 --- !u!114 &5296603210019561391
 MonoBehaviour:
   m_ObjectHideFlags: 0
