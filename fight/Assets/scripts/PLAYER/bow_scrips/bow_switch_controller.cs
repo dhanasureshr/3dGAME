@@ -15,4 +15,10 @@ public class bow_switch_controller : InventoryItemBase
       
        
     }
+
+
+    private void Update()
+    {
+        transform.Rotate(0, 10 * Time.deltaTime, 0);
+    }
 }

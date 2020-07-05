@@ -8,10 +8,12 @@ public class arrow : ExtendedCustomMonoBehavior
     private bool hitsomething;
     public float destroyAfter = 15.0f;
     public float arrow_appliable_damage = 10.0f;
+    private BoxCollider arrow_collider;
 
     private void Start()
     {
         mybody = gameObject.GetComponent<Rigidbody>();
+        arrow_collider = gameObject.GetComponent<BoxCollider>();
         StartCoroutine("DestroyTimer");
     }
 
@@ -31,7 +33,7 @@ public class arrow : ExtendedCustomMonoBehavior
             Destroy(gameObject);
             return;
         }
-        else if (colision.transform.tag != gameObject.transform.tag  && colision.transform.tag != tags.un_tag)
+        else if (colision.transform.tag != gameObject.transform.tag  && colision.transform.tag != tags.un_tag && colision.transform.tag != tags.full_player_tag)
         {
             stick();
            // return;
@@ -39,9 +41,10 @@ public class arrow : ExtendedCustomMonoBehavior
         
         mybody.mass = 100.0f;
         mybody.useGravity = true;
-        
+        arrow_collider.enabled = false;
+        Debug.Log(colision.gameObject.name);
        
-    }
+    }  
 
     //  code to stick the arrow to stop when collider with other objects
 
