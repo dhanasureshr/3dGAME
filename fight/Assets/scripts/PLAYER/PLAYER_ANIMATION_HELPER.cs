@@ -9,15 +9,15 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     public enum CombeState
     { 
         NONE,
-        PUNCH_1,
-        PUNCH_2,
-        PUNCH_3,
-        PUNCH_4,
-        PUNCH_5,
-        PUNCH_6,
-        KICK_1,
-        KICK_2,
-        KICK_3
+        ACTION_1,
+        ACTION_2,
+        ACTION_3,
+        ACTION_4,
+        ACTION_5,
+        ACTION_6,
+        B_ACTION_1,
+        B_ACTION_2,
+        B_ACTION_3
     }
 
 
@@ -25,7 +25,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     private bool activateTimerToReset;
     private float default_combo_timer = 0.6f;
     private float current_combo_timer;
-    private CombeState current_combo_state;
+    private CombeState c_state;
     #endregion
 
     #region animation variables
@@ -66,7 +66,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     private void Start()
     {
         current_combo_timer = default_combo_timer;
-        current_combo_state = CombeState.NONE;
+        c_state = CombeState.NONE;
         player_animator_ref = GetComponent<Animator>();
         //player_animator_ref.SetLayerWeight(1, 1);
     }
@@ -159,46 +159,19 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         }
     }
 
-    #region prayer fighting functions
+    #region player mechanm fighting functions
+
+
     public void PUNCH1_BUTTON_PRESSED()
     {
-        #region three button setup
-        /*
-        if( current_combo_state == CombeState.PUNCH_3 ||
-            current_combo_state == CombeState.PUNCH_4 ||
-            current_combo_state == CombeState.PUNCH_5 ||
-            current_combo_state == CombeState.PUNCH_6 ||
-            current_combo_state == CombeState.KICK_1||
-            current_combo_state == CombeState.KICK_2||
-            current_combo_state == CombeState.KICK_3)
-        {
-            return;
-        }
 
-        current_combo_state++;
-        activateTimerToReset = true;
-        current_combo_timer = default_combo_timer;
 
-        if(current_combo_state == CombeState.PUNCH_1)
-        {
-            PLAY_CROSS_OUNCH();
-        }
-        if(current_combo_state == CombeState.PUNCH_2)
-        {
-            
-            
-            PLAY_RIGHT_HOOK_PUNCH();
-        }
-        if(current_combo_state == CombeState.PUNCH_3)
-        {
-            PLAY_FORWARD();
-        }
-        */
-
-        #endregion
 
         #region two button setup
         ///two button change;
+        ///
+
+        /*
         if (current_combo_state == CombeState.PUNCH_6||
             current_combo_state == CombeState.KICK_1||
             current_combo_state == CombeState.KICK_2||
@@ -209,141 +182,65 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         current_combo_state++;
         activateTimerToReset = true;
         current_combo_timer = default_combo_timer;
-        if(current_combo_state == CombeState.PUNCH_1)
+
+    */
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        c_state = action_button_one_combo_state_determiner(this.c_state);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///
+
+
+
+
+
+
+
+        if (c_state == CombeState.ACTION_1)
         {
             PLAY_CROSS_OUNCH();
         }
 
-        if(current_combo_state == CombeState.PUNCH_2)
+        if (c_state == CombeState.ACTION_2)
         {
             PLAY_RIGHT_HOOK_PUNCH();
         }
 
-        if(current_combo_state == CombeState.PUNCH_3)
+        if (c_state == CombeState.ACTION_3)
         {
             PLAY_FORWARD();
         }
 
-        if(current_combo_state == CombeState.PUNCH_4)
+        if (c_state == CombeState.ACTION_4)
         {
             PLAY_PUNCH();
         }
 
-        if(current_combo_state == CombeState.PUNCH_5)
+        if (c_state == CombeState.ACTION_5)
         {
             PLAY_PUNCH_COMBO();
         }
 
-        if(current_combo_state == CombeState.PUNCH_6)
+        if (c_state == CombeState.ACTION_6)
         {
             PLAY_QUICK_PUNCH();
         }
+
+
+
+
         #endregion
-
-        
-
     }
-
-    #region three button setup button
-    public void PUNCH2_BUTTON_PRESSED()
-    {
-        if(current_combo_state == CombeState.PUNCH_3 ||
-            current_combo_state == CombeState.PUNCH_6||
-            current_combo_state == CombeState.KICK_3)
-        {
-            return;
-
-        }
-
-        if(current_combo_state == CombeState.NONE||
-            current_combo_state == CombeState.PUNCH_1||
-            current_combo_state == CombeState.PUNCH_2||
-            current_combo_state == CombeState.KICK_1||
-            current_combo_state == CombeState.KICK_2)
-        {
-            current_combo_state = CombeState.PUNCH_4;
-        }
-        else if(current_combo_state == CombeState.PUNCH_4)
-        {
-            current_combo_state++;
-        }
-        else if(current_combo_state == CombeState.PUNCH_5)
-        {
-            current_combo_state++;
-        }
-        activateTimerToReset = true;
-        current_combo_timer = default_combo_timer;
-
-        if(current_combo_state == CombeState.PUNCH_4)
-        {
-            PLAY_PUNCH();
-
-        }
-        if(current_combo_state == CombeState.PUNCH_5)
-        {
-            PLAY_PUNCH_COMBO();
-        }
-        if(current_combo_state == CombeState.PUNCH_6)
-        {
-            PLAY_QUICK_PUNCH();
-        }
-    }
-    #endregion
-
 
 
     public void KICK_BUTTON_PRESSED()
     {
-        #region three button setup
-        /*
-        if (current_combo_state == CombeState.KICK_3||
-             current_combo_state == CombeState.PUNCH_3 ||
-              current_combo_state == CombeState.PUNCH_6
-             )
-        {
-            return;
-        }
-
-        if (current_combo_state == CombeState.NONE ||
-             current_combo_state == CombeState.PUNCH_4 ||
-              current_combo_state == CombeState.PUNCH_5||
-              current_combo_state == CombeState.PUNCH_1||
-              current_combo_state == CombeState.PUNCH_2
-              )
-        {
-            current_combo_state = CombeState.KICK_1;
-       }
-       else if(current_combo_state == CombeState.KICK_1)
-        {
-            current_combo_state++;
-        }
-        else if(current_combo_state == CombeState.KICK_2)
-        {
-            current_combo_state++;
-        }
-        activateTimerToReset = true;
-        current_combo_timer = default_combo_timer;
-        if(current_combo_state == CombeState.KICK_1)
-        {
-            PLAY_FLY_TWO_LEG_KICK();
-        }
-        if(current_combo_state == CombeState.KICK_2)
-        {
-            PLAY_ROUND_KICK();
-            
-        }
-
-        if(current_combo_state == CombeState.KICK_3)
-        {
-            PLAY_RIGHT_FORWORD_KICK();
-            
-        }
-        */
-        #endregion
 
         #region two button setup
         ///two button change
 
+        /*
         if (current_combo_state  == CombeState.KICK_3||
             current_combo_state == CombeState.PUNCH_6)
         {
@@ -372,17 +269,25 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
         activateTimerToReset = true;
         current_combo_timer = default_combo_timer;
-        if(current_combo_state == CombeState.KICK_1)
+
+    */
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         c_state   = action_button_two_combo_state_determiner(this.c_state);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        if (c_state == CombeState.B_ACTION_1)
         {
             PLAY_FLY_TWO_LEG_KICK();
         }
-       
-        if(current_combo_state == CombeState.KICK_2)
+
+        if (c_state == CombeState.B_ACTION_2)
         {
             PLAY_ROUND_KICK();
         }
 
-        if(current_combo_state == CombeState.KICK_3)
+        if (c_state == CombeState.B_ACTION_3)
         {
             PLAY_RIGHT_FORWORD_KICK();
         }
@@ -392,10 +297,127 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     }
 
-    public void SHIELD_BUTTON_PRESSED()
+    public void FIGHTING_SHIELD_BUTTON_PRESSED()
     {
         PLAY_PLAYER_SHIELD();
         StartCoroutine(Disable_player_shield_protection());
+    }
+
+    #endregion
+
+    #region player  sward fighting functions
+
+    public void SWARD_BUTTON1_PRESSED()
+    {
+        c_state = action_button_one_combo_state_determiner(this.c_state);
+
+        if(c_state == CombeState.ACTION_1)
+        {
+
+        }
+
+        if(c_state == CombeState.ACTION_2)
+        {
+
+        }
+
+        if(c_state == CombeState.ACTION_3)
+        {
+
+        }
+
+        if(c_state == CombeState.ACTION_4)
+        {
+
+        }
+
+
+        if(c_state == CombeState.ACTION_5)
+        {
+
+        }
+
+        if(c_state == CombeState.ACTION_6)
+        {
+
+
+        }
+
+
+    }
+
+    public void SWARD_BUTTON2_PRESSED()
+    {
+        c_state = action_button_two_combo_state_determiner(this.c_state);
+        if(c_state == CombeState.B_ACTION_1)
+        {
+
+        }
+
+        if(c_state == CombeState.B_ACTION_2)
+        {
+
+        }
+    }
+
+
+    public void SWARD_SHIELD_BUTTON_PRESSED()
+    {
+        StartCoroutine(Disable_player_shield_protection());
+    }
+    #endregion
+
+    #region prayer ACTION  COMMON functions
+
+    public CombeState action_button_one_combo_state_determiner(CombeState c_state)
+    {
+        if (this.c_state == CombeState.ACTION_6 ||
+           this.c_state == CombeState.B_ACTION_1 ||
+           this.c_state == CombeState.B_ACTION_2 ||
+           this.c_state == CombeState.B_ACTION_3)
+        {
+            return this.c_state;
+        }
+        this.c_state++;
+        activateTimerToReset = true;
+        current_combo_timer = default_combo_timer;
+        return this.c_state;
+    }
+
+
+    public CombeState action_button_two_combo_state_determiner(CombeState c_state)
+    {
+
+        if (this.c_state == CombeState.B_ACTION_3 ||
+             this.c_state == CombeState.ACTION_6)
+        {
+            return this.c_state;
+
+        }
+
+        if (this.c_state == CombeState.NONE ||
+            this.c_state == CombeState.ACTION_1 ||
+            this.c_state == CombeState.ACTION_2 ||
+            this.c_state == CombeState.ACTION_3 ||
+            this.c_state == CombeState.ACTION_4 ||
+            this.c_state == CombeState.ACTION_5)
+        {
+            this.c_state = CombeState.B_ACTION_1;
+        }
+        else if (this.c_state == CombeState.B_ACTION_1)
+        {
+            this.c_state++;
+        }
+        else if (this.c_state == CombeState.B_ACTION_2)
+        {
+            this.c_state++;
+        }
+
+
+        activateTimerToReset = true;
+        current_combo_timer = default_combo_timer;
+
+        return this.c_state;
     }
 
     public IEnumerator Disable_player_shield_protection()
@@ -416,7 +438,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
             if (current_combo_timer <= 0.0f)
             {
-                current_combo_state = CombeState.NONE;
+                c_state = CombeState.NONE;
                 activateTimerToReset = false;
                 current_combo_timer = default_combo_timer;
             }

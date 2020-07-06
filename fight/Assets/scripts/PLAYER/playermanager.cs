@@ -19,13 +19,6 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     private InteractableItemBase mIntractItem = null;
     private InventoryItemBase mCurrentItem = null;
 
-    //public InventoryItemBase inventoryItem;
-    //public InteractableItemBase item;
-    //public GameObject goItem;
-
-
-    // [Inject(InjectFrom.Anywhere)]
-    // public HUD Hud;
 
     #endregion
 

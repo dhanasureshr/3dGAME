@@ -37,7 +37,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
 
     public void On_shield_button_pressed()
     {
-        t.player_animation_helper_for_uI_controllers.SHIELD_BUTTON_PRESSED();
+        t.player_animation_helper_for_uI_controllers.FIGHTING_SHIELD_BUTTON_PRESSED();
     }
    
 
