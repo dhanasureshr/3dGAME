@@ -8,9 +8,7 @@ public class player_archary_ui_controller_method : MonoBehaviour
 
     public bool aim_arrow_shoot = false;
 
-    [Inject(InjectFrom.Anywhere)]
-    public game_action_swithcer game_action_swither_script;
-
+    
     private void Start()
     {
         t = gameObject.GetComponent<main_ui_component_provider>();
@@ -18,7 +16,7 @@ public class player_archary_ui_controller_method : MonoBehaviour
 
     public void REMOVE_AURCHARY_BUTTON()
     {
-        game_action_swither_script.REMOVEA_ARCHARY_MODE();
+        t.game_action_swither_script.REMOVEA_ARCHARY_MODE();
     }
 
     public void FIRE_ARROW_BUTTON()

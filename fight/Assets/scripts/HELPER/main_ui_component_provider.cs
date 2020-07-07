@@ -40,8 +40,11 @@ public class main_ui_component_provider : MonoBehaviour
 
     [Inject(InjectFrom.Anywhere)]
     public gun_controller gun_script;
-    
-       
-   
+
+    [Inject(InjectFrom.Anywhere)]
+    public game_action_swithcer game_action_swither_script;
+
+
+
 
 }

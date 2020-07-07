@@ -15,6 +15,8 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
 
     public GameObject BOW_CANVAS;
 
+    public GameObject SWORD_CANVAS;
+
     [Space(15)]
     [Header("main canvas scripts")]
     [Inject(InjectFrom.Anywhere)]
@@ -31,6 +33,8 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         FIGHTING_CANVAS = GameObject.FindWithTag(tags.fighting_canvas_tag);
         GUN_CANVAS = GameObject.FindWithTag(tags.gun_canvas_tag);
         BOW_CANVAS = GameObject.FindWithTag(tags.bow_canvas_tag);
+        SWORD_CANVAS = GameObject.FindWithTag(tags.sward_canvas_tag);
+
 
         GAME_PANALS = GameObject.FindWithTag(tags.game_panals_tag);
 
@@ -45,6 +49,7 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         // gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(FIGHTING_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(SWORD_CANVAS);
     }
 
     public void Disable_game_action_canvas()

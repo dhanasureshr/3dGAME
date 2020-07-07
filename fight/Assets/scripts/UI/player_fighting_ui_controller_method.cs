@@ -18,6 +18,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     {
         t = gameObject.GetComponentInParent<main_ui_component_provider>();
     }
+
     public void OnPunchButtonPressed()
     {
         t.player_animation_helper_for_uI_controllers.PUNCH1_BUTTON_PRESSED();
@@ -27,7 +28,6 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     {
         t.player_animation_helper_for_uI_controllers.KICK_BUTTON_PRESSED();
     }
-
 
     public void On_Dute_Animation()
     {
@@ -39,9 +39,29 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     {
         t.player_animation_helper_for_uI_controllers.FIGHTING_SHIELD_BUTTON_PRESSED();
     }
-   
 
 
+    public void On_Sword_Splash_Button_Pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.SWARD_BUTTON1_PRESSED();
+    }
+
+    public void On_Sword_Attack_Button_Pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.SWARD_BUTTON2_PRESSED();
+    }
+
+
+    public void Remove_Sword_Mode_Button_Pressed()
+    {
+        t.game_action_swither_script.REMOVE_SWARD_MODE();
+    }
+
+    public void On_Sword_Casting_Button_Pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.PLAY_PLAYER_SWORD_CASTING_ANIMATION(Random.Range(0, 2));
+
+    }
     #endregion
 
 }

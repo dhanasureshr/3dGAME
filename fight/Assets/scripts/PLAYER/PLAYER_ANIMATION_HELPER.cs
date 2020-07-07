@@ -59,6 +59,31 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     // this are the variables for the player shiled effect animations
     private static int player_shield = Animator.StringToHash("PLAYER_SHIELD");
 
+    // this are the variables for the player sword animations 
+    private static int sword_splash1 = Animator.StringToHash("SPLASH1");
+
+    private static int sword_splash2 = Animator.StringToHash("SPLASH2");
+
+    private static int sword_splash3 = Animator.StringToHash("SPLASH3");
+
+    private static int sword_splash4 = Animator.StringToHash("SPLASH4");
+
+    private static int sword_splash5 = Animator.StringToHash("SPLASH5");
+
+    private static int sword_attack1 = Animator.StringToHash("ATTACK1");
+
+    private static int sword_attack2 = Animator.StringToHash("ATTACK2");
+
+    private static int sword_attack3 = Animator.StringToHash("ATTACK3");
+
+    private static int sword_attack4 = Animator.StringToHash("ATTACK4");
+
+    private static int sword_casting1 = Animator.StringToHash("CAST1");
+
+    private static int sword_casting2 = Animator.StringToHash("CAST2");
+
+  
+
     #endregion
 
     #region mono methods
@@ -145,6 +170,65 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(player_shield);
     }
 
+    public void PLAY_PLAYER_SWORD_SPLASH1()
+    {
+        player_animator_ref.SetTrigger(sword_splash1);
+    }
+
+    public void PLAY_PLAYER_SWORD_SPLASH2()
+    {
+        player_animator_ref.SetTrigger(sword_splash2);
+    }
+
+    public void PLAY_PLAYER_SWORD_SPLASH3()
+    {
+        player_animator_ref.SetTrigger(sword_splash3);
+    }
+
+    public void PLAY_PLAYER_SWORD_SPLASH4()
+    {
+        player_animator_ref.SetTrigger(sword_splash4);
+    }
+
+    public void PLAY_PLAYER_SWORD_SPLASH5()
+    {
+        player_animator_ref.SetTrigger(sword_splash5);
+    }
+
+    public void PLAY_PLAYER_SWORD_ATTACK1()
+    {
+        player_animator_ref.SetTrigger(sword_attack1);
+    }
+
+    public void PLAY_PLAYER_SWORD_ATTACK2()
+    {
+        player_animator_ref.SetTrigger(sword_attack2);
+    }
+
+    public void PLAY_PLAYER_SWORD_ATTACK3()
+    {
+        player_animator_ref.SetTrigger(sword_attack3);
+    }
+
+    public void PLAY_PLAYER_SWORD_ATTACK4()
+    {
+        player_animator_ref.SetTrigger(sword_attack4);
+    }
+
+
+    public void PLAY_PLAYER_SWORD_CASTING1()
+    {
+        player_animator_ref.SetTrigger(sword_casting1);
+    }
+
+    public void PLAY_PLAYER_SWORD_CASTING2()
+    {
+        player_animator_ref.SetTrigger(sword_casting2);
+    }
+
+
+
+    
     #endregion
 
     public void PLAY_PLAYER_GET_HIT(int val)
@@ -313,33 +397,33 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
         if(c_state == CombeState.ACTION_1)
         {
-
+            PLAY_PLAYER_SWORD_SPLASH1();
         }
 
         if(c_state == CombeState.ACTION_2)
         {
-
+            PLAY_PLAYER_SWORD_SPLASH2();
         }
 
         if(c_state == CombeState.ACTION_3)
         {
-
+            PLAY_PLAYER_SWORD_SPLASH3();
         }
 
         if(c_state == CombeState.ACTION_4)
         {
-
+            PLAY_PLAYER_SWORD_SPLASH4();
         }
 
 
         if(c_state == CombeState.ACTION_5)
         {
-
+            PLAY_PLAYER_SWORD_SPLASH5();
         }
 
         if(c_state == CombeState.ACTION_6)
         {
-
+            PLAY_PLAYER_SWORD_ATTACK1();
 
         }
 
@@ -351,12 +435,12 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         c_state = action_button_two_combo_state_determiner(this.c_state);
         if(c_state == CombeState.B_ACTION_1)
         {
-
+            PLAY_PLAYER_SWORD_ATTACK2();
         }
 
         if(c_state == CombeState.B_ACTION_2)
         {
-
+            PLAY_PLAYER_SWORD_ATTACK3();
         }
     }
 
@@ -365,6 +449,20 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         StartCoroutine(Disable_player_shield_protection());
     }
+
+    public void PLAY_PLAYER_SWORD_CASTING_ANIMATION(int n)
+    {
+        if(n == 0)
+        {
+            PLAY_PLAYER_SWORD_CASTING1();
+        }
+
+        if(n == 1)
+        {
+            PLAY_PLAYER_SWORD_CASTING2();
+        }
+    }
+
     #endregion
 
     #region prayer ACTION  COMMON functions

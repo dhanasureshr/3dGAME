@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class bow_switch_controller : InventoryItemBase
 {
-    [Inject(InjectFrom.Anywhere)]
-    public game_action_swithcer game_action_switcher_script;
+    
 
+    [Inject(InjectFrom.Anywhere)]
+    public main_ui_component_provider t;
     public override void OnUse()
     {
         base.OnUse();
 
-        game_action_switcher_script.ARCHARY_MODE();
+        t.game_action_swither_script.ARCHARY_MODE();
       
        
     }
