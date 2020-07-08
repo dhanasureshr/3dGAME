@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1087622554201810601}
   - component: {fileID: 1087622554201810602}
   - component: {fileID: 1087622554201810607}
+  - component: {fileID: 75608395}
   m_Layer: 0
   m_Name: instantiator_for_enimy
   m_TagString: Untagged
@@ -99,5 +100,24 @@ MonoBehaviour:
   charactercontroller: {fileID: 0}
   enimy_prefab_to_instantiate: {fileID: 7113736230619165277, guid: 44ad25141d831c54589898160b74042a,
     type: 3}
-  instantation_count: 1
+  instantation_count: 10
   cloned_enimy_list: []
+--- !u!95 &75608395
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087622554201810603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
