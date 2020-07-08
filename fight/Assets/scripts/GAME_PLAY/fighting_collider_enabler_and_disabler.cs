@@ -6,6 +6,7 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
 {
     
     public GameObject RIGHT_HAND_COLLIDER;
+    public GameObject right_sword_collider;
     public GameObject LEFT_HAND_COLLIDER;
     public GameObject RIGHT_LEG_COLLIDER;
     public GameObject LEFT_LEG_COLLIDER;
@@ -22,6 +23,7 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
     void RIGHT_HAND_ENABLER()
     {
         RIGHT_HAND_COLLIDER.SetActive(true);
+       // right_sword_collider.SetActive(true);
     }
 
     void RIGHT_HAND_DISABLER()
@@ -29,6 +31,7 @@ public class fighting_collider_enabler_and_disabler : MonoBehaviour
         if (RIGHT_HAND_COLLIDER.gameObject.activeInHierarchy)
         {
             RIGHT_HAND_COLLIDER.SetActive(false);
+          //  right_sword_collider.SetActive(false);
         }
     }
 

@@ -2630,7 +2630,7 @@ GameObject:
   - component: {fileID: 364597855}
   m_Layer: 0
   m_Name: sword_holder
-  m_TagString: Untagged
+  m_TagString: sword_player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2719,6 +2719,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a9e23a3842bab44947f337abb6c3a8, type: 3}
+--- !u!1 &396629433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396629434}
+  - component: {fileID: 396629435}
+  m_Layer: 0
+  m_Name: sword_collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &396629434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396629433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.267, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5217830622019634969}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396629435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396629433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeb29a60566f97b42b590992ae9a0ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  myGo: {fileID: 0}
+  myBody: {fileID: 0}
+  didInit: 0
+  canControl: 0
+  iD: 0
+  charactercontroller: {fileID: 0}
+  doc: this script should be attatched to the player and enimy  collision points
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  radius: 0.4
+  is_Player: 1
+  is_Enemy: 0
+  nock_down_the_enimy: 0
+  hit_Fx: {fileID: 3278920563003827372, guid: d942cc093bdc3e643a2fc01d8e9d1743, type: 3}
+  enimy_manageer_ref_for_applible_damage: {fileID: 0}
 --- !u!1 &485668599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,7 +3034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -176.6, y: -97.100006}
+  m_AnchoredPosition: {x: -176.59961, y: -97.100006}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &533222242
@@ -4143,7 +4203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -97.7, y: 228}
+  m_AnchoredPosition: {x: -97.700195, y: 228}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891847239
@@ -6299,7 +6359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -223.9, y: 177.6}
+  m_AnchoredPosition: {x: -223.90039, y: 177.6}
   m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559405744
@@ -6529,7 +6589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -279.9, y: 66.2}
+  m_AnchoredPosition: {x: -279.9004, y: 66.2}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610795197
@@ -7517,7 +7577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 35.6, y: -121.3}
+  m_AnchoredPosition: {x: 35.59961, y: -121.3}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1812948537
@@ -8942,7 +9002,7 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 75608395, guid: 9d81516facc63bd458f019c46dc8c816, type: 3}
       propertyPath: m_Controller
@@ -9302,6 +9362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RIGHT_HAND_COLLIDER: {fileID: 4272947401108836005}
+  right_sword_collider: {fileID: 0}
   LEFT_HAND_COLLIDER: {fileID: 4272947402380311798}
   RIGHT_LEG_COLLIDER: {fileID: 4272947400813891626}
   LEFT_LEG_COLLIDER: {fileID: 4272947402293444578}
@@ -10095,6 +10156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RIGHT_HAND_COLLIDER: {fileID: 4272947401108836005}
+  right_sword_collider: {fileID: 396629433}
   LEFT_HAND_COLLIDER: {fileID: 4272947402380311798}
   RIGHT_LEG_COLLIDER: {fileID: 4272947400813891626}
   LEFT_LEG_COLLIDER: {fileID: 4272947402293444578}
@@ -12603,6 +12665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 185385051}
+  - {fileID: 396629434}
   m_Father: {fileID: 841747882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12661,8 +12724,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217830622019803961}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.76763743, y: 0.08366255, z: 0.02406032}
   m_Center: {x: 0.12750255, y: -0.0018409137, z: -0.0025147728}
@@ -12673,7 +12736,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217830622019803961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fef42877c2211954082cf1a755e4fb75, type: 3}
   m_Name: 
@@ -12688,6 +12751,7 @@ MonoBehaviour:
   sword_applialbe_damage: 50
   blood_impact_prefab: {fileID: 3278920563003827372, guid: d942cc093bdc3e643a2fc01d8e9d1743,
     type: 3}
+  sword_collider: {fileID: 0}
 --- !u!54 &5217830622019803965
 Rigidbody:
   m_ObjectHideFlags: 0
