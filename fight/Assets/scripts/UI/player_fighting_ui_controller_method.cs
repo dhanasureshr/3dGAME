@@ -55,6 +55,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     public void Remove_Sword_Mode_Button_Pressed()
     {
         t.game_action_swither_script.REMOVE_SWARD_MODE();
+        t.player_mangaer_for_dute.SWORD_MODE = false;
     }
 
     public void On_Sword_Casting_Button_Pressed()

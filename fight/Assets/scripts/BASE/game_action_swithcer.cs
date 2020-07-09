@@ -108,18 +108,23 @@ public class game_action_swithcer : MonoBehaviour
     void switch_sword()
     {
         Remove_all_game_action_modes();
+        player_component_access.SWORD_PLAYER.SetActive(true);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 0);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 1);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.applyRootMotion = true;
+ 
         canvas_component_access.SWORD_CANVAS.SetActive(true);
         canvas_component_access.FIGHTING_CANVAS.SetActive(false);
     }
 
     void remove_sword()
     {
+        player_component_access.SWORD_PLAYER.SetActive(false);
+        player_component_access.FULL_PLAYER.GetComponent<playermanager>().fighting_colider_set_to_sword();
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 0);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 1);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.applyRootMotion = false;
+        
         canvas_component_access.SWORD_CANVAS.SetActive(false);
         canvas_component_access.FIGHTING_CANVAS.SetActive(true);
     }

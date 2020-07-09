@@ -11,13 +11,23 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     /// like player health,etc;
     /// by considering this script as a base for player to provide data to the another moudle like player UI
     /// </summary>
+    #region vaiables for player game actions modes determiner
 
-        
+    public bool SWORD_MODE = false;
+
+
+    public Transform sword_collider_pos;
+    public Transform fighting_collider_pos;
+
+    #endregion
+
     #region inventory variables
     [Inject(InjectFrom.Anywhere)]
     public Inventory Inventory;
     private InteractableItemBase mIntractItem = null;
     private InventoryItemBase mCurrentItem = null;
+
+
 
 
     #endregion
@@ -429,6 +439,20 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
 
     #endregion
 
+
+
+    public void sword_colider_set_to_sword()
+    {
+        AApplible_damage = 25.0f;
+        gameObject.GetComponentInParent<fighting_collider_enabler_and_disabler>().RIGHT_HAND_COLLIDER.transform.position = sword_collider_pos.position;
+    }
+
+
+    public void fighting_colider_set_to_sword()
+    {
+        AApplible_damage = 5.0f;
+        gameObject.GetComponentInParent<fighting_collider_enabler_and_disabler>().RIGHT_HAND_COLLIDER.transform.position = fighting_collider_pos.position;
+    }
 
 }//player manager class
 

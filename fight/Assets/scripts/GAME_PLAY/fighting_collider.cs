@@ -23,7 +23,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     public float radius = 0.005f;
     public bool is_Player, is_Enemy;
     public bool nock_down_the_enimy;
-    public GameObject hit_Fx;
+    public GameObject[] hit_Fx;
 
     #region changin the applible damage code to set it on opponent
     [Inject(InjectFrom.Anywhere)]
@@ -34,7 +34,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
 
     private Vector3 hit_pos;
 
-    private float player_hit_impact_on_enimy;
+    private playermanager player_hit_impact_on_enimy;
 
     private float enimy_hit_impact_on_player;
 
@@ -44,7 +44,7 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
     {
        if(is_Player)
         {
-            player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>().AApplible_damage;
+            player_hit_impact_on_enimy = gameObject.GetComponentInParent<playermanager>();
         }
 
        if(is_Enemy)
@@ -99,15 +99,23 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                 {
                    // Debug.Log("enimy_nock_down");
                    
-                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down(player_hit_impact_on_enimy);
-                    Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+                    hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_nock_down(player_hit_impact_on_enimy.AApplible_damage);
+                    
+                    Instantiate(hit_Fx[0], hit_pos, Quaternion.identity);
                 }
                 else
                 {
                     if (Random.Range(0, 9) > 1)
                     {
-                        hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit(player_hit_impact_on_enimy);
-                        Instantiate(hit_Fx, hit_pos, Quaternion.identity);
+                        hit[0].GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit(player_hit_impact_on_enimy.AApplible_damage);
+                        if (player_hit_impact_on_enimy.SWORD_MODE)
+                        {
+                            Instantiate(hit_Fx[1], hit_pos, Quaternion.identity);
+                        }
+                        else
+                        {
+                        Instantiate(hit_Fx[0], hit_pos, Quaternion.identity);
+                    }
                     }
                 }
             }

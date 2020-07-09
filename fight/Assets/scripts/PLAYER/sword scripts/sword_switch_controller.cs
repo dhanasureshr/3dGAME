@@ -14,6 +14,9 @@ public class sword_switch_controller : InventoryItemBase
         base.OnUse();
 
         t.game_action_swither_script.SWARD_MODE();
+
+        t.player_mangaer_for_dute.SWORD_MODE = true;
+        t.player_mangaer_for_dute.sword_colider_set_to_sword();
     }
 
 }

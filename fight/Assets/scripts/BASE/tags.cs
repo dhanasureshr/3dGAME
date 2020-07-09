@@ -31,12 +31,16 @@ public class tags : ExtendedCustomMonoBehavior
     public const string fighting_player_tag = "fight_player";
     public const string gun_player_tag = "gun_player";
     public const string bow_player_tag = "bow_player";
+    public const string sword_player_tag = "sword_player";
+
 
     public const string fps_pivot_tag = "fps_pivot";
     public const string tps_pivot_tag = "tps_pivot";
     public const string player_pivot_tag = "player_pivot";
     public const string main_camera_tag = "MainCamera";
     public const string gun_camera_tag = "Gun_camera";
+
+
 
     public const string fighting_canvas_tag = "fighting_canvas";
     public const string gun_canvas_tag = "gun_canvas";
@@ -49,7 +53,15 @@ public class tags : ExtendedCustomMonoBehavior
     public const string game_panals_tag = "PANALS";
 
     public const string full_enimy_tag = "ENIMY";
-    
+
+
+
+    // variables for the wepon holders 
+    public const string sword_in_rest_tag = "sword_in_rest_pos";
+    public const string sword_in_use_tag = "sword_in_use_pos";
+
+
+
 
 
 }
