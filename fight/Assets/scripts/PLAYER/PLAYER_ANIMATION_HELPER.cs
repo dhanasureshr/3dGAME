@@ -452,15 +452,11 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     public void PLAY_PLAYER_SWORD_CASTING_ANIMATION(int n)
     {
-        if(n == 0)
+        if(n == 0 || n == 1)
         {
             PLAY_PLAYER_SWORD_CASTING1();
         }
 
-        if(n == 1)
-        {
-            PLAY_PLAYER_SWORD_CASTING2();
-        }
     }
 
     #endregion

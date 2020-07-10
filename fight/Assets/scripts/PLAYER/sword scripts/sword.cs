@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sword : ExtendedCustomMonoBehavior
+public class sword : MonoBehaviour
 {
 
     public float sword_applialbe_damage = 10.0f;
     public GameObject blood_impact_prefab;
 
-    public BoxCollider sword_collider;
+    public GameObject[] sword_partical;
+    
 
     //public void OnCollisionEnter(Collision colision)
     //{
@@ -21,47 +22,26 @@ public class sword : ExtendedCustomMonoBehavior
     //}
 
 
-    private void Start()
+
+
+    public void Enable_sword_pratical_collider()
     {
-        sword_collider = gameObject.GetComponent<BoxCollider>();
-        sword_collider.enabled = false;
-
-    }
-
-    public void OnTriggerEnter(Collider colision)
-    {
-
-        if (colision.transform.CompareTag(tags.full_enimy_tag))
-        {
-            colision.transform.gameObject.GetComponentInParent<health>().ApplyDamage(sword_applialbe_damage, false);
-            Instantiate(blood_impact_prefab, transform.position,transform.rotation);
-            Debug.Log("sword splashed the enimy ok dhana");
-        }
+        sword_partical[0].SetActive(true);
+        StartCoroutine(Automatic_sword_collider_disabler());
     }
 
 
-    public void Enable_sword_collider()
+    public void Disable_sword_pratical_collider()
     {
-        sword_collider.enabled = true;
-    }
-
-
-    public void Disable_sword_collider()
-    {
-        sword_collider.enabled = false;
+        sword_partical[0].SetActive(false);
+        sword_partical[1].SetActive(true);
     }
 
 
     public IEnumerator Automatic_sword_collider_disabler()
     {
-        yield return new WaitForSeconds(10);
-        Disable_sword_collider();
+        yield return new WaitForSeconds(0.6f);
+        Disable_sword_pratical_collider();
     }
-    public void Update()
-    {
-        
-
-    }
-
 
 }
