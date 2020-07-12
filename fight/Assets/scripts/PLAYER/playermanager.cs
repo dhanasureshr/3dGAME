@@ -14,7 +14,7 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     #region vaiables for player game actions modes determiner
 
     public bool SWORD_MODE = false;
-
+    public bool MAGIC_MODE = false;
 
     public Transform sword_collider_pos;
     public Transform fighting_collider_pos;

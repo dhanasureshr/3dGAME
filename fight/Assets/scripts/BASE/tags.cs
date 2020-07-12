@@ -46,6 +46,7 @@ public class tags : ExtendedCustomMonoBehavior
     public const string gun_canvas_tag = "gun_canvas";
     public const string bow_canvas_tag = "bow_canvas";
     public const string sward_canvas_tag = "sward_canvas";
+    public const string magic_canvas_tag = "magic_canvas";
 
     public const string game_resume_panal_tag = "G_resume_Panal";
     public const string game_lost_panal_tag = "G_lost_Panal";

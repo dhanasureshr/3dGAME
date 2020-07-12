@@ -27,12 +27,12 @@ public class game_action_swithcer : MonoBehaviour
 
     public  void MAGIC_MODE()
     {
-
+        switch_magic();
     }
 
     public void REMOVE_MAGIC_MODE()
     {
-
+        remove_magic();
     }
 
     public void BAT_MODE()
@@ -57,7 +57,7 @@ public class game_action_swithcer : MonoBehaviour
 
     public void ARCHARY_MODE()
     {
-        //Remove_all_game_action_modes();
+        
         switch_bow();
     }
     
@@ -78,13 +78,6 @@ public class game_action_swithcer : MonoBehaviour
         canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_fps_mode();
     }
 
-    void remove_gun()
-    {
-        player_component_access.GUN_PLAYER.SetActive(false);
-        canvas_component_access.GUN_CANVAS.SetActive(false);
-        canvas_component_access.FIGHTING_CANVAS.SetActive(true);
-        canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_tps_mode();
-    }
 
 
     void switch_bow()
@@ -97,13 +90,6 @@ public class game_action_swithcer : MonoBehaviour
         canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_fps_mode();
     }
 
-    void remove_bow()
-    {
-        player_component_access.BOW_PLAYER.SetActive(false);
-        canvas_component_access.BOW_CANVAS.SetActive(false);
-        canvas_component_access.FIGHTING_CANVAS.SetActive(true);
-        canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_tps_mode(); 
-    }
 
     void switch_sword()
     {
@@ -112,9 +98,44 @@ public class game_action_swithcer : MonoBehaviour
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 0);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 1);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.applyRootMotion = true;
- 
+
         canvas_component_access.SWORD_CANVAS.SetActive(true);
         canvas_component_access.FIGHTING_CANVAS.SetActive(false);
+    }
+
+    void switch_magic()
+    {
+        Remove_all_game_action_modes();
+        player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(2, 1);
+        canvas_component_access.FIGHTING_CANVAS.SetActive(false);
+        canvas_component_access.MAGIC_CANVAS.SetActive(true);
+
+    }
+
+    void remove_magic()
+    {
+
+        player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 1);
+        canvas_component_access.FIGHTING_CANVAS.SetActive(true);
+        canvas_component_access.MAGIC_CANVAS.SetActive(false);
+
+    }
+    void remove_gun()
+    {
+        player_component_access.GUN_PLAYER.SetActive(false);
+        canvas_component_access.GUN_CANVAS.SetActive(false);
+        canvas_component_access.FIGHTING_CANVAS.SetActive(true);
+        canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_tps_mode();
+    }
+
+
+
+    void remove_bow()
+    {
+        player_component_access.BOW_PLAYER.SetActive(false);
+        canvas_component_access.BOW_CANVAS.SetActive(false);
+        canvas_component_access.FIGHTING_CANVAS.SetActive(true);
+        canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_tps_mode(); 
     }
 
     void remove_sword()
@@ -137,6 +158,7 @@ public class game_action_swithcer : MonoBehaviour
         REMOVE_BAT_MODE();
         REMOVE_SWARD_MODE();
         REMOVEA_ARCHARY_MODE();
-      
+        player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 1);
+
     }
 }

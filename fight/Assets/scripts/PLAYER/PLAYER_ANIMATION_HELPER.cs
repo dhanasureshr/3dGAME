@@ -30,34 +30,37 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     #region animation variables
     public  Animator player_animator_ref;
-    // these all are one punch1 sets
+    // these are the variables for the player fighting animations
     private static int cross_ounch = Animator.StringToHash("CROSS_OUNCH");
+
     private static int right_hook_punch = Animator.StringToHash("RIGHT_HOOK_PUNCH");
+
     private static int forward = Animator.StringToHash("FORWARD");
    
-    // thes all are one punch2 sets
-    
     private static int punch = Animator.StringToHash("PUNCH");
+
     private static int punch_combo = Animator.StringToHash("PUNCH_COMBO");
+
     private static int quick_punch = Animator.StringToHash("QUICK_PUNCH");
-
-    //these all are kick sets
+    
     private static int fly_two_leg_kick = Animator.StringToHash("FLY_TWO_LEG_KICK");
+
     private static int round_kick = Animator.StringToHash("ROUND_KICK");
+
     private static int right_forword_kick = Animator.StringToHash("RIGHT_FORWORD_KICK");
-
-    // this are the variables for the player hit animation
+    
     private static int player_body_hit = Animator.StringToHash("HIT_TO_BODY");
+
     private static int player_face_hit = Animator.StringToHash("PUNCH_TO_FACE");
-
-
-    // this are the variavels for the player dute animations
+    
     private static int player_showlder_dute = Animator.StringToHash("SHOLDER_THROW_PLAYER");
+
     private static int player_hell_dute = Animator.StringToHash("PLAYER_HELL_SLAMMER");
-
-
-    // this are the variables for the player shiled effect animations
+    
     private static int player_shield = Animator.StringToHash("PLAYER_SHIELD");
+
+
+
 
     // this are the variables for the player sword animations 
     private static int sword_splash1 = Animator.StringToHash("SPLASH1");
@@ -82,7 +85,30 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     private static int sword_casting2 = Animator.StringToHash("CAST2");
 
-  
+
+    // this are the variables for th player magic animations
+    private static int magic_h_attack1 = Animator.StringToHash("M_ATTACK_H1");
+    
+    private static int magic_h_attack2 = Animator.StringToHash("M_ATTACK_H2");
+    
+    private static int magic_h_attack3 = Animator.StringToHash("M_ATTACK_H3");
+
+    private static int magic_2h_attack1 = Animator.StringToHash("M_ATTACK_2H1");
+
+    private static int magic_2h_attack2 = Animator.StringToHash("M_ATTACK_2H2");
+
+    private static int magic_2h_attack3 = Animator.StringToHash("M_ATTACK_2H3");
+
+    private static int magic_2h_attack4 = Animator.StringToHash("M_ATTACK_2H4");
+
+    private static int magic_2h_attack5 = Animator.StringToHash("M_ATTACK_2H5");
+
+    private static int magic_2h_a_attack1 = Animator.StringToHash("M_ATTACK_A_2H1");
+
+    private static int magic_2h_a_attack2 = Animator.StringToHash("M_ATTACK_A_2H2");
+
+
+
 
     #endregion
 
@@ -93,7 +119,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         current_combo_timer = default_combo_timer;
         c_state = CombeState.NONE;
         player_animator_ref = GetComponent<Animator>();
-        //player_animator_ref.SetLayerWeight(1, 1);
+        //player_animator_ref.SetLayerWeight(2, 1);
     }
 
     private void Update()
@@ -452,11 +478,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     public void PLAY_PLAYER_SWORD_CASTING_ANIMATION(int n)
     {
-        if(n == 0 || n == 1)
-        {
-            PLAY_PLAYER_SWORD_CASTING1();
-        }
-
+        PLAY_PLAYER_SWORD_CASTING1();
     }
 
     #endregion
