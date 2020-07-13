@@ -112,10 +112,14 @@ public class fighting_collider : ExtendedCustomMonoBehavior//, IListener
                         {
                             Instantiate(hit_Fx[1], hit_pos, Quaternion.identity);
                         }
+                        else if(player_hit_impact_on_enimy.MAGIC_MODE)
+                        {
+                            Instantiate(hit_Fx[2], hit_pos, Quaternion.identity);
+                        }
                         else
                         {
-                        Instantiate(hit_Fx[0], hit_pos, Quaternion.identity);
-                    }
+                            Instantiate(hit_Fx[0], hit_pos, Quaternion.identity);
+                        }
                     }
                 }
             }

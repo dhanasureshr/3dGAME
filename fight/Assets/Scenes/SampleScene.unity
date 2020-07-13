@@ -2390,7 +2390,7 @@ GameObject:
   - component: {fileID: 190284789}
   - component: {fileID: 190284788}
   m_Layer: 5
-  m_Name: sword_shield
+  m_Name: MAGIC_SHIED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2877,7 +2877,7 @@ GameObject:
   - component: {fileID: 421297219}
   - component: {fileID: 421297218}
   m_Layer: 5
-  m_Name: sword_casting
+  m_Name: MAGIC_AREA_ATTACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2957,7 +2957,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 421297218}
-        m_MethodName: On_Sword_Casting_Button_Pressed
+        m_MethodName: On_Magic_Area_Button_Pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 894898670}
   - component: {fileID: 894898669}
   m_Layer: 5
-  m_Name: sward_splash
+  m_Name: MAGIC_1H_ATTACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4935,7 +4935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 894898669}
-        m_MethodName: On_Sword_Splash_Button_Pressed
+        m_MethodName: On_Magic_Button1_Pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5689,7 +5689,7 @@ GameObject:
   - component: {fileID: 1096799058}
   - component: {fileID: 1096799057}
   m_Layer: 5
-  m_Name: REMOVE_SWORD_MODE
+  m_Name: REMOVE_MAGIC_MODE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6784,7 +6784,7 @@ GameObject:
   - component: {fileID: 1359799842}
   - component: {fileID: 1359799841}
   m_Layer: 5
-  m_Name: sward_attack
+  m_Name: MAGIC_2H_ATTACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6864,7 +6864,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1359799841}
-        m_MethodName: On_Sword_Attack_Button_Pressed
+        m_MethodName: On_Magic_Button2_pressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

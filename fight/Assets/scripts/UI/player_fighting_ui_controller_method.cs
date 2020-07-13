@@ -19,6 +19,7 @@ public class player_fighting_ui_controller_method : MonoBehaviour
         t = gameObject.GetComponentInParent<main_ui_component_provider>();
     }
 
+    #region fighting ui methods
     public void OnPunchButtonPressed()
     {
         t.player_animation_helper_for_uI_controllers.PUNCH1_BUTTON_PRESSED();
@@ -40,7 +41,9 @@ public class player_fighting_ui_controller_method : MonoBehaviour
         t.player_animation_helper_for_uI_controllers.FIGHTING_SHIELD_BUTTON_PRESSED();
     }
 
+    #endregion
 
+    #region sword ui methods
     public void On_Sword_Splash_Button_Pressed()
     {
         t.player_animation_helper_for_uI_controllers.SWARD_BUTTON1_PRESSED();
@@ -60,9 +63,34 @@ public class player_fighting_ui_controller_method : MonoBehaviour
 
     public void On_Sword_Casting_Button_Pressed()
     {
-        t.player_animation_helper_for_uI_controllers.PLAY_PLAYER_SWORD_CASTING_ANIMATION(Random.Range(0, 2));
+        t.player_animation_helper_for_uI_controllers.PLAY_PLAYER_SWORD_CASTING_ANIMATION();
 
     }
+
+    #endregion
+
+    #region magic ui methods
+
+    public void On_Magic_Button1_Pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.MAGIC_BUTTON1_PRESSED();
+    }
+
+    public void On_Magic_Button2_pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.MAGIC_BUTTON2_PRESSED();
+    }
+
+    public void On_Magic_Area_Button_Pressed()
+    {
+        t.player_animation_helper_for_uI_controllers.PLAY_PLAYER_MAGIC_AREA_ANIMATIONS(Random.Range(0, 2));
+    }
+    public void Remov_magic_mode_Button_Pressed()
+    {
+        t.game_action_swither_script.REMOVE_MAGIC_MODE();
+        t.player_mangaer_for_dute.MAGIC_MODE = false;
+    }
+    #endregion
     #endregion
 
 }

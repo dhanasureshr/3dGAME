@@ -196,6 +196,8 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(player_shield);
     }
 
+    // player sword animation methods
+
     public void PLAY_PLAYER_SWORD_SPLASH1()
     {
         player_animator_ref.SetTrigger(sword_splash1);
@@ -247,14 +249,62 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         player_animator_ref.SetTrigger(sword_casting1);
     }
 
-    public void PLAY_PLAYER_SWORD_CASTING2()
+
+    // player magic animations
+
+    public void PLAY_PLAYER_MAGIC_H_ATTACK1()
     {
-        player_animator_ref.SetTrigger(sword_casting2);
+        player_animator_ref.SetTrigger(magic_h_attack1);
+
     }
 
+    public void PLAY_PLAYER_MAGIC_H_ATTACK2()
+    {
+        player_animator_ref.SetTrigger(magic_h_attack2);
+    }
 
+    public void PLAY_PLAYER_MAGIC_H_ATTACK3()
+    {
+        player_animator_ref.SetTrigger(magic_h_attack3);
+    }
 
+    public void PLAY_PLAYER_MAGIC_2H_ATTACK1()
+    {
+        player_animator_ref.SetTrigger(magic_2h_attack1);
+    }
+
+    public void PLAY_PLAYER_MAGIC_2H_ATTACK2()
+    {
+        player_animator_ref.SetTrigger(magic_2h_attack2);
+    }
+
+    public void PLAY_PLAYER_MAGIC_2H_ATTACK3()
+    {
+        player_animator_ref.SetTrigger(magic_2h_attack3);
+    }
     
+    public void PLAY_PLAYER_MAGIC_2H_ATTACK4()
+    {
+        player_animator_ref.SetTrigger(magic_2h_attack4);
+
+    }
+
+    public void PLAY_PLAYER_MAGIC_2H_ATTACK5()
+    {
+        player_animator_ref.SetTrigger(magic_2h_attack5);
+    }
+
+    public void PLAY_PLAYER_MAGIC_2H_A_ATTACK1()
+    {
+        player_animator_ref.SetTrigger(magic_2h_a_attack1);
+    }
+
+    public void PLAY_PLAYER_MAGIC_2H_A_ATTACK2()
+    {
+        player_animator_ref.SetTrigger(magic_2h_a_attack2);
+    }
+    
+
     #endregion
 
     public void PLAY_PLAYER_GET_HIT(int val)
@@ -476,10 +526,84 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         StartCoroutine(Disable_player_shield_protection());
     }
 
-    public void PLAY_PLAYER_SWORD_CASTING_ANIMATION(int n)
+    public void PLAY_PLAYER_SWORD_CASTING_ANIMATION()
     {
         PLAY_PLAYER_SWORD_CASTING1();
     }
+
+    #endregion
+
+    #region player magic fighting functions
+    public void MAGIC_BUTTON1_PRESSED()
+    {
+        c_state = action_button_one_combo_state_determiner(c_state);
+
+        if (c_state == CombeState.ACTION_1)
+        {
+            PLAY_PLAYER_MAGIC_2H_ATTACK2();
+
+        }
+
+        if (c_state == CombeState.ACTION_2)
+        {
+            PLAY_PLAYER_MAGIC_H_ATTACK2();
+        }
+
+        if (c_state == CombeState.ACTION_3)
+        {
+            PLAY_PLAYER_MAGIC_2H_ATTACK1();
+        }
+
+        if (c_state == CombeState.ACTION_4)
+        {
+            PLAY_PLAYER_MAGIC_H_ATTACK1();
+        }
+
+
+        if (c_state == CombeState.ACTION_5)
+        {
+            PLAY_PLAYER_MAGIC_2H_ATTACK3();
+        }
+
+        if (c_state == CombeState.ACTION_6)
+        {
+            PLAY_PLAYER_MAGIC_2H_ATTACK4();
+
+        }
+
+
+    }
+
+    public void MAGIC_BUTTON2_PRESSED()
+    {
+        c_state = action_button_two_combo_state_determiner(this.c_state);
+        if (c_state == CombeState.B_ACTION_1)
+        {
+            PLAY_PLAYER_MAGIC_2H_ATTACK5();
+        }
+
+        if (c_state == CombeState.B_ACTION_2)
+        {
+            PLAY_PLAYER_MAGIC_H_ATTACK3();
+
+        }
+    }
+
+    public void PLAY_PLAYER_MAGIC_AREA_ANIMATIONS(int n)
+    {
+        if(n == 0)
+        {
+            PLAY_PLAYER_MAGIC_2H_A_ATTACK1();
+        }
+        
+        if(n == 1)
+        {
+            PLAY_PLAYER_MAGIC_2H_A_ATTACK2();
+        }
+
+    }
+
+
 
     #endregion
 
@@ -561,7 +685,5 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         }
     }
     #endregion
-
-
 
 }

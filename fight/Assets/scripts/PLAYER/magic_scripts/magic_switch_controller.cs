@@ -13,6 +13,7 @@ public class magic_switch_controller : InventoryItemBase
         base.OnUse();
 
         t.game_action_swither_script.MAGIC_MODE();
+        t.player_mangaer_for_dute.MAGIC_MODE = true;
     }
 
 }
