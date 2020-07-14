@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class magic_particls_prefab_attacker : MonoBehaviour
 {
-    public GameObject[] H1_EFFECTER_PREFABS;
+    public Transform[] H1_EFFECTER_PREFABS;
     public GameObject[] H2_EFFECTER_PREFABS;
     public GameObject[] h1_CHARGE_PREFABS;
     public GameObject[] h2_CHARGE_PREFABS;
     public GameObject[] practical_hit_PREFABS;
 
-
+    
 
     public Transform ONE_HAND_CONTAINER;
     public Transform TWO_HAND_CONTAINER;
 
     public void intantiate_one_hand_partical_prefab()
     {
+      var magic_partical =(Transform) Instantiate(H1_EFFECTER_PREFABS[Random.Range(0, 3)], ONE_HAND_CONTAINER.position, Quaternion.identity);
+        magic_partical.GetComponent<Rigidbody>().velocity = transform.forward * 25;
+        StartCoroutine(destroy_partical(magic_partical));
 
     }
 
@@ -41,9 +44,11 @@ public class magic_particls_prefab_attacker : MonoBehaviour
         yield break;
 
     }
-    public void intantiate_two_hand_partical_prefab()
+
+    public IEnumerator destroy_partical(Transform pratical_to_destroy)
     {
-
-
+        yield return new WaitForSeconds(2);
+        Destroy(pratical_to_destroy.gameObject);
+        yield break;
     }
 }
