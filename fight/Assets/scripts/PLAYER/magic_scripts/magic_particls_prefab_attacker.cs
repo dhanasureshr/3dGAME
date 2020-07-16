@@ -15,6 +15,12 @@ public class magic_particls_prefab_attacker : MonoBehaviour
     public Transform ONE_HAND_CONTAINER;
     public Transform TWO_HAND_CONTAINER;
 
+    public GameObject[] magic_show_off;
+
+    public void Start()
+    {
+        Disablemagic_player();
+    }
     public void intantiate_one_hand_partical_prefab(int n)
     {
         //var magic_partical =(Transform) Instantiate(H1_EFFECTER_PREFABS[Random.Range(0, 3)], ONE_HAND_CONTAINER.position, Quaternion.identity);
@@ -92,4 +98,16 @@ public class magic_particls_prefab_attacker : MonoBehaviour
     }
 
 
+
+
+    public void Disablemagic_player()
+    {
+        gamemanager.instance.base_game_controller_ref.Disable_MULTIPLE_object_in_hirichery(magic_show_off);
+    }
+
+
+    public void Enablemagic_player()
+    {
+        gamemanager.instance.base_game_controller_ref.Enable_MULTIPLE_object_in_hirichery(magic_show_off);
+    }
 }

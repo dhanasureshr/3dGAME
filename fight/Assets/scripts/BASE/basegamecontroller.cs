@@ -100,12 +100,31 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		ref_gameobject_to_deactivate_in_hirichey.SetActive(false);
 	}
-    #endregion
+
+	public virtual void Enable_MULTIPLE_object_in_hirichery(GameObject[] ref_gameobject_to_activate_in_hirichey)
+	{
+		foreach (GameObject item in ref_gameobject_to_activate_in_hirichey)
+		{
+
+			item.SetActive(true);
+		}
+	}
+
+	public virtual void Disable_MULTIPLE_object_in_hirichery(GameObject[] ref_gameobject_to_deactivate_in_hirichey)
+	{
+
+		foreach (GameObject item in ref_gameobject_to_deactivate_in_hirichey)
+		{
+
+			item.SetActive(false);
+		}
+	}
+	#endregion
 
 
-    #endregion
+	#endregion
 
-    public void player_supplyers_spanner(Transform position_to_spane)
+	public void player_supplyers_spanner(Transform position_to_spane)
 	{
 		Instantiate(game_object_prefabes_provider.health_booster, position_to_spane.position, Quaternion.identity);
 	

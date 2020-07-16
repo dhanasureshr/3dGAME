@@ -26,6 +26,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject GUN_PLAYER;
     public GameObject BOW_PLAYER;
     public GameObject SWORD_PLAYER;
+    
     public SkinnedMeshRenderer player_skinned_mesh_renderer;
 
     [Space(15)]
@@ -76,6 +77,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_PLAYER);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_PLAYER);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(SWORD_PLAYER);
+        
     }
 
 }
