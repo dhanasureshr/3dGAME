@@ -5,7 +5,7 @@ using UnityEngine;
 public class arrow : ExtendedCustomMonoBehavior
 {
     private Rigidbody mybody;
-    private bool hitsomething;
+  //  private bool hitsomething;
     public float destroyAfter = 15.0f;
     public float arrow_appliable_damage = 10.0f;
     private BoxCollider arrow_collider;
@@ -17,16 +17,9 @@ public class arrow : ExtendedCustomMonoBehavior
         StartCoroutine("DestroyTimer");
     }
 
-    private void Update()
-    {
-        if(!hitsomething)
-        {
-           // transform.rotation = Quaternion.LookRotation(mybody.velocity);
-        }
-    }
     private void OnCollisionEnter(Collision colision)
     {
-        hitsomething = true;
+        
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
             colision.transform.gameObject.GetComponent<health>().ApplyDamage(arrow_appliable_damage, false);

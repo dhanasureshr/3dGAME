@@ -32,18 +32,14 @@ public class magic_particls_prefab_attacker : MonoBehaviour
         Transform  magic_partical = partical_instantiator(effect, n);
 
         magic_partical.GetComponent<Rigidbody>().velocity = transform.forward * 25;
-        StartCoroutine(destroy_partical(magic_partical,2));
-
+        
     }
 
     public void instantiate_two_hand_partical_prefab(int n)
     {
         Transform magic_partical = partical_instantiator(h2_CHARGE_PREFABS, n);
         magic_partical.rotation = TWO_HAND_CONTAINER.rotation;
-        if (n == 0)
-        {
-            StartCoroutine(destroy_partical(magic_partical, 2.0f));
-        }
+        
     }
 
     public IEnumerator instantiate_partical_effector_prefab()
@@ -62,12 +58,6 @@ public class magic_particls_prefab_attacker : MonoBehaviour
 
     }
 
-    public IEnumerator destroy_partical(Transform pratical_to_destroy,float time_delay)
-    {
-        yield return new WaitForSeconds(time_delay);
-        Destroy(pratical_to_destroy.gameObject);
-        yield break;
-    }
 
 
     public Transform  partical_instantiator(Transform[] h1_list,int effect_number)
