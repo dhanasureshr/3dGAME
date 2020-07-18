@@ -9590,6 +9590,7 @@ GameObject:
   - component: {fileID: 889650463792412052}
   - component: {fileID: 6827952767093490995}
   - component: {fileID: 8303261056604270709}
+  - component: {fileID: 2480435288044505989}
   m_Layer: 0
   m_Name: Particle System (1)
   m_TagString: Untagged
@@ -13079,9 +13080,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -13149,7 +13150,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -13258,10 +13259,10 @@ ParticleSystem:
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
-    maxCollisionShapes: 256
+    maxCollisionShapes: 1
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -14277,6 +14278,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2480435288044505989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570854934721586480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d92f0606b2f88645bd91dcfd9f0675d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sword_player_partical_applible_damage: 5
 --- !u!1 &8471308571947401480
 GameObject:
   m_ObjectHideFlags: 0

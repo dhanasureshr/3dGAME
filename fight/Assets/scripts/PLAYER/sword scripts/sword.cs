@@ -11,18 +11,6 @@ public class sword : MonoBehaviour
     public GameObject[] sword_partical;
     
 
-    //public void OnCollisionEnter(Collision colision)
-    //{
-    //    if (colision.transform.CompareTag(tags.full_enimy_tag))
-    //    {
-    //        colision.transform.gameObject.GetComponentInParent<health>().ApplyDamage(sword_applialbe_damage, false);
-    //        Instantiate(blood_impact_prefab, transform.position, Quaternion.LookRotation(colision.contacts[0].normal));
-    //        Debug.Log("sword splashed the enimy ok dhana");
-    //    }
-    //}
-
-
-
 
     public void Enable_sword_pratical_collider()
     {

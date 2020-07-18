@@ -23084,6 +23084,8 @@ GameObject:
   - component: {fileID: 2769843085924400926}
   - component: {fileID: 2769843085929315026}
   - component: {fileID: 1944877583926011099}
+  - component: {fileID: 1079299049526247423}
+  - component: {fileID: 3569520198122526457}
   m_Layer: 0
   m_Name: FrostProjectileNormal
   m_TagString: Untagged
@@ -23131,7 +23133,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2.5
+  MinDistance: 0.8752432
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -23223,3 +23225,30 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!135 &1079299049526247423
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769843085924885310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.29
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3569520198122526457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769843085924885310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe900c51b4bbde34681799af140a875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_effect: 0
+  big_effect: 1

@@ -82,6 +82,8 @@ GameObject:
   - component: {fileID: 9098302675425375942}
   - component: {fileID: 9098302675424450868}
   - component: {fileID: 8965555258640016468}
+  - component: {fileID: 1255747193233256936}
+  - component: {fileID: 3034520565572235193}
   m_Layer: 0
   m_Name: FrostProjectile
   m_TagString: Untagged
@@ -97,7 +99,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9098302675405311240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.16, y: 0.867, z: 6.44}
+  m_LocalPosition: {x: -3.161, y: 0.867, z: 6.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9098302675405039920}
@@ -4850,6 +4852,33 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!135 &1255747193233256936
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098302675405311240}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.31
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3034520565572235193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098302675405311240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe900c51b4bbde34681799af140a875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  small_effect: 1
+  big_effect: 0
 --- !u!1 &9098302675405316210
 GameObject:
   m_ObjectHideFlags: 0
