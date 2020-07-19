@@ -10,6 +10,8 @@ public class magic_effect_script : MonoBehaviour
     private float small_damage = 2.0f;
     private float big_damage = 9.0f;
 
+
+    public GameObject impact_pref;
     public void Start()
     {
 
@@ -38,10 +40,20 @@ public class magic_effect_script : MonoBehaviour
 
                 collision.transform.gameObject.GetComponentInParent<health>().ApplyDamage(big_damage, false);
             }
-             Destroy(gameObject);
+
+            Instantiate(impact_pref, collision.transform.position + new Vector3(0,1,0), Quaternion.identity);
+            Destroy(gameObject);
             
         }
-        
+
+        if(collision.transform.tag =="cam")
+        {
+            Instantiate(impact_pref, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            Destroy(gameObject);
+
+        }
+
+
     }
 
 }
