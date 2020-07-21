@@ -21,6 +21,10 @@ public class magic_particls_prefab_attacker : MonoBehaviour
 
     public GameObject[] magic_show_off;
 
+
+    public bool script_holder_enimy;
+    public bool script_holder_player;
+
     public void Start()
     {
         Disablemagic_player();

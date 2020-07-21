@@ -37,7 +37,6 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject MAIN_CAMERA;
     public GameObject GUN_CAMERA;
 
-    
 
 
 

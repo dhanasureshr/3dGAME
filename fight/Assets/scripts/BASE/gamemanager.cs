@@ -56,6 +56,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	[Inject(InjectFrom.Anywhere)]
 	public basegamecontroller base_game_controller_ref;
 
+
 	public static gamemanager instance;
 	
     #endregion
