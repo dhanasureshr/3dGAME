@@ -21,6 +21,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	 * */
     #region variables
     // new ********************************
+
+
+    private Rigidbody camera_rigid_body;
    
    [HideInInspector] public float rotx = 0.0f;
    [HideInInspector] public float roty = 0.0f;
@@ -39,13 +42,13 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
    // public Transform look_target;
    [HideInInspector] public int targetframe = 75;
     //this are for the caera collision detection
-    private float thinRadius = 0.15f;
-    private float thickRadius = 0.3f;
-    private float distance = 5.0f; //DEFAULT 10.0f
+    private float thinRadius = 0.30f; //0.15f
+    private float thickRadius = 0.9f; //0.3f
+    private float distance = 10.0f; //DEFAULT 10.0f
     
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
-    private float distanceMin = 1f;
+    private float distanceMin = 1f; //1
     private float distanceMax = 5f;//DEFAULT 5
     private object hit;
    // private float xspeed = 1.0f;
@@ -92,6 +95,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region start metheod for initilization
     private void Start()
     {
+        camera_rigid_body = gameObject.GetComponent<Rigidbody>();
         gameObject.transform.parent = null;
         Vector3 angles = this.transform.eulerAngles;
         x = angles.y;
@@ -181,12 +185,15 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
                     {
-                        distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime *10f);
-                    }
-                    Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);
-                    positions = rotation * distanceVector + target.position;
-                    transform.rotation = rotation;
-                    transform.position = positions;
+                   // distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime);// *1f); //10f
+                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //10f
+                }
+                    Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)
+                positions = rotation * distanceVector + target.position;
+                
+                transform.rotation = rotation;
+                transform.position = positions; // + new Vector3(0.0f,-1f,-1f);
+                //camera_rigid_body.AddForce(position);
                     transform.LookAt(target);
             }
             
@@ -212,7 +219,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             deltay = inittouch_y - finaltouch_y;
             rotx -= deltay * Time.deltaTime * rotspeed * dir;
             roty -= deltax * Time.deltaTime * rotspeed * dir;
-            rotx = Mathf.Clamp(rotx, -30.0f, 30f);
+            rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f
        
     }
     #endregion
@@ -241,7 +248,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         Vector3 normal, thicknormal;
         Vector3 ray = transform.position - target.position;
         //calculation the points 
-        Vector3 collisionPoint = GetDoubleSphereCastCollision(transform.position, thinRadius, out normal, true);
+        Vector3 collisionPoint = GetDoubleSphereCastCollision(transform.position , thinRadius, out normal, true);
         Vector3 collisionPointThick = GetDoubleSphereCastCollision(transform.position, thickRadius, out thicknormal, false);
         Vector3 collisionPointRay = GetRayCollisionPoint(transform.position);
         Vector3 collisionPointProjectedonRay = Vector3.Project(collisionPointThick - target.position, ray.normalized) + target.position;
@@ -273,15 +280,21 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         }
         else
         {
-            distance = Mathf.SmoothStep(distance, collisionDistance, Time.deltaTime * 100 * Mathf.Max(distance * 0.1f, 0.1f));
+            distance = Mathf.SmoothStep(distance , collisionDistance, Time.deltaTime * 100 * Mathf.Max(distance * 0.1f, 0.1f));
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position = target.position + ray.normalized * distance;
+        transform.position = target.position + ray.normalized * distance; //newly changed for cameray fleckring 
+        //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
 
-        if(Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
+
+
+        if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
-            transform.position = collisionPointRay;
+           transform.position = collisionPointRay; //newly changed for cameray fleckring 
+
+          // camera_rigid_body.AddForce(collisionPointRay);
+
         }
      }
     #endregion
@@ -297,7 +310,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         float dot = Vector3.Dot(transform.forward, ray);
         if (dot < 0)
         {
-            ray *= -1;
+            ray *= -1; 
 
         }
 
@@ -343,9 +356,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         Vector3 origin = target.position;
         Vector3 ray = cameraPosition - origin;
         RaycastHit ss;
-        if(Physics.Raycast(origin,ray.normalized,out ss, ray.magnitude, layermask))
+        if(Physics.Raycast(origin,ray.normalized,out ss, ray.magnitude , layermask))
         {
-            return ss.point + ss.normal * 0.15f;
+            return ss.point + ss.normal * 0.15f; //0.15f
 
         }
         return cameraPosition;
