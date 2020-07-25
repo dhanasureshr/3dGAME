@@ -372,13 +372,13 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                // tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
                 tar = target_position.position;
                 transform.LookAt(tar);
-                enimy_nav_mesh_agent.SetDestination(target_position.position);
+                enimy_nav_mesh_agent.SetDestination(target_position.position );
             }
 
             if (cha)
             {
                 enimy_nav_mesh_agent.updateRotation = true;
-                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position );
               
             }
 
@@ -392,7 +392,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 // tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
                 tar = target_position.position;
                 transform.LookAt(tar);
-                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position );
             }
 
             #region scene petrol actual code
@@ -406,7 +406,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                     return;
                 }
                 //  enimy_nav_mesh_agent.updateRotation = true;
-                enimy_nav_mesh_agent.SetDestination(scenepoints[scenepointcount].position);
+                enimy_nav_mesh_agent.SetDestination(scenepoints[scenepointcount].position );
                 scenepointdistance = Vector3.Distance(transform.position, scenepoints[scenepointcount].position);
                 if (scenepointdistance < 10)
                 {
@@ -440,7 +440,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 enimy_nav_mesh_agent.updateRotation = false;
                 Vector3 tar = new Vector3(target_position.transform.position.x, transform.position.y, target_position.transform.position.z);
                 transform.LookAt(tar);
-                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position);
+                enimy_nav_mesh_agent.SetDestination(fightpoints[Random.Range(0, destfightpoint)].position );
                 
             }
         }

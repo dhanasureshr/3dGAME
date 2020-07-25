@@ -119,18 +119,19 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
        
     }
     #endregion
-
+    
+    /*
     //this is the fixedupdate and lateUPdate function in which camera movement around player and camera collision occurs
     #region FixedUpdate
     private void FixedUpdate()
     {
-        if(Application.targetFrameRate != targetframe)
-        {
-            Application.targetFrameRate = targetframe;
-        }
+       // if(Application.targetFrameRate != targetframe)
+      //  {
+      //     Application.targetFrameRate = targetframe;
+      //  }
     }
     #endregion
-
+    
     public void Update()
     {
         if (virtual_joystick_access.isfingeronjoystick)
@@ -146,11 +147,27 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             }
         }
     }
+    */
+
 
     #region LateUpdate
     private void LateUpdate()
     {
         gameObject.transform.parent = null;
+
+        if (virtual_joystick_access.isfingeronjoystick)
+        {
+            if (Input.touchCount == 1)
+            {
+                Touch toucho = Input.GetTouch(0);
+                if (toucho.phase == TouchPhase.Moved)
+                {
+                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value * (speed) * Time.deltaTime, 0.0f);
+
+                }
+            }
+        }
+
         if (target)
         {
             
@@ -192,7 +209,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 positions = rotation * distanceVector + target.position;
                 
                 transform.rotation = rotation;
-                transform.position = positions; // + new Vector3(0.0f,-1f,-1f);
+                transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
                 //camera_rigid_body.AddForce(position);
                     transform.LookAt(target);
             }

@@ -40,6 +40,7 @@ public class enimy_animation_helper : MonoBehaviour
 
     public bool play_get_hit;
 
+    private Rigidbody enimy_rigid_body;
 
     // test to changer the animator controller at run time
    //////////////////////////////////////////////////////////// public RuntimeAnimatorController rp;
@@ -59,6 +60,8 @@ public class enimy_animation_helper : MonoBehaviour
         enimy_manger_ref_for_component_shareng = gameObject.GetComponent<enimy_manager>();
         enimy_movement_reference = enimy_manger_ref_for_component_shareng.E__manager_ref_enimy_movement;
         enimy_movement_reference.enimy_nav_mesh_agent.updatePosition = false;
+
+        enimy_rigid_body = GetComponent<Rigidbody>();
         
     }
 
@@ -119,7 +122,7 @@ public class enimy_animation_helper : MonoBehaviour
 
     #endregion
 
-    private void Update()
+    private void FixedUpdate()
     {
         //enimy blend tree movement
         Vector3 worldDeltaPosition = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition - transform.position;
@@ -147,6 +150,7 @@ public class enimy_animation_helper : MonoBehaviour
             enimy_animator_ref.SetFloat(x_input, velocity.x);
             enimy_animator_ref.SetFloat(y_input, velocity.y);
             transform.position = enimy_movement_reference.enimy_nav_mesh_agent.nextPosition;
+           // enimy_rigid_body.AddForce(enimy_movement_reference.enimy_nav_mesh_agent.nextPosition);
         }
     }
 
