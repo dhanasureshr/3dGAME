@@ -410,18 +410,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d9d6a6fccbc2bb43abdf92a03d65399, type: 3}
---- !u!114 &247789796 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4907941183680758041, guid: 5a1d257d345c4c5488b65e74b55e6965,
-    type: 3}
-  m_PrefabInstance: {fileID: 1919418889}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eaa62a96a4ed73409d0b54f9f6a790b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &252940910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2622,11 +2610,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6232440430254857858, guid: 13432a427d1251d4fb4327c4dfda5ff1,
-        type: 3}
-      propertyPath: virtual_joystick_access
-      value: 
-      objectReference: {fileID: 247789796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13432a427d1251d4fb4327c4dfda5ff1, type: 3}
 --- !u!114 &1540091102887954812

@@ -81,6 +81,17 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		/// --------------------------------------------------------
 		h_joy = virtual_joystick_access.InputDirection.x;
 		y_joy = virtual_joystick_access.InputDirection.z;
+
+		if(h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
+		{
+			speed = Mathf.Lerp(2, 8, 1f);
+		}
+		else
+		{
+			speed = Mathf.Lerp(8, 2, 1f);
+		}
+
+		
 		float yStore = MoveDirection.y;
 		MoveDirection = new Vector3(h_joy, 0, y_joy);
 		MoveDirection = transform.TransformDirection(MoveDirection);
