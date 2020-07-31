@@ -204,7 +204,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100002, guid: 1f61ccd2ce0b3dd41a35bac9ffce463d, type: 3}
+  - {fileID: 2100000, guid: 38f78042ed78dc04b933b676cb83599d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -521,7 +521,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1f61ccd2ce0b3dd41a35bac9ffce463d, type: 3}
+  - {fileID: 2100000, guid: 38f78042ed78dc04b933b676cb83599d, type: 2}
   - {fileID: 2100000, guid: 973f1f2b14874a94286f1e28eaef4956, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2438,7 +2438,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 725495638288480203}
-  - component: {fileID: 725495638297499691}
   m_Layer: 0
   m_Name: Andan Mecanim1
   m_TagString: fight_player
@@ -2468,25 +2467,6 @@ Transform:
   m_Father: {fileID: 5533166723070687492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &725495638297499691
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725495638287985643}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: 1f61ccd2ce0b3dd41a35bac9ffce463d, type: 3}
-  m_Controller: {fileID: 9100000, guid: f846976fd81495641a70f8ca30bd3444, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &725495638287985645
 GameObject:
   m_ObjectHideFlags: 0
@@ -46693,15 +46673,28 @@ MonoBehaviour:
   didInit: 0
   canControl: 0
   iD: 0
-  charactercontroller: {fileID: 6232440430254857857}
-  player_camera_follow_script: {fileID: 0}
+  charactercontroller: {fileID: 0}
+  enabelFeetIk: 1
+  heightFromGroundRaycast: 0.14
+  raycastDownDistance: 0.61
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  pelvisOffset: 0
+  pelvisUpAndDownSpeed: 0.28
+  feetToIkPositionSpeed: 0.5
+  leftFootAnimVariableName: LeftFootCureve
+  rightFootAnimVariableName: RightFootCurve
+  userProIkFeature: 1
+  showSolverDebug: 1
+  player_camera_follow_script: {fileID: 4468730104734397062}
   var: should be attatched to the player
   speed: 8
-  MoveDirection: {x: 0, y: 0, z: 0}
+  MoveDirection: {x: 0, y: -9.81, z: 0}
   virtual_joystick_access: {fileID: 0}
   h_joy: 0
   y_joy: 0
-  rotate_speed: 0
+  rotate_speed: 3
 --- !u!114 &6232440430254857859
 MonoBehaviour:
   m_ObjectHideFlags: 0

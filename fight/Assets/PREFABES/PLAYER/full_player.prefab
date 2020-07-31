@@ -26233,10 +26233,23 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 4965307258223521292}
-  player_camera_follow_script: {fileID: 0}
+  enabelFeetIk: 1
+  heightFromGroundRaycast: 0.14
+  raycastDownDistance: 0.17
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  pelvisOffset: 0
+  pelvisUpAndDownSpeed: 0.28
+  feetToIkPositionSpeed: 0.5
+  leftFootAnimVariableName: LeftFootCureve
+  rightFootAnimVariableName: RightFootCurve
+  userProIkFeature: 1
+  showSolverDebug: 1
+  player_camera_follow_script: {fileID: 3211732231425016331}
   var: should be attatched to the player
   speed: 8
-  MoveDirection: {x: 0, y: 0, z: 0}
+  MoveDirection: {x: 0, y: -9.81, z: 0}
   virtual_joystick_access: {fileID: 0}
   h_joy: 0
   y_joy: 0
