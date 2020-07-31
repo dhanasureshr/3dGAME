@@ -110,7 +110,12 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
     public void _enable_fps_mode()
     {
         Player_camera_follow_script_ref.enabled = false;
-        player_components_provider.player_skinned_mesh_renderer.enabled = false;
+        for(int i = 0;i< player_components_provider.player_skinned_mesh_renderer.Length;i++)
+        {
+
+            player_components_provider.player_skinned_mesh_renderer[i].enabled = false;
+        }
+       // player_components_provider.player_skinned_mesh_renderer.enabled = false;
         
         Player_fps_camera_script_ref.enabled = true;
 
@@ -118,7 +123,12 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
 
     public void _enable_tps_mode()
     {
-        player_components_provider.player_skinned_mesh_renderer.enabled = true;
+        for (int i = 0; i < player_components_provider.player_skinned_mesh_renderer.Length; i++)
+        {
+
+            player_components_provider.player_skinned_mesh_renderer[i].enabled = true;
+        }
+        //player_components_provider.player_skinned_mesh_renderer.enabled = true;
         Player_camera_follow_script_ref.enabled = true;
         Player_fps_camera_script_ref.enabled = false;
         player_components_provider.FULL_PLAYER.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);

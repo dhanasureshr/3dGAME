@@ -27,7 +27,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject BOW_PLAYER;
     public GameObject SWORD_PLAYER;
     
-    public SkinnedMeshRenderer player_skinned_mesh_renderer;
+    public SkinnedMeshRenderer[] player_skinned_mesh_renderer;
 
     [Space(15)]
     [Header("PLAYER CAMERA RIEFERENCES")]
@@ -56,7 +56,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         GUN_PLAYER = GameObject.FindWithTag(tags.gun_player_tag);
         BOW_PLAYER = GameObject.FindWithTag(tags.bow_player_tag);
         SWORD_PLAYER = GameObject.FindWithTag(tags.sword_player_tag);
-        player_skinned_mesh_renderer = FULL_PLAYER.GetComponentInChildren<SkinnedMeshRenderer>();
+        player_skinned_mesh_renderer = FIGHTING_PLAYER.GetComponentsInChildren<SkinnedMeshRenderer>();
 
 
         FPS_PIVOT = GameObject.FindWithTag(tags.fps_pivot_tag);
