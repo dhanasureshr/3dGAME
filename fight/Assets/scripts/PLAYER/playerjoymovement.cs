@@ -46,14 +46,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	[HideInInspector] public float h_joy;
 	[HideInInspector] public float y_joy;
 	[HideInInspector] private CharacterController playercharactercontroller;
+	
 	private float plyer_rot_x;
 	public float rotate_speed = 5.0f;
 	private Vector3 playerrotatevector = Vector3.zero;
 	//[HideInInspector] public Transform camera_pos;
 
-	private float jumpforce = 200.0f;
-	private bool player_on_Ground;
-	//public Rigidbody player_rigid_body;
 	#endregion
 
 	#region player_movement animation paramaters
@@ -67,13 +65,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
-		//player_rigid_body = GetComponent<Rigidbody>();
 
 		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
 
 		player_animator = GetComponent<Animator>();
 
-		player_on_Ground = true;
+
 		//Debug.Log(player_animator.GetLayerName(1));
 		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();
 	}
@@ -90,11 +87,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 		if(h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
 		{
-			speed = Mathf.Lerp(2, 8, 1f);
+			speed = 8f;
 		}
 		else
 		{
-			speed = Mathf.Lerp(8, 2, 1f);
+			speed = 2f;
 		}
 
 		
@@ -110,10 +107,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
 		player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
 
-		if(playercharactercontroller.isGrounded)
-		{
-			player_on_Ground = true;
-		}
+		
 	}
 
 	#endregion
@@ -252,26 +246,5 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	#endregion
 
 
-	public void OnPlayer_Jump_button_pressed()
-	{
-		if (player_on_Ground == true)
-		{
-			//player_rigid_body.velocity = new Vector3(0.0f, jumpforce, 0.0f);
 
-			Vector3 jumpUp = transform.TransformDirection(Vector3.up) * jumpforce;
-			jumpUp -= Physics.gravity;
-			jumpUp.y -= 9.81f * Time.deltaTime;
-			//jumpUp.y -= Physics.gravity;
-			playercharactercontroller.Move(jumpUp * Time.deltaTime);
-			player_on_Ground = false;
-		}
-	}
-
-	//private void OnCollisionEnter(Collision collision)
-	//{
-	//	if (collision.gameObject.CompareTag("cam"))
-	//	{
-	//		player_on_Ground = true;
-	//	}
-	//}
 }

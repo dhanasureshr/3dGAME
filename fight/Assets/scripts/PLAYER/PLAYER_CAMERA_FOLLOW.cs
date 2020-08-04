@@ -187,11 +187,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
-                //look_target.Rotate(0,horizontal,0);
+               // look_target.Rotate(0,horizontal,0);//////////////
                 pivot.Rotate(0, horizontal, 0);
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
-                Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 0);
+                Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 10);
                 transform.LookAt(target);
                
             }
@@ -203,8 +203,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     if (distance < distanceMax)
                     {
                    // distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime);// *1f); //10f
-                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //10f
-                }
+                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
+                    }
                     Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)
                 positions = rotation * distanceVector + target.position;
                 

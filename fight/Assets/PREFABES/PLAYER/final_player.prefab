@@ -27394,7 +27394,6 @@ GameObject:
   - component: {fileID: 4468730105358608572}
   - component: {fileID: 4468730104734397062}
   - component: {fileID: 4468730104734397063}
-  - component: {fileID: 4468730105358608560}
   - component: {fileID: 1418721234}
   m_Layer: 9
   m_Name: Tps_camera
@@ -27542,22 +27541,6 @@ MonoBehaviour:
   virtual_joystick_access_for_fps: {fileID: 0}
   rotatspeed: 10
   invertpitch: 1
---- !u!54 &4468730105358608560
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4468730105358608563}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1418721234
 MonoBehaviour:
   m_ObjectHideFlags: 0

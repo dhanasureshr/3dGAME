@@ -93,9 +93,5 @@ public class player_fighting_ui_controller_method : MonoBehaviour
     #endregion
     #endregion
 
-    public void On_jump_button()
-    {
-        t.player_movement_script_for_jump.OnPlayer_Jump_button_pressed();
-    }
-
+    
 }

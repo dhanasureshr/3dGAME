@@ -10,10 +10,7 @@ public class main_ui_component_provider : MonoBehaviour
     [Inject(InjectFrom.Anywhere)]
     public playermanager player_mangaer_for_dute;
 
-    [Inject(InjectFrom.Anywhere)]
-    public playerjoymovement player_movement_script_for_jump;
-
-
+    
     
 
     [Inject(InjectFrom.Anywhere)]
