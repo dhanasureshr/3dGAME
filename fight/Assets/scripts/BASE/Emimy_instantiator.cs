@@ -23,13 +23,13 @@ public class Emimy_instantiator : ExtendedCustomMonoBehavior
 
     public void Start()
     {
-      //  cloned_enimy_list = instantiate_enimy(enimy_prefab_to_instantiate, instantation_count, gameObject.transform);
+        //  cloned_enimy_list = instantiate_enimy(enimy_prefab_to_instantiate, instantation_count, gameObject.transform);
 
         //////////
         /////////////
         ///
 
-        if(TYPE0)
+        if (TYPE0)
         {
             instantiate_enimy(0);
         }
@@ -68,6 +68,8 @@ public class Emimy_instantiator : ExtendedCustomMonoBehavior
         cloned_enimy_list = instantiate_enimyS(Enimy_prefabs[enimy_type_number], instantation_count, gameObject.transform);
 
     }
+
+
 }
 
 
