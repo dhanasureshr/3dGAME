@@ -27395,6 +27395,7 @@ GameObject:
   - component: {fileID: 4468730104734397062}
   - component: {fileID: 4468730104734397063}
   - component: {fileID: 4468730105358608560}
+  - component: {fileID: 1418721234}
   m_Layer: 9
   m_Name: Tps_camera
   m_TagString: MainCamera
@@ -27557,6 +27558,149 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1418721234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4468730105358608563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b28c29541c3aae4ea0f96b8eb247f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCullDistance: 80
+  distanceMultiplier: 1
+  layerCullInfos:
+  - layerName: Default
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: TransparentFX
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Ignore Raycast
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Water
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: UI
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: PostProcessing
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: cam
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: PLAYER
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: ENIMY
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: e
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  - layerName: Layer Not Defined
+    cullDistance: 80
+    showGizmo: 0
+    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &4606122052494308880
 GameObject:
   m_ObjectHideFlags: 0
@@ -46510,7 +46654,7 @@ CharacterController:
   m_StepOffset: 0.9
   m_SkinWidth: 0.11
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.71, z: 0}
+  m_Center: {x: 0, y: 0.78, z: 0}
 --- !u!114 &6232440430254857858
 MonoBehaviour:
   m_ObjectHideFlags: 0

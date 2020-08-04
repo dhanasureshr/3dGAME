@@ -606,155 +606,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f52543071cb408a43b4bc5e46ee96560, type: 3}
---- !u!1 &1418721232 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4468730105358608563, guid: 13432a427d1251d4fb4327c4dfda5ff1,
-    type: 3}
-  m_PrefabInstance: {fileID: 409194364}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1418721234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1418721232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b28c29541c3aae4ea0f96b8eb247f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCullDistance: 80
-  distanceMultiplier: 1
-  layerCullInfos:
-  - layerName: Default
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: TransparentFX
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Ignore Raycast
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Water
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: UI
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: PostProcessing
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: cam
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: PLAYER
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: ENIMY
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: e
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
-  - layerName: Layer Not Defined
-    cullDistance: 80
-    showGizmo: 0
-    gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1001 &1432676704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1389,21 +1240,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 31246601624348178, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 31246601624348178, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 31246601624348178, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3645369849831234183, guid: 5a1d257d345c4c5488b65e74b55e6965,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1484,25 +1320,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 31246600629429653, guid: 5a1d257d345c4c5488b65e74b55e6965,
+    - target: {fileID: 2414082681677495766, guid: 5a1d257d345c4c5488b65e74b55e6965,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -297.30078
-      objectReference: {fileID: 0}
-    - target: {fileID: 31246600629429653, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 124.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 31246600451131949, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -97.70117
-      objectReference: {fileID: 0}
-    - target: {fileID: 31246602130714187, guid: 5a1d257d345c4c5488b65e74b55e6965,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -97.70117
+      value: -47.559937
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a1d257d345c4c5488b65e74b55e6965, type: 3}
@@ -1729,7 +1550,7 @@ PrefabInstance:
     - target: {fileID: 1087622554201810607, guid: 9d81516facc63bd458f019c46dc8c816,
         type: 3}
       propertyPath: instantation_count
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d81516facc63bd458f019c46dc8c816, type: 3}
