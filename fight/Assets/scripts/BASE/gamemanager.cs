@@ -39,6 +39,8 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	/// 
 	/// 
 	/// </summary>
+	/// 
+
     #region global variables to INTIMATE OTHER SCRIPTS
 	[HideInInspector] public bool isinputallowed = false;
 	[HideInInspector] public bool isgamestarted = false;
