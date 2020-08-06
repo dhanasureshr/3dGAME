@@ -59,6 +59,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	public basegamecontroller base_game_controller_ref;
 
 
+	
 	public static gamemanager instance;
 	
     #endregion

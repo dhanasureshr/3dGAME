@@ -95,6 +95,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
               
                 enimy_manger_ref.enimy_instantiator_from_enimy_component_provider.cloned_enimy_list.Remove(gameObject);// removed the died enimy from the cloned_enimy_list
                 Destroy(gameObject, 10.0f);
+
             }
             else // player death code
             {

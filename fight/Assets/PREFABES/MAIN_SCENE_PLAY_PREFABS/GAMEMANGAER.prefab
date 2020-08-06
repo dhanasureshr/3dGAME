@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4512449123914293135}
   - component: {fileID: 4512449123914293134}
   - component: {fileID: 4512449123914293133}
+  - component: {fileID: 3261278642080251003}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -63,6 +64,7 @@ MonoBehaviour:
   isgamestoped: 0
   isenimydead: 0
   Game_paused: 0
+  play_sfx: 1
   base_game_controller_ref: {fileID: 0}
 --- !u!114 &4512449123914293123
 MonoBehaviour:
@@ -164,7 +166,7 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   event_manager_ref: {fileID: 0}
-  ui_prefabs_provider: {fileID: 0}
+  canvas_component_provider: {fileID: 0}
   game_object_prefabes_provider: {fileID: 0}
 --- !u!114 &4512449123914293134
 MonoBehaviour:
@@ -185,10 +187,6 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
-  Game_lost_panal_prefab: {fileID: 5764820159033256440, guid: 7fa1617bc63f5e748a80874a6847ceec,
-    type: 3}
-  Game_resume_panal_prefab: {fileID: 2234647747849578002, guid: 3c6edd4814c216741a43cf622de3d646,
-    type: 3}
   Game_fighting_panal: {fileID: 0}
   Game_gun_panal: {fileID: 0}
 --- !u!114 &4512449123914293133
@@ -209,3 +207,18 @@ MonoBehaviour:
     type: 3}
   health_booster: {fileID: 8498606026199842714, guid: fc89c0289d2a6b4459644296c5d1d6ab,
     type: 3}
+--- !u!114 &3261278642080251003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd877bef0b4eadd4fab4211a17f98897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Total_levels: 10
+  Game_level_number: 0
+  gameLevelNum: 0

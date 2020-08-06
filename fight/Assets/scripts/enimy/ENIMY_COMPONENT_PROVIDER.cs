@@ -22,6 +22,7 @@ public class ENIMY_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     [Header("CURRENT SCENE PETROL POINTS")]
     public GameObject[] Current_scene_petorl_points;
 
+
    
     
     public void Start()
