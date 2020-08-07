@@ -21,12 +21,13 @@ public class scenemanager : MonoBehaviour
         gameLevelNum++;
         // load the level (the array index starts at 0, but we start
         // counting game levels at 1 for clarity’s sake)
+        Game_level_number = gameLevelNum;
         LoadLevel(gameLevelNum);
 
         // increase our game level index counter
         //gameLevelNum++;
     }
-    private void LoadLevel(int indexNum)
+   public void LoadLevel(int indexNum)
     {
         SceneManager.LoadScene(indexNum);
     }

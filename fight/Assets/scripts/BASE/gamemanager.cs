@@ -51,6 +51,9 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	[HideInInspector] public bool Game_paused;
 	[HideInInspector] private bool is_paused;
 	[HideInInspector] public bool play_sfx = true;
+
+	public int saved_level_number;
+
 	#endregion
 
 
@@ -117,6 +120,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 		
 
 	}
+
 
 	#region Application quite detection to post GAME_STOPED notification
 
@@ -194,7 +198,5 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	}
 
 #endregion
-
-
 
 }

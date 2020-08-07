@@ -85,7 +85,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		h_joy = virtual_joystick_access.InputDirection.x;
 		y_joy = virtual_joystick_access.InputDirection.z;
 
-		if(h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
+		if (h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
 		{
 			speed = 8f;
 		}
@@ -94,7 +94,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			speed = 2f;
 		}
 
-		
+
 		float yStore = MoveDirection.y;
 		MoveDirection = new Vector3(h_joy, 0, y_joy);
 		MoveDirection = transform.TransformDirection(MoveDirection);
@@ -107,8 +107,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
 		player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
 
-		
-	}
+	
+
 
 	#endregion
 
@@ -116,8 +116,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	#region  FeetGrounding
 
-	private void FixedUpdate()
-	{
+
 		if (enabelFeetIk == false) { return; }
 		if (player_animator == null) { return; }
 

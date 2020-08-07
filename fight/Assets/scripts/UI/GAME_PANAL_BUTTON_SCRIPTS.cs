@@ -13,7 +13,6 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     public CANVAS_COMPONENT_PROVIDER canvas_component_provider_script;
     public void GAME_PLAY_BUTTON_PRESSED()
     {
-        // this method is to play the current seclected scene
     }
 
     public void GAME_EXIT_BUTTON_PRESSED()
@@ -57,6 +56,10 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     {
         // this is to restart the same leve when ever the player lost life
         Debug.Log("GAME_REPLAY_BUTTON_PRESSED");
+
+        // this method is to play the current seclected scene 
+        int current_level_no_to_restart = gamemanager.instance.gameObject.GetComponent<scenemanager>().Game_level_number;
+        gamemanager.instance.gameObject.GetComponent<scenemanager>().LoadLevel(current_level_no_to_restart);
     }
 
 } // GAME_PANAL_BUTTON_SCRIPTS class
