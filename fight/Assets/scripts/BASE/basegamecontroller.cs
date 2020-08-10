@@ -38,6 +38,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 		
 		Debug.Log("player_lost_life___---from the basegamecontroller");
 		Enable_object_in_hirichery(canvas_component_provider.GAME_LOST_PANAL);
+		Disable_object_in_hirichery(canvas_component_provider.MAIN_GAME_CANVAS);
 		
 	}
 

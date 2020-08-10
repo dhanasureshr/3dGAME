@@ -13,7 +13,7 @@ public class rocket_controller : MonoBehaviour
     public Transform rocket_prefab;
     public Transform rocketspanpoint;
     //public Transform rocket_rotation;
-    public float rocketforce = 50.0f;
+    public float rocketforce = 100.0f;
 
     public void Start()
     {

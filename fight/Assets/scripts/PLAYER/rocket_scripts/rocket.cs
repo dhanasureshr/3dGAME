@@ -6,7 +6,8 @@ public class rocket : MonoBehaviour
 {
     private Rigidbody mybody;
     //  private bool hitsomething;
-    public float destroyAfter = 15.0f;
+    public float no_collision_destroy_time = 15.0f;
+    public float on_collision_destroy_time = 5.0f;
     public float arrow_appliable_damage = 10.0f;
     private BoxCollider rocket_collider;
     
@@ -30,8 +31,8 @@ public class rocket : MonoBehaviour
     {
         mybody = gameObject.GetComponent<Rigidbody>();
         rocket_collider = gameObject.GetComponent<BoxCollider>();
-        StartCoroutine("DestroyTimer");
-        mybody.useGravity = false;
+        StartCoroutine("Destroy_Rocket_bomb_on_no_collision");
+       
     }
 
     private void Update()
@@ -52,20 +53,22 @@ public class rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision colision)
     {
-        mybody.useGravity = true;
+       
+        explode = true;
+
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
             colision.transform.gameObject.GetComponent<health>().ApplyDamage(arrow_appliable_damage, false);
-            
-            Destroy(gameObject);
-            return;
-        }
-        explode = true;
 
+            StartCoroutine("Destroy_Rocket_bomb_on_collision");
+          
+            
+        }
+        
         
     }
 
-    private IEnumerator Explode()
+    public IEnumerator Explode()
     {
         yield return new WaitForSeconds(randomTime);
 
@@ -88,6 +91,11 @@ public class rocket : MonoBehaviour
             {
                 hit.transform.gameObject.GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit(100);
             }
+
+            if(hit.transform.CompareTag(tags.full_player_tag))
+            {
+                hit.transform.gameObject.GetComponentInParent<baseusermanager>().apply_damage_on_player(5);
+            }
         }
 
 
@@ -100,9 +108,16 @@ public class rocket : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyTimer()
+    private IEnumerator Destroy_Rocket_bomb_on_no_collision()
     {
-        yield return new WaitForSeconds(destroyAfter);
+        yield return new WaitForSeconds(no_collision_destroy_time);
+        Destroy(gameObject);
+    }
+
+
+    private IEnumerator Destroy_Rocket_bomb_on_collision()
+    {
+        yield return new WaitForSeconds(on_collision_destroy_time);
         Destroy(gameObject);
     }
 }
