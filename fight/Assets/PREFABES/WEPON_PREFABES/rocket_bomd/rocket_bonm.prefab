@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8059936349723873737}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 3.85, y: 1.58, z: 0.05}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &8059936349727165897
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyAfter: 15
   arrow_appliable_damage: 100
+  rocket_explosion_effect_prefab: {fileID: 7970201804149444312, guid: f8ea1d5b1fe727642b84fa9ae9b93a95,
+    type: 3}
   explode: 0
   minTime: 0
   maxTime: 0.1

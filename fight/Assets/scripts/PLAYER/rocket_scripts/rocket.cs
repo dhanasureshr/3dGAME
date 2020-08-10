@@ -11,7 +11,7 @@ public class rocket : MonoBehaviour
     private BoxCollider rocket_collider;
     
     //this code is for rocket explosion
-   // public Transform rocket_explosion_effect_prefab;
+    public Transform rocket_explosion_effect_prefab;
 
     float randomTime; 
     bool explosion_routine_started = false;
@@ -61,6 +61,8 @@ public class rocket : MonoBehaviour
             return;
         }
         explode = true;
+
+        
     }
 
     private IEnumerator Explode()
@@ -86,6 +88,15 @@ public class rocket : MonoBehaviour
             {
                 hit.transform.gameObject.GetComponentInParent<baseusermanager>().apply_damage_on_enimy_with_gethit(100);
             }
+        }
+
+
+        RaycastHit checkGround;
+        if (Physics.Raycast(transform.position, Vector3.down, out checkGround, 50))
+        {
+            //hear instantiating the fire explosion prefab;
+            Instantiate(rocket_explosion_effect_prefab, checkGround.point, Quaternion.FromToRotation(Vector3.forward,checkGround.normal));
+
         }
     }
 
