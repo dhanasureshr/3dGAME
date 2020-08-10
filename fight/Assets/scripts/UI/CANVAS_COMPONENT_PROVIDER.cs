@@ -19,6 +19,9 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
 
     public GameObject MAGIC_CANVAS;
 
+    public GameObject ROCKET_CANVAS;
+
+
     [Space(15)]
     [Header("main canvas scripts")]
     [Inject(InjectFrom.Anywhere)]
@@ -37,7 +40,7 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         BOW_CANVAS = GameObject.FindWithTag(tags.bow_canvas_tag);
         SWORD_CANVAS = GameObject.FindWithTag(tags.sward_canvas_tag);
         MAGIC_CANVAS = GameObject.FindWithTag(tags.magic_canvas_tag);
-
+        ROCKET_CANVAS = GameObject.FindWithTag(tags.rocket_canvas_tag);
 
 
         GAME_PANALS = GameObject.FindWithTag(tags.game_panals_tag);
@@ -54,6 +57,7 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(SWORD_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(ROCKET_CANVAS);
     }
 
     public void Disable_game_action_canvas()
@@ -62,6 +66,7 @@ public class CANVAS_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_CANVAS);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(MAGIC_CANVAS);
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(ROCKET_CANVAS);
 
     }
 

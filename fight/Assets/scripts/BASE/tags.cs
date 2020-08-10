@@ -32,6 +32,8 @@ public class tags : ExtendedCustomMonoBehavior
     public const string gun_player_tag = "gun_player";
     public const string bow_player_tag = "bow_player";
     public const string sword_player_tag = "sword_player";
+    public const string rocket_player_tag = "rocket_player";
+   
 
 
     public const string fps_pivot_tag = "fps_pivot";
@@ -47,6 +49,8 @@ public class tags : ExtendedCustomMonoBehavior
     public const string bow_canvas_tag = "bow_canvas";
     public const string sward_canvas_tag = "sward_canvas";
     public const string magic_canvas_tag = "magic_canvas";
+    public const string rocket_canvas_tag = "rocket_canvas";
+
 
     public const string game_resume_panal_tag = "G_resume_Panal";
     public const string game_lost_panal_tag = "G_lost_Panal";

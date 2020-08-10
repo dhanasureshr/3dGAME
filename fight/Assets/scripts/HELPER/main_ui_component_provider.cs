@@ -36,6 +36,9 @@ public class main_ui_component_provider : MonoBehaviour
     public bow_controller bow_controller_animator;
 
     [Inject(InjectFrom.Anywhere)]
+    public rocket_controller rocket_controller_animator;
+
+    [Inject(InjectFrom.Anywhere)]
     public CANVAS_COMPONENT_PROVIDER canvas_component_provider;
 
     [Inject(InjectFrom.Anywhere)]

@@ -26,6 +26,8 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject GUN_PLAYER;
     public GameObject BOW_PLAYER;
     public GameObject SWORD_PLAYER;
+    public GameObject ROCKET_PLAYER;
+    public GameObject BAT_PLAYER;
     
     public SkinnedMeshRenderer[] player_skinned_mesh_renderer;
 
@@ -56,6 +58,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         GUN_PLAYER = GameObject.FindWithTag(tags.gun_player_tag);
         BOW_PLAYER = GameObject.FindWithTag(tags.bow_player_tag);
         SWORD_PLAYER = GameObject.FindWithTag(tags.sword_player_tag);
+        ROCKET_PLAYER = GameObject.FindWithTag(tags.rocket_player_tag);
         player_skinned_mesh_renderer = FIGHTING_PLAYER.GetComponentsInChildren<SkinnedMeshRenderer>();
 
 
@@ -65,7 +68,7 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         MAIN_CAMERA = GameObject.FindWithTag(tags.main_camera_tag);
         GUN_CAMERA = GameObject.FindWithTag(tags.gun_camera_tag);
 
-
+        
         Default_player_disabler();
 
 
@@ -76,7 +79,8 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(GUN_PLAYER);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(BOW_PLAYER);
         gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(SWORD_PLAYER);
-        
+        gamemanager.instance.base_game_controller_ref.Disable_object_in_hirichery(ROCKET_PLAYER);
+
     }
 
 }
