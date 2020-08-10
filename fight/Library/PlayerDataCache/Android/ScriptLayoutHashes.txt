@@ -1,8 +1,9 @@
 Android
 PlayerPath?
-C:/Users/Dhana/Desktop/normal_test_can_be_deleted.apk
+C:/Users/Dhana/Desktop/game_play_test.apk
 SceneListBegin?
 Assets/SCENES/SampleScene.unity
+Assets/SCENES/GAME_SCENES/LEVEL1.unity
 SceneListEnd?
 a1f19ad47d3094e235f21b74dfc423a8 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessLayer
 726fcf7961cbb4108aa5be5e55b8c8bf Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.ColorGrading
@@ -119,6 +120,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ResolveScene
+0961a80036c8bbdb289f505f729226d1 Assembly-CSharp.dll:.rocket_controller
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -134,11 +136,14 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-7728b6d09e919366fbb3df3b9ff82390 Assembly-CSharp.dll:.CANVAS_COMPONENT_PROVIDER
+607873061bc3ff4995f3b388d70e9b31 Assembly-CSharp.dll:.CANVAS_COMPONENT_PROVIDER
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+b98c0945de9acb53d65470500dc5ffb7 Assembly-CSharp.dll:.tele
 08b81229f3ee8dafdfee94ae522edc93 Assembly-CSharp.dll:.tags
 ca32cdb5f3052b1bab4606d5ef7f63bb Assembly-CSharp.dll:.gun_controller
 08b81229f3ee8dafdfee94ae522edc93 Assembly-CSharp.dll:.event_tester
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.level_start_point_for_enimy
+5bf522fa61f4ee0c1ef1887dc42b8607 Assembly-CSharp.dll:.rocket_switch_controller
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ResolveSubset
 fbc2ac9da1168307a946a3550092db88 Assembly-CSharp.dll:.Bullet
 7e6ed836cbaa230e56d6a2bbae1b9bb5 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessEffectSettings
@@ -147,11 +152,11 @@ b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 ea33c5b275c5307102bdecd93f638096 Assembly-CSharp.dll:.health
 0769963ca05483a9f7e743b9118b3fba Assembly-CSharp.dll:TMPro.TMP_TextEventHandler
 714cc21563c08487b81d555fceb491b7 Assembly-CSharp.dll:.Axe
-559a19481ce1dfb98f9651d454dc2fa5 Assembly-CSharp.dll:.PLAYER_COMPONENT_PROVIDER
+16480c5193fe8b2f0c00af3c64d33dff Assembly-CSharp.dll:.PLAYER_COMPONENT_PROVIDER
 1ae541c7b215787cde0ca8bb3898ddf6 Assembly-CSharp.dll:UmbraEvolution.PerLayerCulling
 9356051f3ae5e5e0b17e7ab998ec9220 Assembly-CSharp.dll:.PLAYER_ANIMATION_HELPER
 61b9d9b6f4b6a222dfea8b131b3d3227 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.ChromaticAberration
-1cb7ca130cc78e29d6a7a5a6a8dfc17a Assembly-CSharp.dll:.Emimy_instantiator
+3b0cf81d9d4b1aba64c17c8e66be10cf Assembly-CSharp.dll:.Emimy_instantiator
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 95401dd59f3f38699d552273463e41fb Assembly-CSharp.dll:.MeleeWeaponTrail
 fbc38101329e563f6a50ea811cdc45c4 Assembly-CSharp.dll:.ui_prefabs_provider_to_gamemanager
@@ -167,8 +172,9 @@ a53651ee3996fbba20dfe0fce02f0b23 Unity.Postprocessing.Runtime.dll:UnityEngine.Re
 1308b79fa44ab768ab38cb0fd6ca6622 Assembly-CSharp.dll:.SingleJoystick
 50c443b12ccc0b475183318b5088bcc5 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessDebug
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
-318bf8214cd41795af5bb73fbabf1179 Assembly-CSharp.dll:.gamemanager
+f5f42506d2b3d006ea659cdb9425d4b6 Assembly-CSharp.dll:.gamemanager
 714cc21563c08487b81d555fceb491b7 Assembly-CSharp.dll:.Gem
+3b5b3196a75396716197ce69642f7bcd Assembly-CSharp.dll:.player_detector
 f08feb86e4aa46e33a4160c9fdfb09a3 Assembly-CSharp.dll:.player_archary_ui_controller_method
 7941825a16741cb64d746187b6f6428e Assembly-CSharp.dll:.gun_animation_script
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -199,6 +205,7 @@ e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 259d013faac28e8ba0aa2a7542273735 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.scene_changer
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -213,7 +220,7 @@ bd3f0ca738703903e759f77536ed74fd Assembly-CSharp.dll:TMPro.Examples.TMP_FrameRat
 e25e5d406fe2bbccac161e743d9d41e2 Assembly-CSharp.dll:.gun_switch_controller
 ee0cef6caaac8ae485bfa82f000f0f7b Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5f75f2f4d4c369f0183500821803c7d3 Assembly-CSharp.dll:.magic_particls_prefab_attacker
-624f8cece4d43e78d83fadd93bd3dabf Assembly-CSharp.dll:.main_ui_component_provider
+b6236209658d2f17c8e425af8db7e763 Assembly-CSharp.dll:.main_ui_component_provider
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 714cc21563c08487b81d555fceb491b7 Assembly-CSharp.dll:.InventoryItemBase
 5bf522fa61f4ee0c1ef1887dc42b8607 Assembly-CSharp.dll:.magic_switch_controller
@@ -236,11 +243,12 @@ d0987ce3e9092dbe0fa30d73f333fffa Unity.Postprocessing.Runtime.dll:UnityEngine.Re
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 de6762e2f415c51e127e7aec53f1fd03 Assembly-CSharp.dll:.game_objects_prefabes_provider_to_gamemanager
 ac6acd886c54c48c599ab5fed5781ea7 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.AmbientOcclusion
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.chanage_scene
 29696ab65fc37ce7fbd55d956275f66c Assembly-CSharp.dll:.eniable_gun
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 cb54f0044b5e221dc7250b0e8ff0ec6f Assembly-CSharp.dll:.game_action_swithcer
 b3d64221c80e5a585dd3b27f67311a29 Assembly-CSharp.dll:.playermanager
 9b0bfa60233befeaec4a6a3dd5e4100f Assembly-CSharp.dll:.HEALTH_BOOSTERS
 cd56602e9582280b8173430246dd5c74 Assembly-CSharp.dll:.player_gun_fighting_ui_controller_method
+0f63cadfc4bbbf6bf8ac25d44a47db75 Assembly-CSharp.dll:.rocket
 5bf522fa61f4ee0c1ef1887dc42b8607 Assembly-CSharp.dll:.bow_switch_controller
+f21a6ba8b72994485148c09e9307b832 Assembly-CSharp.dll:.scenemanager

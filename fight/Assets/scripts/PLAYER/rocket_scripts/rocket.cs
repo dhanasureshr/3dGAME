@@ -10,9 +10,11 @@ public class rocket : MonoBehaviour
     public float on_collision_destroy_time = 5.0f;
     public float arrow_appliable_damage = 10.0f;
     private BoxCollider rocket_collider;
-    
+    public GameObject rocket_fire_spray;
+
     //this code is for rocket explosion
     public Transform rocket_explosion_effect_prefab;
+
 
     float randomTime; 
     bool explosion_routine_started = false;
@@ -32,6 +34,7 @@ public class rocket : MonoBehaviour
         mybody = gameObject.GetComponent<Rigidbody>();
         rocket_collider = gameObject.GetComponent<BoxCollider>();
         StartCoroutine("Destroy_Rocket_bomb_on_no_collision");
+        rocket_fire_spray.SetActive(true);
        
     }
 
@@ -53,7 +56,7 @@ public class rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision colision)
     {
-       
+        rocket_fire_spray.SetActive(false);
         explode = true;
 
         if (colision.transform.CompareTag(tags.full_enimy_tag))
