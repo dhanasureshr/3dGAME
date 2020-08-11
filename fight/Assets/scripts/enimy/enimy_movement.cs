@@ -258,7 +258,7 @@ public class enimy_movement : ExtendedCustomMonoBehavior
                 if (distance > fighting_petrol_distance_ref && distance < chase_distance_ref)
                 {
                     fightpetrol = true;
-                    enimy_nav_mesh_agent.speed = 2.0f;
+                    enimy_nav_mesh_agent.speed = 1.0f;
                 }
                 else
                 {
