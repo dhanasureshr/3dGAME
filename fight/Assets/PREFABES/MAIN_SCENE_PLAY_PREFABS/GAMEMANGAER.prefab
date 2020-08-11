@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4512449123914293134}
   - component: {fileID: 4512449123914293133}
   - component: {fileID: 3261278642080251003}
+  - component: {fileID: 251788146314567532}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -65,7 +66,9 @@ MonoBehaviour:
   isenimydead: 0
   Game_paused: 0
   play_sfx: 1
+  saved_level_number: 0
   base_game_controller_ref: {fileID: 0}
+  explosion_magager_script_from_game_manager: {fileID: 251788146314567532}
 --- !u!114 &4512449123914293123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +225,21 @@ MonoBehaviour:
   Total_levels: 10
   Game_level_number: 0
   gameLevelNum: 0
+--- !u!114 &251788146314567532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 827252964ae5c2c448ac1e257059ad20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explode: 0
+  minTime: 0.05
+  maxTime: 0.25
+  explosioionRadius: 12.5
+  explosionForce: 40
+  position_explode: {x: 0, y: 0, z: 0}

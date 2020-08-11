@@ -16,17 +16,17 @@ public class rocket : MonoBehaviour
     public Transform rocket_explosion_effect_prefab;
 
 
-    float randomTime; 
-    bool explosion_routine_started = false;
-    public bool explode = false;
+    //float randomTime; 
+    //bool explosion_routine_started = false;
+    //public bool explode = false;
 
-    public float minTime = 0.05f;
-    public float maxTime = 0.25f;
+    //public float minTime = 0.05f;
+    //public float maxTime = 0.25f;
 
-    [Header("Explosion options")]
-    public float explosioionRadius = 12.5f;
+    //[Header("Explosion options")]
+    //public float explosioionRadius = 12.5f;
 
-    public float explosionForce = 4000.0f;
+    //public float explosionForce = 4000.0f;
     
 
     private void Start()
@@ -38,26 +38,14 @@ public class rocket : MonoBehaviour
        
     }
 
-    private void Update()
-    {
-        randomTime = Random.Range(minTime, maxTime);
-
-        if (explode == true)
-        {
-            if(explosion_routine_started ==  false)
-            {
-                StartCoroutine(Explode());
-                explosion_routine_started = true;
-            }
-        }
-    }
-
 
 
     private void OnCollisionEnter(Collision colision)
     {
+        //explode = true;
         rocket_fire_spray.SetActive(false);
-        explode = true;
+        gamemanager.instance.explosion_magager_script_from_game_manager.explosino_receiver(gameObject.transform.position);
+       gamemanager.instance.explosion_magager_script_from_game_manager.explode = true;
 
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
@@ -67,10 +55,19 @@ public class rocket : MonoBehaviour
           
             
         }
-        
-        
+
+
+        RaycastHit checkGround;
+        if (Physics.Raycast(transform.position, Vector3.down, out checkGround, 50))
+        {
+            //hear instantiating the fire explosion prefab;
+            Instantiate(rocket_explosion_effect_prefab, checkGround.point, Quaternion.FromToRotation(Vector3.forward, checkGround.normal));
+
+        }
+
     }
 
+/*
     public IEnumerator Explode()
     {
         yield return new WaitForSeconds(randomTime);
@@ -110,6 +107,8 @@ public class rocket : MonoBehaviour
 
         }
     }
+    */
+
 
     private IEnumerator Destroy_Rocket_bomb_on_no_collision()
     {

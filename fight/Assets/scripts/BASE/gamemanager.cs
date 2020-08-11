@@ -61,6 +61,8 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	[Inject(InjectFrom.Anywhere)]
 	public basegamecontroller base_game_controller_ref;
 
+	public explosion_manager explosion_magager_script_from_game_manager;
+
 
 	
 	public static gamemanager instance;
