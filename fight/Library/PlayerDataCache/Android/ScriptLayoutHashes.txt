@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/Dhana/Desktop/game_play_test.apk
+C:/Users/Dhana/Desktop/gamedc.apk
 SceneListBegin?
 Assets/SCENES/SampleScene.unity
 Assets/SCENES/GAME_SCENES/LEVEL1.unity
@@ -66,6 +66,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 8669c6a1f4f59437d876a9863183321d Assembly-CSharp.dll:.bow_controller
+446acd88d3a607868b10277687945a6d Assembly-CSharp.dll:.oil_barrel_explode_script
 f542c1afca5bb4022f91fdda19b8d622 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.DepthOfField
 b31ef1c110c5a7ed74ad67be3ae59038 Unity.TextMeshPro.dll:TMPro.TMP_InputField
 e403ab8c1126ee7f67c0b69e0f110da5 Assembly-CSharp.dll:.fighting_collider_enabler_and_disabler
@@ -158,6 +159,7 @@ ea33c5b275c5307102bdecd93f638096 Assembly-CSharp.dll:.health
 61b9d9b6f4b6a222dfea8b131b3d3227 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.ChromaticAberration
 3b0cf81d9d4b1aba64c17c8e66be10cf Assembly-CSharp.dll:.Emimy_instantiator
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
+8d3e277143332cd08abf13d21fb5a7e2 Assembly-CSharp.dll:.explosion_manager
 95401dd59f3f38699d552273463e41fb Assembly-CSharp.dll:.MeleeWeaponTrail
 fbc38101329e563f6a50ea811cdc45c4 Assembly-CSharp.dll:.ui_prefabs_provider_to_gamemanager
 d1949638118f8c4ce116e63f555b8959 Assembly-CSharp.dll:.enimy_manager
@@ -172,7 +174,7 @@ a53651ee3996fbba20dfe0fce02f0b23 Unity.Postprocessing.Runtime.dll:UnityEngine.Re
 1308b79fa44ab768ab38cb0fd6ca6622 Assembly-CSharp.dll:.SingleJoystick
 50c443b12ccc0b475183318b5088bcc5 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessDebug
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
-f5f42506d2b3d006ea659cdb9425d4b6 Assembly-CSharp.dll:.gamemanager
+cd652b4248ae8ae2307f4b49d138c98c Assembly-CSharp.dll:.gamemanager
 714cc21563c08487b81d555fceb491b7 Assembly-CSharp.dll:.Gem
 3b5b3196a75396716197ce69642f7bcd Assembly-CSharp.dll:.player_detector
 f08feb86e4aa46e33a4160c9fdfb09a3 Assembly-CSharp.dll:.player_archary_ui_controller_method
@@ -249,6 +251,6 @@ cb54f0044b5e221dc7250b0e8ff0ec6f Assembly-CSharp.dll:.game_action_swithcer
 b3d64221c80e5a585dd3b27f67311a29 Assembly-CSharp.dll:.playermanager
 9b0bfa60233befeaec4a6a3dd5e4100f Assembly-CSharp.dll:.HEALTH_BOOSTERS
 cd56602e9582280b8173430246dd5c74 Assembly-CSharp.dll:.player_gun_fighting_ui_controller_method
-0f63cadfc4bbbf6bf8ac25d44a47db75 Assembly-CSharp.dll:.rocket
+57e5bbb7312198d07d0ae1b367d9a596 Assembly-CSharp.dll:.rocket
 5bf522fa61f4ee0c1ef1887dc42b8607 Assembly-CSharp.dll:.bow_switch_controller
 f21a6ba8b72994485148c09e9307b832 Assembly-CSharp.dll:.scenemanager

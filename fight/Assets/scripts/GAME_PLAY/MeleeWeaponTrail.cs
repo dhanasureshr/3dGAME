@@ -13,6 +13,20 @@ using System.Collections.Generic;
 
 public class MeleeWeaponTrail : MonoBehaviour
 {
+
+	#region refectored update varables
+	float theDistanceSqr;
+	bool make;
+	Vector3 l1;
+	Vector3 l2;
+	Vector3[] tipPoints;
+	Vector3[] basePoints;
+	List<Vector3> smoothTipList;
+	List<Vector3> smoothBaseList;
+	float firstTime;
+	float secondTime;
+	#endregion
+
 	[SerializeField]
 	bool _emit = true;
 	public bool Emit { set{_emit = value;} }
@@ -121,25 +135,23 @@ public class MeleeWeaponTrail : MonoBehaviour
 		}
 
 		// early out if there is no camera
-		if (!Camera.main) return;
+		//if (!Camera.main) return; // updated this you can uncoment it makes problem  dhana
 
 		// if we have moved enough, create a new vertex and make sure we rebuild the mesh
-		float theDistanceSqr = (_lastPosition - transform.position).sqrMagnitude;
+		theDistanceSqr = (_lastPosition - transform.position).sqrMagnitude;
 		if (_emit)
 		{
 			if (theDistanceSqr > _minVertexDistanceSqr)
 			{
-				bool make = false;
+			    make = false;
 				if (_points.Count < 3)
 				{
 					make = true;
 				}
 				else
 				{
-					//Vector3 l1 = _points[_points.Count - 2].basePosition - _points[_points.Count - 3].basePosition;
-					//Vector3 l2 = _points[_points.Count - 1].basePosition - _points[_points.Count - 2].basePosition;
-					Vector3 l1 = _points[_points.Count - 2].tipPosition - _points[_points.Count - 3].tipPosition;
-					Vector3 l2 = _points[_points.Count - 1].tipPosition - _points[_points.Count - 2].tipPosition;
+				    l1 = _points[_points.Count - 2].tipPosition - _points[_points.Count - 3].tipPosition;
+				    l2 = _points[_points.Count - 1].tipPosition - _points[_points.Count - 2].tipPosition;
 					if (Vector3.Angle(l1, l2) > _maxAngle || theDistanceSqr > _maxVertexDistanceSqr) make = true;
 				}
 
@@ -168,7 +180,7 @@ public class MeleeWeaponTrail : MonoBehaviour
 					// we use 4 control points for the smoothing
 					if (_points.Count >= 4)
 					{
-						Vector3[] tipPoints = new Vector3[4];
+					    tipPoints = new Vector3[4];
 						tipPoints[0] = _points[_points.Count - 4].tipPosition;
 						tipPoints[1] = _points[_points.Count - 3].tipPosition;
 						tipPoints[2] = _points[_points.Count - 2].tipPosition;
@@ -177,7 +189,7 @@ public class MeleeWeaponTrail : MonoBehaviour
 						//IEnumerable<Vector3> smoothTip = Interpolate.NewBezier(Interpolate.Ease(Interpolate.EaseType.Linear), tipPoints, subdivisions);
 						IEnumerable<Vector3> smoothTip = Interpolate.NewCatmullRom(tipPoints, subdivisions, false);
 
-						Vector3[] basePoints = new Vector3[4];
+					    basePoints = new Vector3[4];
 						basePoints[0] = _points[_points.Count - 4].basePosition;
 						basePoints[1] = _points[_points.Count - 3].basePosition;
 						basePoints[2] = _points[_points.Count - 2].basePosition;
@@ -186,11 +198,11 @@ public class MeleeWeaponTrail : MonoBehaviour
 						//IEnumerable<Vector3> smoothBase = Interpolate.NewBezier(Interpolate.Ease(Interpolate.EaseType.Linear), basePoints, subdivisions);
 						IEnumerable<Vector3> smoothBase = Interpolate.NewCatmullRom(basePoints, subdivisions, false);
 
-						List<Vector3> smoothTipList = new List<Vector3>(smoothTip);
-						List<Vector3> smoothBaseList = new List<Vector3>(smoothBase);
+					    smoothTipList = new List<Vector3>(smoothTip);
+						smoothBaseList = new List<Vector3>(smoothBase);
 
-						float firstTime = _points[_points.Count - 4].timeCreated;
-						float secondTime = _points[_points.Count - 1].timeCreated;
+						firstTime = _points[_points.Count - 4].timeCreated;
+						secondTime = _points[_points.Count - 1].timeCreated;
 
 						//Debug.Log(" smoothTipList.Count: " + smoothTipList.Count);
 
@@ -337,7 +349,8 @@ public class MeleeWeaponTrail : MonoBehaviour
 		}
 	}
 
-	void RemoveOldPoints(List<Point> pointList)
+    #region old points remover
+    void RemoveOldPoints(List<Point> pointList)
 	{
 		List<Point> remove = new List<Point>();
 		foreach (Point p in pointList)
@@ -353,4 +366,5 @@ public class MeleeWeaponTrail : MonoBehaviour
 			pointList.Remove(p);
 		}
 	}
+    #endregion
 }
