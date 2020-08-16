@@ -125,12 +125,13 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region FixedUpdate
     private void FixedUpdate()
     {
-       // if(Application.targetFrameRate != targetframe)
-      //  {
-      //     Application.targetFrameRate = targetframe;
-      //  }
+        if(Application.targetFrameRate != targetframe)
+        {
+           Application.targetFrameRate = targetframe;
+        }
     }
     #endregion
+    
     
     public void Update()
     {
@@ -147,8 +148,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             }
         }
     }
-    */
-
+    
+*/
 
     #region LateUpdate
     private void LateUpdate()
