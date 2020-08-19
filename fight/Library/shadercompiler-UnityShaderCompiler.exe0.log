@@ -1,25 +1,81 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.8f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6568 outsize=6570 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7346 outsize=7348 ok=1
+Cmd: preprocessCompute
+  insize=7529 outsize=7531 ok=1
+Cmd: preprocessCompute
+  insize=7328 outsize=7330 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39162 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7691 outsize=7693 ok=1
+Cmd: preprocessCompute
+  insize=7292 outsize=7294 ok=1
 Cmd: preprocess
-  insize=38397 outsize=618 ok=1
+  insize=39129 outsize=613 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7691 outsize=7693 ok=1
+Cmd: preprocessCompute
+  insize=7292 outsize=7294 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39129 outsize=613 ok=1
 Cmd: preprocessCompute
-  insize=7456 outsize=7458 ok=1
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7691 outsize=7693 ok=1
+Cmd: preprocessCompute
+  insize=7292 outsize=7294 ok=1
+Cmd: preprocess
+  insize=39129 outsize=613 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 9 at (0): Buffer count exceeding default GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS. Shader might not work on all hw. Consider combining separate buffers into one containing struct elements.
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
+  api=9 insize=7691 outsize=6533 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
+Cmd: preprocess
+  insize=39121 outsize=612 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -38,14 +94,9 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(107): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7458 outsize=4320 ok=1
+  api=9 insize=7520 outsize=5965 ok=1
 Cmd: preprocessCompute
-  insize=7377 outsize=7379 ok=1
-Cmd: preprocess
-  insize=39093 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7626 outsize=7628 ok=1
+  insize=6474 outsize=6476 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -64,62 +115,137 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(109): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7628 outsize=4828 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=6476 outsize=9459 ok=1
 Cmd: preprocess
-  insize=38855 outsize=618 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7071 outsize=7073 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7278 outsize=7280 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7518 outsize=7520 ok=1
+Cmd: preprocessCompute
+  insize=6474 outsize=6476 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=38969 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=10406 outsize=10408 ok=1
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
+Cmd: preprocess
+  insize=39121 outsize=612 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
+Cmd: preprocess
+  insize=39121 outsize=612 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
+Cmd: preprocess
+  insize=39121 outsize=612 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
+Cmd: preprocess
+  insize=39121 outsize=612 ok=1
+Cmd: preprocessCompute
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -138,134 +264,47 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(116): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10408 outsize=6097 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=7290 outsize=10944 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39121 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=7689 outsize=7691 ok=1
+Cmd: preprocessCompute
+  insize=7288 outsize=7290 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39121 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=7312 outsize=7314 ok=1
 Cmd: preprocessCompute
-  insize=10406 outsize=10408 ok=1
+  insize=8871 outsize=8873 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 9 at (0): Buffer count exceeding default GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS. Shader might not work on all hw. Consider combining separate buffers into one containing struct elements.
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
+  api=9 insize=8873 outsize=6898 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=8552 outsize=8554 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10406 outsize=10408 ok=1
+  insize=11174 outsize=11176 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -284,14 +323,17 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(116): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10408 outsize=6086 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=11176 outsize=12779 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39685 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=10675 outsize=10677 ok=1
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=8083 outsize=8085 ok=1
+Cmd: preprocessCompute
+  insize=8821 outsize=8823 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -310,14 +352,37 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(119): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10677 outsize=6761 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=8823 outsize=11545 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39309 outsize=613 ok=1
 Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=8477 outsize=8479 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 9 at (0): Buffer count exceeding default GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS. Shader might not work on all hw. Consider combining separate buffers into one containing struct elements.
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
+  api=9 insize=8479 outsize=6794 ok=1
+Cmd: preprocessCompute
+  insize=10009 outsize=10011 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -336,14 +401,37 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(120): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10904 outsize=7490 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=10011 outsize=12083 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39497 outsize=611 ok=1
 Cmd: preprocessCompute
-  insize=11218 outsize=11220 ok=1
+  insize=6534 outsize=6536 ok=1
+Cmd: preprocessCompute
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=8564 outsize=8566 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 9 at (0): Buffer count exceeding default GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS. Shader might not work on all hw. Consider combining separate buffers into one containing struct elements.
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
+  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
+  api=9 insize=8566 outsize=6833 ok=1
+Cmd: preprocessCompute
+  insize=10419 outsize=10421 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -362,74 +450,27 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(123): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=11220 outsize=7864 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  api=9 insize=10421 outsize=13067 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39497 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
+  insize=6534 outsize=6536 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
+  insize=7312 outsize=7314 ok=1
+Cmd: preprocessCompute
+  insize=8564 outsize=8566 ok=1
+Cmd: preprocessCompute
+  insize=10419 outsize=10421 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39497 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
+  insize=6568 outsize=6570 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=7346 outsize=7348 ok=1
 Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
+  insize=8404 outsize=8406 ok=1
 Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=10902 outsize=10904 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=9834 outsize=9836 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=9834 outsize=9836 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=9830 outsize=9832 ok=1
+  insize=10449 outsize=10451 ok=1
 Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
@@ -448,1119 +489,16 @@ Cmd: compileComputeKernel
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
   error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(117): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9832 outsize=7543 ok=1
-Cmd: preprocessCompute
-  insize=7374 outsize=7376 ok=1
-Cmd: preprocess
-  insize=38558 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9831 outsize=9833 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(117): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9833 outsize=7549 ok=1
-Cmd: preprocessCompute
-  insize=7375 outsize=7377 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=7377 outsize=11570 ok=1
-Cmd: preprocess
-  insize=38559 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=9838 outsize=9840 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(117): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9840 outsize=7555 ok=1
-Cmd: preprocessCompute
-  insize=7396 outsize=7398 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=7398 outsize=11576 ok=1
-Cmd: preprocess
-  insize=38568 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9835 outsize=9837 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=7388 outsize=11576 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(107): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7461 outsize=4344 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8342 outsize=8344 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8344 outsize=15547 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=39693 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38554 outsize=616 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=37402 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=37922 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=37922 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=37402 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7462 outsize=7464 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(107): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7464 outsize=4351 ok=1
-Cmd: preprocessCompute
-  insize=7396 outsize=7398 ok=1
-Cmd: preprocess
-  insize=37180 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7630 outsize=7632 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(109): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7632 outsize=4859 ok=1
-Cmd: preprocessCompute
-  insize=7394 outsize=7396 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=7396 outsize=11667 ok=1
-Cmd: preprocess
-  insize=36922 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=37402 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8417 outsize=8419 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8806 outsize=8808 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8806 outsize=8808 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8417 outsize=8419 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8419 outsize=15691 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8390 outsize=8392 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8417 outsize=8419 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8419 outsize=15691 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8417 outsize=8419 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7554 outsize=7556 ok=1
-Cmd: preprocessCompute
-  insize=8417 outsize=8419 ok=1
-Cmd: preprocess
-  insize=38584 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
+  api=9 insize=10451 outsize=11130 ok=1
 Cmd: preprocess
-  insize=38564 outsize=618 ok=1
+  insize=39530 outsize=612 ok=1
 Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
+  insize=6568 outsize=6570 ok=1
 Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7813 outsize=7815 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(111): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7815 outsize=5251 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7829 outsize=7831 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(109): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7831 outsize=5156 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7813 outsize=7815 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7860 outsize=7862 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(110): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7862 outsize=5222 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9473 outsize=9475 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(113): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9475 outsize=6319 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9488 outsize=9490 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(115): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9490 outsize=6361 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9572 outsize=9574 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(115): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9574 outsize=6311 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9888 outsize=9890 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(118): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=9890 outsize=6983 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9572 outsize=9574 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=10138 outsize=10140 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(113): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10140 outsize=6446 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9572 outsize=9574 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=10138 outsize=10140 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(113): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=10140 outsize=6460 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=9572 outsize=9574 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7959 outsize=7961 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(112): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7961 outsize=5214 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7875 outsize=7877 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(111): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7877 outsize=5061 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at ribbion.vfx(107): use of potentially uninitialized variable (GetParticleIndex)
-  api=9 insize=7461 outsize=4344 ok=1
-Cmd: preprocessCompute
-  insize=8319 outsize=8321 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8321 outsize=15685 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8454 outsize=8456 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8568 outsize=8570 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8570 outsize=15832 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8454 outsize=8456 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8456 outsize=15734 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8319 outsize=8321 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8321 outsize=15629 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7946 outsize=7948 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7944 outsize=7946 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=7946 outsize=15027 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7944 outsize=7946 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8104 outsize=8106 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8106 outsize=14097 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8104 outsize=8106 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=8302 outsize=8304 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl(1028): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(127): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(128): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(129): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(130): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(150): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(336): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(343): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/Packing.hlsl(478): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(176): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.core/ShaderLibrary/SpaceTransforms.hlsl(183): 'TransformWorldToTangent': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(79): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(81): 'TransformObjectToWorldDir': conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(82): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(113): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(171): conversion from larger type to smaller, possible loss of data
-  error: 1 plat 9 at Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl(177): conversion from larger type to smaller, possible loss of data
-  api=9 insize=8304 outsize=14381 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7459 outsize=7461 ok=1
-Cmd: preprocessCompute
-  insize=7386 outsize=7388 ok=1
-Cmd: preprocess
-  insize=38564 outsize=618 ok=1
-Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7071 outsize=7073 ok=1
-Cmd: preprocessCompute
-  insize=7278 outsize=7280 ok=1
-Cmd: preprocess
-  insize=38569 outsize=623 ok=1
-Cmd: preprocessCompute
-  insize=7071 outsize=7073 ok=1
-Cmd: preprocessCompute
-  insize=7278 outsize=7280 ok=1
-Cmd: preprocess
-  insize=38569 outsize=623 ok=1
-Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7458 outsize=7460 ok=1
-Cmd: preprocessCompute
-  insize=7385 outsize=7387 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
-Cmd: preprocessCompute
-  insize=7071 outsize=7073 ok=1
-Cmd: preprocessCompute
-  insize=7278 outsize=7280 ok=1
-Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=7346 outsize=7348 ok=1
 Cmd: preprocessCompute
-  insize=7071 outsize=7073 ok=1
+  insize=8404 outsize=8406 ok=1
 Cmd: preprocessCompute
-  insize=7278 outsize=7280 ok=1
+  insize=10449 outsize=10451 ok=1
 Cmd: preprocess
-  insize=38563 outsize=617 ok=1
+  insize=39530 outsize=612 ok=1
