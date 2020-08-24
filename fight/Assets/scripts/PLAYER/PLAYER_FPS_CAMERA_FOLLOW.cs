@@ -108,7 +108,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
 
 					pitch = Mathf.Clamp(pitch, -80, 80);
-				player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
+				    player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
 				
 				}
 			}

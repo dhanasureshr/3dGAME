@@ -118,6 +118,9 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
        // player_components_provider.player_skinned_mesh_renderer.enabled = false;
         
         Player_fps_camera_script_ref.enabled = true;
+        player_components_provider.player_joy.is_tps_mode_on = false;
+
+        
 
     }
 
@@ -131,7 +134,10 @@ public class camera_switch_ui_script : ExtendedCustomMonoBehavior
         //player_components_provider.player_skinned_mesh_renderer.enabled = true;
         Player_camera_follow_script_ref.enabled = true;
         Player_fps_camera_script_ref.enabled = false;
-        player_components_provider.FULL_PLAYER.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+         player_components_provider.FULL_PLAYER.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f); //desabled for the test of player movement
+        player_components_provider.player_joy.is_tps_mode_on = true;
+
+
     }
 
 

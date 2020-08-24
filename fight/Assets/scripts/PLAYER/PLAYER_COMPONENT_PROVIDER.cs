@@ -40,7 +40,8 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     public GameObject GUN_CAMERA;
 
 
-
+    [Inject(InjectFrom.Anywhere)]
+    public playerjoymovement player_joy;
 
     public void Start()
     {

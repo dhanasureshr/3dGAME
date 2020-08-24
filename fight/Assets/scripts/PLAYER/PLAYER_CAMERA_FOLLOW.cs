@@ -188,11 +188,19 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 //code no 1
                 float horizontal = virtual_joystick_access.InputDirection.x *(speed);
                 float vertical = virtual_joystick_access.InputDirection.y * (speed);
-               // look_target.Rotate(0,horizontal,0);//////////////
-                pivot.Rotate(0, horizontal, 0);
+
+
+             // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
+                ///
+
+                
+               
+                
+                
                 float desiredYAngle = target.eulerAngles.y;
                 float desiredXAngle = pivot.eulerAngles.x;
-                Quaternion rotations = Quaternion.Euler(desiredXAngle, desiredYAngle, 10);
+                Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0);
+
                 transform.LookAt(target);
                
             }
@@ -203,15 +211,15 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
                     {
-                   // distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime);// *1f); //10f
+                    // distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime);// *1f); //10f
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)
-                positions = rotation * distanceVector + target.position;
+                    positions = rotation * distanceVector + target.position;
                 
-                transform.rotation = rotation;
-                transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
-                //camera_rigid_body.AddForce(position);
+                                 transform.rotation = rotation;
+                                 transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
+                    //camera_rigid_body.AddForce(position);
                     transform.LookAt(target);
             }
             
@@ -233,11 +241,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
         finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
        
-            deltax = inittouch_x - finaltouch_x;
-            deltay = inittouch_y - finaltouch_y;
-            rotx -= deltay * Time.deltaTime * rotspeed * dir;
-            roty -= deltax * Time.deltaTime * rotspeed * dir;
-            rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f
+        deltax = inittouch_x - finaltouch_x;
+        deltay = inittouch_y - finaltouch_y;
+        rotx -= deltay * Time.deltaTime * rotspeed * dir;
+        roty -= deltax * Time.deltaTime * rotspeed * dir;
+        rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f
        
     }
     #endregion
@@ -376,6 +384,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         RaycastHit ss;
         if(Physics.Raycast(origin,ray.normalized,out ss, ray.magnitude , layermask))
         {
+
             return ss.point + ss.normal * 0.15f; //0.15f
 
         }

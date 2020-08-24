@@ -27,7 +27,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public bool showSolverDebug = true;
 
 
-
+	public bool is_tps_mode_on = true;
 
 	// this is paramaters section
 	#region player movement paramaters
@@ -96,9 +96,20 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 		float yStore = MoveDirection.y;
-		MoveDirection = new Vector3(h_joy, 0, y_joy);
-		MoveDirection = transform.TransformDirection(MoveDirection);
-		////////////////MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
+		MoveDirection = new Vector3(h_joy,0, y_joy);
+	//	MoveDirection = transform.TransformDirection(MoveDirection);
+	    MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
+
+		if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
+		{
+
+			transform.rotation = Quaternion.LookRotation(MoveDirection.normalized);
+
+			
+
+		}
+		
+		
 		/////===========================================================
 		MoveDirection = MoveDirection * speed;
 		MoveDirection += Physics.gravity;
@@ -107,7 +118,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
 		player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
 
-	
+	  
 
 
 	#endregion
