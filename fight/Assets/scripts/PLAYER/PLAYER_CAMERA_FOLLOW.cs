@@ -42,14 +42,14 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
    // public Transform look_target;
    [HideInInspector] public int targetframe = 75;
     //this are for the caera collision detection
-    private float thinRadius = 0.30f; //0.15f
-    private float thickRadius = 0.9f; //0.3f
+    private float thinRadius = 0.30f; //0.15f //0.30f
+    private float thickRadius = 0.9f; //0.3f  //0.9f
     private float distance = 10.0f; //DEFAULT 10.0f
     
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
-    private float distanceMin = 1f; //1
-    private float distanceMax = 5f;//DEFAULT 5
+    private float distanceMin = 1f; //1   
+    private float distanceMax = 5f;//DEFAULT 5   
     private object hit;
    // private float xspeed = 1.0f;
     //private float yspeed = 1.0f;
@@ -163,7 +163,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 Touch toucho = Input.GetTouch(0);
                 if (toucho.phase == TouchPhase.Moved)
                 {
-                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value * (speed) * Time.deltaTime, 0.0f);
+                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value * (speed) * Time.deltaTime, 0.0f); 
 
                 }
             }
@@ -197,12 +197,12 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                
                 
                 
-                float desiredYAngle = target.eulerAngles.y;
-                float desiredXAngle = pivot.eulerAngles.x;
-                Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0);
+               // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
+               // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
+              //  Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0); ////////////////////////////////this is the testing code be celly :-)
 
-                transform.LookAt(target);
-               
+                  transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
+
             }
             else
             {
@@ -211,16 +211,16 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     rotation = rotation.normalized;
                     if (distance < distanceMax)
                     {
-                    // distance = Mathf.Lerp(distance, distanceMax, Time.deltaTime);// *1f); //10f
+                     //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                     }
-                    Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)
-                    positions = rotation * distanceVector + target.position;
+                    Vector3 distanceVector = new Vector3(1.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
+                positions = rotation * distanceVector + target.position;
                 
-                                 transform.rotation = rotation;
-                                 transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
+                                                               transform.rotation = rotation; 
+                                                         transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
                     //camera_rigid_body.AddForce(position);
-                    transform.LookAt(target);
+                                                           transform.LookAt(target);
             }
             
             
@@ -245,7 +245,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         deltay = inittouch_y - finaltouch_y;
         rotx -= deltay * Time.deltaTime * rotspeed * dir;
         roty -= deltax * Time.deltaTime * rotspeed * dir;
-        rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f
+        rotx = Mathf.Clamp(rotx, -15.0f, 10f); //-30.0f,30.0f //-20.0f,10f
        
     }
     #endregion
@@ -272,7 +272,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     {
         // difining the variables for the calculation
         Vector3 normal, thicknormal;
-        Vector3 ray = transform.position - target.position;
+        Vector3 ray = transform.position - target.position; // target.position
         //calculation the points 
         Vector3 collisionPoint = GetDoubleSphereCastCollision(transform.position , thinRadius, out normal, true);
         Vector3 collisionPointThick = GetDoubleSphereCastCollision(transform.position, thickRadius, out thicknormal, false);
@@ -299,25 +299,30 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         {
             collisionDistance = collisionDistanceThin;
         }
-        if(collisionDistance < distance)
+        if(collisionDistance < distance )
         {
                 distance = collisionDistance;
 
         }
         else
         {
-            distance = Mathf.SmoothStep(distance , collisionDistance, Time.deltaTime * 100 * Mathf.Max(distance * 0.1f, 0.1f));
+            distance = Mathf.SmoothStep(distance , collisionDistance, Time.deltaTime * 100 * Mathf.Max(distance * 0.1f,0.1f)); //(distacne * 0.1f,0.1f)
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position = target.position + ray.normalized * distance; //newly changed for cameray fleckring 
+        transform.position = target.position + ray.normalized;                               // * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
         //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
+
+        //this code is to test the work flow of the player main camera 
+        // why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
+
+        
 
 
 
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
-           transform.position = collisionPointRay; //newly changed for cameray fleckring 
+           transform.position = collisionPointRay; //newly changed for cameray fleckring
 
           // camera_rigid_body.AddForce(collisionPointRay);
 

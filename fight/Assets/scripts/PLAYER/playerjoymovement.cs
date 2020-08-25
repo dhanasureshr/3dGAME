@@ -52,6 +52,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private Vector3 playerrotatevector = Vector3.zero;
 	//[HideInInspector] public Transform camera_pos;
 
+
+	float angle;
+	Quaternion targetrotation;
+
+
 	#endregion
 
 	#region player_movement animation paramaters
@@ -96,15 +101,31 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 		float yStore = MoveDirection.y;
-		MoveDirection = new Vector3(h_joy,0, y_joy);
+		MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
 	//	MoveDirection = transform.TransformDirection(MoveDirection);
 	    MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
+
+		
 
 		if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
 		{
 
-			transform.rotation = Quaternion.LookRotation(MoveDirection.normalized);
+			//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
 
+			angle = Mathf.Atan2(h_joy, y_joy);
+
+			angle = Mathf.Rad2Deg * angle;
+
+			angle += Camera.main.transform.eulerAngles.y;
+
+			targetrotation = Quaternion.Euler(0, angle, 0);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
+			
+
+		}
+		else
+		{
+			//transform.rotation = Quaternion.RotateTowards(transform.rotation,)
 			
 
 		}
