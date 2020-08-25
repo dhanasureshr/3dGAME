@@ -115,6 +115,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			angle = Mathf.Atan2(h_joy, y_joy);
 
 			angle = Mathf.Rad2Deg * angle;
+			
 
 			angle += Camera.main.transform.eulerAngles.y;
 
@@ -134,19 +135,24 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		/////===========================================================
 		MoveDirection = MoveDirection * speed;
 		MoveDirection += Physics.gravity;
+		
 		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 		///-----------------------------------------------------------
 		player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
 		player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
 
-	  
-
-
-	#endregion
 
 
 
-	#region  FeetGrounding
+
+
+		#endregion
+
+
+		
+
+
+		#region  FeetGrounding
 
 
 		if (enabelFeetIk == false) { return; }
@@ -275,6 +281,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 	#endregion
+
+
 
 
 

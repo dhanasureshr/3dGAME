@@ -186,22 +186,25 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ///if you enable the below lines of code menas 
                 ///the camera will move free from player
                 //code no 1
-                float horizontal = virtual_joystick_access.InputDirection.x *(speed);
-                float vertical = virtual_joystick_access.InputDirection.y * (speed);
+                // float horizontal = virtual_joystick_access.InputDirection.x *(speed);
+                //float vertical = virtual_joystick_access.InputDirection.y * (speed);
 
 
-             // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
+                // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
                 ///
 
-                
-               
-                
-                
-               // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
-               // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
-              //  Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0); ////////////////////////////////this is the testing code be celly :-)
 
-                  transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
+
+
+
+                // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
+                // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
+                //  Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0); ////////////////////////////////this is the testing code be celly :-)
+                // transform.rotation = rotations;
+
+                // transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
+
+                transform.LookAt(target);
 
             }
             else
@@ -214,11 +217,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                      //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                     }
-                    Vector3 distanceVector = new Vector3(1.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
+                    Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
                 positions = rotation * distanceVector + target.position;
                 
-                                                               transform.rotation = rotation; 
-                                                         transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
+                                                            transform.rotation = rotation; 
+                                                        transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
                     //camera_rigid_body.AddForce(position);
                                                            transform.LookAt(target);
             }
@@ -245,7 +248,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         deltay = inittouch_y - finaltouch_y;
         rotx -= deltay * Time.deltaTime * rotspeed * dir;
         roty -= deltax * Time.deltaTime * rotspeed * dir;
-        rotx = Mathf.Clamp(rotx, -15.0f, 10f); //-30.0f,30.0f //-20.0f,10f
+        rotx = Mathf.Clamp(rotx, -15.0f, 10f); //-30.0f,30.0f //-15.0f,10f
        
     }
     #endregion
@@ -254,13 +257,13 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region ClampAgle script
     public float ClampAngle(float angle,float min,float max)
     {
-        if(angle < -360f)
+        if(angle < -45f)
         {
-            angle += 360f;
+            angle += 45f;
         }
-        if(angle > 360f)
+        if(angle > 45f)
         {
-            angle -= 360f;
+            angle -= 45f;
         }
         return Mathf.Clamp(angle, min, max);
     }
@@ -299,18 +302,19 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         {
             collisionDistance = collisionDistanceThin;
         }
-        if(collisionDistance < distance )
+        
+        if (collisionDistance < distance )
         {
-                distance = collisionDistance;
+            distance = collisionDistance;
 
         }
         else
         {
-            distance = Mathf.SmoothStep(distance , collisionDistance, Time.deltaTime * 100 * Mathf.Max(distance * 0.1f,0.1f)); //(distacne * 0.1f,0.1f)
+            distance = Mathf.SmoothStep(distance, collisionDistance, Time.deltaTime *2);// * 100);// * Mathf.Max(distance * 0.1f,0.1f)); //(distacne * 0.1f,0.1f)
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position = target.position + ray.normalized;                               // * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
+        transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
         //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
 
         //this code is to test the work flow of the player main camera 
