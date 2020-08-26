@@ -92,6 +92,18 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     public VirtualJoystick virtual_joystick_access;
 
 
+
+
+
+
+
+
+
+    float horizontal;
+
+    float verticle;
+
+
     #region start metheod for initilization
     private void Start()
     {
@@ -107,7 +119,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             pivot = main_player.gameObject.GetComponent<Transform>();
             player_fps_target = GameObject.FindWithTag("player_pivot");
             target = player_fps_target.GetComponent<Transform>();
-            offset = target.position - transform.position;
+            offset = transform.position - target.position;
             // this is for the movement camer controller code
             pivot.transform.position = target.transform.position;
             pivot.transform.parent = target.transform;
@@ -119,7 +131,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
        
     }
     #endregion
-    
+
     /*
     //this is the fixedupdate and lateUPdate function in which camera movement around player and camera collision occurs
     #region FixedUpdate
@@ -150,6 +162,17 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     }
     
 */
+
+    private void Update()
+    {
+       horizontal = virtual_joystick_access.InputDirection.x * (speed);
+       verticle = virtual_joystick_access.InputDirection.y * (speed);
+
+        verticle = Mathf.Clamp(horizontal, 20, 50);
+
+        
+
+    }
 
     #region LateUpdate
     private void LateUpdate()
@@ -186,9 +209,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 ///if you enable the below lines of code menas 
                 ///the camera will move free from player
                 //code no 1
-                // float horizontal = virtual_joystick_access.InputDirection.x *(speed);
-                //float vertical = virtual_joystick_access.InputDirection.y * (speed);
-
 
                 // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
                 ///
@@ -204,6 +224,14 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 // transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
 
+
+                Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
+
+               positions = rotation * distanceVector + target.position;
+
+                // transform.rotation = rotation;
+                transform.position = positions;
+/////////
                 transform.LookAt(target);
 
             }
@@ -218,7 +246,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
-                positions = rotation * distanceVector + target.position;
+                    positions = rotation * distanceVector + target.position;
                 
                                                             transform.rotation = rotation; 
                                                         transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
@@ -315,19 +343,17 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
         transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
-        //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
+                                                                          //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
 
         //this code is to test the work flow of the player main camera 
         // why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
-
-        
-
 
 
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
            transform.position = collisionPointRay; //newly changed for cameray fleckring
-
+            
+ 
           // camera_rigid_body.AddForce(collisionPointRay);
 
         }
