@@ -49,7 +49,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f; //1   
-    private float distanceMax = 5f;//DEFAULT 5   
+    private float distanceMax = 3f;//DEFAULT 5   
     private object hit;
    // private float xspeed = 1.0f;
     //private float yspeed = 1.0f;
@@ -225,7 +225,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 // transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
 
 
-                Vector3 distanceVector = new Vector3(0.0f, 1.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
+                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
 
                positions = rotation * distanceVector + target.position;
 
@@ -276,7 +276,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         deltay = inittouch_y - finaltouch_y;
         rotx -= deltay * Time.deltaTime * rotspeed * dir;
         roty -= deltax * Time.deltaTime * rotspeed * dir;
-        rotx = Mathf.Clamp(rotx, -15.0f, 10f); //-30.0f,30.0f //-15.0f,10f
+        rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f //-15.0f,10f
        
     }
     #endregion
