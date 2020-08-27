@@ -66,8 +66,6 @@ public class magic_particls_prefab_attacker : MonoBehaviour
 
     public Transform  partical_instantiator(Transform[] h1_list,int effect_number)
     {
-        Ray t = Camera.main.ScreenPointToRay(transform.position);
-       
         
         var magic_partical = (Transform)Instantiate(h1_list[effect_number], TWO_HAND_CONTAINER.position, Quaternion.identity);
         

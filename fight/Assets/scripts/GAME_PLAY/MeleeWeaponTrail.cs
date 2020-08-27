@@ -89,6 +89,37 @@ public class MeleeWeaponTrail : MonoBehaviour
 		public Vector3 tipPosition;
 	}
 
+
+	Point p;
+
+	IEnumerable<Vector3> smoothTip;
+	IEnumerable<Vector3> smoothBase;
+	int idx;
+	Point sp;
+
+	List<Point> pointsToUse;
+
+	Vector3[] newVertices;
+	Vector2[] newUV;
+	int[] newTriangles;
+	Color[] newColors;
+
+	
+	float time;
+	Color color;
+
+	float colorTime;
+	float min;
+	float max;
+	float lerp;
+
+	float size;
+	float sizeTime;
+
+	Vector3 lineDirection;
+	float uvRatio;
+
+	List<Point> remove;
 	void Start()
 	{
 		_lastPosition = transform.position;
@@ -107,6 +138,12 @@ public class MeleeWeaponTrail : MonoBehaviour
 
 		_minVertexDistanceSqr = _minVertexDistance * _minVertexDistance;
 		_maxVertexDistanceSqr = _maxVertexDistance * _maxVertexDistance;
+
+
+		//changing some update declerations to start to retify GARBACE COLLECTOR problem
+
+
+
 	}
 
 	void OnDisable()
@@ -157,7 +194,7 @@ public class MeleeWeaponTrail : MonoBehaviour
 
 				if (make)
 				{
-					Point p = new Point();
+					p = new Point();
 					p.basePosition = _base.position;
 					p.tipPosition = _tip.position;
 					p.timeCreated = Time.time;
@@ -187,7 +224,7 @@ public class MeleeWeaponTrail : MonoBehaviour
 						tipPoints[3] = _points[_points.Count - 1].tipPosition;
 
 						//IEnumerable<Vector3> smoothTip = Interpolate.NewBezier(Interpolate.Ease(Interpolate.EaseType.Linear), tipPoints, subdivisions);
-						IEnumerable<Vector3> smoothTip = Interpolate.NewCatmullRom(tipPoints, subdivisions, false);
+					    smoothTip = Interpolate.NewCatmullRom(tipPoints, subdivisions, false);
 
 					    basePoints = new Vector3[4];
 						basePoints[0] = _points[_points.Count - 4].basePosition;
@@ -196,10 +233,10 @@ public class MeleeWeaponTrail : MonoBehaviour
 						basePoints[3] = _points[_points.Count - 1].basePosition;
 
 						//IEnumerable<Vector3> smoothBase = Interpolate.NewBezier(Interpolate.Ease(Interpolate.EaseType.Linear), basePoints, subdivisions);
-						IEnumerable<Vector3> smoothBase = Interpolate.NewCatmullRom(basePoints, subdivisions, false);
+					    smoothBase = Interpolate.NewCatmullRom(basePoints, subdivisions, false);
 
-					    smoothTipList = new List<Vector3>(smoothTip);
-						smoothBaseList = new List<Vector3>(smoothBase);
+					   smoothTipList = new List<Vector3>(smoothTip);
+					   smoothBaseList = new List<Vector3>(smoothBase);
 
 						firstTime = _points[_points.Count - 4].timeCreated;
 						secondTime = _points[_points.Count - 1].timeCreated;
@@ -209,12 +246,12 @@ public class MeleeWeaponTrail : MonoBehaviour
 						for (int n = 0; n < smoothTipList.Count; ++n)
 						{
 
-							int idx = _smoothedPoints.Count - (smoothTipList.Count-n);
+						    idx = _smoothedPoints.Count - (smoothTipList.Count-n);
 							// there are moments when the _smoothedPoints are lesser
 							// than what is required, when elements from it are removed
 							if (idx > -1 && idx < _smoothedPoints.Count)
 							{
-								Point sp = new Point();
+								sp = new Point();
 								sp.basePosition = smoothBaseList[n];
 								sp.tipPosition = smoothTipList[n];
 								sp.timeCreated = Mathf.Lerp(firstTime, secondTime, (float)n/smoothTipList.Count);
@@ -277,55 +314,55 @@ public class MeleeWeaponTrail : MonoBehaviour
 
 
 #if USE_INTERPOLATION
-		List<Point> pointsToUse = _smoothedPoints;
+		pointsToUse = _smoothedPoints;
 #else
-		List<Point> pointsToUse = _points;
+	    pointsToUse = _points;
 #endif
 
 		if (pointsToUse.Count > 1)
 		{
-			Vector3[] newVertices = new Vector3[pointsToUse.Count * 2];
-			Vector2[] newUV = new Vector2[pointsToUse.Count * 2];
-			int[] newTriangles = new int[(pointsToUse.Count - 1) * 6];
-			Color[] newColors = new Color[pointsToUse.Count * 2];
+			newVertices = new Vector3[pointsToUse.Count * 2];
+			newUV = new Vector2[pointsToUse.Count * 2];
+			newTriangles = new int[(pointsToUse.Count - 1) * 6];
+			newColors = new Color[pointsToUse.Count * 2];
 
 			for (int n = 0; n < pointsToUse.Count; ++n)
 			{
-				Point p = pointsToUse[n];
-				float time = (Time.time - p.timeCreated) / _lifeTime;
-
-				Color color = Color.Lerp(Color.white, Color.clear, time);
+			    p = pointsToUse[n];
+			    time = (Time.time - p.timeCreated) / _lifeTime;
+			   
+			    color = Color.Lerp(Color.white, Color.clear, time);
 				if (_colors != null && _colors.Length > 0)
 				{
-					float colorTime = time * (_colors.Length - 1);
-					float min = Mathf.Floor(colorTime);
-					float max = Mathf.Clamp(Mathf.Ceil(colorTime), 1, _colors.Length - 1);
-					float lerp = Mathf.InverseLerp(min, max, colorTime);
+					colorTime = time * (_colors.Length - 1);
+					min = Mathf.Floor(colorTime);
+					max = Mathf.Clamp(Mathf.Ceil(colorTime), 1, _colors.Length - 1);
+					lerp = Mathf.InverseLerp(min, max, colorTime);
 					if (min >= _colors.Length) min = _colors.Length - 1; if (min < 0) min = 0;
 					if (max >= _colors.Length) max = _colors.Length - 1; if (max < 0) max = 0;
 					color = Color.Lerp(_colors[(int)min], _colors[(int)max], lerp);
 				}
 
-				float size = 0f;
+				size = 0f;
 				if (_sizes != null && _sizes.Length > 0)
 				{
-					float sizeTime = time * (_sizes.Length - 1);
-					float min = Mathf.Floor(sizeTime);
-					float max = Mathf.Clamp(Mathf.Ceil(sizeTime), 1, _sizes.Length - 1);
-					float lerp = Mathf.InverseLerp(min, max, sizeTime);
+				     sizeTime = time * (_sizes.Length - 1);
+				     min = Mathf.Floor(sizeTime);
+				     max = Mathf.Clamp(Mathf.Ceil(sizeTime), 1, _sizes.Length - 1);
+				     lerp = Mathf.InverseLerp(min, max, sizeTime);
 					if (min >= _sizes.Length) min = _sizes.Length - 1; if (min < 0) min = 0;
 					if (max >= _sizes.Length) max = _sizes.Length - 1; if (max < 0) max = 0;
 					size = Mathf.Lerp(_sizes[(int)min], _sizes[(int)max], lerp);
 				}
 
-				Vector3 lineDirection = p.tipPosition - p.basePosition;
+				lineDirection = p.tipPosition - p.basePosition;
 
 				newVertices[n * 2] = p.basePosition - (lineDirection * (size * 0.5f));
 				newVertices[(n * 2) + 1] = p.tipPosition + (lineDirection * (size * 0.5f));
 
 				newColors[n * 2] = newColors[(n * 2) + 1] = color;
 
-				float uvRatio = (float)n/pointsToUse.Count;
+			    uvRatio = (float)n/pointsToUse.Count;
 				newUV[n * 2] = new Vector2(uvRatio, 0);
 				newUV[(n * 2) + 1] = new Vector2(uvRatio, 1);
 
@@ -352,8 +389,8 @@ public class MeleeWeaponTrail : MonoBehaviour
     #region old points remover
     void RemoveOldPoints(List<Point> pointList)
 	{
-		List<Point> remove = new List<Point>();
-		foreach (Point p in pointList)
+		remove = new List<Point>();
+		foreach ( Point p in pointList)
 		{
 			// cull old points first
 			if (Time.time - p.timeCreated > _lifeTime)
