@@ -43,6 +43,9 @@ public class PLAYER_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
     [Inject(InjectFrom.Anywhere)]
     public playerjoymovement player_joy;
 
+    [Inject(InjectFrom.Anywhere)]
+    public PLAYER_CAMERA_FOLLOW player_camera_follow_scrip_reference;
+
     public void Start()
     {
         player_health_bar_gameobject = GameObject.FindWithTag(tags.player_health_bg_tag);

@@ -93,6 +93,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
 
+    [HideInInspector] public float h_joy;
+    [HideInInspector] public float y_joy;
 
 
 
@@ -103,6 +105,13 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
     float verticle;
 
+
+
+
+
+    #region WEPON CAMERA CONTROLLER VARIABLES
+    public bool _wepon_tps_camera_ = false;
+    #endregion
 
     #region start metheod for initilization
     private void Start()
@@ -225,21 +234,43 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 // transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
 
 
-                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
+                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  //////this is the testing code be celly :-)
+                
 
-               positions = rotation * distanceVector + target.position;
+                if (_wepon_tps_camera_ == true)
+                {
 
-                // transform.rotation = rotation;
+                     positions = target.rotation * distanceVector + target.position;
+                }
+                else
+                {
+                    positions = rotation * distanceVector + target.position;
+                }
+                
+                
+                
+                
+                
+                
+                
                 transform.position = positions;
-/////////
                 transform.LookAt(target);
+
+
+
+
 
             }
             else
             {
+                
                     CameraMovementAroundPlayer();
                     rotation = Quaternion.Euler(rotx, roty, 0);
+
+                  
+                    
                     rotation = rotation.normalized;
+
                     if (distance < distanceMax)
                     {
                      //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
@@ -248,10 +279,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
                     positions = rotation * distanceVector + target.position;
                 
-                                                            transform.rotation = rotation; 
-                                                        transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f);
-                    //camera_rigid_body.AddForce(position);
-                                                           transform.LookAt(target);
+                    transform.rotation = rotation; 
+                    transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f)
+                    transform.LookAt(target);
             }
             
             
@@ -343,10 +373,36 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
         transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
-                                                                          //camera_rigid_body.AddForce(target.position + ray.normalized * distance);
 
+
+
+
+        transform.rotation = target.rotation;                                              
+        transform.LookAt(target);
+        
+        
+        
+        
+        
+        
+        
         //this code is to test the work flow of the player main camera 
         // why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))

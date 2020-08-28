@@ -120,14 +120,19 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			angle += Camera.main.transform.eulerAngles.y;
 
 			targetrotation = Quaternion.Euler(0, angle, 0);
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
-			
+			if (player_camera_follow_script._wepon_tps_camera_ != true)
+			{
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
+			}
+
 
 		}
 		else
 		{
-			//transform.rotation = Quaternion.RotateTowards(transform.rotation,)
-			
+			if (player_camera_follow_script._wepon_tps_camera_ == true)
+			{
+				transform.rotation = Quaternion.RotateTowards(transform.rotation, Camera.main.transform.rotation, 5);
+			}
 
 		}
 		
@@ -284,6 +289,17 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 
-
+	public float ClampAngle(float angle, float min, float max)
+	{
+		if (angle < -360f)
+		{
+			angle += 360f;
+		}
+		if (angle > 360f)
+		{
+			angle -= 360f;
+		}
+		return Mathf.Clamp(angle, min, max);
+	}
 
 }

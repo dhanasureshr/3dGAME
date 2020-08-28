@@ -104,6 +104,7 @@ public class game_action_swithcer : MonoBehaviour
     void switch_sword()
     {
         Remove_all_game_action_modes();
+        player_component_access.player_camera_follow_scrip_reference._wepon_tps_camera_ = true;
         player_component_access.SWORD_PLAYER.SetActive(true);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 0);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 1);
@@ -116,6 +117,7 @@ public class game_action_swithcer : MonoBehaviour
     void switch_magic()
     {
         Remove_all_game_action_modes();
+        player_component_access.player_camera_follow_scrip_reference._wepon_tps_camera_ = true;
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 0);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(2, 1);
         player_component_access.FULL_PLAYER.GetComponent<magic_particls_prefab_attacker>().Enablemagic_player();
@@ -147,7 +149,7 @@ public class game_action_swithcer : MonoBehaviour
 
     void remove_magic()
     {
-
+        player_component_access.player_camera_follow_scrip_reference._wepon_tps_camera_ = false;
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(0, 1);
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(2, 0);
         player_component_access.FULL_PLAYER.GetComponent<magic_particls_prefab_attacker>().Disablemagic_player();
@@ -176,6 +178,7 @@ public class game_action_swithcer : MonoBehaviour
 
     void remove_sword()
     {
+        player_component_access.player_camera_follow_scrip_reference._wepon_tps_camera_ = false;
         player_component_access.SWORD_PLAYER.SetActive(false);
         player_component_access.FULL_PLAYER.GetComponent<playermanager>().fighting_colider_set_to_sword();
         player_component_access.FULL_PLAYER.GetComponent<PLAYER_ANIMATION_HELPER>().player_animator_ref.SetLayerWeight(1, 0);
