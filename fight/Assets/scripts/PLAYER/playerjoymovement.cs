@@ -57,6 +57,19 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	Quaternion targetrotation;
 
 
+
+
+	
+
+
+
+
+
+	private float pitch = 0.0f, raw = 0.0f;
+	public float rotatspeed = 30.0f;
+	public int invertpitch = 1;
+
+
 	#endregion
 
 	#region player_movement animation paramaters
@@ -89,6 +102,32 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		/// --------------------------------------------------------
 		h_joy = virtual_joystick_access.InputDirection.x;
 		y_joy = virtual_joystick_access.InputDirection.z;
+
+
+
+
+		if (Input.touchCount == 1)
+		{
+			Touch toucho = Input.GetTouch(0);
+			if (toucho.phase == TouchPhase.Moved)
+			{
+				
+				
+					//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+					pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
+					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
+
+					pitch = Mathf.Clamp(pitch, -80, 80);
+
+				targetrotation = Quaternion.Euler(0, raw, 0);
+
+
+			}
+		}
+
+	
+	//	player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
+
 
 		if (h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
 		{
@@ -129,9 +168,13 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		}
 		else
 		{
-			if (player_camera_follow_script._wepon_tps_camera_ == true)
+			if (player_camera_follow_script._wepon_tps_camera_ == true && tuch_inpu.touch_input_manager.swiping)
 			{
-				transform.rotation = Quaternion.RotateTowards(transform.rotation, Camera.main.transform.rotation, 5);
+				//transform.rotation = Quaternion.RotateTowards(transform.rotation, Camera.main.transform.rotation, 30);
+
+				//transform.rotation = rotation;
+
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, 10 * Time.deltaTime);
 			}
 
 		}

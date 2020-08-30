@@ -240,11 +240,14 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (_wepon_tps_camera_ == true)
                 {
 
-                     positions = target.rotation * distanceVector + target.position;
+                    positions = target.rotation * distanceVector + target.position;
+                    //transform.rotation = target.rotation;
                 }
                 else
                 {
                     positions = rotation * distanceVector + target.position;
+
+                    
                 }
                 
                 
@@ -271,6 +274,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     
                     rotation = rotation.normalized;
 
+                    
+
+
                     if (distance < distanceMax)
                     {
                      //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
@@ -278,10 +284,22 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
                     positions = rotation * distanceVector + target.position;
-                
-                    transform.rotation = rotation; 
+
+                if (_wepon_tps_camera_ == true)
+                {
+
+                    transform.position = target.rotation * distanceVector + target.position;
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
+                    transform.LookAt(target);
+                }
+                else
+                {
+
+                    transform.rotation = rotation;
                     transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f)
                     transform.LookAt(target);
+                }
+
             }
             
             
@@ -375,11 +393,16 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
 
 
-
-
-        transform.rotation = target.rotation;                                              
-        transform.LookAt(target);
-        
+        if (_wepon_tps_camera_ == true)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
+            transform.LookAt(target);
+        }
+        else
+        {
+            transform.rotation = target.rotation;
+            transform.LookAt(target);
+        }
         
         
         
