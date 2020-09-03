@@ -15,7 +15,12 @@ public class Asset_Manager : MonoBehaviour
     /// </summary>
     public void release_assert(GameObject ref_game_object_to_release)
     {
+        
         Addressables.ReleaseInstance(ref_game_object_to_release);
+        
+        
+
+        
     }
 
 }

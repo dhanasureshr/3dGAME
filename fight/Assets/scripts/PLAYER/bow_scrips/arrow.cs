@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement;
 public class arrow : ExtendedCustomMonoBehavior
 {
     private Rigidbody mybody;
@@ -10,11 +12,15 @@ public class arrow : ExtendedCustomMonoBehavior
     public float arrow_appliable_damage = 10.0f;
     private BoxCollider arrow_collider;
 
+   
+
+
     private void Start()
     {
         mybody = gameObject.GetComponent<Rigidbody>();
         arrow_collider = gameObject.GetComponent<BoxCollider>();
         StartCoroutine("DestroyTimer");
+       
     }
 
     private void OnCollisionEnter(Collision colision)
@@ -58,6 +64,7 @@ public class arrow : ExtendedCustomMonoBehavior
 
     private void OnDestroy()
     {
-        gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
+        Addressables.ReleaseInstance(gameObject);
+      //  gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
     }
 }
