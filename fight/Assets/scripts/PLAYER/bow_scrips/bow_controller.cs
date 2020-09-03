@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 public class bow_controller : MonoBehaviour
 {
     public GameObject bow_arow;
@@ -26,6 +27,11 @@ public class bow_controller : MonoBehaviour
     public Transform arrowspanpoint;
     public Transform arrow_rotation;
     public float arrowforce = 20.0f;
+
+
+    //addressable assert code
+    public AssetReference arrow_bullet_prefab;
+    private GameObject arrow;
 
     public void Start()
     {
@@ -88,8 +94,25 @@ public class bow_controller : MonoBehaviour
 
     public void shoot_arrow()
     {
-        var arrows  =(Transform)Instantiate(arrow_prefab, arrow_rotation.transform.position,arrow_rotation.transform.rotation);
-        arrows.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+      //  var arrows  =(Transform)Instantiate(arrow_prefab, arrow_rotation.transform.position,arrow_rotation.transform.rotation);
+      //  arrows.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+
+       
+        //addressable assert code
+        arrow_bullet_prefab.InstantiateAsync(arrow_rotation.transform.position, arrow_rotation.transform.rotation).Completed += arrow_bomb_loaded;
 
     }
+
+
+    private void arrow_bomb_loaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<GameObject> obj)
+    {
+        // In a production environment, you should add exception handling to catch scenarios such as a null result.
+        arrow = obj.Result;
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+
+        }
+    }
+
 }

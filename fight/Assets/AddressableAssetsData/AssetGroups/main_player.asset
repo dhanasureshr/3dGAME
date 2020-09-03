@@ -10,13 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: main_player
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: main_player
   m_Data:
     m_SerializedData: []
   m_GUID: 5a7a0d10c1a8574458f8bd465912a609
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 43a2b91b4be2997429fc12c2949b2e58
+    m_Address: rocket_bomd/rocket_bonm.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 8059936349723873737, guid: 43a2b91b4be2997429fc12c2949b2e58,
+      type: 3}
+    m_TargetAsset: {fileID: 8059936349723873737, guid: 43a2b91b4be2997429fc12c2949b2e58,
+      type: 3}
+  - m_GUID: 79a78bf523e1e944ca07407978081dcb
+    m_Address: bow/Arrow_bullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d3ebd7111e3aef14fb3b714eb54ff991, type: 2}
   m_SchemaSet:

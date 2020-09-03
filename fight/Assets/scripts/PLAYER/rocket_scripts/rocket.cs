@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class rocket : MonoBehaviour
 {
+    
+
+
     private Rigidbody mybody;
     //  private bool hitsomething;
     public float no_collision_destroy_time = 15.0f;
@@ -39,13 +42,12 @@ public class rocket : MonoBehaviour
     }
 
 
-
     private void OnCollisionEnter(Collision colision)
     {
         //explode = true;
         rocket_fire_spray.SetActive(false);
         gamemanager.instance.explosion_magager_script_from_game_manager.explosino_receiver(gameObject.transform.position);
-       gamemanager.instance.explosion_magager_script_from_game_manager.explode = true;
+        gamemanager.instance.explosion_magager_script_from_game_manager.explode = true;
 
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
@@ -121,5 +123,12 @@ public class rocket : MonoBehaviour
     {
         yield return new WaitForSeconds(on_collision_destroy_time);
         Destroy(gameObject);
+    }
+
+
+    private void OnDestroy()
+    {
+        
+        gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
     }
 }

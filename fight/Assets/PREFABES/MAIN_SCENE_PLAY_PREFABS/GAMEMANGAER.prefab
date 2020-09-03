@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4512449123914293133}
   - component: {fileID: 3261278642080251003}
   - component: {fileID: 251788146314567532}
+  - component: {fileID: 163734388068087780}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -69,6 +70,7 @@ MonoBehaviour:
   saved_level_number: 0
   base_game_controller_ref: {fileID: 0}
   explosion_magager_script_from_game_manager: {fileID: 251788146314567532}
+  Asset_manager_script_reference: {fileID: 163734388068087780}
 --- !u!114 &4512449123914293123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +245,15 @@ MonoBehaviour:
   explosioionRadius: 12.5
   explosionForce: 20
   position_explode: {x: 0, y: 0, z: 0}
+--- !u!114 &163734388068087780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fb83af4c78e7a4f96a433f9882a3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

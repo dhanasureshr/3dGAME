@@ -54,4 +54,10 @@ public class arrow : ExtendedCustomMonoBehavior
         yield return new WaitForSeconds(destroyAfter);
         Destroy(gameObject);
     }
+
+
+    private void OnDestroy()
+    {
+        gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
+    }
 }

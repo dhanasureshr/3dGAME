@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class rocket_controller : MonoBehaviour
 {
     public Animator rocket_animator;
 
     public static int rocket_fire = Animator.StringToHash("lauch_rocket");
-
-
-
-    public Transform rocket_prefab;
-    public Transform rocketspanpoint;
-    //public Transform rocket_rotation;
     public float rocketforce = 100.0f;
+
+
+    //addressable assrt code;
+    private GameObject rocket_bomb;
+    public AssetReference rocket_bomb_prefab;
+    public Transform rocketspanpoint;
+
 
     public void Start()
     {
@@ -28,8 +31,32 @@ public class rocket_controller : MonoBehaviour
 
     public void Fire_Rocket()
     {
-        var rocket = (Transform)Instantiate(rocket_prefab, rocketspanpoint.transform.position,transform.rotation);
-        rocket.GetComponent<Rigidbody>().velocity = rocketspanpoint.forward * rocketforce;
+        // GameObject rocket = Instantiate(rocket_prefab, rocketspanpoint.transform.position,transform.rotation);
+        //  rocket.GetComponent<Rigidbody>().velocity = rocketspanpoint.forward * rocketforce;
+
+        
+        //addressable assert code
+        rocket_bomb_prefab.InstantiateAsync(rocketspanpoint.transform.position, transform.rotation).Completed += rocket_loaded;
+
+
+        
+
+
 
     }
+
+    private void rocket_loaded(UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<GameObject> obj)
+    {
+        // In a production environment, you should add exception handling to catch scenarios such as a null result.
+        rocket_bomb = obj.Result;
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            rocket_bomb.GetComponent<Rigidbody>().velocity = rocketspanpoint.forward * rocketforce;
+
+        }
+    }
+
+
+
+
 }

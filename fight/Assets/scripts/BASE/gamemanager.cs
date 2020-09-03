@@ -63,6 +63,7 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
 	public explosion_manager explosion_magager_script_from_game_manager;
 
+	public Asset_Manager Asset_manager_script_reference;
 
 	
 	public static gamemanager instance;

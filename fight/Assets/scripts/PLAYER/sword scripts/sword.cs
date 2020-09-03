@@ -6,7 +6,7 @@ public class sword : MonoBehaviour
 {
 
     public float sword_applialbe_damage = 10.0f;
-    public GameObject blood_impact_prefab;
+  //  public GameObject blood_impact_prefab;
 
     public GameObject[] sword_partical;
     
