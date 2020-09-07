@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement;
 public class arrow : ExtendedCustomMonoBehavior
@@ -23,13 +22,19 @@ public class arrow : ExtendedCustomMonoBehavior
        
     }
 
+    private void Update()
+    {
+       // Debug.Log(Addressables.ReleaseInstance(gameObject));
+    }
+
     private void OnCollisionEnter(Collision colision)
     {
         
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
             colision.transform.gameObject.GetComponent<health>().ApplyDamage(arrow_appliable_damage, false);
-            Destroy(gameObject);
+             Destroy(gameObject);
+            //Addressables.ReleaseInstance(gameObject);
             return;
         }
         else if (colision.transform.tag != gameObject.transform.tag  && colision.transform.tag != tags.un_tag && colision.transform.tag != tags.full_player_tag)
@@ -59,12 +64,16 @@ public class arrow : ExtendedCustomMonoBehavior
     {
         yield return new WaitForSeconds(destroyAfter);
         Destroy(gameObject);
+      //  Addressables.ReleaseInstance(gameObject);
     }
 
 
     private void OnDestroy()
     {
-        Addressables.ReleaseInstance(gameObject);
+       // Addressables.ReleaseInstance(gameObject);
+        Debug.Log(" arrow instance release");
+        Debug.Log(Addressables.ReleaseInstance(gameObject));
+        
       //  gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
     }
 }

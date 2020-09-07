@@ -51,7 +51,7 @@ public class bow_controller : MonoBehaviour
         bow_animation_controller.SetFloat(horthash, playerjoymovement_for_gun_movement_animation.h_joy, 0.1f, Time.deltaTime);
         bow_animation_controller.SetFloat(verthash, playerjoymovement_for_gun_movement_animation.y_joy, 0.1f, Time.deltaTime);
 
-        Debug.Log("dhana...........................................................ddddd");
+       
     }
 
     public void PLAY_ARCHARY_PLAYER_FIRE_ARROW()
@@ -108,10 +108,10 @@ public class bow_controller : MonoBehaviour
 
 
         //addressable assert code
-        //  arrow_bullet_prefab.InstantiateAsync(arrow_rotation.transform.position, arrow_rotation.transform.rotation).Completed += arrow_bomb_loaded;
+          arrow_bullet_prefab.InstantiateAsync(arrow_rotation.transform.position, arrow_rotation.transform.rotation).Completed += arrow_bomb_loaded;
 
-        arrow = (GameObject) GameObject.Instantiate(arrow_bullet_prefab.Asset, arrow_rotation.transform.position, arrow_rotation.transform.rotation);
-        arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+       // arrow = (GameObject) GameObject.Instantiate(arrow_bullet_prefab.Asset, arrow_rotation.transform.position, arrow_rotation.transform.rotation);
+       // arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
 
     }
 
@@ -119,14 +119,15 @@ public class bow_controller : MonoBehaviour
     private void arrow_bomb_loaded(AsyncOperationHandle<GameObject> obj)
     {
         // In a production environment, you should add exception handling to catch scenarios such as a null result.
-      //  arrow = obj.Result;
+         arrow = obj.Result;
         if (obj.Status == AsyncOperationStatus.Succeeded)
         {
-            //arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+
+            Debug.Log("arrow bulled loaded dhana ");
+            arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
 
         }
 
-        Debug.Log("arrow bulled loaded dhana ");
     }
 
 
@@ -143,11 +144,16 @@ public class bow_controller : MonoBehaviour
 
         // addressable assert code
         arrow_bullet_prefab.LoadAssetAsync<GameObject>().Completed += arrow_bomb_loaded;
+       
+
     }
     private void OnDisable()
     {
         arrow_bullet_prefab.ReleaseAsset();
-         
+        if(!arrow_bullet_prefab.IsValid())
+        {
+            Debug.Log("arrow bullet unloaded");
+        }
 
 
     }
