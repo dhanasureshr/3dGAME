@@ -38,11 +38,6 @@ public class bow_controller : MonoBehaviour
     {
         bow_arow = GameObject.FindWithTag("n");
         bow_animation_controller = gameObject.GetComponent<Animator>();
-
-
-        // addressable assert code
-        arrow_bullet_prefab.LoadAssetAsync<GameObject>().Completed += arrow_bomb_loaded;
-
     }
 
     private void Update()
@@ -108,10 +103,10 @@ public class bow_controller : MonoBehaviour
 
 
         //addressable assert code
-          arrow_bullet_prefab.InstantiateAsync(arrow_rotation.transform.position, arrow_rotation.transform.rotation).Completed += arrow_bomb_loaded;
+        //  arrow_bullet_prefab.InstantiateAsync(arrow_rotation.transform.position, arrow_rotation.transform.rotation).Completed += arrow_bomb_loaded;
 
-       // arrow = (GameObject) GameObject.Instantiate(arrow_bullet_prefab.Asset, arrow_rotation.transform.position, arrow_rotation.transform.rotation);
-       // arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
+        arrow = (GameObject) GameObject.Instantiate(arrow_bullet_prefab.Asset, arrow_rotation.transform.position, arrow_rotation.transform.rotation);
+        arrow.GetComponent<Rigidbody>().velocity = arrowspanpoint.forward * arrowforce;
 
     }
 
@@ -130,31 +125,19 @@ public class bow_controller : MonoBehaviour
 
     }
 
-
-    private void OnDestroy()
-    {
-        arrow_bullet_prefab.ReleaseAsset();
-
-     
-    }
-
-
     private void OnEnable()
     {
-
-        // addressable assert code
-        arrow_bullet_prefab.LoadAssetAsync<GameObject>().Completed += arrow_bomb_loaded;
-       
-
+        arrow_bullet_prefab.LoadAssetAsync<GameObject>();
     }
+
+
     private void OnDisable()
     {
+
         arrow_bullet_prefab.ReleaseAsset();
-        if(!arrow_bullet_prefab.IsValid())
-        {
-            Debug.Log("arrow bullet unloaded");
-        }
-
-
+       
+        
+       
     }
+
 }

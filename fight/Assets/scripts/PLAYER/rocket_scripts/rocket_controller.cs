@@ -36,10 +36,11 @@ public class rocket_controller : MonoBehaviour
 
         
         //addressable assert code
-        rocket_bomb_prefab.InstantiateAsync(rocketspanpoint.transform.position, transform.rotation).Completed += rocket_loaded;
+      //  rocket_bomb_prefab.InstantiateAsync(rocketspanpoint.transform.position, transform.rotation).Completed += rocket_loaded;
 
+        GameObject rocket = (GameObject) GameObject.Instantiate(rocket_bomb_prefab.Asset, rocketspanpoint.transform.position, transform.rotation);
+        rocket.GetComponent<Rigidbody>().velocity = rocketspanpoint.forward * rocketforce;
 
-        
 
 
 
@@ -56,7 +57,17 @@ public class rocket_controller : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        rocket_bomb_prefab.LoadAssetAsync<GameObject>();
+    }
 
 
+    private void OnDisable()
+    {
 
+        rocket_bomb_prefab.ReleaseAsset();
+       
+    }
+ 
 }

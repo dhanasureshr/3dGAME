@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
 using UnityEngine;
 
 public class rocket : MonoBehaviour
@@ -9,14 +9,16 @@ public class rocket : MonoBehaviour
 
     private Rigidbody mybody;
     //  private bool hitsomething;
-    public float no_collision_destroy_time = 15.0f;
-    public float on_collision_destroy_time = 5.0f;
+    public float no_collision_destroy_time = 1300.0f;
+    public float on_collision_destroy_time = 1300.0f;
     public float arrow_appliable_damage = 10.0f;
     private BoxCollider rocket_collider;
-    public GameObject rocket_fire_spray;
+  
 
     //this code is for rocket explosion
-    public Transform rocket_explosion_effect_prefab;
+  //  public Transform rocket_explosion_effect_prefab;
+
+    public AssetReference rocket_explosion_effect;
 
 
     //float randomTime; 
@@ -37,36 +39,35 @@ public class rocket : MonoBehaviour
         mybody = gameObject.GetComponent<Rigidbody>();
         rocket_collider = gameObject.GetComponent<BoxCollider>();
         StartCoroutine("Destroy_Rocket_bomb_on_no_collision");
-        rocket_fire_spray.SetActive(true);
+    
        
     }
 
 
     private void OnCollisionEnter(Collision colision)
     {
-        //explode = true;
-        rocket_fire_spray.SetActive(false);
+        
         gamemanager.instance.explosion_magager_script_from_game_manager.explosino_receiver(gameObject.transform.position);
         gamemanager.instance.explosion_magager_script_from_game_manager.explode = true;
-
+       
         if (colision.transform.CompareTag(tags.full_enimy_tag))
         {
             colision.transform.gameObject.GetComponent<health>().ApplyDamage(arrow_appliable_damage, false);
-
-            StartCoroutine("Destroy_Rocket_bomb_on_collision");
-          
-            
         }
 
 
         RaycastHit checkGround;
         if (Physics.Raycast(transform.position, Vector3.down, out checkGround, 50))
         {
+            //  rocket_bomb_prefab.InstantiateAsync(rocketspanpoint.transform.position, transform.rotation).Completed += rocket_loaded;
             //hear instantiating the fire explosion prefab;
-            Instantiate(rocket_explosion_effect_prefab, checkGround.point, Quaternion.FromToRotation(Vector3.forward, checkGround.normal));
+            //Instantiate(rocket_explosion_effect_prefab, checkGround.point, Quaternion.FromToRotation(Vector3.forward, checkGround.normal));
+            rocket_explosion_effect.InstantiateAsync(checkGround.point, Quaternion.FromToRotation(Vector3.forward, checkGround.normal)); 
+
 
         }
-
+        
+       StartCoroutine("Destroy_Rocket_bomb_on_collision");
     }
 
 /*
@@ -115,20 +116,19 @@ public class rocket : MonoBehaviour
     private IEnumerator Destroy_Rocket_bomb_on_no_collision()
     {
         yield return new WaitForSeconds(no_collision_destroy_time);
-        Destroy(gameObject);
+        
+          Destroy(gameObject);
+       // Addressables.ReleaseInstance(gameObject);
+       
     }
 
 
     private IEnumerator Destroy_Rocket_bomb_on_collision()
     {
         yield return new WaitForSeconds(on_collision_destroy_time);
-        Destroy(gameObject);
+          Destroy(gameObject);
+        //Addressables.ReleaseInstance(gameObject);
     }
 
 
-    private void OnDestroy()
-    {
-        
-        gamemanager.instance.Asset_manager_script_reference.release_assert(gameObject);
-    }
 }
