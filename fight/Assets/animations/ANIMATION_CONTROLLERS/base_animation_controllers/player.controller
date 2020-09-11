@@ -2430,7 +2430,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 1H_attack2
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101232249321334580}
@@ -2672,7 +2672,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_attack3
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101993741650576772}
@@ -2861,7 +2861,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 1H_attack1
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101657055915844256}
@@ -2888,7 +2888,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_attack5
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101425465510484622}
@@ -3049,7 +3049,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_attack2
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101995790298425298}
@@ -3076,7 +3076,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_A_attack1
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101071421665519698}
@@ -3130,7 +3130,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_attack4
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101199774983003692}
@@ -3184,7 +3184,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_A_attack2
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101997361387641536}
@@ -3211,7 +3211,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 1H_attack3
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101671214707622008}
@@ -3400,7 +3400,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 2H_attack1
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101556924686151930}
@@ -3566,10 +3566,10 @@ AnimatorStateMachine:
     m_Position: {x: 324, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102375378286635178}
-    m_Position: {x: -264, y: 480, z: 0}
+    m_Position: {x: -260, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102592913607567044}
-    m_Position: {x: 756, y: 228, z: 0}
+    m_Position: {x: 760, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102058579371288832}
     m_Position: {x: -264, y: 324, z: 0}
@@ -3578,22 +3578,22 @@ AnimatorStateMachine:
     m_Position: {x: -264, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102493210716865336}
-    m_Position: {x: -264, y: 252, z: 0}
+    m_Position: {x: -260, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102225170940431226}
-    m_Position: {x: -264, y: 552, z: 0}
+    m_Position: {x: -260, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102554088359535022}
     m_Position: {x: -264, y: 396, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102411048859511064}
-    m_Position: {x: 756, y: 288, z: 0}
+    m_Position: {x: 760, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102512585011133228}
-    m_Position: {x: 756, y: 420, z: 0}
+    m_Position: {x: 760, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102578095030587816}
-    m_Position: {x: 756, y: 492, z: 0}
+    m_Position: {x: 760, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102922505943707672}
     m_Position: {x: 192, y: 348, z: 0}

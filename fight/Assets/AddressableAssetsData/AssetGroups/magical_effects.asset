@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: magical_effects
+  m_EditorClassIdentifier: 
+  m_GroupName: magical_effects
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 07605ac700c4ed244a630fe5e03a997e
+  m_SerializeEntries:
+  - m_GUID: 746315431920f034a93ace1734c7267f
+    m_Address: /1H_VFX/EarthProjectileNormal.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 3847591501260844446, guid: 746315431920f034a93ace1734c7267f,
+      type: 3}
+    m_TargetAsset: {fileID: 3847591501260844446, guid: 746315431920f034a93ace1734c7267f,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d3ebd7111e3aef14fb3b714eb54ff991, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1d703eda12c150141aea7358ed6ea8ef, type: 2}
+    - {fileID: 11400000, guid: 3098566d8b1c3dc4e8cd0b5f18bad36e, type: 2}

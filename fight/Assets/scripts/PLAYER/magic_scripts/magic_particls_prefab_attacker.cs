@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class magic_particls_prefab_attacker : MonoBehaviour
 {
     public Transform[] H1_EFFECTER_PREFABS;
-    public Transform[] H2_EFFECTER_PREFABS;
-    public Transform[] h1_CHARGE_PREFABS;
+   // public Transform[] H2_EFFECTER_PREFABS;
+    //public Transform[] h1_CHARGE_PREFABS;
     public Transform[] h2_CHARGE_PREFABS;
     public GameObject[] practical_hit_PREFABS;
 
-
     public GameObject[] magic_clave;
-
-
-
 
     public Transform ONE_HAND_CONTAINER;
     public Transform TWO_HAND_CONTAINER;
@@ -24,6 +22,10 @@ public class magic_particls_prefab_attacker : MonoBehaviour
 
     public bool script_holder_enimy;
     public bool script_holder_player;
+
+
+
+  //  public AssetReference[] H1_EFFECTE_PREFAB;
 
     public void Start()
     {
@@ -46,6 +48,8 @@ public class magic_particls_prefab_attacker : MonoBehaviour
         
     }
 
+
+    /*
     public IEnumerator instantiate_partical_effector_prefab()
     {
 
@@ -62,6 +66,7 @@ public class magic_particls_prefab_attacker : MonoBehaviour
 
     }
 
+    */
 
 
     public Transform  partical_instantiator(Transform[] h1_list,int effect_number)
