@@ -8,6 +8,6 @@ public class expo : MonoBehaviour
 
     private void OnDestroy()
     {
-        Addressables.ReleaseInstance(gameObject);
+        Addressables.ReleaseInstance(gameObject); // this is to release the instance gameobject
     }
 }
