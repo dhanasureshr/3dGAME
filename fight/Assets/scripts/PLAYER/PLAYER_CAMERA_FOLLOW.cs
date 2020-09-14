@@ -106,7 +106,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     float verticle;
 
 
-
+    private Rect bottom_Right;
 
 
     #region WEPON CAMERA CONTROLLER VARIABLES
@@ -136,8 +136,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             transform.rotation = pivot.rotation;
             
         }
-        
-       
+
+
+
+
+        bottom_Right = new Rect(Screen.width / 2, 0, Screen.width / 2, Screen.height/2);
     }
     #endregion
 
@@ -249,17 +252,30 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                     
                 }
-                
-                
-                
-                
-                
-                
-                
-                transform.position = positions;
-                transform.LookAt(target);
 
 
+
+                if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
+                {
+                    rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
+
+                    transform.position = positions;
+                    transform.rotation = rotation;
+                    transform.LookAt(target);
+                }
+                else
+                {
+
+
+
+                    transform.position = positions;
+                    transform.LookAt(target);
+                }
+
+
+
+
+                
 
 
 
@@ -287,10 +303,22 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 if (_wepon_tps_camera_ == true)
                 {
+                    if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
+                    {
+                        rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
 
-                    transform.position = target.rotation * distanceVector + target.position;
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
-                    transform.LookAt(target);
+                        transform.position = positions;
+                        transform.rotation = rotation;
+                        transform.LookAt(target);
+                    }
+                    else
+                    {
+
+
+                        transform.position = target.rotation * distanceVector + target.position;
+                        transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
+                        transform.LookAt(target);
+                    }
                 }
                 else
                 {

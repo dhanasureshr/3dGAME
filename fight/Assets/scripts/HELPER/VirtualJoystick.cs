@@ -27,7 +27,8 @@ public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointe
     //EventSystems interfaces
     public virtual void OnDrag(PointerEventData ped)
     {
-		
+
+        Debug.Log("Dragged on joysitck");
 
         Vector2 pos = Vector2.zero;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle
@@ -58,15 +59,19 @@ public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointe
 
 
 		isfingeronjoystick = true;
-        
 
 
-		OnDrag(ped);
-
+        Debug.Log("fingerd on joysitck");
     }
 
-	// this method is going to decide weather the player is using the joystick or not 
-	// if the  player is using the joystick for that purpes this method is used
+    public virtual void OnPointerDrag(PointerEventData ped)
+    {
+      //  OnDrag(ped);
+
+
+    }
+    // this method is going to decide weather the player is using the joystick or not 
+    // if the  player is using the joystick for that purpes this method is used
     public virtual void OnPointerUp(PointerEventData ped)
     {
 
