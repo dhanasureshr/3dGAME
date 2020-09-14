@@ -257,8 +257,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
                 {
+                    
                     rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
-
+                    
                     transform.position = positions;
                     transform.rotation = rotation;
                     transform.LookAt(target);
@@ -269,6 +270,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
                     transform.position = positions;
+
+
                     transform.LookAt(target);
                 }
 
