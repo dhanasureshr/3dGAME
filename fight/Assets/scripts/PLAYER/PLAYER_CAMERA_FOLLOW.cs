@@ -106,6 +106,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     float verticle;
 
 
+    private Quaternion rotations;
+
+
     private Rect bottom_Right;
 
 
@@ -182,8 +185,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         verticle = Mathf.Clamp(horizontal, 20, 50);
 
-        
+     
 
+       
     }
 
     #region LateUpdate
@@ -215,6 +219,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 			{
 				rotspeed = 0.0f;
 			}
+
+
             if (virtual_joystick_access.isfingeronjoystick)
             {
                 ////////=====================================================================
@@ -244,22 +250,22 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 {
 
                     positions = target.rotation * distanceVector + target.position;
-                    //transform.rotation = target.rotation;
+                  
                 }
                 else
                 {
-                    positions = rotation * distanceVector + target.position;
+                    positions = rotation *distanceVector + target.position; 
 
                     
                 }
+
 
 
 
                 if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
                 {
-                    
+                  
                     rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
-                    
                     transform.position = positions;
                     transform.rotation = rotation;
                     transform.LookAt(target);
@@ -270,8 +276,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
                     transform.position = positions;
-
-
+                    transform.rotation = rotation;
                     transform.LookAt(target);
                 }
 
@@ -287,46 +292,39 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             {
                 
                     CameraMovementAroundPlayer();
-                    rotation = Quaternion.Euler(rotx, roty, 0);
+                 // rotation = Quaternion.Euler(rotx, roty, 0);
+                    rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
 
-                  
-                    
                     rotation = rotation.normalized;
 
-                    
+
 
 
                     if (distance < distanceMax)
                     {
                      //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
-                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
+                        distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                     }
                     Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
-                    positions = rotation * distanceVector + target.position;
+                    positions = rotation * distanceVector + target.position; //rotatioon
 
                 if (_wepon_tps_camera_ == true)
                 {
-                    if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
-                    {
-                        rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
-
-                        transform.position = positions;
-                        transform.rotation = rotation;
-                        transform.LookAt(target);
-                    }
-                    else
-                    {
+                   
 
 
                         transform.position = target.rotation * distanceVector + target.position;
+                        
                         transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
                         transform.LookAt(target);
-                    }
+                    
                 }
                 else
                 {
 
-                    transform.rotation = rotation;
+
+                   // transform.position = target.rotation * distanceVector + target.position;
+                    transform.rotation = rotation; //rotation
                     transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f)
                     transform.LookAt(target);
                 }

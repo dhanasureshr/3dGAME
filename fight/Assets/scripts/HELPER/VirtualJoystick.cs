@@ -28,7 +28,7 @@ public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointe
     public virtual void OnDrag(PointerEventData ped)
     {
 
-        Debug.Log("Dragged on joysitck");
+
 
         Vector2 pos = Vector2.zero;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle
@@ -61,7 +61,7 @@ public class VirtualJoystick : ExtendedCustomMonoBehavior, IDragHandler, IPointe
 		isfingeronjoystick = true;
 
 
-        Debug.Log("fingerd on joysitck");
+
     }
 
     public virtual void OnPointerDrag(PointerEventData ped)

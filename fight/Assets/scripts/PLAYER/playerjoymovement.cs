@@ -78,6 +78,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private static int horthash = Animator.StringToHash("X");
 	private static int verthash = Animator.StringToHash("Y");
 	#endregion
+
+
 	// this is for game functions
 	#region start for player coimponent references
 	private void Start()
@@ -142,8 +144,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		float yStore = MoveDirection.y;
 		MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
 	//	MoveDirection = transform.TransformDirection(MoveDirection);
-	    MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
-
+	 
+		
+	    MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
 		
 
 		if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
@@ -159,8 +162,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			angle += Camera.main.transform.eulerAngles.y;
 
 			targetrotation = Quaternion.Euler(0, angle, 0);
-			if (player_camera_follow_script._wepon_tps_camera_ != true)
+
+
+		
+		 if (player_camera_follow_script._wepon_tps_camera_ != true )
 			{
+				
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
 			}
 
@@ -168,15 +175,14 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		}
 		else
 		{
+			
 			if (player_camera_follow_script._wepon_tps_camera_ == true && tuch_inpu.touch_input_manager.swiping)
 			{
-				//transform.rotation = Quaternion.RotateTowards(transform.rotation, Camera.main.transform.rotation, 30);
-
-				//transform.rotation = rotation;
-
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, 10 * Time.deltaTime);
 			}
+			
 
+			
 		}
 		
 		

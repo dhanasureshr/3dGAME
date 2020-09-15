@@ -68,23 +68,22 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 	public void Update()
 	{
-		///featur plan
-		///hear before rotating the player we should check whether the is fingeron joystick    
-		/// if the finger on joystick then we should not run the below code;
-		//if (!virtual_joystick_access_for_fps.isfingeronjoystick)
-		//{
-			//if (Input.touchCount == 1)
-			//{
-			//	Touch toucho = Input.GetTouch(0);
-			//	if (toucho.phase == TouchPhase.Moved)
-			//	{
-			//		if (TopRight.Contains(toucho.position) || bottom_Right.Contains(toucho.position))
-			//		{
-			//			player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
-			//		}
-			//	}
-			//}
-		//}
+
+		// this is custom fps palyer rotate code  with my custom touch input script
+		if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
+		{
+
+			Quaternion rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
+
+
+			pitch = camera_swiper_raw_image.instance.rotx;
+
+			raw = camera_swiper_raw_image.instance.roty;
+
+			pitch = Mathf.Clamp(pitch, -45, 45);
+			player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
+
+		}
 
 	}
 
@@ -96,6 +95,8 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 		
 		transform.rotation = camera_switch_ui_script_ref.fps_camera_pivot.rotation;
 
+		// this is norma fps player rotate code with screen touch
+		/*
 		if (Input.touchCount == 1)
 		{
 			Touch toucho = Input.GetTouch(0);
@@ -113,7 +114,9 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				}
 			}
 		}
-		
+		*/
+
+
 	}
 
 	#endregion
