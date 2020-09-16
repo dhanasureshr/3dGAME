@@ -165,12 +165,22 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 		
-		 if (player_camera_follow_script._wepon_tps_camera_ != true )
+			 if (player_camera_follow_script._wepon_tps_camera_ != true )
 			{
-				
+				Debug.Log("tps wepon_ mode is executing------------------------------------>");
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
 			}
 
+
+			if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
+			{
+
+				targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
+
+
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+
+			}
 
 		}
 		else
@@ -178,9 +188,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 
-			if (player_camera_follow_script._wepon_tps_camera_ == true && tuch_inpu.touch_input_manager.swiping)
+			if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
 			{
-				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, 10 * Time.deltaTime);
+				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
 			}
 			
 

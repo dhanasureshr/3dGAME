@@ -314,8 +314,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
                         transform.position = target.rotation * distanceVector + target.position;
-                        
-                        transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 30);
+                        rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
+                        transform.rotation = Quaternion.RotateTowards(rotation, target.transform.rotation, 45);
                         transform.LookAt(target);
                     
                 }
