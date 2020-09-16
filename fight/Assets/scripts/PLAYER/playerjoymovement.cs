@@ -175,7 +175,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		}
 		else
 		{
-			
+
+
+
 			if (player_camera_follow_script._wepon_tps_camera_ == true && tuch_inpu.touch_input_manager.swiping)
 			{
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, 10 * Time.deltaTime);

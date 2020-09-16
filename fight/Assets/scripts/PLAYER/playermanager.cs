@@ -415,6 +415,8 @@ public class playermanager : ExtendedCustomMonoBehavior,IConstraint
     {
         return mCurrentItem;
     }
+
+
     public void IntractWithItem()
     {
 
