@@ -184,10 +184,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
        verticle = virtual_joystick_access.InputDirection.y * (speed);
 
         verticle = Mathf.Clamp(horizontal, 20, 50);
-
-     
-
-       
     }
 
     #region LateUpdate
@@ -202,8 +198,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 Touch toucho = Input.GetTouch(0);
                 if (toucho.phase == TouchPhase.Moved)
                 {
-                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value * (speed) * Time.deltaTime, 0.0f); 
-
+                    pivot.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value * (speed) * Time.deltaTime, 0.0f);
                 }
             }
         }
@@ -294,29 +289,27 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     CameraMovementAroundPlayer();
                  // rotation = Quaternion.Euler(rotx, roty, 0);
                     rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
-
                     rotation = rotation.normalized;
-
-
-
 
                     if (distance < distanceMax)
                     {
                      //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
-                        distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
-                    }
-                    Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  ////////////////////////////////this is the testing code be celly :-)
-                    positions = rotation * distanceVector + target.position; //rotatioon
+                distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
+                }
+                Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
+                positions = rotation * distanceVector + target.position; //rotatioon
 
                 if (_wepon_tps_camera_ == true)
                 {
+
+                    rotation = target.rotation * Quaternion.Euler(camera_swiper_raw_image.instance.rotx,0, 0); // here is actually the rotation around the player and relative vertical rotation 
+                    transform.position = rotation * distanceVector + target.position;
+                       
+                    rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
+                       
+                    transform.rotation = Quaternion.RotateTowards(rotation, target.transform.rotation, 45);
                    
-
-
-                        transform.position = target.rotation * distanceVector + target.position;
-                        rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
-                        transform.rotation = Quaternion.RotateTowards(rotation, target.transform.rotation, 45);
-                        transform.LookAt(target);
+                    transform.LookAt(target);
                     
                 }
                 else

@@ -167,7 +167,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		
 			 if (player_camera_follow_script._wepon_tps_camera_ != true )
 			{
-				Debug.Log("tps wepon_ mode is executing------------------------------------>");
+
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
 			}
 
@@ -176,7 +176,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			{
 
 				targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
-
 
 				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
 
