@@ -95,6 +95,7 @@ public class game_action_swithcer : MonoBehaviour
         Remove_all_game_action_modes();
 
         player_component_access.BOW_PLAYER.SetActive(true);
+
         canvas_component_access.BOW_CANVAS.SetActive(true);
         canvas_component_access.FIGHTING_CANVAS.SetActive(false);
         canvas_component_access.main_ui_script_components.camera_swithc_ui_script_for_gun_ui._enable_fps_mode();
@@ -170,6 +171,7 @@ public class game_action_swithcer : MonoBehaviour
 
     void remove_bow()
     {
+
         player_component_access.BOW_PLAYER.SetActive(false);
         canvas_component_access.BOW_CANVAS.SetActive(false);
         canvas_component_access.FIGHTING_CANVAS.SetActive(true);

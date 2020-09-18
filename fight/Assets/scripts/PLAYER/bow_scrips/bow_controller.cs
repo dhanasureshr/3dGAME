@@ -23,8 +23,8 @@ public class bow_controller : MonoBehaviour
 
     private static int fire_arrow = Animator.StringToHash("fire_rifil");
     private static int aim_arrow = Animator.StringToHash("aim");
-
-   // public Transform arrow_prefab;
+    private static int aim_fire = Animator.StringToHash("aim_fire");
+    // public Transform arrow_prefab;
     public Transform arrowspanpoint;
     public Transform arrow_rotation;
     public float arrowforce = 20.0f;
@@ -63,6 +63,11 @@ public class bow_controller : MonoBehaviour
            // player_component_provider_script.BOW_PLAYER.transform.position = horizontal_bow_position.position;
            
         
+    }
+
+    public void PLAY_ARCHARY_PLAYER_AIM_FIRE_ARROW()
+    {
+        bow_animation_controller.SetTrigger(aim_fire);
     }
 
 

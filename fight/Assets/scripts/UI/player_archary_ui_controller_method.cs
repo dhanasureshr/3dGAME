@@ -28,9 +28,9 @@ public class player_archary_ui_controller_method : MonoBehaviour
     public void AIM_ARCHARY_BUTTON()
     {
         aim_arrow_shoot = !aim_arrow_shoot;
-        if(aim_arrow_shoot)
+        if (aim_arrow_shoot)
         {
-
+           
             t.bow_controller_animator.PLAY_ARCHARY_PLAYER_AIM_IN_VERTICAL_ARROW();
            
         }
@@ -39,6 +39,7 @@ public class player_archary_ui_controller_method : MonoBehaviour
            t.bow_controller_animator.PLAY_ARCHARY_PLAYER_AIM_OUT_VERTICAL_ARROW();
 
         }
+        
     }
 
 
