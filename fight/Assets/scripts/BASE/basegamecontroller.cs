@@ -70,7 +70,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 
 	public virtual void GameEnded_Handler_Method()
 	{
-		// this deals about the endig of the game
+		// this deals about the endig of the game 
 	}
 
 	public virtual void GameStoped_Handler_Method()
