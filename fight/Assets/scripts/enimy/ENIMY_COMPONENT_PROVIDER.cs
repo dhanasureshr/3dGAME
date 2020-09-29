@@ -35,6 +35,8 @@ public class ENIMY_COMPONENT_PROVIDER : ExtendedCustomMonoBehavior
 
         Current_fighting_petrol_points = GameObject.FindGameObjectsWithTag(tags.p1);
         Current_scene_petorl_points = GameObject.FindGameObjectsWithTag(tags.p2);
+        Debug.Log(Current_fighting_petrol_points);
+        Debug.Log(Current_scene_petorl_points);
         
     }
 }

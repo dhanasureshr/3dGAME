@@ -113,7 +113,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         #region fight petrol initial checks
       
-        target_fight_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_fighting_petrol_points;
+       // target_fight_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_fighting_petrol_points;
+        target_fight_points =  GameObject.FindGameObjectsWithTag(tags.p1);
         for(int i = 0;i<target_fight_points.Length;i++)
         {
             fightpoints[i] = target_fight_points[i].gameObject.GetComponent<Transform>();
@@ -124,7 +125,8 @@ public class enimy_movement : ExtendedCustomMonoBehavior
 
         #region sceen petrol initial checks
 
-        target_scene_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_scene_petorl_points;
+        //target_scene_points = eimy_manager_ref_for_enimy_properties.enimy_component_provider.Current_scene_petorl_points;
+        target_scene_points = GameObject.FindGameObjectsWithTag(tags.p2);
         for (int j = 0; j < target_scene_points.Length; j++)
         {
             scenepoints[j] = target_scene_points[j].gameObject.GetComponent<Transform>();

@@ -294,6 +294,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -305,6 +306,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2135,9 +2137,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.047922216
-  m_Height: 0.474553
+  m_Height: 0.11115516
   m_Direction: 0
-  m_Center: {x: -0.2748131, y: -0.0025828725, z: 0.000000030152382}
+  m_Center: {x: -0.0931151, y: -0.002582533, z: 0.00000062301206}
 --- !u!54 &8452713163267430700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2878,9 +2880,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.047922216
-  m_Height: 0.46329996
+  m_Height: 0.12376551
   m_Direction: 0
-  m_Center: {x: -0.28044003, y: -0.002583024, z: -0.00000020079091}
+  m_Center: {x: -0.110672444, y: -0.0025828641, z: -0.0000000349545}
 --- !u!54 &8452713163267430694
 Rigidbody:
   m_ObjectHideFlags: 0
