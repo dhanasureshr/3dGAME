@@ -23,6 +23,8 @@ public class Emimy_instantiator : ExtendedCustomMonoBehavior
     public bool TYPE3;
 
 
+int count  = 20;
+
     public void Start()
     {
         //  cloned_enimy_list = instantiate_enimy(enimy_prefab_to_instantiate, instantation_count, gameObject.transform);
@@ -56,6 +58,8 @@ public class Emimy_instantiator : ExtendedCustomMonoBehavior
         }
 
         StartCoroutine(level_complet_checker());
+        
+           StartCoroutine("enimy_ins");
     }
 
     public List<GameObject> instantiate_enimyS(GameObject enimy_game_object, int ins_count,Transform[] position_to_instantiate)
@@ -90,6 +94,26 @@ public class Emimy_instantiator : ExtendedCustomMonoBehavior
 
         yield return new WaitForSeconds(1);
         StartCoroutine(level_complet_checker());
+    }
+
+
+
+    public IEnumerator enimy_ins()
+    {
+        
+        yield return new WaitForSeconds(5);
+       cloned_enimy_list = instantiate_enimyS(Enimy_prefabs[3],1,position_to_instantiate_enimy);
+       count -=1;
+
+       if(count == 0)
+       {
+           yield break;
+       }
+       else
+       {
+            yield return new WaitForSeconds(5);
+           StartCoroutine("enimy_ins");
+       }
     }
 }
 
