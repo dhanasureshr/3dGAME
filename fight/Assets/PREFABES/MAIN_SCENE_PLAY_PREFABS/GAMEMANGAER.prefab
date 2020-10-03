@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3261278642080251003}
   - component: {fileID: 251788146314567532}
   - component: {fileID: 163734388068087780}
+  - component: {fileID: 4532593734256567332}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -71,6 +72,7 @@ MonoBehaviour:
   base_game_controller_ref: {fileID: 0}
   explosion_magager_script_from_game_manager: {fileID: 251788146314567532}
   Asset_manager_script_reference: {fileID: 163734388068087780}
+  game_Scene_Manager: {fileID: 4532593734256567332}
 --- !u!114 &4512449123914293123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +259,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fb83af4c78e7a4f96a433f9882a3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4532593734256567332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36fb572aaeb300443b639fd7ce05beb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enimy_prfab: {fileID: 7113736230619165277, guid: 44ad25141d831c54589898160b74042a,
+    type: 3}
+  MAXIMUM_NUMBER_OF_ENIMYES_COUNT_IN_CURRENT_SCENE: 10
+  instantiated_enimyes_count: 0

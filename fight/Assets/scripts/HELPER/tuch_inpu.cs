@@ -88,114 +88,118 @@ public class tuch_inpu : ExtendedCustomMonoBehavior
     #region update to check the touch input
     public void Update()
     {
-        if(Input.touchCount == 1) // user is touching the screen with the single finger
+        if(gamemanager.instance.isinputallowed)
         {
-            touch = Input.GetTouch(0); //get that touch
-            if(touch.phase == TouchPhase.Began) // checking for the first touch 
+            
+            if(Input.touchCount == 1) // user is touching the screen with the single finger
             {
-				touchbegin = true;
-                fp = touch.position;
-                lp = touch.position;
-                swiping = false;
-
-            }else if(touch.phase == TouchPhase.Moved)//updated the last posistion where the touch touch begain
-            {
-
-
-
-
-                
-
-                if (Input.touchCount == 1)
+                touch = Input.GetTouch(0); //get that touch
+                if(touch.phase == TouchPhase.Began) // checking for the first touch 
                 {
-                    Touch toucho = Input.GetTouch(0);
-                    if (toucho.phase == TouchPhase.Moved)
+                    touchbegin = true;
+                    fp = touch.position;
+                    lp = touch.position;
+                    swiping = false;
+
+                }else if(touch.phase == TouchPhase.Moved)//updated the last posistion where the touch touch begain
+                {
+
+
+
+
+                    
+
+                    if (Input.touchCount == 1)
                     {
-                        //  player_target.Rotate(0.0f, toucho.deltaPosition.x, 0.0f);
-                        swiping_value =  toucho.deltaPosition.x;
+                        Touch toucho = Input.GetTouch(0);
+                        if (toucho.phase == TouchPhase.Moved)
+                        {
+                            //  player_target.Rotate(0.0f, toucho.deltaPosition.x, 0.0f);
+                            swiping_value =  toucho.deltaPosition.x;
+                        }
+
                     }
 
+
+                    lp = touch.position;
+                    swiping = true;
                 }
-
-
-                lp = touch.position;
-                swiping = true;
-            }
-            else if(touch.phase == TouchPhase.Ended)//user has removed his finger from the screen
-            {
-               
-				touchended = true;
-				swiping = false;
-               
-
-				lp = touch.position; // last touch positon
-
-                //now checking the drag distance to minimum drag distance
-                if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
+                else if(touch.phase == TouchPhase.Ended)//user has removed his finger from the screen
                 {
-                    // now i am checking the horizontal movement is grater than vertical movement
-                    if(Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
-                    {
-                        //if the horizontal movement is grater than the vertical movement
-                        // now i am checking if the movement was to the right
-                        if(lp.x > fp.x)
-                        {
-                            
-                            swipe_right = true;
-                            swipe_down = false;
-                            swipe_left = false;
-                            swipe_up = false;
+                
+                    touchended = true;
+                    swiping = false;
+                
 
+                    lp = touch.position; // last touch positon
+
+                    //now checking the drag distance to minimum drag distance
+                    if (Mathf.Abs(lp.x - fp.x) > dragDistance || Mathf.Abs(lp.y - fp.y) > dragDistance)
+                    {
+                        // now i am checking the horizontal movement is grater than vertical movement
+                        if(Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
+                        {
+                            //if the horizontal movement is grater than the vertical movement
+                            // now i am checking if the movement was to the right
+                            if(lp.x > fp.x)
+                            {
+                                
+                                swipe_right = true;
+                                swipe_down = false;
+                                swipe_left = false;
+                                swipe_up = false;
+
+
+                            }
+                            else
+                            {
+                            
+                                swipe_left = true;
+                                swipe_right = false;
+                                swipe_down = false;
+                                swipe_up = false;
+                            }
+
+                            swipe_right = false;
+                            swipe_left = false;
 
                         }
                         else
                         {
-                           
-                            swipe_left = true;
-                            swipe_right = false;
-                            swipe_down = false;
+                            // the vertical movement is grater than horizontla movement
+                            if(lp.y > fp.y) // the movement is up are not
+                            {
+                            
+                                swipe_up = true;
+                                swipe_down = false;
+                                swipe_left = false;
+                                swipe_right = false;
+                                
+                            }
+                            else
+                            {
+                                
+                                swipe_down = true;
+                                swipe_up = false;
+                                swipe_right = false;
+                                swipe_left = false;
+                            }
                             swipe_up = false;
+                            swipe_down = false;
                         }
-
-						swipe_right = false;
-						swipe_left = false;
-
                     }
                     else
                     {
-                        // the vertical movement is grater than horizontla movement
-                        if(lp.y > fp.y) // the movement is up are not
-                        {
-                           
-                            swipe_up = true;
-                            swipe_down = false;
-                            swipe_left = false;
-                            swipe_right = false;
-                            
-                        }
-                        else
-                        {
-                            
-                            swipe_down = true;
-                            swipe_up = false;
-                            swipe_right = false;
-                            swipe_left = false;
-                        }
-						swipe_up = false;
-						swipe_down = false;
+                        //print("user taped the screen");
+                        swipe_up = false;
+                        swipe_down = false;
+                        swipe_right = false;
+                        swipe_left = false;
+    
                     }
                 }
-                else
-                {
-                    //print("user taped the screen");
-                    swipe_up = false;
-                    swipe_down = false;
-                    swipe_right = false;
-                    swipe_left = false;
- 
-                }
-            }
 
+            }
         }
 
 

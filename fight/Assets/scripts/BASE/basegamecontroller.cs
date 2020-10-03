@@ -35,7 +35,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
     public virtual void PlayerLostLife_Handler_Method()
 	{ 
 	
-		
+		gamemanager.instance.isplayerdead = true;
 		Debug.Log("player_lost_life___---from the basegamecontroller");
 		Enable_object_in_hirichery(canvas_component_provider.GAME_LOST_PANAL);
 		Disable_object_in_hirichery(canvas_component_provider.MAIN_GAME_CANVAS);
@@ -45,6 +45,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	public virtual void SpawnPlayer_Handler_Method()
 	{
 		// this deals about the loading the player
+
 
 	}
 
@@ -58,6 +59,7 @@ public class basegamecontroller : ExtendedCustomMonoBehavior
 	{
 		
 		event_manager_ref.RemoveRedundancies();
+		gamemanager.instance.isplayerdead = false;
 
 	
 	}

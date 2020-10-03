@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
 {
@@ -56,10 +58,13 @@ public class GAME_PANAL_BUTTON_SCRIPTS :ExtendedCustomMonoBehavior
     {
         // this is to restart the same leve when ever the player lost life
         Debug.Log("GAME_REPLAY_BUTTON_PRESSED");
-
+        gamemanager.instance.isplayerdead = false;
         // this method is to play the current seclected scene 
         int current_level_no_to_restart = gamemanager.instance.gameObject.GetComponent<scenemanager>().Game_level_number;
         gamemanager.instance.gameObject.GetComponent<scenemanager>().LoadLevel(current_level_no_to_restart);
+        
+        
+        
     }
 
 } // GAME_PANAL_BUTTON_SCRIPTS class

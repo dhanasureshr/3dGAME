@@ -56,15 +56,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	float angle;
 	Quaternion targetrotation;
 
-
-
-
-	
-
-
-
-
-
 	private float pitch = 0.0f, raw = 0.0f;
 	public float rotatspeed = 30.0f;
 	public int invertpitch = 1;
@@ -100,135 +91,137 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private void Update()
 	{
-		/// this code is for the player movement with camera at back
-		/// --------------------------------------------------------
-		h_joy = virtual_joystick_access.InputDirection.x;
-		y_joy = virtual_joystick_access.InputDirection.z;
-
-
-
-
-		if (Input.touchCount == 1)
+		if(gamemanager.instance.isinputallowed)
 		{
-			Touch toucho = Input.GetTouch(0);
-			if (toucho.phase == TouchPhase.Moved)
+
+		
+
+			/// this code is for the player movement with camera at back
+			/// --------------------------------------------------------
+			h_joy = virtual_joystick_access.InputDirection.x;
+			y_joy = virtual_joystick_access.InputDirection.z;
+
+			if (Input.touchCount == 1)
 			{
+				Touch toucho = Input.GetTouch(0);
+				if (toucho.phase == TouchPhase.Moved)
+				{
+					
+					
+						//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+						pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
+						raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
+
+						pitch = Mathf.Clamp(pitch, -80, 80);
+
+					targetrotation = Quaternion.Euler(0, raw, 0);
+
+
+				}
+			}
+
+		
+		    //player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
+
+
+			if (h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
+			{
+				speed = 8f;
+			}
+			else
+			{
+				speed = 2f;
+			}
+
+
+			float yStore = MoveDirection.y;
+			MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
+		   //MoveDirection = transform.TransformDirection(MoveDirection);
+		
+			
+			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
+			
+
+			if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
+			{
+
+				//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
+
+				angle = Mathf.Atan2(h_joy, y_joy);
+
+				angle = Mathf.Rad2Deg * angle;
 				
+
+				angle += Camera.main.transform.eulerAngles.y;
+
+				targetrotation = Quaternion.Euler(0, angle, 0);
+
+
+			
+				if (player_camera_follow_script._wepon_tps_camera_ != true )
+				{
+
+					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
+				}
+
+
+				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
+				{
+
+					targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
+
+					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+
+				}
+
+			}
+			else
+			{
+
+
+
+				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
+				{
+					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+				}
 				
-					//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
-					pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
-					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
 
-					pitch = Mathf.Clamp(pitch, -80, 80);
-
-				targetrotation = Quaternion.Euler(0, raw, 0);
-
-
-			}
-		}
-
-	
-	//	player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
-
-
-		if (h_joy > 0.8 || y_joy > 0.8 || h_joy > -0.8 || y_joy > -0.8)
-		{
-			speed = 8f;
-		}
-		else
-		{
-			speed = 2f;
-		}
-
-
-		float yStore = MoveDirection.y;
-		MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
-	//	MoveDirection = transform.TransformDirection(MoveDirection);
-	 
-		
-	    MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
-		
-
-		if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
-		{
-
-			//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
-
-			angle = Mathf.Atan2(h_joy, y_joy);
-
-			angle = Mathf.Rad2Deg * angle;
-			
-
-			angle += Camera.main.transform.eulerAngles.y;
-
-			targetrotation = Quaternion.Euler(0, angle, 0);
-
-
-		
-			 if (player_camera_follow_script._wepon_tps_camera_ != true )
-			{
-
-				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
-			}
-
-
-			if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
-			{
-
-				targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
-
-				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
-
-			}
-
-		}
-		else
-		{
-
-
-
-			if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
-			{
-				transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+				
 			}
 			
+			
+			/////===========================================================
+			MoveDirection = MoveDirection * speed;
+			MoveDirection += Physics.gravity;
+			
+			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
+			///-----------------------------------------------------------
+			player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
+			player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
+
+
+
+
+
+
+			#endregion
+
 
 			
+
+
+			#region  FeetGrounding
+
+
+			if (enabelFeetIk == false) { return; }
+			if (player_animator == null) { return; }
+
+			AdjustFeetTarget(ref rightFootPosition, HumanBodyBones.RightFoot);
+			AdjustFeetTarget(ref leftFootPosition, HumanBodyBones.LeftFoot);
+
+			FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
+			FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
 		}
-		
-		
-		/////===========================================================
-		MoveDirection = MoveDirection * speed;
-		MoveDirection += Physics.gravity;
-		
-		playercharactercontroller.Move(MoveDirection * Time.deltaTime);
-		///-----------------------------------------------------------
-		player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
-		player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
-
-
-
-
-
-
-		#endregion
-
-
-		
-
-
-		#region  FeetGrounding
-
-
-		if (enabelFeetIk == false) { return; }
-		if (player_animator == null) { return; }
-
-		AdjustFeetTarget(ref rightFootPosition, HumanBodyBones.RightFoot);
-		AdjustFeetTarget(ref leftFootPosition, HumanBodyBones.LeftFoot);
-
-		FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
-		FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
-
 	}
 
 	private void OnAnimatorIK(int layerIndex)

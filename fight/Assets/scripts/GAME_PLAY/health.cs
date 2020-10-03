@@ -29,6 +29,7 @@ public class health : ExtendedCustomMonoBehavior,IListener
 
     public bool disable_enimy_Rotation_collider; // this variable is accessed by the playermanager to determine whether to enable or disable the player rotation constraint so be care full suresh :-)
     public bool nock_check;
+
     public void Start()
     {
         
@@ -93,7 +94,12 @@ public class health : ExtendedCustomMonoBehavior,IListener
                
                 base_game_controller_to_intimate_game_state.player_supplyers_spanner(gameObject.transform);
               
-                enimy_manger_ref.enimy_instantiator_from_enimy_component_provider.cloned_enimy_list.Remove(gameObject);// removed the died enimy from the cloned_enimy_list
+               // enimy_manger_ref.enimy_instantiator_from_enimy_component_provider.cloned_enimy_list.Remove(gameObject);// removed the died enimy from the cloned_enimy_list
+                
+                gamemanager.instance.game_Scene_Manager.instantiated_enimyes_count -= 1;
+
+                
+                               
                 Destroy(gameObject, 10.0f);
 
             }

@@ -59,7 +59,7 @@ int count  = 20;
 
         StartCoroutine(level_complet_checker());
         
-           StartCoroutine("enimy_ins");
+          // StartCoroutine("enimy_ins");
     }
 
     public List<GameObject> instantiate_enimyS(GameObject enimy_game_object, int ins_count,Transform[] position_to_instantiate)
@@ -72,6 +72,7 @@ int count  = 20;
         return cloned_enimy_list;
     }
 
+
     public void instantiate_enimy(int enimy_type_number)
     {
 
@@ -83,6 +84,7 @@ int count  = 20;
                                               );
 
     }
+
 
     public IEnumerator level_complet_checker()
     {

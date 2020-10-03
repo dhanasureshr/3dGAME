@@ -68,6 +68,9 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	
 	public static gamemanager instance;
 	
+
+
+	public Game_Scene_Manager game_Scene_Manager;
     #endregion
 
 
@@ -120,7 +123,14 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 
 	private void Update()
 	{
-		
+		if(isplayerdead)
+		{
+			isinputallowed = false;
+		}
+		else
+		{
+			isinputallowed = true;
+		}
 
 	}
 
