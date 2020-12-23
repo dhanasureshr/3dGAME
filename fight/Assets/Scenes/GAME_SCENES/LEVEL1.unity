@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1052,6 +1052,21 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.w
       value: 9.950165e-17
       objectReference: {fileID: 0}
+    - target: {fileID: 6081553163091101108, guid: e5b53e392ab864444bdad51a5a6b1743,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081553163091101108, guid: e5b53e392ab864444bdad51a5a6b1743,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081553163091101108, guid: e5b53e392ab864444bdad51a5a6b1743,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6081553163091101110, guid: e5b53e392ab864444bdad51a5a6b1743,
         type: 3}
       propertyPath: m_RootOrder
@@ -1185,6 +1200,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
       value: 7.491e-41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506601875037269976, guid: f52543071cb408a43b4bc5e46ee96560,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506601875037269976, guid: f52543071cb408a43b4bc5e46ee96560,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506601875037269976, guid: f52543071cb408a43b4bc5e46ee96560,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3506601875037269982, guid: f52543071cb408a43b4bc5e46ee96560,
         type: 3}

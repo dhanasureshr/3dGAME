@@ -59,7 +59,7 @@ public class arrow : ExtendedCustomMonoBehavior
     {
         yield return new WaitForSeconds(destroyAfter);
         Destroy(gameObject);
-        // Addressables.ReleaseInstance(gameObject);
+        //Addressables.ReleaseInstance(gameObject);
        
     }
 

@@ -35,7 +35,7 @@ public class Game_Scene_Manager : MonoBehaviour
  
     private void Update()
     {
-        Debug.Log(MAXIMUM_NUMBER_OF_ENIMYES_COUNT_IN_CURRENT_SCENE);
+       // Debug.Log(MAXIMUM_NUMBER_OF_ENIMYES_COUNT_IN_CURRENT_SCENE);
     }
     
     
