@@ -1179,7 +1179,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!73398921 &278838984
 VFXRenderer:
   m_ObjectHideFlags: 2
@@ -1187,7 +1187,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278838983}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2880,10 +2880,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6081553163091101108, guid: e5b53e392ab864444bdad51a5a6b1743,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6081553163091101109, guid: e5b53e392ab864444bdad51a5a6b1743,
         type: 3}
       propertyPath: m_Name
       value: BOW_SWITCHER
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081553163091101109, guid: e5b53e392ab864444bdad51a5a6b1743,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6081553163091101110, guid: e5b53e392ab864444bdad51a5a6b1743,
         type: 3}
@@ -6645,6 +6655,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MAGIC_SWITCHER
       objectReference: {fileID: 0}
+    - target: {fileID: 6713317008993522806, guid: 7ed2eb75865f258429a4196cc67952fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6713317008993522807, guid: 7ed2eb75865f258429a4196cc67952fc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6659,6 +6674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713317008993522807, guid: 7ed2eb75865f258429a4196cc67952fc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ed2eb75865f258429a4196cc67952fc, type: 3}
@@ -6674,6 +6694,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ROCKET_SWITCHER
       objectReference: {fileID: 0}
+    - target: {fileID: 4269779863432112384, guid: edcbce4747a38f54ea8818a7e76f493b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4269779863432112387, guid: edcbce4747a38f54ea8818a7e76f493b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6688,6 +6713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269779863432112387, guid: edcbce4747a38f54ea8818a7e76f493b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4269779863432112389, guid: edcbce4747a38f54ea8818a7e76f493b,
         type: 3}
@@ -6875,10 +6905,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5559517851778841424, guid: a9925bad233c38d43a4155824b915cda,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5559517851778841425, guid: a9925bad233c38d43a4155824b915cda,
         type: 3}
       propertyPath: m_Name
       value: GUN_SWITCHER
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559517851778841425, guid: a9925bad233c38d43a4155824b915cda,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5559517851778841430, guid: a9925bad233c38d43a4155824b915cda,
         type: 3}
@@ -8133,10 +8173,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3506601875037269976, guid: f52543071cb408a43b4bc5e46ee96560,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3506601875037269977, guid: f52543071cb408a43b4bc5e46ee96560,
         type: 3}
       propertyPath: m_Name
       value: SWORD_SWITCHER
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506601875037269977, guid: f52543071cb408a43b4bc5e46ee96560,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3506601875037269982, guid: f52543071cb408a43b4bc5e46ee96560,
         type: 3}
