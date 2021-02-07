@@ -1,6 +1,9 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+
 
 
 public class playerjoymovement : ExtendedCustomMonoBehavior
@@ -68,6 +71,10 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	[HideInInspector] private Animator player_animator;
 	private static int horthash = Animator.StringToHash("X");
 	private static int verthash = Animator.StringToHash("Y");
+
+
+
+	public AndroidInput t;
 	#endregion
 
 
@@ -192,8 +199,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			
 			/////===========================================================
 			MoveDirection = MoveDirection * speed;
-			MoveDirection += Physics.gravity;
-			
+			MoveDirection += Physics.gravity; 
+			/* this is the line of code where the gravity is applying to the player
+			   if you want to make the player to jump smoothly disable the gravity 
+			   by checking a condition and make the gravity negative 
+			*/
 			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 			///-----------------------------------------------------------
 			player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
