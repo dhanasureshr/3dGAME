@@ -74,7 +74,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 
-	public AndroidInput t;
+//	public AndroidInput t;
 	#endregion
 
 
@@ -88,6 +88,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	#region start for player coimponent references
 	private void Start()
 	{
+
+		if(Application.platform == RuntimePlatform.Android)
+		{
+
+		}
+
 		playercharactercontroller = GetComponent<CharacterController>();
 
 		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
@@ -119,17 +125,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				Touch toucho = Input.GetTouch(0);
 				if (toucho.phase == TouchPhase.Moved)
 				{
-					
-					
-						//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
-						pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
-						raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
-
-						pitch = Mathf.Clamp(pitch, -80, 80);
-
+					//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+					pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
+					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
+					pitch = Mathf.Clamp(pitch, -80, 80);
 					targetrotation = Quaternion.Euler(0, raw, 0);
-
-
 				}
 			}
 
@@ -151,7 +151,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
 			MoveDirection = multiplat_form_input_manager.moveVec;
 
-		   																							//MoveDirection = transform.TransformDirection(MoveDirection);
+		   								//MoveDirection = transform.TransformDirection(MoveDirection);
 		
 			
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 

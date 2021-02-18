@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 251788146314567532}
   - component: {fileID: 163734388068087780}
   - component: {fileID: 4532593734256567332}
+  - component: {fileID: 6284009696825837287}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -275,3 +276,15 @@ MonoBehaviour:
     type: 3}
   MAXIMUM_NUMBER_OF_ENIMYES_COUNT_IN_CURRENT_SCENE: 10
   instantiated_enimyes_count: 0
+--- !u!114 &6284009696825837287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3943e9faeedf04e891715ef0ed3a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
