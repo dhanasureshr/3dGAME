@@ -47604,6 +47604,7 @@ MonoBehaviour:
   rotate_speed: 3
   rotatspeed: 10
   invertpitch: 1
+  multiplat_form_input_manager: {fileID: 0}
 --- !u!114 &6504001686676046231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47791,7 +47792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 33d14fd199625924db47090902b1cb72,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -47804,7 +47805,18 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4680657620252648977}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c265a5b6-6284-46d3-87ab-35e04a3c7b26
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -47812,7 +47824,18 @@ MonoBehaviour:
     m_ActionId: b588fbab-8d3e-4491-bd5e-792683b7d90a
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2995459559788264436}
+        m_MethodName: OnFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 70e89682-c860-43f3-8f00-3275172196e0
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -47879,6 +47902,7 @@ MonoBehaviour:
   canControl: 0
   iD: 0
   charactercontroller: {fileID: 0}
+  moveVec: {x: 0, y: 0, z: 0}
 --- !u!1 &5639933892325695856
 GameObject:
   m_ObjectHideFlags: 0

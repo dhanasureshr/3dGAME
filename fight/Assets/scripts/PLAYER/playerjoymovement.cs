@@ -78,6 +78,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	#endregion
 
 
+
+	[Inject(InjectFrom.Anywhere)]
+
+	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
+	
+
 	// this is for game functions
 	#region start for player coimponent references
 	private void Start()
@@ -142,20 +148,24 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 			float yStore = MoveDirection.y;
-			MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
-		   //MoveDirection = transform.TransformDirection(MoveDirection);
+			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
+			MoveDirection = multiplat_form_input_manager.moveVec;
+
+		   																							//MoveDirection = transform.TransformDirection(MoveDirection);
 		
 			
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
 			
 
-			if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
+			//if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick) 2021/02/18 desable for new input mangager input test
+			
+			if(is_tps_mode_on)
 			{
 
 				//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
 
-				angle = Mathf.Atan2(h_joy, y_joy);
-
+				//angle = Mathf.Atan2(h_joy, y_joy);2021/02/18 desable for new input mangager input test
+				angle = Mathf.Atan2(multiplat_form_input_manager.moveVec.x,multiplat_form_input_manager.moveVec.z);
 				angle = Mathf.Rad2Deg * angle;
 				
 
@@ -206,9 +216,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			*/
 			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 			///-----------------------------------------------------------
-			player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
-			player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
 
+			//player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
+			//player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
+
+			player_animator.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
+			player_animator.SetFloat(verthash, multiplat_form_input_manager.moveVec.z, 0.1f, Time.deltaTime);
 
 
 
