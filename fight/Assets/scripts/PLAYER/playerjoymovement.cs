@@ -84,15 +84,20 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
 	
 
+
+	private bool groundedPlayer;
+
+	private float jumpheight = 5.0f;
+
+	private float gravity = 20.0f;
+
+	private bool jump;
+
 	// this is for game functions
 	#region start for player coimponent references
 	private void Start()
 	{
 
-		if(Application.platform == RuntimePlatform.Android)
-		{
-
-		}
 
 		playercharactercontroller = GetComponent<CharacterController>();
 
@@ -110,10 +115,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private void Update()
 	{
+
 		if(gamemanager.instance.isinputallowed)
 		{
 
-		
+			
+			groundedPlayer = playercharactercontroller.isGrounded;
 
 			/// this code is for the player movement with camera at back
 			/// --------------------------------------------------------
@@ -145,6 +152,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			{
 				speed = 2f;
 			}
+
 
 
 			float yStore = MoveDirection.y;
@@ -208,12 +216,21 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			
 			
 			/////===========================================================
-			MoveDirection = MoveDirection * speed;
-			MoveDirection += Physics.gravity; 
+
+
+				MoveDirection = MoveDirection * speed;
+		
+			
+				
+
+			MoveDirection += Physics.gravity;
+			
 			/* this is the line of code where the gravity is applying to the player
 			   if you want to make the player to jump smoothly disable the gravity 
 			   by checking a condition and make the gravity negative 
 			*/
+
+
 			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 			///-----------------------------------------------------------
 
@@ -242,11 +259,15 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			AdjustFeetTarget(ref rightFootPosition, HumanBodyBones.RightFoot);
 			AdjustFeetTarget(ref leftFootPosition, HumanBodyBones.LeftFoot);
 
-			FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
+		    FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
 			FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
 		}
 	}
 
+public void OnJump()
+{
+	jump = true;
+}
 	private void OnAnimatorIK(int layerIndex)
 	{
 		if (enabelFeetIk == false) { return; }

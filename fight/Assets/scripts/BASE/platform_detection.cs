@@ -13,9 +13,39 @@ public class platform_detection : MonoBehaviour
     // 2) graphics quality setting ::::-- because diferent platforms have some limitations on hardwares like apk and exe
     // 3) entire game input system
     //  for now these are known to me -------
+
+    #region platform detection variables
+    public bool PLATFORM_ANDROID = false;
+    public bool PLATFORM_WINDOWS = false;
+
+    public bool PLATFORM_LINUX = false;
+
+    public bool PLATFORM_IOS = false;
+
+    #endregion
+
     void Start()
     {
-        
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            PLATFORM_ANDROID = true;
+
+        }
+        else if(Application.platform == RuntimePlatform.LinuxPlayer)
+        {
+            PLATFORM_LINUX = true;
+
+        }
+        else if(Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            PLATFORM_IOS = true;
+        }
+        else if(Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            PLATFORM_WINDOWS =  true;
+
+        }
+    
     }
 
 
