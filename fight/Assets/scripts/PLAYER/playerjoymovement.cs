@@ -89,7 +89,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private float jumpheight = 5.0f;
 
-	private float gravity = 20.0f;
+	private float gravity = 9.8f;
 
 	private bool jump;
 
@@ -97,17 +97,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	#region start for player coimponent references
 	private void Start()
 	{
-
-
 		playercharactercontroller = GetComponent<CharacterController>();
-
-		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
-
 		player_animator = GetComponent<Animator>();
-
-
-		//Debug.Log(player_animator.GetLayerName(1));
-		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();
 	}
 	#endregion
 
@@ -216,20 +207,25 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			
 			
 			/////===========================================================
-
-
+			// here actiol movement of the player with the jump action is going to take place
+			if(groundedPlayer)
+			{
 				MoveDirection = MoveDirection * speed;
-		
+				if(jump)
+				{
+					transform.Translate(Vector3.up * 5  );
+					jump = false;
+				}
+			}
 			
-				
-
-			MoveDirection += Physics.gravity;
+			MoveDirection.y -= gravity ;
 			
 			/* this is the line of code where the gravity is applying to the player
 			   if you want to make the player to jump smoothly disable the gravity 
 			   by checking a condition and make the gravity negative 
 			*/
 
+			
 
 			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
 			///-----------------------------------------------------------
@@ -252,7 +248,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 			#region  FeetGrounding
 
-
 			if (enabelFeetIk == false) { return; }
 			if (player_animator == null) { return; }
 
@@ -261,13 +256,18 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 		    FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
 			FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
+    
+			#endregion
 		}
 	}
+
 
 public void OnJump()
 {
 	jump = true;
 }
+	#region player leg IK code
+
 	private void OnAnimatorIK(int layerIndex)
 	{
 		if (enabelFeetIk == false) { return; }
@@ -303,10 +303,9 @@ public void OnJump()
 
 	}
 
-	#endregion
+	
 
 
-	#region FeetGroundingMethods
 
 
 	void MoveFeetToIkPoint(AvatarIKGoal foot, Vector3 positionIkHolder, Quaternion rotationIkHolder, ref float lastFootPositionY)
@@ -382,10 +381,12 @@ public void OnJump()
 	}
 
 
+	
+
+
 	#endregion
 
-
-
+	#region  clamp between angles range determination
 	public float ClampAngle(float angle, float min, float max)
 	{
 		if (angle < -360f)
@@ -398,5 +399,7 @@ public void OnJump()
 		}
 		return Mathf.Clamp(angle, min, max);
 	}
+
+	#endregion
 
 }

@@ -47792,7 +47792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 33d14fd199625924db47090902b1cb72,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -47903,6 +47903,8 @@ MonoBehaviour:
   iD: 0
   charactercontroller: {fileID: 0}
   moveVec: {x: 0, y: 0, z: 0}
+  lookVec: {x: 0, y: 0, z: 0}
+  jump: 0
 --- !u!1 &5639933892325695856
 GameObject:
   m_ObjectHideFlags: 0

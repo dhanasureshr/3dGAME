@@ -7,7 +7,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
     public Vector3 lookVec;
 
-
+    public bool jump;
 
     public void OnFire()
     {
@@ -32,7 +32,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
     }
 
-
+   
 
 
 }
