@@ -72,7 +72,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	private static int horthash = Animator.StringToHash("X");
 	private static int verthash = Animator.StringToHash("Y");
 
-
+	[Inject(InjectFrom.Anywhere)]
+	public PLAYER_ANIMATION_HELPER player_animations_config;
 
 //	public AndroidInput t;
 	#endregion
@@ -213,7 +214,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				MoveDirection = MoveDirection * speed;
 				if(jump)
 				{
-					transform.Translate(Vector3.up * 5  );
+					//transform.Translate(Vector3.up * 2  );
+					player_animations_config.PLAY_JUMP();
 					jump = false;
 				}
 			}
@@ -232,10 +234,18 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 			//player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
 			//player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
+			
 
-			player_animator.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
-			player_animator.SetFloat(verthash, multiplat_form_input_manager.moveVec.z, 0.1f, Time.deltaTime);
+			//Replaced and given the movement animation controlles entairly to the PLAYER_ANIMATION_HELPER script
+			// so from now the eniter animations control is given to the seperate script in which that script is 
+			// imported as on name of player_animatons_config variable
 
+
+
+			//player_animator.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
+			//player_animator.SetFloat(verthash, multiplat_form_input_manager.moveVec.z, 0.1f, Time.deltaTime);
+
+			player_animations_config.PLAY_MOVE_ANIMATION();
 
 
 

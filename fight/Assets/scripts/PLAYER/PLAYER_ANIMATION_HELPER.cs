@@ -6,6 +6,7 @@ using UnityEngine;
 public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 {
     #region combo variables
+
     public enum CombeState
     { 
         NONE,
@@ -107,11 +108,19 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
 
     private static int magic_2h_a_attack2 = Animator.StringToHash("M_ATTACK_A_2H2");
 
+    // this are the variables for player jump
 
+    private static int Jump_animation = Animator.StringToHash("JUMP");
+
+    private static int horthash = Animator.StringToHash("X");
+	private static int verthash = Animator.StringToHash("Y");
 
 
     #endregion
 
+   	[Inject(InjectFrom.Anywhere)]
+
+	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
     #region mono methods
 
     private void Start()
@@ -130,6 +139,19 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     #endregion
 
     #region animation functions 
+
+    
+    public void PLAY_MOVE_ANIMATION()
+    {
+        player_animator_ref.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
+		player_animator_ref.SetFloat(verthash, multiplat_form_input_manager.moveVec.z, 0.1f, Time.deltaTime);
+    }
+
+    public void PLAY_JUMP()
+    {
+        player_animator_ref.SetTrigger(Jump_animation);
+    }
+   
 
     public void PLAY_CROSS_OUNCH()
     {
@@ -303,7 +325,7 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     {
         player_animator_ref.SetTrigger(magic_2h_a_attack2);
     }
-    
+ 
 
     #endregion
 
