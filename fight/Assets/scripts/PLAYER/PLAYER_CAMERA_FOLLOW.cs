@@ -112,6 +112,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private Rect bottom_Right;
 
 
+    public Vector3 player_x_z_offset;
+
     #region WEPON CAMERA CONTROLLER VARIABLES
     public bool _wepon_tps_camera_ = false;
     #endregion
@@ -183,12 +185,17 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
        horizontal = virtual_joystick_access.InputDirection.x * (speed);
        verticle = virtual_joystick_access.InputDirection.y * (speed);
 
+
+
         verticle = Mathf.Clamp(horizontal, 20, 50);
     }
 
     #region LateUpdate
     private void LateUpdate()
     {
+         //jump code for camera
+         player_x_z_offset = new Vector3(target.position.x,2,target.position.z);
+
         gameObject.transform.parent = null;
 
         if (virtual_joystick_access.isfingeronjoystick)
@@ -286,24 +293,26 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             else
             {
                 
-                    CameraMovementAroundPlayer();
-                 // rotation = Quaternion.Euler(rotx, roty, 0);
-                    rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
-                    rotation = rotation.normalized;
+                CameraMovementAroundPlayer();
+                //rotation = Quaternion.Euler(rotx, roty, 0);
+                rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
+                rotation = rotation.normalized;
 
-                    if (distance < distanceMax)
-                    {
-                     //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
-                distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
+                if (distance < distanceMax)
+                {
+                    //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
+                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                 }
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
-                positions = rotation * distanceVector + target.position; //rotatioon
+            
+
+                positions = rotation * distanceVector + target.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
 
                 if (_wepon_tps_camera_ == true)
                 {
 
                     rotation = target.rotation * Quaternion.Euler(camera_swiper_raw_image.instance.rotx,0, 0); // here is actually the rotation around the player and relative vertical rotation 
-                    transform.position = rotation * distanceVector + target.position;
+                    transform.position = rotation * distanceVector+ target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
                        
                     rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
                        
@@ -316,7 +325,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 {
 
 
-                   // transform.position = target.rotation * distanceVector + target.position;
+                    //transform.position = target.rotation * distanceVector + target.position;
                     transform.rotation = rotation; //rotation
                     transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f)
                     transform.LookAt(target);
@@ -412,7 +421,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
+        transform.position = target.position + ray.normalized * distance; // 
 
 
         if (_wepon_tps_camera_ == true)
@@ -453,9 +462,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
            transform.position = collisionPointRay; //newly changed for cameray fleckring
-            
- 
-          // camera_rigid_body.AddForce(collisionPointRay);
 
         }
      }

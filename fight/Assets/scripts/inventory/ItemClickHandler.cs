@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemClickHandler : MonoBehaviour
@@ -19,6 +17,7 @@ public class ItemClickHandler : MonoBehaviour
 
     void Update()
     {
+        /*
         if(Input.GetKeyDown(_Key))
         {
             FadeToColor(_button.colors.pressedColor);
@@ -30,6 +29,7 @@ public class ItemClickHandler : MonoBehaviour
         {
             FadeToColor(_button.colors.normalColor);
         }
+        */
     }
 
     void FadeToColor(Color color)

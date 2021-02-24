@@ -1,6 +1,9 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+
 
 
 public class playerjoymovement : ExtendedCustomMonoBehavior
@@ -68,22 +71,37 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	[HideInInspector] private Animator player_animator;
 	private static int horthash = Animator.StringToHash("X");
 	private static int verthash = Animator.StringToHash("Y");
+
+	[Inject(InjectFrom.Anywhere)]
+	public PLAYER_ANIMATION_HELPER player_animations_config;
+
+//	public AndroidInput t;
 	#endregion
 
+
+
+	[Inject(InjectFrom.Anywhere)]
+
+	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
+	
+
+
+	private bool groundedPlayer;
+
+	private float jumpforce = 10.0f;
+
+	private float verticalvelocity;
+
+	private float gravity = 20.8f;
+
+	private bool jump;
 
 	// this is for game functions
 	#region start for player coimponent references
 	private void Start()
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
-
-		///////////////////////////////////////////////player_animator = GetComponentInChildren<Animator>();
-
 		player_animator = GetComponent<Animator>();
-
-
-		//Debug.Log(player_animator.GetLayerName(1));
-		//camera_pos = player_camera_follow_script.gameObject.GetComponent<Transform>();
 	}
 	#endregion
 
@@ -91,10 +109,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private void Update()
 	{
+
 		if(gamemanager.instance.isinputallowed)
 		{
 
-		
+			
+			groundedPlayer = playercharactercontroller.isGrounded;
 
 			/// this code is for the player movement with camera at back
 			/// --------------------------------------------------------
@@ -106,17 +126,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				Touch toucho = Input.GetTouch(0);
 				if (toucho.phase == TouchPhase.Moved)
 				{
-					
-					
-						//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
-						pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
-						raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
-
-						pitch = Mathf.Clamp(pitch, -80, 80);
-
+					//player_target.Rotate(0.0f, tuch_inpu.touch_input_manager.swiping_value, 0.0f);
+					pitch -= Input.GetTouch(0).deltaPosition.y * rotatspeed * invertpitch * Time.deltaTime;
+					raw += Input.GetTouch(0).deltaPosition.x * rotatspeed * invertpitch * Time.deltaTime;
+					pitch = Mathf.Clamp(pitch, -80, 80);
 					targetrotation = Quaternion.Euler(0, raw, 0);
-
-
 				}
 			}
 
@@ -134,21 +148,26 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			}
 
 
+
 			float yStore = MoveDirection.y;
-			MoveDirection = new Vector3(h_joy,0, y_joy); /// (h_joy,0,y_joy)
-		   //MoveDirection = transform.TransformDirection(MoveDirection);
+			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
+			MoveDirection = multiplat_form_input_manager.moveVec;
+
+		   		//MoveDirection = transform.TransformDirection(MoveDirection);
 		
 			
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
 			
 
-			if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick)
+			//if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick) 2021/02/18 desable for new input mangager input test
+			
+			if(is_tps_mode_on)
 			{
 
 				//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
 
-				angle = Mathf.Atan2(h_joy, y_joy);
-
+				//angle = Mathf.Atan2(h_joy, y_joy);2021/02/18 desable for new input mangager input test
+				angle = Mathf.Atan2(multiplat_form_input_manager.moveVec.x,multiplat_form_input_manager.moveVec.z);
 				angle = Mathf.Rad2Deg * angle;
 				
 
@@ -191,15 +210,53 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			
 			
 			/////===========================================================
-			MoveDirection = MoveDirection * speed;
-			MoveDirection += Physics.gravity;
+			// here actiol movement of the player with the jump action is going to take place
+			if(groundedPlayer)
+			{
+				Debug.Log("player is on ground");
+				verticalvelocity = -gravity * Time.deltaTime;
+				MoveDirection = MoveDirection * speed;
+				if(jump)
+				{
+					Debug.Log("player jump code is working");
+					//transform.Translate(Vector3.up * 2  );
+					//player_animations_config.PLAY_JUMP();
+					verticalvelocity = jumpforce;
+					jump = false;
+				}
+			}
+			else
+			{
+
 			
-			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
+				verticalvelocity -= gravity * Time.deltaTime;
+			}
+
+			Vector3 moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
+			/* this is the line of code where the gravity is applying to the player
+			   if you want to make the player to jump smoothly disable the gravity 
+			   by checking a condition and make the gravity negative 
+			*/
+
+			
+
+			playercharactercontroller.Move(moveVector * Time.deltaTime);
 			///-----------------------------------------------------------
-			player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);
-			player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);
+
+			//player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
+			//player_animator.SetFloat(verthash, y_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
+			
+
+			//Replaced and given the movement animation controlles entairly to the PLAYER_ANIMATION_HELPER script
+			// so from now the eniter animations control is given to the seperate script in which that script is 
+			// imported as on name of player_animatons_config variable
 
 
+
+			//player_animator.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
+			//player_animator.SetFloat(verthash, multiplat_form_input_manager.moveVec.z, 0.1f, Time.deltaTime);
+
+			player_animations_config.PLAY_MOVE_ANIMATION();
 
 
 
@@ -211,18 +268,26 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 			#region  FeetGrounding
-
-
+			
 			if (enabelFeetIk == false) { return; }
 			if (player_animator == null) { return; }
 
 			AdjustFeetTarget(ref rightFootPosition, HumanBodyBones.RightFoot);
 			AdjustFeetTarget(ref leftFootPosition, HumanBodyBones.LeftFoot);
 
-			FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
+		    FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
 			FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
+			
+			#endregion
 		}
 	}
+
+
+public void OnJump()
+{
+	jump = true;
+}
+	#region player leg IK code
 
 	private void OnAnimatorIK(int layerIndex)
 	{
@@ -259,10 +324,9 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	}
 
-	#endregion
+	
 
 
-	#region FeetGroundingMethods
 
 
 	void MoveFeetToIkPoint(AvatarIKGoal foot, Vector3 positionIkHolder, Quaternion rotationIkHolder, ref float lastFootPositionY)
@@ -338,10 +402,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	}
 
 
+	
+
+
 	#endregion
 
-
-
+	#region  clamp between angles range determination
 	public float ClampAngle(float angle, float min, float max)
 	{
 		if (angle < -360f)
@@ -354,5 +420,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 		}
 		return Mathf.Clamp(angle, min, max);
 	}
+
+	#endregion
 
 }
