@@ -88,9 +88,11 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private bool groundedPlayer;
 
-	private float jumpheight = 5.0f;
+	private float jumpforce = 10.0f;
 
-	private float gravity = 9.8f;
+	private float verticalvelocity;
+
+	private float gravity = 20.8f;
 
 	private bool jump;
 
@@ -151,7 +153,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
 			MoveDirection = multiplat_form_input_manager.moveVec;
 
-		   								//MoveDirection = transform.TransformDirection(MoveDirection);
+		   		//MoveDirection = transform.TransformDirection(MoveDirection);
 		
 			
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
@@ -211,17 +213,26 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			// here actiol movement of the player with the jump action is going to take place
 			if(groundedPlayer)
 			{
+				Debug.Log("player is on ground");
+				verticalvelocity = -gravity * Time.deltaTime;
 				MoveDirection = MoveDirection * speed;
 				if(jump)
 				{
+					Debug.Log("player jump code is working");
 					//transform.Translate(Vector3.up * 2  );
-					player_animations_config.PLAY_JUMP();
+					//player_animations_config.PLAY_JUMP();
+					verticalvelocity = jumpforce;
 					jump = false;
 				}
 			}
+			else
+			{
+
 			
-			MoveDirection.y -= gravity ;
-			
+				verticalvelocity -= gravity * Time.deltaTime;
+			}
+
+			Vector3 moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
 			/* this is the line of code where the gravity is applying to the player
 			   if you want to make the player to jump smoothly disable the gravity 
 			   by checking a condition and make the gravity negative 
@@ -229,7 +240,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 			
 
-			playercharactercontroller.Move(MoveDirection * Time.deltaTime);
+			playercharactercontroller.Move(moveVector * Time.deltaTime);
 			///-----------------------------------------------------------
 
 			//player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
@@ -257,7 +268,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 
 			#region  FeetGrounding
-
+			
 			if (enabelFeetIk == false) { return; }
 			if (player_animator == null) { return; }
 
@@ -266,7 +277,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 		    FeetPositiononSolver(rightFootPosition, ref rightFootIkPosition, ref rightFootIkRotation);
 			FeetPositiononSolver(leftFootPosition, ref leftFootIkPosition, ref leftFootIkRotation);
-    
+			
 			#endregion
 		}
 	}

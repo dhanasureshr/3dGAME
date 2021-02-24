@@ -112,6 +112,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private Rect bottom_Right;
 
 
+    public Vector3 player_x_z_offset;
+
     #region WEPON CAMERA CONTROLLER VARIABLES
     public bool _wepon_tps_camera_ = false;
     #endregion
@@ -191,6 +193,9 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region LateUpdate
     private void LateUpdate()
     {
+         //jump code for camera
+         player_x_z_offset = new Vector3(target.position.x,2,target.position.z);
+
         gameObject.transform.parent = null;
 
         if (virtual_joystick_access.isfingeronjoystick)
@@ -299,13 +304,15 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                 }
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
-                positions = rotation * distanceVector + target.position; //rotatioon
+            
+
+                positions = rotation * distanceVector + target.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
 
                 if (_wepon_tps_camera_ == true)
                 {
 
                     rotation = target.rotation * Quaternion.Euler(camera_swiper_raw_image.instance.rotx,0, 0); // here is actually the rotation around the player and relative vertical rotation 
-                    transform.position = rotation * distanceVector+ target.position;
+                    transform.position = rotation * distanceVector+ target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
                        
                     rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
                        
@@ -414,7 +421,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         }
         distance = Mathf.Clamp(distance, distanceMin, distanceMax);
-        transform.position = target.position + ray.normalized * distance; // llooooooooooooooooooooooooooooooooooooonewly changed for cameray fleckring 
+        transform.position = target.position + ray.normalized * distance; // 
 
 
         if (_wepon_tps_camera_ == true)
