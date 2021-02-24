@@ -32,7 +32,10 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
     }
 
-   
+   public void OnJump()
+   {
+       jump = true;
+   }
 
 
 }

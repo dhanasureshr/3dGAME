@@ -88,7 +88,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private bool groundedPlayer;
 
-	private float jumpforce = 10.0f;
+	private float jumpforce = 8.0f;
 
 	private float verticalvelocity;
 
@@ -213,21 +213,21 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			// here actiol movement of the player with the jump action is going to take place
 			if(groundedPlayer)
 			{
-				Debug.Log("player is on ground");
 				verticalvelocity = -gravity * Time.deltaTime;
-				MoveDirection = MoveDirection * speed;
-				if(jump)
+				MoveDirection = MoveDirection * speed; // applying movement when player is on ground
+
+				if(multiplat_form_input_manager.jump)
 				{
-					Debug.Log("player jump code is working");
-					//transform.Translate(Vector3.up * 2  );
-					//player_animations_config.PLAY_JUMP();
+					player_animations_config.PLAY_JUMP();
 					verticalvelocity = jumpforce;
-					jump = false;
+					
+					multiplat_form_input_manager.jump = false;
 				}
 			}
 			else
 			{
-
+				
+				MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
 			
 				verticalvelocity -= gravity * Time.deltaTime;
 			}
@@ -283,10 +283,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	}
 
 
-public void OnJump()
-{
-	jump = true;
-}
+
 	#region player leg IK code
 
 	private void OnAnimatorIK(int layerIndex)
