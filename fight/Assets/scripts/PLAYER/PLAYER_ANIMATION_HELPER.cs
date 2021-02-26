@@ -139,8 +139,6 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
     #endregion
 
     #region animation functions 
-
-    
     public void PLAY_MOVE_ANIMATION()
     {
         player_animator_ref.SetFloat(horthash, multiplat_form_input_manager.moveVec.x, 0.1f, Time.deltaTime);
@@ -373,12 +371,6 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///
 
-
-
-
-
-
-
         if (c_state == CombeState.ACTION_1)
         {
             PLAY_CROSS_OUNCH();
@@ -408,9 +400,6 @@ public class PLAYER_ANIMATION_HELPER : MonoBehaviour
         {
             PLAY_QUICK_PUNCH();
         }
-
-
-
 
         #endregion
     }

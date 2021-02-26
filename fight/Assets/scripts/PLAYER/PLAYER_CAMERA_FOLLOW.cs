@@ -45,7 +45,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private float thinRadius = 0.30f; //0.15f //0.30f
     private float thickRadius = 0.9f; //0.3f  //0.9f
     private float distance = 10.0f; //DEFAULT 10.0f
-    
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f; //1   
@@ -80,38 +79,18 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [HideInInspector] public float deltax;
     [HideInInspector] public float deltay;
     #endregion
-
-
     [Inject(InjectFrom.Anywhere)]
     public playermanager main_player;
-
     [Inject(InjectFrom.Anywhere)]
     public camera_switch_ui_script ui_script_ref;
-
     [Inject(InjectFrom.Anywhere)]
     public VirtualJoystick virtual_joystick_access;
-
-
-
     [HideInInspector] public float h_joy;
     [HideInInspector] public float y_joy;
-
-
-
-
-
-
     float horizontal;
-
     float verticle;
-
-
     private Quaternion rotations;
-
-
     private Rect bottom_Right;
-
-
     public Vector3 player_x_z_offset;
 
     #region WEPON CAMERA CONTROLLER VARIABLES
@@ -129,7 +108,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
        // QualitySettings.vSyncCount = 0;
         if (!useOffsetValue)
         {
-
             pivot = main_player.gameObject.GetComponent<Transform>();
             player_fps_target = GameObject.FindWithTag("player_pivot");
             target = player_fps_target.GetComponent<Transform>();
@@ -141,9 +119,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             transform.rotation = pivot.rotation;
             
         }
-
-
-
 
         bottom_Right = new Rect(Screen.width / 2, 0, Screen.width / 2, Screen.height/2);
     }
@@ -222,7 +197,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				rotspeed = 0.0f;
 			}
 
-
             if (virtual_joystick_access.isfingeronjoystick)
             {
                 ////////=====================================================================
@@ -233,10 +207,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
                 ///
 
-
-
-
-
                 // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
                 // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
                 //  Quaternion rotations = Quaternion.Euler(0,transform.rotation.y , 0); ////////////////////////////////this is the testing code be celly :-)
@@ -246,7 +216,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
 
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  //////this is the testing code be celly :-)
-                
 
                 if (_wepon_tps_camera_ == true)
                 {
@@ -258,11 +227,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 {
                     positions = rotation *distanceVector + target.position; 
 
-                    
                 }
-
-
-
 
                 if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
                 {
@@ -274,20 +239,10 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 }
                 else
                 {
-
-
-
                     transform.position = positions;
                     transform.rotation = rotation;
                     transform.LookAt(target);
                 }
-
-
-
-
-                
-
-
 
             }
             else
@@ -324,7 +279,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 else
                 {
 
-
                     //transform.position = target.rotation * distanceVector + target.position;
                     transform.rotation = rotation; //rotation
                     transform.position = positions;  //+ new Vector3(0.0f,-1f,-1f)
@@ -332,9 +286,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 }
 
             }
-            
-            
-            
 
         }
         CameraCollision();
@@ -435,29 +386,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
             transform.LookAt(target);
         }
         
-        
-        
-        
-        
-        
         //this code is to test the work flow of the player main camera 
         // why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
