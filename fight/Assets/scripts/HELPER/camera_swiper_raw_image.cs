@@ -41,11 +41,12 @@ public class camera_swiper_raw_image : ExtendedCustomMonoBehavior, IDragHandler,
         roty += deltax * Time.deltaTime * rotSpeed * dir;
 
         rotx = Mathf.Clamp(rotx, -20f, 20f);
+
        // roty = Mathf.Clamp(roty, -360f, 360f);
        // pos = new Vector3(roty, rotx, 0); // new Vector3(rotx,roty,0);
-        
-
        // Debug.Log(pos);
+
+       
     }
 
     public void OnPointerDown(PointerEventData eventData)

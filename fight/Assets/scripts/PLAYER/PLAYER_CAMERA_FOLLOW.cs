@@ -50,7 +50,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private float distanceMin = 1f; //1   
     private float distanceMax = 3f;//DEFAULT 5   
     private object hit;
-   // private float xspeed = 1.0f;
+   //private float xspeed = 1.0f;
     //private float yspeed = 1.0f;
    // private float yMinLimit = 10f;
     //private float yMaxLimit = 20f; //DEFAULT 80
@@ -96,6 +96,22 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region WEPON CAMERA CONTROLLER VARIABLES
     public bool _wepon_tps_camera_ = false;
     #endregion
+
+
+
+    #region input manager variables
+    
+	[Inject(InjectFrom.Anywhere)]
+
+	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
+	
+
+
+    private float x_input;
+    private float y_input;
+
+    #endregion
+
 
     #region start metheod for initilization
     private void Start()
@@ -157,19 +173,31 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
     private void Update()
     {
-       horizontal = virtual_joystick_access.InputDirection.x * (speed);
-       verticle = virtual_joystick_access.InputDirection.y * (speed);
+       //horizontal = virtual_joystick_access.InputDirection.x * (speed);//28/02/2021 disabled to update input system
+       //verticle = virtual_joystick_access.InputDirection.y * (speed);//28/02/2021 disabled to update input system
 
-
+        horizontal = multiplat_form_input_manager.lookVec.x * (speed);
+        verticle = multiplat_form_input_manager.lookVec.y * (speed);
 
         verticle = Mathf.Clamp(horizontal, 20, 50);
+
+       x_input = camera_swiper_raw_image.instance.rotx;//28/02/2021 disabled to update input system
+       y_input = camera_swiper_raw_image.instance.roty;//28/02/2021 disabled to update input system
+
+      // x_input = multiplat_form_input_manager.lookVec.z; // this is new input system input z
+      // y_input = multiplat_form_input_manager.lookVec.x; // this is new input system input  x 
+    
+       
+     //  x_input= Mathf.Clamp(x_input, -20f, 20f);
+ 
+
     }
 
     #region LateUpdate
     private void LateUpdate()
     {
-         //jump code for camera
-         player_x_z_offset = new Vector3(target.position.x,2,target.position.z);
+        //jump code for camera
+        player_x_z_offset = new Vector3(target.position.x,2,target.position.z);
 
         gameObject.transform.parent = null;
 
@@ -232,7 +260,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
                 {
                   
-                    rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
+                    rotation = Quaternion.Euler(x_input, y_input, 0);
                     transform.position = positions;
                     transform.rotation = rotation;
                     transform.LookAt(target);
@@ -250,7 +278,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 
                 CameraMovementAroundPlayer();
                 //rotation = Quaternion.Euler(rotx, roty, 0);
-                rotation = Quaternion.Euler(camera_swiper_raw_image.instance.rotx, camera_swiper_raw_image.instance.roty, 0);
+                rotation = Quaternion.Euler(x_input, y_input, 0);
                 rotation = rotation.normalized;
 
                 if (distance < distanceMax)
@@ -259,17 +287,15 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
                 }
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
-            
-
                 positions = rotation * distanceVector + target.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
 
                 if (_wepon_tps_camera_ == true)
                 {
 
-                    rotation = target.rotation * Quaternion.Euler(camera_swiper_raw_image.instance.rotx,0, 0); // here is actually the rotation around the player and relative vertical rotation 
+                    rotation = target.rotation * Quaternion.Euler(x_input,0, 0); // here is actually the rotation around the player and relative vertical rotation 
                     transform.position = rotation * distanceVector+ target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
                        
-                    rotation = Quaternion.Euler(0,camera_swiper_raw_image.instance.roty, 0);
+                    rotation = Quaternion.Euler(0,y_input, 0);
                        
                     transform.rotation = Quaternion.RotateTowards(rotation, target.transform.rotation, 45);
                    
@@ -301,13 +327,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         inittouch_y = tuch_inpu.touch_input_manager.fp.y;
         finaltouch_x = tuch_inpu.touch_input_manager.lp.x;
         finaltouch_y = tuch_inpu.touch_input_manager.lp.y;
-       
         deltax = inittouch_x - finaltouch_x;
         deltay = inittouch_y - finaltouch_y;
         rotx -= deltay * Time.deltaTime * rotspeed * dir;
         roty -= deltax * Time.deltaTime * rotspeed * dir;
         rotx = Mathf.Clamp(rotx, -20.0f, 10f); //-30.0f,30.0f //-15.0f,10f
-       
     }
     #endregion
 
@@ -331,6 +355,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     #region CameraCollision script
     public void CameraCollision()
     {
+
         // difining the variables for the calculation
         Vector3 normal, thicknormal;
         Vector3 ray = transform.position - target.position; // target.position
@@ -352,6 +377,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
          * due to double projection t avoid sphere moving through the walls 
          *in this case we should only use thin point 
          * */
+
+
         bool isThickPointIncorrect = transform.InverseTransformDirection(collisionPointThick - target.position).z > 0;
 
         isThickPointIncorrect = isThickPointIncorrect || (collisionDistanceThin < collisionDistanceThick);
@@ -392,7 +419,6 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {
            transform.position = collisionPointRay; //newly changed for cameray fleckring
-
         }
      }
     #endregion
@@ -462,5 +488,8 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         }
         return cameraPosition;
     }
+
+    // this is the end of the player camera  rotation
+
     #endregion
 }

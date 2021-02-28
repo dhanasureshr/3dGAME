@@ -4289,7 +4289,9 @@ MonoBehaviour:
   virtual_joystick_access: {fileID: 0}
   h_joy: 0
   y_joy: 0
+  player_x_z_offset: {x: 0, y: 0, z: 0}
   _wepon_tps_camera_: 0
+  multiplat_form_input_manager: {fileID: 0}
 --- !u!114 &3618878444202896787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47604,6 +47606,7 @@ MonoBehaviour:
   rotate_speed: 3
   rotatspeed: 10
   invertpitch: 1
+  player_animations_config: {fileID: 0}
   multiplat_form_input_manager: {fileID: 0}
 --- !u!114 &6504001686676046231
 MonoBehaviour:
@@ -47618,6 +47621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_animator_ref: {fileID: 0}
+  multiplat_form_input_manager: {fileID: 0}
 --- !u!208 &6504001686676046225
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -47879,7 +47883,7 @@ MonoBehaviour:
     m_ActionId: 074a2594-15ed-420d-bdb3-7da12be798f9
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Joystick
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 3618878443787122601}
