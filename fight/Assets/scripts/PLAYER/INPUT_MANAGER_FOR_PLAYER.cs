@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+
 public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 {
+    public InputAction fire;
+
     public Vector3 moveVec;
     public Vector3 lookVec;
     public bool jump;
     #region private variables
     private Vector2 inputvac; // for temperarly storing the input value
     #endregion
+
+    
+    
+
+
     public void OnFire()
     {
         Debug.Log("player is fireing dhana from new input system ok");

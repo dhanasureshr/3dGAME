@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 
@@ -83,8 +84,17 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	[Inject(InjectFrom.Anywhere)]
 
 	public INPUT_MANAGER_FOR_PLAYER multiplat_form_input_manager;
+
+    // input system action for player jump test code
+
+	#region input system varables for player controlls
+
+	public InputAction jump_action;
+	[SerializeField] private InputActionAsset controls;
+	private InputActionMap _inputActionMap;
 	
 
+	#endregion
 
 	private bool groundedPlayer;
 
@@ -102,8 +112,26 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
 		player_animator = GetComponent<Animator>();
+
+		// this is the test code to check the player jump code from new C# events
+
+		_inputActionMap = controls.FindActionMap("Player");
+
+		jump_action = _inputActionMap.FindAction("Jump");
+		jump_action.performed += OnJumpAction;
+
 	}
 	#endregion
+
+	// this is the method for the player jump actaual implementation method 
+
+	private void OnJumpAction(InputAction.CallbackContext obj)
+	{
+		Debug.Log("yes treggerd the player input actions ");
+		jump = true;
+		
+	}
+
 
 	#region player movement updater
 
@@ -120,7 +148,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			/// --------------------------------------------------------
 			h_joy = virtual_joystick_access.InputDirection.x;
 			y_joy = virtual_joystick_access.InputDirection.z;
-
+/*       // desabled when creating the input actions with the c# events
 			if (Input.touchCount == 1)
 			{
 				Touch toucho = Input.GetTouch(0);
@@ -134,7 +162,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				}
 			}
 
-		
+		*/ 
 		    //player_target.transform.eulerAngles = new Vector3(pitch, raw, 0.0f);
 
 
@@ -153,7 +181,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
 			MoveDirection = multiplat_form_input_manager.moveVec;
 
-		   		//MoveDirection = transform.TransformDirection(MoveDirection);
+		   	//MoveDirection = transform.TransformDirection(MoveDirection);
 		
 			
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
@@ -216,12 +244,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				verticalvelocity = -gravity * Time.deltaTime;
 				MoveDirection = MoveDirection * speed; // applying movement when player is on ground
 
-				if(multiplat_form_input_manager.jump)
+				if(jump) // multiplat_form_input_manager.jump 
 				{
 					player_animations_config.PLAY_JUMP();
 					verticalvelocity = jumpforce;
 					
-					multiplat_form_input_manager.jump = false;
+					jump = false;//multiplat_form_input_manager.jump = false;
 				}
 			}
 			else

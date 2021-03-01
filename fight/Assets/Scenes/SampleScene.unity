@@ -24858,6 +24858,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: final_player
       objectReference: {fileID: 0}
+    - target: {fileID: 6504001686676046230, guid: c5f1a4570871b66498fe5e028e7d2ac4,
+        type: 3}
+      propertyPath: jump_action.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504001686676046230, guid: c5f1a4570871b66498fe5e028e7d2ac4,
+        type: 3}
+      propertyPath: jump_action.m_SingletonActionBindings.Array.data[1].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504001686676046230, guid: c5f1a4570871b66498fe5e028e7d2ac4,
+        type: 3}
+      propertyPath: jump_action.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Mouse>/middleButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504001686676046230, guid: c5f1a4570871b66498fe5e028e7d2ac4,
+        type: 3}
+      propertyPath: jump_action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: ec2284a2-0753-40c0-a38e-b32cc42a20e4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6504001686676046230, guid: c5f1a4570871b66498fe5e028e7d2ac4,
+        type: 3}
+      propertyPath: jump_action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/middleButton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5f1a4570871b66498fe5e028e7d2ac4, type: 3}
 --- !u!1001 &1087622553489508155

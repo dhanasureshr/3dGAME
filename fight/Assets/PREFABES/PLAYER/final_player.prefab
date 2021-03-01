@@ -47608,6 +47608,32 @@ MonoBehaviour:
   invertpitch: 1
   player_animations_config: {fileID: 0}
   multiplat_form_input_manager: {fileID: 0}
+  jump_action:
+    m_Name: Jump_action
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: a3b3dfdb-36da-4efe-ac2a-ce3c41d6f38d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: ca2f3286-dad4-4285-a5f6-56f8210b3e7d
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump_action
+      m_Flags: 0
+    - m_Name: 
+      m_Id: ec2284a2-0753-40c0-a38e-b32cc42a20e4
+      m_Path: <Keyboard>/h
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump_action
+      m_Flags: 0
+  controls: {fileID: -944628639613478452, guid: 33d14fd199625924db47090902b1cb72,
+    type: 3}
 --- !u!114 &6504001686676046231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47796,7 +47822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 33d14fd199625924db47090902b1cb72,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
