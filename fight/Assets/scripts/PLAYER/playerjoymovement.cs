@@ -244,12 +244,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				verticalvelocity = -gravity * Time.deltaTime;
 				MoveDirection = MoveDirection * speed; // applying movement when player is on ground
 
-				if(jump) // multiplat_form_input_manager.jump 
+				if(multiplat_form_input_manager.jump) // multiplat_form_input_manager.jump 
 				{
 					player_animations_config.PLAY_JUMP();
 					verticalvelocity = jumpforce;
 					
-					jump = false;//multiplat_form_input_manager.jump = false;
+					multiplat_form_input_manager.jump = false;//multiplat_form_input_manager.jump = false;
 				}
 			}
 			else

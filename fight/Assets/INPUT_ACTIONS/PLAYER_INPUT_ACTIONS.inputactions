@@ -35,7 +35,7 @@
                     "id": "4dafe5fa-05f1-414d-84b1-be9f1738529d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -266,6 +266,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08545f35-eaa5-429c-981f-c72568815d08",
+                    "path": "<HID::MOCUTE MOCUTE-Gamepad>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false

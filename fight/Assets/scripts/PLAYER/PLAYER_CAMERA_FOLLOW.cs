@@ -189,17 +189,18 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
       // y_input = camera_swiper_raw_image.instance.roty;//28/02/2021 disabled to update input system
 
         // this is the place where the camera look input is applied by new input system
-       scaledRotateSpeed = 1 * Time.deltaTime;
+       //scaledRotateSpeed = 1 * Time.deltaTime;
 
        x_input = multiplat_form_input_manager.lookVec.z; // this is new input system input z
        y_input = multiplat_form_input_manager.lookVec.x; // this is new input system input  x 
 
     
 
-       m_Rotation.y +=x_input * scaledRotateSpeed;
-       m_Rotation.x = Mathf.Clamp(m_Rotation.x - y_input * scaledRotateSpeed,-45,45);
+       //m_Rotation.y +=x_input * scaledRotateSpeed;
+       //m_Rotation.x = Mathf.Clamp(m_Rotation.x - y_input * scaledRotateSpeed,-45,45);
     
-       
+      // y_input = Mathf.Clamp(y_input - x_input,-45,45);
+
 
 
      //  x_input= Mathf.Clamp(x_input, -20f, 20f);
@@ -274,7 +275,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
                 {
                   
-                    rotation = Quaternion.Euler(m_Rotation.x,m_Rotation.y, 0);
+                    rotation = Quaternion.Euler(x_input,y_input, 0);
                     transform.position = positions;
                     transform.rotation = rotation;
                     transform.LookAt(target);
@@ -292,7 +293,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 
                 CameraMovementAroundPlayer();
                 //rotation = Quaternion.Euler(rotx, roty, 0);
-                rotation = Quaternion.Euler(m_Rotation.x,m_Rotation.y, 0);
+                rotation = Quaternion.Euler(x_input,y_input, 0);
                 rotation = rotation.normalized;
 
                 if (distance < distanceMax)
@@ -306,7 +307,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (_wepon_tps_camera_ == true)
                 {
 
-                    rotation = target.rotation * Quaternion.Euler(m_Rotation.x,0, 0); // here is actually the rotation around the player and relative vertical rotation 
+                    rotation = target.rotation * Quaternion.Euler(x_input,0, 0); // here is actually the rotation around the player and relative vertical rotation 
                     transform.position = rotation * distanceVector+ target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
                        
                     rotation = Quaternion.Euler(0,y_input, 0);
