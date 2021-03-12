@@ -23,6 +23,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
         player_input_actions.Player.Movement.performed += x=> inputvac = x.ReadValue<Vector2>();
         player_input_actions.Player.Movement.canceled += x=> inputvac = new Vector2(0,0);
+
         // this is the player input method to handle different type of input actions
 
         player_input_actions.Player.Look.performed += x=>d =x.ReadValue<Vector2>();
@@ -47,11 +48,11 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     public void f1sire()
     {
         Debug.Log("ok dhana player is fighting");
+
         b.OnPunchButtonPressed();
         
+        
     }
-
-
     public void f2sire()
     {
         b.OnKickButtonPressed();
@@ -60,7 +61,6 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     public void f3sire()
     {
         b.On_Dute_Animation();
-
     }
 
     public void f4sire()

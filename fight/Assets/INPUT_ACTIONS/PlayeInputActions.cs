@@ -20,7 +20,7 @@ public class @PlayeInputActions : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""2b53a5e7-87c6-4e60-837f-8d6fc28d132f"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": ""StickDeadzone"",
@@ -79,8 +79,8 @@ public class @PlayeInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""WASD"",
                     ""id"": ""3ade499a-0cc7-4238-b725-5285b2bb325f"",
-                    ""path"": ""2DVector(mode=1)"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
@@ -134,8 +134,8 @@ public class @PlayeInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""ARROW"",
                     ""id"": ""354a5472-9651-4571-9612-4becafbe32e5"",
-                    ""path"": ""2DVector(mode=1)"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
