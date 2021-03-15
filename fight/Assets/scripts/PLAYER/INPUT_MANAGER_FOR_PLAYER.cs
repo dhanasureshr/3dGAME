@@ -27,6 +27,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
         // this is the player input method to handle different type of input actions
 
         player_input_actions.Player.Look.performed += x=>d =x.ReadValue<Vector2>();
+        player_input_actions.Player.Look.canceled += x=> d = new Vector2(0,0);
       
         
         player_input_actions.Player.Jump.performed += x => Jump();
@@ -71,7 +72,9 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     {
         moveVec = new Vector3(inputvac.x,0,inputvac.y);
 
-        lookVec  = new Vector3(d.x,0,d.y);
+        lookVec = new Vector3(d.x,0,d.y);
+
+        Debug.Log(lookVec);
         
     
       
