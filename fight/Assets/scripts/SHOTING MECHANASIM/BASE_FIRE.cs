@@ -54,12 +54,9 @@ namespace  shoot
             if(Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out hitpoint,100.0f))
             {
                 screenPoint = hitpoint.point;
+                if(hitpoint.rigidbody != null)
+                    hitpoint.rigidbody.AddForce(-hitpoint.normal * 100.0f);
             }
-            
-            
-
-
-           
             //return hitpoint.point;
 
             return screenPoint;

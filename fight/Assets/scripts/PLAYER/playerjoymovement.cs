@@ -115,10 +115,10 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 		// this is the test code to check the player jump code from new C# events
 
-		_inputActionMap = controls.FindActionMap("Player");
+		//_inputActionMap = controls.FindActionMap("Player");
 
-		jump_action = _inputActionMap.FindAction("Jump");
-		jump_action.performed += OnJumpAction;
+		//jump_action = _inputActionMap.FindAction("Jump");
+		//jump_action.performed += OnJumpAction;
 
 	}
 	#endregion

@@ -299,10 +299,10 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (distance < distanceMax)
                 {
                     //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
-                    distance = Mathf.Lerp(distance+3, distanceMax ,2); //2f
+                    distance = Mathf.Lerp(distance+3, distanceMax ,20); //2f
                 }
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
-                positions = rotation * distanceVector + target.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
+                positions = rotation * distanceVector + pivot.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
 
                 if (_wepon_tps_camera_ == true)
                 {
@@ -429,7 +429,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         }
         
         //this code is to test the work flow of the player main camera 
-        // why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
+        //why i am writing this code means i have a problem with camera movement with respective to camera movement from negative input
 
         if (Vector3.Distance(target.position,collisionPoint) > Vector3.Distance(target.position, collisionPointRay))
         {

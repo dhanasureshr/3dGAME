@@ -15,16 +15,23 @@ public class shoot_test : MonoBehaviour
     [SerializeField]
     private GameObject ff;
 
+    private float firerate = 30f;
+
+    private float nexttimetofire = 0.0f;
+
+
 
     public void Update()
     {
-        refposition = t.worldpositionfromscreenpoint();
-
-        if(ts.f)
+        if(ts.f && Time.time >= nexttimetofire)
         {
+          refposition = t.worldpositionfromscreenpoint();
           var obj =  GameObject.Instantiate(ff,refposition,Quaternion.identity);
           obj.transform.Translate(transform.right * Time.deltaTime,Space.World);
+          GameObject.Destroy(obj,5.0f);
+          nexttimetofire = Time.time + 1f/firerate;
+          Debug.Log(nexttimetofire);
+        
         }
-
     }
 }
