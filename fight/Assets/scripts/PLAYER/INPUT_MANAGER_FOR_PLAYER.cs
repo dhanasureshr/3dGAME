@@ -10,6 +10,8 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     public Vector3 lookVec;
     public bool jump;
 
+    public bool f = false;
+
     public Vector2 d;
 
     PlayeInputActions player_input_actions;
@@ -40,7 +42,10 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
         player_input_actions.Player.Fire4.performed += x => f4sire();
 
+
+
         
+        player_input_actions.Player.Fire.canceled += x => f = false;
         player_input_actions.Enable();
 
     }
@@ -51,7 +56,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
         Debug.Log("ok dhana player is fighting");
 
         b.OnPunchButtonPressed();
-        
+        f = true;
         
     }
     public void f2sire()
@@ -70,14 +75,10 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     }
     public void Update()
     {
+        // reading movement input
         moveVec = new Vector3(inputvac.x,0,inputvac.y);
-
+        // reading look input
         lookVec = new Vector3(d.x,0,d.y);
-
-        Debug.Log(lookVec);
-        
-    
-      
     }
     private void Jump()
     {

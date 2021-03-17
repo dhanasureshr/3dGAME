@@ -190,7 +190,7 @@ public class @PlayeInputActions : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""5ffedb67-3c68-4259-aa71-e8d26699d10d"",
                     ""path"": ""<AndroidGamepad>/leftStick"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",

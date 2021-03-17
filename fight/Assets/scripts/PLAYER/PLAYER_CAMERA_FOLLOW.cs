@@ -197,7 +197,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
         var scaledRotateSpeed = 100 * Time.deltaTime;
 
        m_Rotation.y +=y_input * scaledRotateSpeed;
-       m_Rotation.x = Mathf.Clamp(m_Rotation.x - x_input * scaledRotateSpeed,-20,20);
+       m_Rotation.x = Mathf.Clamp(m_Rotation.x - x_input * scaledRotateSpeed,-60,60);
     
       // y_input = Mathf.Clamp(y_input - x_input,-45,45);
 
