@@ -216,7 +216,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
         gameObject.transform.parent = null;
 
-        if (virtual_joystick_access.isfingeronjoystick)
+        if (virtual_joystick_access.isfingeronjoystick || multiplat_form_input_manager.is_finger_on_move_joystick)
         {
             if (Input.touchCount == 1)
             {
@@ -240,7 +240,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				rotspeed = 0.0f;
 			}
 
-            if (virtual_joystick_access.isfingeronjoystick)
+            if (virtual_joystick_access.isfingeronjoystick || multiplat_form_input_manager.is_finger_on_move_joystick)
             {
                 ////////=====================================================================
                 ///if you enable the below lines of code menas 
@@ -249,6 +249,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
                 ///
+                
 
                 // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
                 // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
@@ -272,7 +273,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 }
 
-                if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
+                if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image || multiplat_form_input_manager.is_finger_on_look_joystick)
                 {
                   
                     rotation = Quaternion.Euler(m_Rotation.x,m_Rotation.y, 0);
