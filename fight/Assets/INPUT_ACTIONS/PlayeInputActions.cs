@@ -434,7 +434,7 @@ public class @PlayeInputActions : IInputActionCollection, IDisposable
                     ""path"": ""*/{Secondary2DMotion}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Pointer;Mouse"",
+                    ""groups"": """",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

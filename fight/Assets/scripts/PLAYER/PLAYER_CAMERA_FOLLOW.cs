@@ -48,7 +48,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f; //1   
-    private float distanceMax = 3f;//DEFAULT 5   
+    private float distanceMax = 4f;//DEFAULT 5   
     private object hit;
    //private float xspeed = 1.0f;
     //private float yspeed = 1.0f;
