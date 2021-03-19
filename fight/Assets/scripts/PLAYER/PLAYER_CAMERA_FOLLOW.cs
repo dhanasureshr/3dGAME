@@ -268,7 +268,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 }
                 else
                 {
-                    positions = rotation *distanceVector + target.position; 
+                    positions = rotation * distanceVector + target.position; 
 
                 }
 
@@ -507,4 +507,4 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     // this is the end of the player camera  rotation
 
     #endregion
-}
+}//----> BY DHANA SURESH ADARI
