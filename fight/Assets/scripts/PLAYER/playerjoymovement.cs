@@ -175,16 +175,12 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			{
 
 				//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
-
 				//angle = Mathf.Atan2(h_joy, y_joy);2021/02/18 desable for new input mangager input test
+
 				angle = Mathf.Atan2(multiplat_form_input_manager.moveVec.x,multiplat_form_input_manager.moveVec.z);
 				angle = Mathf.Rad2Deg * angle;
-				
-
 				angle += Camera.main.transform.eulerAngles.y;
-
 				targetrotation = Quaternion.Euler(0, angle, 0);
-				
 				if (player_camera_follow_script._wepon_tps_camera_ != true )
 				{
 					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime);
@@ -192,25 +188,17 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
 				{
-
 					targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
-
 					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
 				}
-
 			}
 			else
 			{
-
-
-
 				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
 				{
 					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
 				}
-				
-
-				
+				transform.rotation = targetrotation;
 			}
 			
 			
@@ -220,20 +208,16 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			{
 				verticalvelocity = -gravity * Time.deltaTime;
 				MoveDirection = MoveDirection * speed; // applying movement when player is on ground
-
 				if(multiplat_form_input_manager.jump) // multiplat_form_input_manager.jump 
 				{
 					player_animations_config.PLAY_JUMP();
 					verticalvelocity = jumpforce;
-					
 					multiplat_form_input_manager.jump = false;//multiplat_form_input_manager.jump = false;
 				}
 			}
 			else
 			{
-				
 				MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
-			
 				verticalvelocity -= gravity * Time.deltaTime;
 			}
 
@@ -242,9 +226,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			   if you want to make the player to jump smoothly disable the gravity 
 			   by checking a condition and make the gravity negative 
 			*/
-
-			
-
 			playercharactercontroller.Move(moveVector * Time.deltaTime);
 			///-----------------------------------------------------------
 
@@ -263,14 +244,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 			player_animations_config.PLAY_MOVE_ANIMATION();
 
-
-
-
 			#endregion
-
-
-			
-
 
 			#region  FeetGrounding
 			
