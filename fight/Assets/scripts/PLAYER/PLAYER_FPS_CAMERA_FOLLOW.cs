@@ -24,6 +24,7 @@ public class PLAYER_FPS_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 	public playermanager main_player;
 	[Inject(InjectFrom.Anywhere)]
 	public VirtualJoystick virtual_joystick_access_for_fps;
+	
 	//[Inject(InjectFrom.Anywhere)]
 	//public tuch_inpu touch_input;
 	private Rect TopRight;

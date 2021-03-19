@@ -48,7 +48,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     [Tooltip("LayerMask used for detecting camera collision"),SerializeField]
     private LayerMask layermask;
     private float distanceMin = 1f; //1   
-    private float distanceMax = 3f;//DEFAULT 5   
+    private float distanceMax = 4f;//DEFAULT 5   
     private object hit;
    //private float xspeed = 1.0f;
     //private float yspeed = 1.0f;
@@ -212,11 +212,11 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
     private void LateUpdate()
     {
         //jump code for camera
-        player_x_z_offset = new Vector3(target.position.x,2,target.position.z);
+        player_x_z_offset = new Vector3(target.position.x,2,target.position.z); // 2 in place of 15
 
         gameObject.transform.parent = null;
 
-        if (virtual_joystick_access.isfingeronjoystick)
+        if (virtual_joystick_access.isfingeronjoystick || multiplat_form_input_manager.is_finger_on_move_joystick)
         {
             if (Input.touchCount == 1)
             {
@@ -240,7 +240,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 				rotspeed = 0.0f;
 			}
 
-            if (virtual_joystick_access.isfingeronjoystick)
+            if (virtual_joystick_access.isfingeronjoystick || multiplat_form_input_manager.is_finger_on_move_joystick)
             {
                 ////////=====================================================================
                 ///if you enable the below lines of code menas 
@@ -249,6 +249,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
 
                 // pivot.Rotate(0, horizontal, 0); ///////////desabled for player_rot test
                 ///
+                
 
                 // float desiredYAngle = target.eulerAngles.y; ////////////////////////////////this is the testing code be celly :-)
                 // float desiredXAngle = pivot.eulerAngles.x; ////////////////////////////////this is the testing code be celly :-)
@@ -256,23 +257,25 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 // transform.rotation = rotations;
 
                 // transform.LookAt(target);  ////////////////////////////////this is the testing code be celly :-)
-
+                 if (distance < distanceMax)
+                {
+                    //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
+                    distance = Mathf.Lerp(distance+3, distanceMax ,20); //20
+                }
 
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  //////this is the testing code be celly :-)
+                positions = rotation * distanceVector + pivot.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
 
                 if (_wepon_tps_camera_ == true)
                 {
-
-                    positions = target.rotation * distanceVector + target.position;
-                  
+                    positions = target.rotation * distanceVector + target.position;  
                 }
                 else
                 {
                     positions = rotation * distanceVector + target.position; 
-
                 }
 
-                if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)
+                if (camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image || multiplat_form_input_manager.is_finger_on_look_joystick)
                 {
                   
                     rotation = Quaternion.Euler(m_Rotation.x,m_Rotation.y, 0);
@@ -286,6 +289,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                     transform.rotation = rotation;
                     transform.LookAt(target);
                 }
+                
 
             }
             else
@@ -299,7 +303,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 if (distance < distanceMax)
                 {
                     //distance = Mathf.Lerp(distance+3, distanceMax, Time.deltaTime);// *1f); //10f
-                    distance = Mathf.Lerp(distance+3, distanceMax ,20); //2f
+                    distance = Mathf.Lerp(distance+3, distanceMax ,20); //20
                 }
                 Vector3 distanceVector = new Vector3(0.0f, 0.0f, -distance);//(0.0f,1.0f,-distance)  /////////this is the testing code be celly :-)
                 positions = rotation * distanceVector + pivot.position; //positions = rotation * distanceVector + target.position;24/2/2020 changed target.position to player_x_z_offset 
@@ -308,7 +312,7 @@ public class PLAYER_CAMERA_FOLLOW : ExtendedCustomMonoBehavior
                 {
 
                     rotation = target.rotation * Quaternion.Euler(m_Rotation.x,0, 0); // here is actually the rotation around the player and relative vertical rotation 
-                    transform.position = rotation * distanceVector+ target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
+                    transform.position = rotation * distanceVector + target.position;//transform.position = rotation * distanceVector+ target.position;24/2/2020 changed target.position to player_x_z_offset
                        
                     rotation = Quaternion.Euler(0,y_input, 0);
                        
