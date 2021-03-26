@@ -110,8 +110,6 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 	{
 		playercharactercontroller = GetComponent<CharacterController>();
 		player_animator = GetComponent<Animator>();
-
-
 	}
 	#endregion
 
@@ -119,11 +117,8 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 
 	private void Update()
 	{
-
 		if(gamemanager.instance.isinputallowed)
-		{
-
-			
+		{	
 			groundedPlayer = playercharactercontroller.isGrounded;
 
 			/// this code is for the player movement with camera at back
@@ -157,33 +152,33 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				speed = 2f;
 			}
 
-
-
 			float yStore = MoveDirection.y;
 			//MoveDirection = new Vector3(h_joy,0, y_joy); // 2021/02/18 desable for new input mangager input test
-			MoveDirection = multiplat_form_input_manager.moveVec;
-
-		   //MoveDirection = transform.TransformDirection(MoveDirection);
-		
 			
+			MoveDirection = multiplat_form_input_manager.moveVec; // new test
+			
+
+		    //MoveDirection = transform.TransformDirection(MoveDirection);
 			MoveDirection = Camera.main.transform.TransformDirection(MoveDirection); 
 			
-
 			//if (is_tps_mode_on && virtual_joystick_access.isfingeronjoystick) 2021/02/18 desable for new input mangager input test
-			
+
 			if(is_tps_mode_on && multiplat_form_input_manager.is_finger_on_move_joystick)
 			{
-
-				//transform.rotation = Quaternion.LookRotation(MoveDirection.normalized); // testing purpus disabled
+				//transform.rotation = Quaternion.LookRotation(Vector3.forward); // testing purpus disabled
 				//angle = Mathf.Atan2(h_joy, y_joy);2021/02/18 desable for new input mangager input test
-
 				angle = Mathf.Atan2(multiplat_form_input_manager.moveVec.x,multiplat_form_input_manager.moveVec.z);
-				angle = Mathf.Rad2Deg * angle;
+				
+				angle = Mathf.Rad2Deg * angle; // this is helping to rotate the paleyer 
+				//angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
+
 				angle += Camera.main.transform.eulerAngles.y;
 				targetrotation = Quaternion.Euler(0, angle, 0);
 				if (player_camera_follow_script._wepon_tps_camera_ != true )
 				{
-					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation ,speed * Time.deltaTime);
+					//transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation ,speed * 50 * Time.deltaTime);
+					//---------
+					transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed  * Time.deltaTime);
 					
 				}
 
@@ -191,14 +186,21 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
 				{
 					targetrotation = Quaternion.Euler(0, camera_swiper_raw_image.instance.roty, 0);
-					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+					//transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * 50* Time.deltaTime); // 10
+					//-----------
+					
+					transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed * Time.deltaTime);
+					
 				}
 			}
 			else
 			{
 				if (player_camera_follow_script._wepon_tps_camera_ == true && camera_swiper_raw_image.instance.isfingerON_custom_swipe_input_image)//&&tuch_inpu.touch_input_manager.swiping
 				{
-					transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * Time.deltaTime); // 10
+					//transform.rotation = Quaternion.Slerp(transform.rotation, targetrotation, speed * 50 * Time.deltaTime); // 10
+					//--------
+					transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed * Time.deltaTime);
+					
 				}
 				
 			}
@@ -228,7 +230,7 @@ public class playerjoymovement : ExtendedCustomMonoBehavior
 			   if you want to make the player to jump smoothly disable the gravity 
 			   by checking a condition and make the gravity negative 
 			*/
-			playercharactercontroller.Move(moveVector * Time.deltaTime);
+			playercharactercontroller.Move(moveVector  * Time.deltaTime);
 			///-----------------------------------------------------------
 
 			//player_animator.SetFloat(horthash, h_joy, 0.1f, Time.deltaTime);2021/02/18 desable for new input mangager input test
