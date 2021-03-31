@@ -11,12 +11,8 @@ public class player_movement : MonoBehaviour
 
     private Quaternion rotationToMoveDirection;
 
-    [Inject(injectFrom.Anywhere)]
+    
 
     
 
-    private void Update()
-    {
-        MoveDirection  = Vector3.forward * 
-    }
 }
