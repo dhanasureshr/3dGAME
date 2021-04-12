@@ -27,7 +27,7 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
 
     PlayeInputActions player_input_actions;
     
-    public player_fighting_ui_controller_method b;
+    //public player_fighting_ui_controller_method b;
 
     #region player action responce methods with out player input component with c# object 
     private void Awake()
@@ -85,23 +85,23 @@ public class INPUT_MANAGER_FOR_PLAYER : ExtendedCustomMonoBehavior
     {
         Debug.Log("ok dhana player is fighting");
 
-        b.OnPunchButtonPressed();
+        //b.OnPunchButtonPressed();
         f = true;
         
     }
     public void f2sire()
     {
-        b.OnKickButtonPressed();
+        //b.OnKickButtonPressed();
     }
 
     public void f3sire()
     {
-        b.On_Dute_Animation();
+        //b.On_Dute_Animation();
     }
 
     public void f4sire()
     {
-        b.On_shield_button_pressed();
+        //b.On_shield_button_pressed();
     }
     public void Update()
     {

@@ -9,21 +9,40 @@ public class player_movement : MonoBehaviour
 
     private Quaternion rotationToCamera;
 
+
+    private float movespeed = 5.0f;
+    private float rotationspeed = 5.0f;
+
+
+
     private Quaternion rotationToMoveDirection;
     [Inject(InjectFrom.Anywhere)]
     public INPUT_MANAGER_FOR_PLAYER Player_Input;
 
 
     
-    private void update()
+    private void Update()
     {
-        if(gamemanager.instance.isinputallowed)
-        {
-            
-        }
+        Debug.Log("hi dhana player");
+
+        MoveDirection = Player_Input.moveVec;
+
+        ProjectedCameraForward = Vector3.ProjectOnPlane(Camera.main.transform.forward,Vector3.up);
+        rotationToCamera = Quaternion.LookRotation(ProjectedCameraForward,Vector3.up);
 
 
-        //MoveDirection = Vector3.forward 
+        MoveDirection  = rotationToCamera * MoveDirection;
+
+        rotationToMoveDirection  = Quaternion.LookRotation(MoveDirection,Vector3.up);
+        // this rotation is for wepon look
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToCamera,rotationspeed * Time.deltaTime);
+
+        // this rotation is for free look
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToMoveDirection,rotationspeed * Time.deltaTime);
+
+        transform.position += MoveDirection * movespeed * Time.deltaTime;
+
+        
     }
     
 
