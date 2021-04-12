@@ -10,9 +10,21 @@ public class player_movement : MonoBehaviour
     private Quaternion rotationToCamera;
 
     private Quaternion rotationToMoveDirection;
+    [Inject(InjectFrom.Anywhere)]
+    public INPUT_MANAGER_FOR_PLAYER Player_Input;
+
 
     
+    private void update()
+    {
+        if(gamemanager.instance.isinputallowed)
+        {
+            
+        }
 
+
+        //MoveDirection = Vector3.forward 
+    }
     
 
 }

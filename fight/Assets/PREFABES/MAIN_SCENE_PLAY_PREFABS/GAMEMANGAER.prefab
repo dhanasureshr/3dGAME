@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 163734388068087780}
   - component: {fileID: 4532593734256567332}
   - component: {fileID: 6284009696825837287}
+  - component: {fileID: 2196840259093053758}
   m_Layer: 0
   m_Name: GAMEMANGAER
   m_TagString: gamemanager
@@ -288,3 +289,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3943e9faeedf04e891715ef0ed3a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PLATFORM_ANDROID: 0
+  PLATFORM_WINDOWS: 0
+  PLATFORM_LINUX: 0
+  PLATFORM_IOS: 0
+--- !u!114 &2196840259093053758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4512449123914293125}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4433564e76b1940028e7e531f171050d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
