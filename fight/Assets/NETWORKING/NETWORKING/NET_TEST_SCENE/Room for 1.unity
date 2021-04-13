@@ -3190,7 +3190,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795520836}
-  m_LocalRotation: {x: 0.011305846, y: 0.051129363, z: -0.010489976, w: -0.998573}
+  m_LocalRotation: {x: 0.011305861, y: 0.051129397, z: -0.010489981, w: -0.998573}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7777,7 +7777,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736650099}
-  m_LocalRotation: {x: 0.07722114, y: 0.0000000022383269, z: -1.7336382e-10, w: 0.99701405}
+  m_LocalRotation: {x: 0.07722114, y: 0.0000000045525614, z: -3.526069e-10, w: 0.99701405}
   m_LocalPosition: {x: 0, y: 2.78, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -7853,7 +7853,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792910808}
-  m_LocalRotation: {x: 0.029467508, y: 0.051311713, z: -0.009558223, w: -0.99820215}
+  m_LocalRotation: {x: 0.029467508, y: 0.05131171, z: -0.009558222, w: -0.99820215}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11981,7 +11981,6 @@ GameObject:
   m_Component:
   - component: {fileID: 566671207025015044}
   - component: {fileID: 1774879207523282335}
-  - component: {fileID: 566671207025015047}
   m_Layer: 10
   m_Name: N_player
   m_TagString: Player
@@ -11989,19 +11988,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &566671207025015047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566671207025015046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b936643c9da8f7b488024904f4409834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player_Input: {fileID: 0}
 --- !u!1 &566671207025210590
 GameObject:
   m_ObjectHideFlags: 0
@@ -13430,8 +13416,7 @@ MonoBehaviour:
   umaData: {fileID: 4048027289117422733}
   defaultRendererAsset: {fileID: 0}
   umaRecipe: {fileID: 11400000, guid: 1d97eb041589729479af9716fd5b42b3, type: 2}
-  umaAdditionalRecipes:
-  - {fileID: 11400000, guid: 1f292487d7383514f97c491cadfb0442, type: 2}
+  umaAdditionalRecipes: []
   umaGenerator: {fileID: 0}
   animationController: {fileID: 9100000, guid: ae859d58fdf844b73863d3833f955cdf, type: 2}
   CharacterCreated:
