@@ -31,6 +31,9 @@ public class player_movement : MonoBehaviour
 	float angle;
 	Quaternion targetrotation;
 
+    public bool wepon__movement;
+
+
     private void Start()
     {
         playercharactercontroller = GetComponent<CharacterController>();
@@ -42,24 +45,31 @@ public class player_movement : MonoBehaviour
     {
         MoveDirection = Player_Input.moveVec;
 
-        //MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
+        MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
 
-        MoveDirection =transform.TransformDirection(MoveDirection);
+        //MoveDirection =transform.TransformDirection(MoveDirection);
         
 		MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
 	    verticalvelocity -= gravity * Time.deltaTime;
 
 
-        angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z);                        
-        angle = Mathf.Rad2Deg * angle; // this is helping to rotate the paleyer 
-        //angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
-        //angle += Camera.main.transform.eulerAngles.y;
-        angle += transform.eulerAngles.y;
+        angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z); 
+        if(wepon__movement)
+        {                       
+            angle = Mathf.Rad2Deg * angle; // this is helping to rotate the paleyer 
+        }
+        else
+        {
+            angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
+        }
+        angle += Camera.main.transform.eulerAngles.y;
+        //angle += transform.eulerAngles.y;
         targetrotation = Quaternion.Euler(0, angle, 0);
 
     
-		//transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed * Time.deltaTime);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed  * Time.deltaTime);
+		transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,20 * Time.deltaTime);
+        
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed  * Time.deltaTime);
 
         moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
 
