@@ -21,14 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 645
-  m_MinSize: {x: 678, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 2795
-=======
-  controlID: 20693
->>>>>>> parent of b6372d3c (player movement update)
+  controlID: 746
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -50,10 +46,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 268
+    x: 202
     y: 19
-    width: 813
-    height: 346
+    width: 887
+    height: 353
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -63,7 +59,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 813, y: 325}
+  m_TargetSize: {x: 887, y: 332}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -78,10 +74,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -406.5
-    m_HBaseRangeMax: 406.5
-    m_VBaseRangeMin: -162.5
-    m_VBaseRangeMax: 162.5
+    m_HBaseRangeMin: -443.5
+    m_HBaseRangeMax: 443.5
+    m_VBaseRangeMin: -166
+    m_VBaseRangeMax: 166
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -99,23 +95,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 813
-      height: 325
+      width: 887
+      height: 332
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 406.5, y: 162.5}
+    m_Translation: {x: 443.5, y: 166}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -406.5
-      y: -162.5
-      width: 813
-      height: 325
+      x: -443.5
+      y: -166
+      width: 887
+      height: 332
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 813, y: 346}
+  m_LastWindowPixelSize: {x: 887, y: 353}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -140,16 +136,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1082
+    width: 1090
     height: 645
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-<<<<<<< HEAD
-  controlID: 2796
-=======
-  controlID: 20694
->>>>>>> parent of b6372d3c (player movement update)
+  controlID: 747
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,16 +161,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1082
-    height: 367
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+    width: 1090
+    height: 374
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-<<<<<<< HEAD
-  controlID: 2797
-=======
-  controlID: 20695
->>>>>>> parent of b6372d3c (player movement update)
+  controlID: 748
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,10 +184,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 267
-    height: 367
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 201
+    height: 374
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -228,19 +216,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 266
-    height: 346
+    width: 200
+    height: 353
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-<<<<<<< HEAD
-      m_ExpandedIDs: 66e3ffff2cfbffff80550000
-=======
-      m_ExpandedIDs: c6deffff96750000
->>>>>>> parent of b6372d3c (player movement update)
+      m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -256,7 +240,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -279,10 +263,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 267
+    x: 201
     y: 0
-    width: 815
-    height: 367
+    width: 889
+    height: 374
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
@@ -313,10 +297,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 267
+    x: 201
     y: 73
-    width: 813
-    height: 346
+    width: 887
+    height: 353
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 56f585782a53d5b428b2faa4bf39e18a
@@ -328,15 +312,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: 90.333916, y: 13.631088, z: -11.893143}
+    m_Target: {x: 0.00013446808, y: 1.6080506, z: 0.008116931}
     speed: 2
-    m_Value: {x: 90.333916, y: 13.631088, z: -11.893143}
-=======
-    m_Target: {x: 2.4551203, y: 1.4684657, z: 4.2572017}
-    speed: 2
-    m_Value: {x: 2.4551203, y: 1.4684657, z: 4.2572017}
->>>>>>> parent of b6372d3c (player movement update)
+    m_Value: {x: 0.00013446808, y: 1.6080506, z: 0.008116931}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -386,15 +364,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.08549509, y: -0.06958959, z: 0.0059864544, w: -0.9938874}
   m_Size:
-<<<<<<< HEAD
-    m_Target: 98.37878
+    m_Target: 1.171862
     speed: 2
-    m_Value: 98.37878
-=======
-    m_Target: 0.9247449
-    speed: 2
-    m_Value: 0.9247449
->>>>>>> parent of b6372d3c (player movement update)
+    m_Value: 1.171862
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -461,9 +433,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 367
-    width: 1082
-    height: 278
+    y: 374
+    width: 1090
+    height: 271
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 11}
@@ -494,9 +466,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 440
-    width: 1081
-    height: 257
+    y: 447
+    width: 1089
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -511,20 +483,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/NETWORKING/NETWORKING/NET_TEST_SCENE
+    - Assets/NETWORKING/NETWORKING/Resources
   m_ViewMode: 1
-  m_StartGridSize: 96
+  m_StartGridSize: 16
   m_LastFolders:
-  - Assets/NETWORKING/NETWORKING/NET_TEST_SCENE
-  m_LastFoldersGridSize: 96
+  - Assets/NETWORKING/NETWORKING/Resources
+  m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\project\3dGAME\fight
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 19}
-    m_SelectedIDs: 1c590000
-    m_LastClickedID: 22812
-    m_ExpandedIDs: 00000000744f0000e0580000e2580000e458000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: be580000
+    m_LastClickedID: 22718
+    m_ExpandedIDs: 00000000744f0000a6580000a8580000aa58000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -552,7 +524,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000744f0000e0580000e2580000e458000000ca9a3b
+    m_ExpandedIDs: 00000000744f0000a6580000a8580000aa58000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -577,14 +549,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-<<<<<<< HEAD
-    m_SelectedInstanceIDs: 2c6a0000
-    m_LastClickedInstanceID: 27180
-=======
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
->>>>>>> parent of b6372d3c (player movement update)
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -601,7 +568,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -610,7 +577,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 96
+    m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
 --- !u!114 &12
@@ -635,9 +602,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 440
-    width: 1081
-    height: 257
+    y: 447
+    width: 1089
+    height: 250
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -649,17 +616,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1082
+    x: 1090
     y: 0
-    width: 284
+    width: 276
     height: 645
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -686,9 +653,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1082
+    x: 1090
     y: 73
-    width: 283
+    width: 275
     height: 624
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -701,9 +668,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-<<<<<<< HEAD
-  m_LastInspectedObjectInstanceID: 27180
-=======
   m_LastInspectedObjectInstanceID: -1
->>>>>>> parent of b6372d3c (player movement update)
   m_LastVerticalScrollValue: 0
