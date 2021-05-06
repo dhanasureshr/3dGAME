@@ -33,7 +33,7 @@ namespace  shoot
         // A variable name starts with smallcase forllowed by caps in between names
         //------------------------------------------------------------------------------>
         //------------------------------------------------------------------------------>
-        ///<summery> ----BY DHANA SURESH ADARI
+        ///<summery> ----BY DHANA SURESH ADARI -->love you janu
         #region Generic public variables
 
         private Vector3 nozzlePosition;

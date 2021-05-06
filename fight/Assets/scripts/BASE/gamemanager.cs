@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class gamemanager : ExtendedCustomMonoBehavior,IListener
+public class gamemanager : MonoBehaviourPunCallbacks,IListener
 {
 	/// <summary>
 	/// this is the main game manager script in which it knows about every dynamic objcts reference is stored hear 
@@ -36,7 +39,8 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 	/// BUT health_booster,strength_booster,score_boosters are common for every level
 	/// -------------------------------------------------------------------------------------------------------------------------------------------
 	/// ===========================================================================================================================================
-	/// 
+	/// ----> love you janu :-)
+	/// this script also manages some core network features for the entire application
 	/// 
 	/// </summary>
 	/// 
@@ -210,6 +214,65 @@ public class gamemanager : ExtendedCustomMonoBehavior,IListener
 		
 	}
 
-#endregion
+
+        #region  Network features implementation
+
+        #region  Photon callbacks
+		// this is the place to handle when player disconnected form game or intenctionally left the game 
+		// so here i am loading the main menu as a responce to the above action
+        public override void OnLeftRoom()
+        {
+            SceneManager.LoadScene(0);
+        }
+
+		// this is the place to handle when player entered the room
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            Debug.LogFormat("OnPlayerEnteredRoom(){0}",newPlayer.NickName);
+			if(PhotonNetwork.IsMasterClient)
+			{
+				Debug.LogFormat("OnPlayerEnteredRoom IsMasterClient {0}",PhotonNetwork.IsMasterClient);
+
+				LoadArena();
+			}
+        }
+
+        // this is the place to handle when player left room 
+        public override void OnPlayerLeftRoom(Player other)
+        {
+            Debug.LogFormat("OnPlayerLeftRoom() {0}",other);
+
+			if(PhotonNetwork.IsMasterClient)
+			{
+				Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}",PhotonNetwork.IsMasterClient);
+				LoadArena();
+
+			}
+        }
+        #endregion
+
+		void LoadArena()
+		{
+			if(!PhotonNetwork.IsMasterClient)
+			{
+				Debug.LogFormat("PhotoNetwork: Tring to Load a Level but we are not the master client");
+
+			}
+			Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+
+			PhotonNetwork.LoadLevel("Room for " + PhotonNetwork.CurrentRoom.PlayerCount);
+
+		}
+
+		public void LeaveRoom()
+		{
+			PhotonNetwork.LeaveRoom();
+
+		}
+
+        #endregion
+
+        #endregion
+
 
 }

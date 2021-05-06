@@ -16,6 +16,7 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
     void Start()
     {
         GameObject go = GameObject.Instantiate(DCAPrefab);
+        go.name = "Player_mesh";
         var DCA = go.GetComponent<DynamicCharacterAvatar>();
 
         // Just load some items into the character.

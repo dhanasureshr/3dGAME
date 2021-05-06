@@ -162,7 +162,7 @@ public class UMAMountedItem : MonoBehaviour
 
     private void SetMountTransform()
     {
-       // Debug.Log("Setting mount transform");
+        Debug.Log("Setting mount transform");
         if (MountPoint != null)
         {
             Vector3 globalScale = avatar.gameObject.transform.lossyScale;

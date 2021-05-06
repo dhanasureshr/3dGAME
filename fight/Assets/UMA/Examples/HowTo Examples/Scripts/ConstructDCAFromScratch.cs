@@ -22,6 +22,7 @@ public class ConstructDCAFromScratch : MonoBehaviour
     void Start()
     {
         GameObject go = new GameObject();
+        go.name = "Player"; // -------given a player name here ---------jahnavi;
         var DCA = go.AddComponent<DynamicCharacterAvatar>();
 
         if (LoadFromAvatarDef)
