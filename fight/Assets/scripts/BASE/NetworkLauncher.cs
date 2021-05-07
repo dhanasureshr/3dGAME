@@ -16,7 +16,6 @@ namespace com.dhanasoftwares
         void Awake()
         {
             PhotonNetwork.AutomaticallySyncScene = true;
-
         }
 
         public void Connect()
