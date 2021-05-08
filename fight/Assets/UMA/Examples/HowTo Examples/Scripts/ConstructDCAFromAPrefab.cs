@@ -41,7 +41,7 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
             // channel.
             // If you need full control over color channels, use DCA.SetRawColor("Hair",overlayColorData);
             DCA.SetColor("Hair", hairColor);
-
+            
             // Set any predefined wardrobe items.
             go.transform.position = new Vector3(0f, 0.5f, 0f);
             go.SetActive(true);
