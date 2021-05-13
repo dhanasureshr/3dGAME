@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using UMA.Examples;
 using UMA.PoseTools;
+using static UMA.UMAPackedRecipeBase;
 
 namespace UMA.Editors
 {
@@ -60,7 +61,7 @@ namespace UMA.Editors
 			EditorUtility.DisplayDialog("Saved", "Avatar save to assets as CreatedAvatar", "OK");
 		}
 
-		public static void ConvertToNonUMA(GameObject baseObject, UMAAvatarBase avatar, string Folder, bool ConvertNormalMaps, string CharName)
+		public static void ConvertToNonUMA(GameObject baseObject, UMAAvatarBase avatar, string Folder, bool ConvertNormalMaps, string CharName, bool AddStandaloneDNA)
 		{
 			Folder = Folder + "/" + CharName;
 
@@ -91,24 +92,40 @@ namespace UMA.Editors
 							Texture texture = m.GetTexture(propertyName);
 							if (texture is Texture2D || texture is RenderTexture)
 							{
+								bool isNormal = false;
 								string path = AssetDatabase.GetAssetPath(texture.GetInstanceID());
 								if (string.IsNullOrEmpty(path))
 								{
-									if (ConvertNormalMaps && propertyName.ToLower().Contains("bumpmap"))
+									if (ConvertNormalMaps)
 									{
-										// texture = ConvertNormalMap(texture);
-										texture = sconvertNormalMap(texture);
+										if (propertyName.ToLower().Contains("bumpmap") || propertyName.ToLower().Contains("normal"))
+										{
+											// texture = ConvertNormalMap(texture);
+											texture = sconvertNormalMap(texture);
+											isNormal = true;
+										}
 									}
-									string texName = Path.Combine(Folder, CharName+"_Mat_" + Material + propertyName + ".png");
+									string texName = Path.Combine(Folder, CharName + "_Mat_" + Material + propertyName + ".png");
 									SaveTexture(texture, texName);
 									AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+									if (isNormal)
+                                    {
+										TextureImporter importer = (TextureImporter)TextureImporter.GetAtPath(texName);
+										importer.isReadable = true;
+										importer.textureType = TextureImporterType.NormalMap;
+										importer.maxTextureSize = 1024; // or whatever
+										importer.textureCompression = TextureImporterCompression.CompressedHQ;
+										EditorUtility.SetDirty(importer);
+										importer.SaveAndReimport();
+									}
+
 									Texture2D tex = AssetDatabase.LoadAssetAtPath<Texture2D>(CustomAssetUtility.UnityFriendlyPath(texName));
 									m.SetTexture(propertyName, tex);
 								}
 							}
 						}
 					}
-					string matname = Folder + "/"+CharName+"_Mat_" + Material + ".mat";
+					string matname = Folder + "/"+CharName+"_Mat_" + Material + ".mat"; 
 					CustomAssetUtility.SaveAsset<Material>(m, matname);
 					Material++;
 					// Save the material to disk?
@@ -118,6 +135,7 @@ namespace UMA.Editors
 				string meshName = Folder + "/"+CharName+"_Mesh_" + meshno + ".asset";
 				meshno++;
 				// Save Mesh to disk.
+				smr.sharedMesh.Optimize();
 				CustomAssetUtility.SaveAsset<Mesh>(smr.sharedMesh, meshName);
 				smr.sharedMaterials = mats;
 				smr.materials = mats;
@@ -133,9 +151,23 @@ namespace UMA.Editors
 			var lod = baseObject.GetComponent<UMASimpleLOD>();
 			if (lod != null) DestroyImmediate(lod);
 
-			var ud = baseObject.GetComponent<UMAData>();
-			if (ud != null) DestroyImmediate(ud);
-
+			if (AddStandaloneDNA)
+			{
+				UMAData uda = baseObject.GetComponent<UMAData>();
+				StandAloneDNA sda = baseObject.AddComponent<UMA.StandAloneDNA>();
+				sda.PackedDNA = UMAPackedRecipeBase.GetPackedDNA(uda._umaRecipe);
+				if (avatar is DynamicCharacterAvatar)
+				{
+					DynamicCharacterAvatar avt = avatar as DynamicCharacterAvatar;
+					sda.avatarDefinition = avt.GetAvatarDefinition(true);
+				}
+				sda.umaData = uda;
+			}
+			else
+			{
+				var ud = baseObject.GetComponent<UMAData>();
+				if (ud != null) DestroyImmediate(ud);
+			}
 			var ue = baseObject.GetComponent<UMAExpressionPlayer>();
 			if (ue != null) DestroyImmediate(ue);
 
@@ -654,6 +686,8 @@ namespace UMA.Editors
 		public UMAAvatarBase baseObject;
 		[Tooltip("Convert Swizzled normal maps back to standard normal maps")]
 		public bool UnswizzleNormalMaps = true;
+		[Tooltip("If True, will keep the umaData, and add a Standalone DNA component allowing you to load/save/Deform skeletal DNA")]
+		public bool AddStandaloneDNA = true;
 		[Tooltip("The prefab will be named this, and it will be added to all assets saved")]
 		public string CharacterName;
 		[Tooltip("The folder where the prefab folder will be created")]
@@ -681,7 +715,10 @@ namespace UMA.Editors
 			EditorGUILayout.LabelField("UMA Prefab Saver", EditorStyles.boldLabel);
 			EditorGUILayout.HelpBox("This will convert an UMA avatar into a non-UMA prefab. Once converted, it can be reused with little overhead, but all UMA functionality will be lost.", MessageType.None, false);
 			baseObject = (UMAAvatarBase)EditorGUILayout.ObjectField("UMA Avatar",baseObject, typeof(UMAAvatarBase),true);
+			EditorGUILayout.HelpBox("If you unswizzle normals (recommended) then they can be used in other applications, and UMA will automatically mark them as normal maps in the import settings.", MessageType.None);
 			UnswizzleNormalMaps = EditorGUILayout.Toggle("Unswizzle Normals", UnswizzleNormalMaps);
+			EditorGUILayout.HelpBox("Adding Standalone DNA will allow you to adjust most DNA of the character, without it being an UMA. However, it will require that you have the UMA system in the project.",MessageType.None);
+			AddStandaloneDNA = EditorGUILayout.Toggle("Add Standalone DNA", AddStandaloneDNA);
 			CharacterName = EditorGUILayout.TextField("Prefab Name", CharacterName);
 			prefabFolder = EditorGUILayout.ObjectField("Prefab Base Folder", prefabFolder, typeof(UnityEngine.Object), false) as UnityEngine.Object;
 
@@ -691,7 +728,7 @@ namespace UMA.Editors
 			{
 				if (GUILayout.Button("Make Prefab") && prefabFolder != null)
 				{
-					UMAAvatarLoadSaveMenuItems.ConvertToNonUMA(baseObject.gameObject, baseObject, folder, UnswizzleNormalMaps, CharacterName);
+					UMAAvatarLoadSaveMenuItems.ConvertToNonUMA(baseObject.gameObject, baseObject, folder, UnswizzleNormalMaps, CharacterName,AddStandaloneDNA);
 					EditorUtility.DisplayDialog("UMA Prefab Saver", "Conversion complete", "OK");
 				}
 			}

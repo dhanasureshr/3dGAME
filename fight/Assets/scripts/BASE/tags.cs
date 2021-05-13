@@ -67,6 +67,9 @@ public class tags : ExtendedCustomMonoBehavior
 
 
 
+    // variables for the virtual camras
+    public const string thirdpersocamera = "TPS_FREE_LOOK";
+    public const string Player_Look_target  = "look_target";
 
 
 }

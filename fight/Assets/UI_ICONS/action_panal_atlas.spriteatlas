@@ -40,11 +40,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 3586f8d5b41f9474b9e6f3c3b44c8722, type: 3}
     totalSpriteSurfaceArea: 290944
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: bb6088e07d53d4843ae237fabb685cfa, type: 3}
@@ -94,5 +97,6 @@ SpriteAtlas:
   - border_pot
   - Futoro_Ring
   - health_sp_0001_Shape-2
+  m_RenderDataMap: {}
   m_Tag: action_panal_atlas
   m_IsVariant: 0

@@ -12,11 +12,17 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
     public GameObject DCAPrefab;
     public string CharacterString;
 
+    public GameObject go;
+
+    void Awake()
+    {
+        go = GameObject.Instantiate(DCAPrefab);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject go = GameObject.Instantiate(DCAPrefab);
-        go.name = "Player_mesh";
+       // GameObject go = GameObject.Instantiate(DCAPrefab);
         var DCA = go.GetComponent<DynamicCharacterAvatar>();
 
         // Just load some items into the character.
@@ -41,7 +47,7 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
             // channel.
             // If you need full control over color channels, use DCA.SetRawColor("Hair",overlayColorData);
             DCA.SetColor("Hair", hairColor);
-            
+
             // Set any predefined wardrobe items.
             go.transform.position = new Vector3(0f, 0.5f, 0f);
             go.SetActive(true);

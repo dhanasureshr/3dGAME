@@ -7,8 +7,6 @@ public class UMAMountedItemSample : MonoBehaviour
 {
     public DynamicCharacterAvatar avatar;
     public GameObject swordPrefab;
-
-    public GameObject piston;
     private string InstantiatedItemName;
 
     public void Start()
@@ -33,7 +31,6 @@ public class UMAMountedItemSample : MonoBehaviour
         }
     }
 
-
     public void UnMountSword()
     {
         if (string.IsNullOrEmpty(InstantiatedItemName))
@@ -43,39 +40,6 @@ public class UMAMountedItemSample : MonoBehaviour
         if (item != null)
         {
             GameObject.Destroy(item);
-        }
-    }
-
-    
-    public void MountPiston()
-    {
-        if(string.IsNullOrEmpty(InstantiatedItemName))
-        {
-            return;
-
-        }
-        var item = GetItemIfMounted(piston,InstantiatedItemName);
-        if(item == null)
-        {
-            GameObject go = GameObject.Instantiate(piston,avatar.gameObject.transform);
-            go.name = InstantiatedItemName;
-            go.SetActive(true);
-
-        }
-    }
-
-    public void UnmountPiston()
-    {
-        if(string.IsNullOrEmpty(InstantiatedItemName))
-        {
-            return;
-
-        }
-        var item = GetItemIfMounted(piston,InstantiatedItemName);
-        if(item != null)
-        {
-            GameObject.Destroy(item);
-            
         }
     }
 

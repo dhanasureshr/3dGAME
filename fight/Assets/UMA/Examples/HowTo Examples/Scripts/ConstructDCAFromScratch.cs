@@ -22,7 +22,7 @@ public class ConstructDCAFromScratch : MonoBehaviour
     void Start()
     {
         GameObject go = new GameObject();
-        go.name = "Player"; // -------given a player name here ---------jahnavi;
+        go.transform.localRotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
         var DCA = go.AddComponent<DynamicCharacterAvatar>();
 
         if (LoadFromAvatarDef)
