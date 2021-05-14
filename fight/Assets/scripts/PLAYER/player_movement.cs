@@ -62,18 +62,18 @@ public class player_movement : MonoBehaviour
         {
             angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
         }
-        angle += Camera.main.transform.eulerAngles.y;
+        angle += Camera.main.transform.eulerAngles.y; // new below comment
         //angle += transform.eulerAngles.y;
         targetrotation = Quaternion.Euler(0, angle, 0);
 
     
-		transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,20 * Time.deltaTime);
+		transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,20 * Time.deltaTime); //new below comment
         
         //transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed  * Time.deltaTime);
 
         angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z);                        
-        angle = Mathf.Rad2Deg * angle; // this is helping to rotate the paleyer 
-        //angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
+        //angle = Mathf.Rad2Deg * angle; // this is helping to rotate the paleyer 
+        angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
         angle += Camera.main.transform.eulerAngles.y;
         targetrotation = Quaternion.Euler(0, angle, 0);
 
@@ -83,7 +83,7 @@ public class player_movement : MonoBehaviour
         
         moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
 
-        playercharactercontroller.Move(moveVector* Time.deltaTime);
+        playercharactercontroller.Move(moveVector* Time.deltaTime); // this is the move the player
 
 
         /// this code related to the player movment with player transform;
