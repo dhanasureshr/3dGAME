@@ -41,35 +41,28 @@ public class player_movement : MonoBehaviour
     
     private void Update()
     {
-        
-        MoveDirection = Player_Input.moveVec;
-
-        MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
-
-		MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
-	    verticalvelocity -= gravity * Time.deltaTime;
-       
-        angle += Camera.main.transform.eulerAngles.y; // new below comment
-        targetrotation = Quaternion.Euler(0, angle, 0);
-        angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z);                         
-        angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
-        angle += Camera.main.transform.eulerAngles.y;
-        
-        
-        targetrotation = Quaternion.Euler(0, angle, 0);
-
-    
-		
-        transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed  * Time.deltaTime);
-        
-        moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
-
-        playercharactercontroller.Move(moveVector* Time.deltaTime); // this is the move the player
-
-        Networked_Player_animatior.SetFloat("inputX",Player_Input.moveVec.x);
-        Networked_Player_animatior.SetFloat("inputY",Player_Input.moveVec.z);
-
-       
+        if(wepon__movement)// this condition enables player wepon movement
+        {
+            MoveDirection = Player_Input.moveVec;
+            MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
+            MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
+            verticalvelocity -= gravity * Time.deltaTime;
+            angle += Camera.main.transform.eulerAngles.y; // new below comment
+            targetrotation = Quaternion.Euler(0, angle, 0);
+            angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z);                         
+            angle = Mathf.Deg2Rad * angle;  // this is helping to strict the player rotation
+            angle += Camera.main.transform.eulerAngles.y;
+            targetrotation = Quaternion.Euler(0, angle, 0);
+            transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed  * Time.deltaTime);
+            moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
+            playercharactercontroller.Move(moveVector* Time.deltaTime); // this is the move the player
+            Networked_Player_animatior.SetFloat("inputX",Player_Input.moveVec.x);
+            Networked_Player_animatior.SetFloat("inputY",Player_Input.moveVec.z);
+        }
+        else // this condition enables player advanture movemnt
+        {
+            // TO---DO 
+        }
         
     }
     
