@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
-    // private Vector3 MoveDirection;
-    // private Vector3 ProjectedCameraForward;
-    // private Quaternion rotationToCamera;
-    // private float movespeed = 5.0f;
-    // private float rotationspeed = 5.0f;
-    // private Quaternion rotationToMoveDirection;
-
+    /*
+     private Vector3 MoveDirection;
+     private Vector3 ProjectedCameraForward;
+     private Quaternion rotationToCamera;
+     private float movespeed = 5.0f;
+     private float rotationspeed = 5.0f;
+     private Quaternion rotationToMoveDirection;
+    
+    [Inject(InjectFrom.Anywhere)]
+    public INPUT_MANAGER_FOR_PLAYER Player_Input;
+    */
 
     [Inject(InjectFrom.Anywhere)]
     public INPUT_MANAGER_FOR_PLAYER Player_Input;
@@ -43,16 +47,17 @@ public class player_movement : MonoBehaviour
     
     private void Update()
     {
+        
         MoveDirection = Player_Input.moveVec;
 
         MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
 
-        //MoveDirection =transform.TransformDirection(MoveDirection);
         
+        
+
+
 		MoveDirection = MoveDirection * speed;// here aplying the movement input when player is in middle of jump
 	    verticalvelocity -= gravity * Time.deltaTime;
-
-
         angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z); 
         if(wepon__movement)
         {                       
@@ -66,9 +71,7 @@ public class player_movement : MonoBehaviour
         //angle += transform.eulerAngles.y;
         targetrotation = Quaternion.Euler(0, angle, 0);
 
-    
-		transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,20 * Time.deltaTime); //new below comment
-        
+		       
         //transform.rotation = Quaternion.RotateTowards(transform.rotation,targetrotation,speed  * Time.deltaTime);
 
         angle = Mathf.Atan2(Player_Input.moveVec.x,Player_Input.moveVec.z);                        
@@ -78,28 +81,28 @@ public class player_movement : MonoBehaviour
         targetrotation = Quaternion.Euler(0, angle, 0);
 
     
-		//transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed * Time.deltaTime);
+		
         transform.rotation = Quaternion.Lerp(transform.rotation,targetrotation,speed  * Time.deltaTime);
         
         moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
 
         playercharactercontroller.Move(moveVector* Time.deltaTime); // this is the move the player
 
-
+        
         /// this code related to the player movment with player transform;
-
-        // Debug.Log("hi dhana player");
-        // MoveDirection = Player_Input.moveVec;
-        // ProjectedCameraForward = Vector3.ProjectOnPlane(Camera.main.transform.forward,Vector3.up);
-        // rotationToCamera = Quaternion.LookRotation(ProjectedCameraForward,Vector3.up);
-        // MoveDirection  = rotationToCamera * MoveDirection;
-        // rotationToMoveDirection  = Quaternion.LookRotation(MoveDirection,Vector3.up);
+        /*
+         Debug.Log("hi dhana player");
+         MoveDirection = Player_Input.moveVec;
+         ProjectedCameraForward = Vector3.ProjectOnPlane(Camera.main.transform.forward,Vector3.up);
+         rotationToCamera = Quaternion.LookRotation(ProjectedCameraForward,Vector3.up);
+         MoveDirection  = rotationToCamera * MoveDirection;
+         rotationToMoveDirection  = Quaternion.LookRotation(MoveDirection,Vector3.up);
         // // this rotation is for wepon look
-        // transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToCamera,rotationspeed * Time.deltaTime);
-        // // this rotation is for free look
-        // //transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToMoveDirection,rotationspeed * Time.deltaTime);
-        // transform.position += MoveDirection * movespeed * Time.deltaTime;
-
+         transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToCamera,rotationspeed * Time.deltaTime);
+         // this rotation is for free look
+         //transform.rotation = Quaternion.RotateTowards(transform.rotation,rotationToMoveDirection,rotationspeed * Time.deltaTime);
+         transform.position += MoveDirection * movespeed * Time.deltaTime;
+        */
         
     }
     
