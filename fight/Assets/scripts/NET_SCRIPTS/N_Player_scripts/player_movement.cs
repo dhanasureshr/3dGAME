@@ -5,23 +5,15 @@ namespace com.dhanasoftwares
 {
     public class player_movement : MonoBehaviour
     {
-
-        [Inject(InjectFrom.Anywhere)]
         public INPUT_MANAGER_FOR_PLAYER Player_Input;
-    
+        public Net_Player_Animainton_Helper N_P_Animator_Helper;
         private Vector3 MoveDirection = Vector3.zero;
-
         private CharacterController playercharactercontroller;
         private float rotate_speed = 5.0f;
-
         private float verticalvelocity;
-
         private float gravity = 20.8f;
         public float speed;
-
         private Vector3 moveVector;
-
-        
         float angle;
         Quaternion targetrotation;
 
@@ -42,7 +34,7 @@ namespace com.dhanasoftwares
         {
             if(wepon__movement)// this condition enables player wepon movement
             {
-                Networked_Player_animatior.SetBool("P_wepon_mode",true);
+                N_P_Animator_Helper.ENABLE_WEPON_MOVEMENT_ANIMATIONS();
                 MoveDirection = Player_Input.moveVec;
                 MoveDirection = Camera.main.transform.TransformDirection(MoveDirection);
                 //---jump code TO--DO
@@ -59,8 +51,10 @@ namespace com.dhanasoftwares
             }
             else // this condition enables player advanture movemnt
             {
-                Networked_Player_animatior.SetBool("P_wepon_mode",false);
+                N_P_Animator_Helper.DISABLE_WEPON_MOVEMENT_ANIMATIONS();
                 MoveDirection = Player_Input.moveVec.normalized;
+
+  
                 if(MoveDirection.magnitude >= 0.1f)
                 {
                     float tragetAngle = Mathf.Atan2(MoveDirection.x,MoveDirection.z) * Mathf.Rad2Deg  + Camera.main.transform.eulerAngles.y;
@@ -69,12 +63,19 @@ namespace com.dhanasoftwares
                     //---jump code
                     verticalvelocity = jump_motor();
                     moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
-                    playercharactercontroller.Move(moveVector.normalized * speed * Time.deltaTime);     
+                    playercharactercontroller.Move(moveVector.normalized * speed * Time.deltaTime);   
+                
+                }
+                else
+                {
+                    verticalvelocity = jump_motor();
+                    moveVector = new Vector3(MoveDirection.x,verticalvelocity,MoveDirection.z);
+                    playercharactercontroller.Move(moveVector.normalized * speed * Time.deltaTime);   
                 }
                                 
             }
-            Networked_Player_animatior.SetFloat("wepon_inputX",Player_Input.moveVec.x);    
-            Networked_Player_animatior.SetFloat("wepon_inputY",Player_Input.moveVec.z);
+            
+            N_P_Animator_Helper.PLAY_MOVE_ANIMATION();
 
                 
         }
@@ -88,12 +89,12 @@ namespace com.dhanasoftwares
 				        {
                             if(wepon__movement)
                             {
-					            Networked_Player_animatior.SetTrigger("idle_jump");
+					            N_P_Animator_Helper.PLAY_WEPON_JUMP();
 					            verticalvelocity = jumpforce;
                             }
                             else
                             {
-					            Networked_Player_animatior.SetTrigger("run_jump");
+					            N_P_Animator_Helper.PLAY_ADVANTURE_JUMP();
 					            verticalvelocity = jumpforce + 5;
                             }
 

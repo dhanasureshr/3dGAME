@@ -284,7 +284,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22521047}
-  m_LocalRotation: {x: 0.09078908, y: -0.8186328, z: 0.27012357, w: 0.49862915}
+  m_LocalRotation: {x: 0.09078912, y: -0.8186328, z: 0.27012357, w: 0.4986292}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -929,7 +929,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301003098}
-  m_LocalRotation: {x: 0.07637511, y: -0.82608056, z: 0.24640884, w: 0.50103945}
+  m_LocalRotation: {x: 0.07637512, y: -0.82608056, z: 0.24640884, w: 0.5010395}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7868,7 +7868,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207880062}
-  m_LocalRotation: {x: 0.19657369, y: 0.4956982, z: -0.11628865, w: 0.8379255}
+  m_LocalRotation: {x: 0.19657369, y: 0.4956982, z: -0.11628866, w: 0.8379255}
   m_LocalPosition: {x: -2.2237382, y: 3.0702384, z: -1.2217405}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8716,7 +8716,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467418956}
-  m_LocalRotation: {x: -0.009375131, y: -0.036781717, z: 0.014788443, w: 0.9991699}
+  m_LocalRotation: {x: -0.009375136, y: -0.036781717, z: 0.014788449, w: 0.9991699}
   m_LocalPosition: {x: -0.05342067, y: -0.000000022351742, z: 0.000000056810677}
   m_LocalScale: {x: 0.9999998, y: 0.99999994, z: 0.99999917}
   m_Children:
@@ -11040,6 +11040,7 @@ GameObject:
   - component: {fileID: 8078065447909854194}
   - component: {fileID: 8078065447909854197}
   - component: {fileID: 5415929631288008153}
+  - component: {fileID: 8078065447909854198}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11060,8 +11061,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Input: {fileID: 8078065447909854195}
+  N_P_Animator_Helper: {fileID: 8078065447909854198}
   speed: 10
-  wepon__movement: 1
+  wepon__movement: 0
 --- !u!114 &8078065447909854195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11136,3 +11138,16 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8078065447909854198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8078065447909854193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80354a4f5ba5fcc4ea6479bb904359d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Input: {fileID: 8078065447909854195}
