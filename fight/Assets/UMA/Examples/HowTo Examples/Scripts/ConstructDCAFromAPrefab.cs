@@ -17,13 +17,13 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
 
     void Awake()
     {
-        go = GameObject.Instantiate(DCAPrefab);
+        //go = GameObject.Instantiate(DCAPrefab);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-       // GameObject go = GameObject.Instantiate(DCAPrefab);
+        GameObject go = GameObject.Instantiate(DCAPrefab);
         var DCA = go.GetComponent<DynamicCharacterAvatar>();
 
         // Just load some items into the character.
