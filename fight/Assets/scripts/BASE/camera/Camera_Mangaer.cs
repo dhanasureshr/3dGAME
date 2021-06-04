@@ -30,6 +30,7 @@ namespace com.dhanasoftwares.cameramanager
 
         private void Start()
         {
+            this.transform.SetParent(null);
             ThirdPersoFreeLookCamera = GameObject.FindGameObjectWithTag(tags.thirdpersocamera);
             Networked_Player_transform  = GameObject.FindGameObjectWithTag(tags.full_player_tag);
             Networked_Player_Look_transform = GameObject.FindGameObjectWithTag(tags.Player_Look_target);
