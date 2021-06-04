@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UMA.CharacterSystem;
 using UnityEngine;
 
-
 public class ConstructDCAFromAPrefab : MonoBehaviour
 {
     public string raceName = "HumanFemale";
@@ -12,13 +11,6 @@ public class ConstructDCAFromAPrefab : MonoBehaviour
     public Color hairColor = Color.red;
     public GameObject DCAPrefab;
     public string CharacterString;
-
-    public GameObject go;
-
-    void Awake()
-    {
-        //go = GameObject.Instantiate(DCAPrefab);
-    }
 
     // Start is called before the first frame update
     void Start()
