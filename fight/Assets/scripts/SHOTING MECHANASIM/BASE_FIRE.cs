@@ -10,7 +10,7 @@ namespace  shoot
         //------------------------------------------------------------------------------->
         //----------------------------SHOOTING ALGORITHAM ------------------------------->
         //------------------------------------------------------------------------------->
-        // this is the base script for the fhooting mechanasim
+        // this is the base script for the shooting mechanasim
         // this script holds features like pressing on fire button irrespective of the game
         // action mode 
         // it will calculate the "Screen point to Ray hit point position"
